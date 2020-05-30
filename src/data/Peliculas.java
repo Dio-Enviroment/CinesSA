@@ -7,7 +7,7 @@ public enum Peliculas {
 			duracion(130),
 			horarios(),
 			"Fant�stico. Ciencia ficci�n. Acci�n | Superh�roes. C�mic. Marvel Comics. Secuela. 3-D. Robots. Terrorismo",
-			"+ 12", 
+			12, 
 			"El descarado y brillante empresario Tony Stark/Iron Man se enfrentar� a un enemigo cuyo poder no conoce "
 			+ "l�mites. Cuando Stark comprende que su enemigo ha destruido su universo personal, se embarca en una "
 			+ "angustiosa b�squeda para encontrar a los responsables. Este viaje pondr� a prueba su entereza una y "
@@ -18,7 +18,7 @@ public enum Peliculas {
 			duracion(104),
 			horarios(), 
 			"Comedia | Adolescencia. Comedia juvenil. Secuela",
-			"+ 18",
+			18,
 			"Los protagonistas masculinos de la primera entrega, entonces obsesionados por perder la virginidad,"
 			+ " se reencuentran en su pueblo natal tras su primer a�o en la universidad. Ha pasado un a�o, y Jim "
 			+ "(Jason Biggs), Oz (Chris Klein), Kevin (Thomas Ian Nicholas) y Finch (Eddie Kay Thomas) deciden "
@@ -31,7 +31,7 @@ public enum Peliculas {
 			duracion(95),
 			horarios(), 
 			"Terror. Thriller | Sobrenatural. Comedia de terror",
-			"+ 18",
+			18,
 			"La joven Christine Brown (Alison Lohman), ambiciosa apoderada de un banco de Los �ngeles, sale con un"
 			+ " hombre encantador, el profesor Clay Dalton (Justin Long). El trabajo de Christine consiste en "
 			+ "conceder pr�stamos hipotecarios. Un d�a la se�ora Ganush, una misteriosa anciana (Lorna Raver), "
@@ -56,7 +56,7 @@ public enum Peliculas {
 			duracion(100),
 			horarios(), 
 			"Ciencia ficci�n. Acci�n. Terror | Supervivencia. Pandemias. Vampiros. Remake. Futuro postapocal�ptico",
-			"+ 12",
+			12,
 			"A�o 2012. Robert Neville (Will Smith) es el �ltimo hombre vivo que hay sobre la Tierra, pero no est� "
 			+ "solo. Los dem�s seres humanos se han convertido en vampiros y todos ans�an beber su sangre. Durante "
 			+ "el d�a vive en estado de alerta, como un cazador, y busca a los muertos vivientes mientras duermen; "
@@ -71,7 +71,7 @@ public enum Peliculas {
 			duracion(108),
 			horarios(), 
 			"Fant�stico. Animaci�n. Aventuras | Cuentos. 3-D",
-			"+ 10",
+			10,
 			"Inspirada en la obra hom�nima de Lewis Carroll. Alicia (Mia Wasikowska), una joven de 19 a�os,"
 			+ " acude a una mansi�n victoriana para asistir a una fiesta de la alta sociedad. Cuando est� a "
 			+ "punto de recibir p�blicamente una propuesta de matrimonio, sale corriendo tras un conejo blanco "
@@ -85,7 +85,7 @@ public enum Peliculas {
 			duracion(140),
 			horarios(), 
 			"Fant�stico. Acci�n | Superh�roes. C�mic. Marvel Comics. Secuela",
-			"+ 14",
+			14,
 			"Tercera entrega de las aventuras del joven Peter Parker (Maguire). Parece que Parker ha conseguido por "
 			+ "fin el equilibrio entre su devoci�n por Mary Jane y sus deberes como superh�roe. Pero, de repente, su "
 			+ "traje se vuelve negro y adquiere nuevos poderes; tambi�n �l se transforma, mostrando el lado m�s oscuro "
@@ -98,7 +98,7 @@ public enum Peliculas {
 			duracion(98),
 			horarios(), 
 			"Terror | Sobrenatural. Mu�ecos. Spin-off. A�os 70",
-			"+ 16",
+			16,
 			"John Form encuentra el regalo perfecto para su mujer embarazada, Mia: una preciosa e inusual mu�eca "
 			+ "vintage que lleva un vestido de novia blanco inmaculado. Sin embargo, la alegr�a de Mia al recibir a "
 			+ "Annabelle no dura mucho. Durante una espantosa noche la pareja ve como miembros de una secta sat�nica"
@@ -117,10 +117,11 @@ public enum Peliculas {
 			+ "junto con otros pitufos, entrar� en una ruta prohibida. La luna azul y un portal m�gico"
 			+ " los transportar�n a Central Park, en Nueva York. Sin embargo, Gargamel sigue persigui�ndolos,"
 			+ " por lo que los Pitufos buscar�n refugio en casa de un matrimonio.");*/
-	private final String duracion,horario,titulo,genero,censura,sinapsis,salaTipo;
+	private final String duracion,horario,titulo,genero,sinapsis,salaTipo;
 	private String boleteria_back,boleteria_front,boleteria_title;
+	private int edad;
 
-	Peliculas(String boleteria_back,String boleteria_front,String boleteria_title, String titulo,String duracion,String horario, String genero, String censura, String sinapsis,String salaTipo){
+	Peliculas(String boleteria_back,String boleteria_front,String boleteria_title, String titulo,String duracion,String horario, String genero, int edad, String sinapsis,String salaTipo){
 		this.boleteria_back=boleteria_back;
 		this.boleteria_front=boleteria_front;
 		this.boleteria_title=boleteria_title;
@@ -128,7 +129,7 @@ public enum Peliculas {
 		this.horario = horario;
 		this.titulo = titulo;
 		this.genero = genero;
-		this.censura = censura;
+		this.edad = edad;
 		this.sinapsis = sinapsis;
 		this.salaTipo=salaTipo;
 	}
@@ -209,8 +210,8 @@ public enum Peliculas {
 		return genero;
 	}
 
-	public String getCensura() {
-		return censura;
+	public int getEdad() {
+		return edad;
 	}
 
 	public String getSinapsis() {

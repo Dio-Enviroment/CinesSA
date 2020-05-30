@@ -13,7 +13,7 @@ public class ControladorProyeccion {
 
     public ControladorProyeccion() {
         for (Peliculas pelicula : Peliculas.values()) {
-            proyecciones.add(new Pelicula(pelicula.getBoleteria_back(),pelicula.getBoleteria_front(),pelicula.getBoleteria_title(),pelicula.getTitulo(), pelicula.getDuracion(), pelicula.getHorario(),pelicula.getGenero(),pelicula.getCensura(),pelicula.getSinapsis(),pelicula.getSalaTipo()));
+            proyecciones.add(new Pelicula(pelicula.getBoleteria_back(),pelicula.getBoleteria_front(),pelicula.getBoleteria_title(),pelicula.getTitulo(), pelicula.getDuracion(), pelicula.getHorario(),pelicula.getGenero(),pelicula.getEdad(),pelicula.getSinapsis(),pelicula.getSalaTipo()));
         }
         
         for (Conferencias conferencia : Conferencias.values()) {
