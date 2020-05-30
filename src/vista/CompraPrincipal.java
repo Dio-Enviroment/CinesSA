@@ -65,11 +65,13 @@ public class CompraPrincipal extends JPanel{
 	private JPanel pn_controlBotones;
 	public JLabel lbl_tiiposala;
 	private JLabel lbl_sp;
+	private ControladorProyeccion ctrProyeccion;
+	
 
 	/**
 	 * Create the panel.
 	 */
-	public CompraPrincipal() {
+	public CompraPrincipal(ControladorProyeccion ctrProyeccion) {
 		setLayout(null);
 
 		pn_compra = new JPanel();
@@ -354,6 +356,9 @@ public class CompraPrincipal extends JPanel{
 		// ****************************////////////////////////
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		// SiguienteToolTip();
+		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
+		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
+		this.lbl_tiiposala.setText(actProyeccion.getTipo());
 		init();
 
 	}
@@ -503,4 +508,5 @@ public class CompraPrincipal extends JPanel{
 	public void recogerDatos() {
 		
 	}
+	
 }
