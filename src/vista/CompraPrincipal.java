@@ -531,6 +531,4 @@ public class CompraPrincipal extends JPanel{
 		}
 		
 	}
-	
-	
 }
