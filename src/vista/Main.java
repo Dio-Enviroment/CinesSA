@@ -38,7 +38,6 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
-		System.out.println("x1zz");
 		contentPane = new JPanel();
 		ControladorPrincipal controladorPrincipal = new ControladorPrincipal(this);
 		ControladorView controladorView = controladorPrincipal.getCtrView();
