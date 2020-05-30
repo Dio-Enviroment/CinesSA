@@ -71,7 +71,12 @@ public class CompraPrincipal extends JPanel{
 	/**
 	 * Create the panel.
 	 */
+<<<<<<< HEAD
 	public CompraPrincipal(ControladorProyeccion ctrProyeccion) {
+=======
+	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView,ControladorSala ctrSala) {
+		//ctrProyeccion.
+>>>>>>> branch 'master' of https://github.com/Dio-Enviroment/CinesSA.git
 		setLayout(null);
 
 		pn_compra = new JPanel();

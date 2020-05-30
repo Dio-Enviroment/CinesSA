@@ -6,38 +6,40 @@ import modelo.Sala;
 import data.*;
 
 public class ControladorSala {
-    private ArrayList<Sala> salas=new ArrayList<Sala>();
-    private Conferencias[] conferencias= Conferencias.values();
-    private Peliculas[] peliculas= Peliculas.values();
-    int numSalasPelicula=conferencias.length;
-    int numSalasConferencia=peliculas.length;
+    
 
-    public ControladorSala(){
-        generarSalas();
-    }
+    // private ArrayList<Sala> salas=new ArrayList<Sala>();
+    // private Conferencias[] conferencias= Conferencias.values();
+    // private Peliculas[] peliculas= Peliculas.values();
+    // int numSalasPelicula=conferencias.length;
+    // int numSalasConferencia=peliculas.length;
 
-    public Sala getSala(int id){
-        return salas.get(id);
-    }
+    // public ControladorSala(){
+    //     generarSalas();
+    // }
 
-    public void generarSalas() {
-        int cont=0;
+    // public Sala getSala(int id){
+    //     return salas.get(id);
+    // }
 
-        for (int i = 0; i < numSalasPelicula; i++) {
-            Peliculas pelicula= peliculas[i];
-            //for (int j = 0; j < peliculas.horario; j++) {
-                salas.add(new Sala(cont, pelicula.getSalaTipo(),calcDimencion(5,8),calcDimencion(5,8)));
-            //}
-            cont++;
-        }
+    // public void generarSalas() {
+    //     int cont=0;
 
-        for (int i = 0; i < numSalasConferencia; i++) {
-            Conferencias conferencia= conferencias[i];
-            salas.add(new Sala(cont, conferencia.getSalaTipo(),calcDimencion(5,8),calcDimencion(5,8)));
-            cont++;
-        }
-        cont--;
-    }
+    //     for (int i = 0; i < numSalasPelicula; i++) {
+    //         Peliculas pelicula= peliculas[i];
+    //         //for (int j = 0; j < peliculas.horario; j++) {
+    //             salas.add(new Sala(cont, pelicula.getSalaTipo(),calcDimencion(5,8),calcDimencion(5,8)));
+    //         //}
+    //         cont++;
+    //     }
+
+    //     for (int i = 0; i < numSalasConferencia; i++) {
+    //         Conferencias conferencia= conferencias[i];
+    //         salas.add(new Sala(cont, conferencia.getSalaTipo(),calcDimencion(5,8),calcDimencion(5,8)));
+    //         cont++;
+    //     }
+    //     cont--;
+    // }
 
     public void ocuparAsiento(int id,int numFil,int numCol){
         salas.get(id).ocuparAsiento(numFil,numCol);

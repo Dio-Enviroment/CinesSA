@@ -36,7 +36,7 @@ public class Precio {
 			return Iva *subtotal;
 		}
 	}
-	public   class Subtotal{
+	public class Subtotal{
 		
 		public double subtotal(int num_boletoA, int num_boletoN, ControladorProyeccion ctrProyeccion) {
 			Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
