@@ -11,16 +11,18 @@ public class Proyeccion {
 	protected String duracion;
 	protected String horario;
 	protected String titulo;
-	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String titulo,String duracion, String horario) {
+	protected String salaTipo;
+	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String titulo,String duracion, String horario,String salaTipo) {
 		this.boleteria_back=boleteria_back;
 		this.boleteria_front=boleteria_front;
 		this.boleteria_title=boleteria_title;
 		this.duracion=duracion;
 		this.horario=horario;
 		this.titulo=titulo;
+		this.salaTipo=salaTipo;
 	}
 	public String getTitulo() {
-		return titulo;
+		return this.titulo;
 	}
 
 	public void setTitulo(String titulo) {
@@ -28,7 +30,7 @@ public class Proyeccion {
 	}
 
 	public String[] getAtributos() {
-		return atributos;
+		return this.atributos;
 	}
 
 	public void setAtributos(String[] atributos) {
@@ -36,7 +38,7 @@ public class Proyeccion {
 	}
 
 	public int getDuracion() {
-		return duracion;
+		return this.duracion;
 	}
 
 	public void setDuracion(int duracion) {
@@ -49,5 +51,13 @@ public class Proyeccion {
 
 	public void setHorario(String horario) {
 		this.horario = horario;
-	}	
+	}
+	
+	public String getSalaTipo() {
+		return salaTipo;
+	}
+
+	public void setSalaTipo(String salaTipo) {
+		this.salaTipo = salaTipo;
+	}
 }
