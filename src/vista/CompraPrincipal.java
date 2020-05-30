@@ -69,7 +69,8 @@ public class CompraPrincipal extends JPanel{
 	/**
 	 * Create the panel.
 	 */
-	public CompraPrincipal() {
+	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView,ControladorSala ctrSala) {
+		//ctrProyeccion.
 		setLayout(null);
 
 		pn_compra = new JPanel();
