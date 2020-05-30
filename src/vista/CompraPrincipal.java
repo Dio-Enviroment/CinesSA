@@ -527,7 +527,7 @@ public class CompraPrincipal extends JPanel{
 	public void censura() {
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		if (actProyeccion instanceof Pelicula) {
-			if (actProyeccion.getEdad()<12) {
+			if (((Pelicula) actProyeccion).getEdad()<12) {
 				this.sp_ninios.setEnabled(false);
 			}
 			else {
@@ -539,6 +539,4 @@ public class CompraPrincipal extends JPanel{
 		}
 		
 	}
-	
-	
 }

@@ -27,7 +27,10 @@ public enum Peliculas {
 			+ " alquiler es algo caro deciden invitar tambi�n a Stifler (Seann William Scott), quien adem�s de "
 			+ "tener mucho dinero, supuestamente sabe mucho de mujeres, aunque su personalidad es detestable.",
 			"imax"),
-	Peli_2("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","Drag Me To Hell",
+	Peli_2("//src//img//peli_0_boleteria_back.png",
+		"//src//img//peli_0_boleteria_front.png",
+		"//src//img//peli_0_boleteria_titulo.png",
+		"Drag Me To Hell",
 			duracion(95),
 			horarios(), 
 			"Terror. Thriller | Sobrenatural. Comedia de terror",
@@ -42,16 +45,20 @@ public enum Peliculas {
 			+ " la gu�a en una fren�tica carrera para conjurar el hechizo. Pero las fuerzas del mal se acercan y Christine "
 			+ "debe enfrentarse a algo impensable.",
 			"normal"),
-	Peli_3("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","Kung Fu Panda",
-			duracion(95),
-			horarios(), 
-			"Ciencia ficci�n. Acci�n. Terror | Supervivencia. Pandemias. Vampiros. Remake. Futuro postapocal�ptico",
-			"Todos los P�blicos",
-			"El protagonista es un oso panda llamado Po, el m�s vago de todas las criaturas del Valle de la Paz. "
-			+ "Con poderosos enemigos acerc�ndose, la esperanza es depositada en una antigua profec�a que dice que "
-			+ "un h�roe se alzar� para salvarles. Voces originales de Jack Black, Angelina Jolie, Dustin Hoffman,"
-			+ " Lucy Liu & Jackie Chan.",
-			"imax"),
+			Peli_3("//src//img//peli_0_boleteria_back.png",
+			"//src//img//peli_0_boleteria_front.png",
+			"//src//img//peli_0_boleteria_titulo.png",
+			"Kung Fu Panda",
+				duracion(95),
+				horarios(), 
+				"Ciencia ficci�n. Acci�n. Terror | Supervivencia. Pandemias. Vampiros. Remake. Futuro postapocal�ptico",
+				12,
+				"El protagonista es un oso panda llamado Po, el m�s vago de todas las criaturas del Valle de la Paz. "+ 
+				"Con poderosos enemigos acerc�ndose, la esperanza es depositada en una antigua profec�a que dice que "+ 
+				"un h�roe se alzar� para salvarles. Voces originales de Jack Black, Angelina Jolie, Dustin Hoffman,"+ 
+				" Lucy Liu & Jackie Chan.",
+				"imax"
+			),
 	Peli_4("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","I Am Legend", 
 			duracion(100),
 			horarios(), 
@@ -81,7 +88,10 @@ public enum Peliculas {
 			+ "rebelarse, esperan contar con el apoyo de Alicia, a la que ayudan a recordar su primera visita al "
 			+ "fant�stico reino. ",
 			"imax"),
-	Peli_6("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","Spider-Man 3", 
+	Peli_6("//src//img//peli_0_boleteria_back.png",
+		"//src//img//peli_0_boleteria_front.png",
+		"//src//img//peli_0_boleteria_titulo.png",
+		"Spider-Man 3", 
 			duracion(140),
 			horarios(), 
 			"Fant�stico. Acci�n | Superh�roes. C�mic. Marvel Comics. Secuela",
@@ -94,7 +104,10 @@ public enum Peliculas {
 			+ " siendo un h�roe compasivo. Mientras tanto, sobre �l se cierne la amenaza de dos temibles enemigos: Venom y el "
 			+ "Hombre de Arena.",
 			"normal"),
-	Peli_7("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","Annabelle",
+	Peli_7("//src//img//peli_0_boleteria_back.png",
+			"//src//img//peli_0_boleteria_front.png",
+			"//src//img//peli_0_boleteria_titulo.png",
+			"Annabelle",
 			duracion(98),
 			horarios(), 
 			"Terror | Sobrenatural. Mu�ecos. Spin-off. A�os 70",
