@@ -481,7 +481,7 @@ public class CompraPrincipal extends JPanel{
 				lbl_valor_iva.setText(lbl_valor_iva.getText() + " $");
 				lbl_valor_total.setText(lbl_valor_total.getText() + " $");
 				activadorSeleccion();
-				
+				System.out.print("hola");
 			}
 
 		});
