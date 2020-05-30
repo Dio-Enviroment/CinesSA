@@ -19,9 +19,9 @@ public class Precio {
 		Iva t = new Iva();
 		return  t.IVA(subtotal);
 	}
-	public double calculoS(int num_boletoA, int num_boletoN, int tipoSala, String tipo) {
+	public double calculoS(int num_boletoA, int num_boletoN, ControladorProyeccion ctrProyeccion) {
 		Subtotal t = new Subtotal();
-		return t.subtotal(num_boletoA, num_boletoN, tipoSala, tipo);
+		return t.subtotal(num_boletoA, num_boletoN, ctrProyeccion );
 	}
 	
 	public class Total {
@@ -41,7 +41,7 @@ public class Precio {
 		public double subtotal(int num_boletoA, int num_boletoN, ControladorProyeccion ctrProyeccion) {
 			Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 			if(actProyeccion instanceof Pelicula) {
-				if(actProyeccion.getTipo().equals("normal")) 
+				if(((Pelicula) actProyeccion).getSalaTipo().equals("normal")) 
 				return (num_boletoA*pelicula)+(num_boletoN*(pelicula*desN));
 				
 						
@@ -54,7 +54,7 @@ public class Precio {
 				
 				return(num_boletoA*conferencia)+(num_boletoN*(conferencia*desN));
 			}
-			return 0.0;
+			
 		}
 	}
 	

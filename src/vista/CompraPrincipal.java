@@ -66,17 +66,20 @@ public class CompraPrincipal extends JPanel{
 	public JLabel lbl_tiiposala;
 	private JLabel lbl_sp;
 	private ControladorProyeccion ctrProyeccion;
-	
+	private ControladorView ctrView;
+	private ControladorSala ctrSala;
 
 	/**
 	 * Create the panel.
 	 */
-<<<<<<< HEAD
+
 	public CompraPrincipal(ControladorProyeccion ctrProyeccion) {
-=======
+
 	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView,ControladorSala ctrSala) {
-		//ctrProyeccion.
->>>>>>> branch 'master' of https://github.com/Dio-Enviroment/CinesSA.git
+		
+		this.ctrProyeccion = ctrProyeccion;
+		this.ctrView= ctrView;
+		this.ctrSala=ctrSala;
 		setLayout(null);
 
 		pn_compra = new JPanel();
@@ -361,9 +364,12 @@ public class CompraPrincipal extends JPanel{
 		// ****************************////////////////////////
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		// SiguienteToolTip();
+		
 		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
-		this.lbl_tiiposala.setText(actProyeccion.getTipo());
+		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
+		this.sp_ninios.setEnabled(false);
+		censura();
 		init();
 
 	}
@@ -510,8 +516,21 @@ public class CompraPrincipal extends JPanel{
 		return estado;
 	}
 
-	public void recogerDatos() {
+	public void censura() {
+		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
+		if (actProyeccion instanceof Pelicula) {
+			if (actProyeccion.getEdad()<12) {
+				this.sp_ninios.setEnabled(false);
+			}
+			else {
+				this.sp_ninios.setEnabled(true);
+			}
+		}
+		else {
+			this.sp_adultos.setEnabled(true);
+		}
 		
 	}
+	
 	
 }
