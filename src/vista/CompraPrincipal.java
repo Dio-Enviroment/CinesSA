@@ -68,18 +68,21 @@ public class CompraPrincipal extends JPanel{
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
 	private ControladorSala ctrSala;
+	private ControladorBoleto ctrBoleto;
+	private Precio pr;
 
 	/**
 	 * Create the panel.
 	 */
 
-	public CompraPrincipal(ControladorProyeccion ctrProyeccion) {
+	
 
-	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView,ControladorSala ctrSala) {
+	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView,ControladorSala ctrSala, ControladorBoleto ctrBoleto) {
 		
 		this.ctrProyeccion = ctrProyeccion;
 		this.ctrView= ctrView;
 		this.ctrSala=ctrSala;
+		this.ctrBoleto=ctrBoleto;
 		setLayout(null);
 
 		pn_compra = new JPanel();
@@ -376,19 +379,16 @@ public class CompraPrincipal extends JPanel{
 
 	//Registro_asiento ra = new Registro_asiento();
 
-	public void limitarValoresJpinner(int num_sala) {
-		//ad.setMaximum(ra.boletosTotales(num_sala));
+	public void limitarValoresJpinner() {
+		ad.setMaximum(ctrlBoleto.getBoletos(ctrlSala));
 		ad.setMinimum(0);
 		ad.setStepSize(1);
-		//nn.setMaximum(ra.boletosTotales(num_sala));
+		nn.setMaximum(ctrlBoleto.getBoletos(ctrlSala));
 		nn.setMinimum(0);
 		nn.setStepSize(1);
 		this.sp_adultos.setModel(ad);
 		this.sp_ninios.setModel(nn);
-		// this.sp_adultos.getValue(); Obtener valor // Parsiar //
 	}
-
-	//Precio pr = new Precio(); 
 	
 	SpinnerNumberModel ad = new SpinnerNumberModel();
 	SpinnerNumberModel nn = new SpinnerNumberModel();
@@ -445,6 +445,9 @@ public class CompraPrincipal extends JPanel{
 				// lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),Integer.parseInt(sp_ninios.getValue().toString()), 1, "Pelicula") * 100) / 100d) + "");
 				// lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText())) * 100) / 100d) + "");
 				// lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText())) * 100) / 100d) + "");
+				lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()), Integer.parseInt(sp_ninios.getValue().toString()), ctrProyeccion)*100)/100d)+"");
+				lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText()))*100)/100d)+"");
+				lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText()))*100)/100d)+"");
 				lbl_valor_Subtotal.setText(lbl_valor_Subtotal.getText() + " $");
 				lbl_valor_iva.setText(lbl_valor_iva.getText() + " $");
 				lbl_valor_total.setText(lbl_valor_total.getText() + " $");
@@ -467,9 +470,13 @@ public class CompraPrincipal extends JPanel{
 				}
 				
 				lbl_contador.setText(aux + "");
+				
 				// lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),Integer.parseInt(sp_ninios.getValue().toString()), 1, "Pelicula") * 100) / 100d) + "");
 				// lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText())) * 100) / 100d) + "");
 				// lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText())) * 100) / 100d) + "");
+				lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()), Integer.parseInt(sp_ninios.getValue().toString()), ctrProyeccion)*100)/100d)+"");
+				lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText()))*100)/100d)+"");
+				lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText()))*100)/100d)+"");
 				lbl_valor_Subtotal.setText(lbl_valor_Subtotal.getText() + " $");
 				lbl_valor_iva.setText(lbl_valor_iva.getText() + " $");
 				lbl_valor_total.setText(lbl_valor_total.getText() + " $");

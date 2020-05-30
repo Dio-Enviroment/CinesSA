@@ -52,5 +52,6 @@ public class ControladorSala {
     private int calcDimencion(int min, int max){
 		return (int)Math.floor(Math.random() * (max - min) + min);
     }
+    //getNumSala () numero de la sala de la pelicula
 
 }
