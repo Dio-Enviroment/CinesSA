@@ -77,7 +77,7 @@ public class CompraPrincipal extends JPanel{
 
 	
 
-	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView,ControladorSala ctrSala, ControladorBoleto ctrBoleto) {
+	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion,ControladorSala ctrSala, ControladorBoleto ctrBoleto, ControladorView ctrView) {
 		
 		this.ctrProyeccion = ctrProyeccion;
 		this.ctrView= ctrView;
@@ -363,27 +363,27 @@ public class CompraPrincipal extends JPanel{
 		//ra.a�adirSalas();
 
 		// ************** NEcesito Numero sala ***////////////////////
-		limitarValoresJpinner(10);
+		limitarValoresJpinner();
 		// ****************************////////////////////////
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		// SiguienteToolTip();
 		
-		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
-		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
-		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
-		this.sp_ninios.setEnabled(false);
-		censura();
-		init();
+		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
+		// this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
+		// this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
+		// this.sp_ninios.setEnabled(false);
+		// censura();
 
 	}
+
 
 	//Registro_asiento ra = new Registro_asiento();
 
 	public void limitarValoresJpinner() {
-		ad.setMaximum(ctrlBoleto.getBoletos(ctrlSala));
+		ad.setMaximum(ctrBoleto.getBoletos().size());
 		ad.setMinimum(0);
 		ad.setStepSize(1);
-		nn.setMaximum(ctrlBoleto.getBoletos(ctrlSala));
+		nn.setMaximum(ctrBoleto.getBoletos().size());
 		nn.setMinimum(0);
 		nn.setStepSize(1);
 		this.sp_adultos.setModel(ad);
@@ -398,6 +398,12 @@ public class CompraPrincipal extends JPanel{
 	private int aux;
 
 	public void init() {
+
+		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
+		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
+		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
+		this.sp_ninios.setEnabled(false);
+		censura();
 
 		txt_cedula.addKeyListener(new KeyAdapter() {
 			@Override

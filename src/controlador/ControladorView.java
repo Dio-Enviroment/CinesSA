@@ -25,6 +25,7 @@ public class ControladorView {
         this.cartelera=new Cartelera(1008,729,ctrProyeccion,this);
         this.selectPelicula=new SelectPelicula(1008, 729,ctrProyeccion,this);
         this.boleteria=new Boleteria(1008, 729,ctrProyeccion,this);
+        this.compraPrincipal=new CompraPrincipal(1008, 729,ctrProyeccion, ctrSala, ctrBoleto, this);
         // this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
         //this.seleccionarAsientos=new SeleccionarAsientos(1008, 729,ctrSala,this);
         // this.resumenCompra=new ResumenCompra(1008, 729,ctrBoleto,this);
@@ -68,11 +69,13 @@ public class ControladorView {
         // repaint();
     // }
 
-    // public void changeCompraPrincipal() {
-        // clean();
-        // this.actPanel=this.compraPrincipal;
-        // repaint();
-    // }
+    public void changeCompraPrincipal() {
+        clean();
+        this.actPanel=this.compraPrincipal;
+        repaint();
+        CompraPrincipal c=(CompraPrincipal)this.actPanel;
+        c.init();
+    }
 
     // public void changeSeleccionarAsientos() {
         // clean();

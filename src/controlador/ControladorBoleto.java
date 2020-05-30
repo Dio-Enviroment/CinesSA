@@ -13,5 +13,9 @@ public class ControladorBoleto {
     public void addBoleto(Cliente cliente,Proyeccion proyeccion, Asiento asiento){
         boletos.add(new Boleto(cliente,proyeccion, asiento));
     }
+
+    public ArrayList<Boleto> getBoletos() {
+        return boletos;
+    }
     //getBoletos () numero totales de bolestos de cada sala
 }

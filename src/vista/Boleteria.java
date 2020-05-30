@@ -11,49 +11,54 @@ import componentes.TransparentPanel;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Component;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
-public class Boleteria extends JPanel{
+public class Boleteria extends JPanel {
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
 
-	public Boleteria(int width,int height,ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
-		this.ctrProyeccion=ctrProyeccion;
-		this.ctrView=ctrView;
-		//String[] back0,String[] back1, String[] title ,
+	public Boleteria(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
+		this.ctrProyeccion = ctrProyeccion;
+		this.ctrView = ctrView;
+		// String[] back0,String[] back1, String[] title ,
 		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] rawback={
-			workingDirectory+"//src//img//peli_0_boleteria_back.png"
-		};
+		String[] rawback = { workingDirectory + "//src//img//peli_0_boleteria_back.png" };
 
-		String[] rawfront={
-			workingDirectory+"//src//img//peli_0_boleteria_front.png"
-		};
+		String[] rawfront = { workingDirectory + "//src//img//peli_0_boleteria_front.png" };
 
-		String[] rawtitle={
-			workingDirectory+"//src//img//peli_0_boleteria_titulo.png"
-		};
+		String[] rawtitle = { workingDirectory + "//src//img//peli_0_boleteria_titulo.png" };
 		setLayout(null);
-		
+
 		ImageAdaptable back = new ImageAdaptable(rawback[0]);
 		back.setLocation(0, 0);
 
 		ImageAdaptable front = new ImageAdaptable(rawfront[0]);
 		front.setLocation(0, 0);
 
-		int formularyWidth=354;
-		Component[] sendComponets={front};
-		TransparentPanel formulary=new TransparentPanel();
-		formulary.setBounds(width-formularyWidth, 0, formularyWidth, height);
-		
-		Object titleS=rawtitle[0];
-		CustomButton title=new CustomButton(titleS);
-		title.setBounds(10, 100, formularyWidth-20, 60);
-		CustomButton title2=new CustomButton("titleS");
-		title2.setBounds(10, 450, formularyWidth-50, 60);
+		int formularyWidth = 354;
+		Component[] sendComponets = { front };
+		TransparentPanel formulary = new TransparentPanel();
+		formulary.setBounds(width - formularyWidth, 0, formularyWidth, height);
+
+		Object titleS = rawtitle[0];
+		CustomButton title = new CustomButton(titleS);
+		title.setBounds(10, 100, formularyWidth - 20, 60);
+		CustomButton title2 = new CustomButton("titleS");
+		title2.setBounds(10, 450, formularyWidth - 50, 60);
+		title2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeCompraPrincipal();
+
+			}
+			
+		});
 
 		JLabel lb1=new JLabel("Tipo");
 		lb1.setForeground(Color.WHITE);
