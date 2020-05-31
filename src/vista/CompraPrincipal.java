@@ -42,7 +42,7 @@ public class CompraPrincipal extends JPanel{
 	public JLabel lbl_tituloPelicula;
 	private JLabel lbl_boletos;
 	private JLabel lbl_ninios;
-	public JSpinner sp_ninios = new JSpinner();;
+	public JSpinner sp_ninios = new JSpinner();
 	private JLabel lbl_adultos;
 
 	public JSpinner sp_adultos = new JSpinner();
@@ -361,15 +361,15 @@ public class CompraPrincipal extends JPanel{
 		//ra.a�adirSalas();
 
 		// ************** NEcesito Numero sala ***////////////////////
-		limitarValoresJpinner();
+		
 		// ****************************////////////////////////
-		maxA = Integer.parseInt(ad.getMaximum().toString());
+		
 		// SiguienteToolTip();
 		
 		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 		// this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
 		// this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
-		// this.sp_ninios.setEnabled(false);
+		this.sp_ninios.setEnabled(false);
 		// censura();
 
 	}
@@ -512,12 +512,8 @@ public class CompraPrincipal extends JPanel{
 		}
 	}
 
-	public void SiguienteToolTip() {
-
-	}
-
 	boolean estado;
-	public JPanel pn_compra;
+	private JPanel pn_compra;
 	
 	public String getContador() {
 		return this.lbl_contador.toString();
@@ -551,5 +547,58 @@ public class CompraPrincipal extends JPanel{
 			this.sp_adultos.setEnabled(true);
 		}
 		
+	}
+	public void descargardata() {
+		maxA=0;
+		asientos="";
+		estado=false;
+		this.lbl_contador.setText("0");
+		this.lbl_tituloPelicula.setText("");
+		this.lbl_tiiposala.setText("");
+		this.lbl_valor_iva.setText("0");
+		this.lbl_valor_Subtotal.setText("0");
+		this.lbl_valor_total.setText("0");
+	}
+	public void cargardata() {
+		limitarValoresJpinner();
+		maxA = Integer.parseInt(ad.getMaximum().toString());
+		aux=0;
+		asientos="";
+		estado=false;
+		init();
+	}
+	public void showcomponet(boolean visible){
+		 txt_cedula.setVisible(visible);
+		 txt_nombre.setVisible(visible);
+		 txt_fono.setVisible(visible);
+		 txt_direccion.setVisible(visible);
+		 lbl_pelicula.setVisible(visible);
+		 lbl_tituloPelicula.setVisible(visible);
+		 lbl_boletos.setVisible(visible);
+		 lbl_ninios.setVisible(visible);
+		 sp_ninios.setVisible(visible) ;
+		 lbl_adultos.setVisible(visible);
+
+		 sp_adultos.setVisible(visible) ;
+		 btn_selecionAsiento.setVisible(visible);
+		 lbl_contador.setVisible(visible);
+		 lbl_subtotal.setVisible(visible);
+		 lbl_valor_Subtotal.setVisible(visible);
+		 lbl_iva.setVisible(visible);
+		 lbl_valor_iva.setVisible(visible);
+	     lbl_total.setVisible(visible);
+		 lbl_valor_total.setVisible(visible);
+	     pn_datoBoleto.setVisible(visible);
+		 pn_datoPersona.setVisible(visible);
+		 lbl_cedula.setVisible(visible);
+		 lbl_nombre.setVisible(visible);
+		 lbl_telefono.setVisible(visible);
+		 lbl_direccion.setVisible(visible);
+	     btn_anterior.setVisible(visible);
+		 btn_siguiente.setVisible(visible);
+		 pn_controlBotones.setVisible(visible);
+	     lbl_tiiposala.setVisible(visible);
+		 lbl_sp.setVisible(visible);
+		 pn_compra.setVisible(visible);
 	}
 }
