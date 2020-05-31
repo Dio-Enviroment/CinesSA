@@ -102,7 +102,6 @@ public class SeleccionarAsientos extends CustomPanel {
 	}
 
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
-
 		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
 		setLayout(null);

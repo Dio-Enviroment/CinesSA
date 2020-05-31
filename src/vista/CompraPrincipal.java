@@ -570,7 +570,7 @@ public class CompraPrincipal extends CustomPanel{
 		
 	}
 	public void descargardata() {
-		maxA=0;
+		maxA=0;//
 		asientos="";
 		estado=false;
 		showcomponet(false);
