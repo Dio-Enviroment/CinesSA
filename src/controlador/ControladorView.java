@@ -20,6 +20,7 @@ public class ControladorView {
     private ResumenCompra resumenCompra;
     private Agradecimiento agradecimiento;
     private String contador;
+    private boolean inicompraPrincipal=true;
     
     
     public ControladorView(JFrame container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
@@ -84,7 +85,10 @@ public class ControladorView {
         //clean();
         this.actPanel.setVisible(false);
         this.actPanel=this.compraPrincipal;
-        this.compraPrincipal.init();
+        if (inicompraPrincipal) {
+            this.compraPrincipal.init();
+            inicompraPrincipal=false;
+        }
         repaint();
         //CompraPrincipal c=(CompraPrincipal)this.actPanel;
         //c.init();

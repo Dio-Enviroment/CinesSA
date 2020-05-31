@@ -88,4 +88,12 @@ public class Boleteria extends JPanel {
 		title.setVisible(value);
 		title2.setVisible(value);
 	}
+
+	public void cargardata() {}
+
+	public void descargadata() {}
+
+	public void showcomponet(boolean visible){
+		
+	}
 }

@@ -13,10 +13,11 @@ import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 
 public class Cartelera extends JPanel {
-	CustomButton btn_comprar;
-	ControladorProyeccion ctrProyeccion;
-	ControladorView ctrView;
-	Slider slider;
+	private CustomButton btn_comprar;
+	private ControladorProyeccion ctrProyeccion;
+	private ControladorView ctrView;
+	private Slider slider;
+	private JButton j;
 
 	public Cartelera(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
 		this.ctrProyeccion=ctrProyeccion;
@@ -33,17 +34,8 @@ public class Cartelera extends JPanel {
 		slider.setBounds(0, 0, 1008, 729);
 		btn_comprar.setBounds(140, 603, 718, 40);
 		
-		JButton j=new JButton("sd");
+		j=new JButton("sd");
 		j.setBounds(10, 50, 50, 50);
-		j.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				slider.setPos(1);
-				btn_comprar.repaint();
-			}
-
-		});
 
 		add(j);
 		
@@ -53,6 +45,17 @@ public class Cartelera extends JPanel {
 		iniComponentEvents();
 	}
 
+	public void cargardata() {}
+
+	public void descargadata() {}
+
+	public void showcomponet(boolean visible){
+		btn_comprar.setVisible(visible);
+		slider.setVisible(visible);
+		j.setVisible(visible);
+	}
+
+
 	public void iniComponentEvents() {
 		btn_comprar.addActionListener(new ActionListener() {
 			@Override
@@ -60,6 +63,16 @@ public class Cartelera extends JPanel {
 				ctrProyeccion.setActProyeccion(slider.getPos());
 				ctrView.changeBoleteria();
 			}
+		});
+
+		j.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				slider.setPos(1);
+				btn_comprar.repaint();
+			}
+
 		});
 	}
 }
