@@ -370,6 +370,7 @@ public class CompraPrincipal extends CustomPanel{
 		//pn_controlBotones.add(btn_siguiente);
 	
 		this.btn_siguiente.setEnabled(false);
+		
 		//ra.a�adirSalas();
 
 		// ************** NEcesito Numero sala ***////////////////////
@@ -405,6 +406,7 @@ public class CompraPrincipal extends CustomPanel{
 	SpinnerNumberModel nn = new SpinnerNumberModel();
 	BasicArrowButton arribaA = (BasicArrowButton) sp_adultos.getComponent(0);
 	BasicArrowButton arribaN = (BasicArrowButton) sp_ninios.getComponent(0);
+	
 	private int maxA;
 	private int aux;
 
@@ -579,14 +581,13 @@ public class CompraPrincipal extends CustomPanel{
 		this.lbl_valor_total.setText("0");
 	}
 	public void cargardata() {
-
-		//this.sp_adultos.setEnabled(ctrView.getActivador());
-		//this.sp_ninios.setEnabled(ctrView.getActivador());
+		
+		//this.sp_adultos.setEditor(null);
+		sp_adultos.setEditor(new JSpinner.DefaultEditor(sp_adultos));
+		sp_ninios.setEditor(new JSpinner.DefaultEditor(sp_ninios));
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
 		limitarValoresJpinner();
-		this.sp_adultos.setValue(0);
-		this.sp_ninios.setValue(0);
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		aux=0;
 		asientos="";
