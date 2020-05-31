@@ -78,6 +78,7 @@ public class Boleteria extends JPanel {
 		add(front);
 		add(formulary);
 		add(back);
+		//ss
 		
 	}
 
