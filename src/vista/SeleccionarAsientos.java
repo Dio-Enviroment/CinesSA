@@ -178,8 +178,8 @@ public class SeleccionarAsientos extends CustomPanel {
 		for (int i = 0; i < asientos.length; i++) {
 			for (int j = 0; j < asientos[i].length; j++) {
 				Object[] paths = { workingDirectory + "//src//resources//asiento//asiento_disponible.png",
-								workingDirectory + "//src//resources//asiento//asiento_disponible.png",
-								workingDirectory + "//src//resources//asiento//asiento_disponible.png", i,j };
+								workingDirectory + "//src//resources//asiento//asiento_seleccionado.png",
+								workingDirectory + "//src//resources//asiento//asiento_desabilitado.png", i,j };
 				CustomButton b1 = new CustomButton(paths);
 				b1.setBounds(0, 0, 62, 47);
 				b1.changeIcon(0);
