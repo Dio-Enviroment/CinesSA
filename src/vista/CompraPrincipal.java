@@ -566,12 +566,10 @@ public class CompraPrincipal extends CustomPanel{
 		this.lbl_valor_iva.setText("0");
 		this.lbl_valor_Subtotal.setText("0");
 		this.lbl_valor_total.setText("0");
-		
 	}
 	public void cargardata() {
 		this.sp_adultos.setEnabled(ctrView.getActivador());
 		this.sp_ninios.setEnabled(ctrView.getActivador());
-		this.arribaN.setEnabled(ctrView.getActivador());
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
 		limitarValoresJpinner();
