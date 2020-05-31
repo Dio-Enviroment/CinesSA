@@ -20,6 +20,7 @@ public class CustomButton extends JButton{
     private int mode = 0;
     private Color idle, press;
     private Object[] customParameter;
+    private String [] paths;
 
     public CustomButton(String txt) {
         super(txt);
@@ -37,12 +38,21 @@ public class CustomButton extends JButton{
         this.setUI(new CustomButtonUI(mode,path[0].toString()));
         this.setBorder(new EmptyBorder(5, 15, 5, 15));
         if(path.length>1 && path.length>path.length-2){
+            paths=new String[path.length-2];
             customParameter=new Object[path.length-3];
+            for (int i = 0; i < path.length-2; i++) {
+                paths[i]=(String)path[i];
+            }
+
             for (int i = path.length-2; i < path.length; i++) {
                 customParameter[cont]=path[i];
                 cont++;
             }
         }
+    }
+
+    public void changeIcon(int pos){
+        this.setUI(new CustomButtonUI(mode,paths[pos].toString()));
     }
 
     public Object getCustomParameter(int pos){
