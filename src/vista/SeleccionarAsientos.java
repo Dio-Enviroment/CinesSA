@@ -340,9 +340,9 @@ public class SeleccionarAsientos extends CustomPanel {
 						}
 					}
 				}
-			
+				ctrView.changeCompraPrincipal();
 			}
-
+			
 		});
 	}
 

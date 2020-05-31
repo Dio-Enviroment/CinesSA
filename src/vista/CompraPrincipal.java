@@ -567,7 +567,8 @@ public class CompraPrincipal extends CustomPanel{
 		this.lbl_valor_total.setText("0");
 	}
 	public void cargardata() {
-		btn_selecionAsiento.setEnabled(false);
+	
+		
 		limitarValoresJpinner();
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		aux=0;
