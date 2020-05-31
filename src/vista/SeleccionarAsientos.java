@@ -103,9 +103,14 @@ public class SeleccionarAsientos extends JPanel {
 		mostrarAsientos(sala.getId());
 		generar();
 		comprar();
-		this.lbl_asiento.setText(ctrView.getContador());
+		System.out.println(ctrView.getContador());
+		
 		cancelar();
 		// init();
+	}
+
+	public void ini() {
+		this.lbl_asiento.setText(ctrView.getContador());
 	}
 
 	private ArrayList<JButton[][]> salas = new ArrayList<JButton[][]>();

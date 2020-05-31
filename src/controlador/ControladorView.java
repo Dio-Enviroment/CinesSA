@@ -34,26 +34,8 @@ public class ControladorView {
         // this.agradecimiento=new Agradecimiento(1008, 729,ctrBoleto,this);
     }
 
-<<<<<<< HEAD
     //a
     private void clean(){
-=======
-    
-    
-    public String getContador() {
-		return contador;
-	}
-
-
-
-	public void setContador(String contador) {
-		this.contador = contador;
-	}
-
-
-
-	private void clean(){
->>>>>>> 897c80576b0cc0ce6eb1de3aa808eb33f0c6e0c7
         if (this.actPanel!=null) {
             this.actPanel.removeAll();
             this.container.remove(this.actPanel);
@@ -102,6 +84,15 @@ public class ControladorView {
         clean();
         this.actPanel=this.seleccionarAsientos;
         repaint();
+        this.seleccionarAsientos.ini();
+    }
+
+    public String getContador() {
+        return contador;
+    }
+
+    public void setContador(String contador) {
+        this.contador = contador;
     }
 
 
