@@ -495,6 +495,7 @@ public class CompraPrincipal extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ctrView.setContador(lbl_contador.getText());
 				ctrView.changeSeleccionarAsientos();
 			}
 
@@ -502,7 +503,7 @@ public class CompraPrincipal extends JPanel{
 		
 
 	}
-
+	String asientos="";
 	public void activadorSeleccion() {
 		if (Integer.parseInt(lbl_contador.getText()) == 0) {
 			this.btn_selecionAsiento.setEnabled(false);
