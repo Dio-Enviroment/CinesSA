@@ -35,23 +35,63 @@ import javax.swing.UIManager;
 public class SeleccionarAsientos extends JPanel {
 	private JLabel lbl_A;
 	private JPanel panel;
-	public JButton btncomprar;
-	public JButton btn_cancelar;
-	public JPanel pn_seleccionarAsiento;
+	private JButton btncomprar;
+	private JButton btn_cancelar;
+	private JPanel pn_seleccionarAsiento;
 	private Sala sala;
 	private JButton asientos[][];
 	private ControladorView ctrView;
 	private JLabel lbl_asientos;
 	private JLabel lbl_asiento;
-	//String
 
-	// public Prueba fr = new Prueba();
-	/**
-	 * Create the panel.
-	 */
+	public void cargarData() {
+		JLabel lbl_A;
+		JPanel panel;
+		JButton btncomprar;
+		JButton btn_cancelar;
+		JPanel pn_seleccionarAsiento;
+		Sala sala;
+		JButton asientos[][];
+		ControladorView ctrView;
+		JLabel lbl_asientos;
+		JLabel lbl_asiento;
+		
+		Botones();
+		mostrarAsientos(sala.getId());
+		generar();
+		comprar();
+		cancelar();
+	}
+
+	
+	public void descargarData() {
+		JLabel lbl_A = null;
+		JPanel panel = null;
+		JButton btncomprar = null;
+		JButton btn_cancelar = null;
+		JPanel pn_seleccionarAsiento = null;
+		Sala sala = null;
+		JButton asientos[][] = null;
+		ControladorView ctrView = null;
+		JLabel lbl_asientos = null;
+		JLabel lbl_asiento = null;
+	}
+
+	public void showcomponet(boolean visible) {
+		lbl_A.setVisible(visible);
+		panel.setVisible(visible);
+		btncomprar.setVisible(visible);
+		btn_cancelar.setVisible(visible);
+		pn_seleccionarAsiento.setVisible(visible);
+		asientos = null;
+		lbl_asientos.setVisible(visible);
+		lbl_asiento.setVisible(visible);
+	}
+
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
+
 		this.sala = ctrSala.getSala(0);
-		this.ctrView=ctrView;
+		this.ctrView = ctrView;
 		setLayout(null);
 
 		pn_asientos = new JPanel();
@@ -99,15 +139,12 @@ public class SeleccionarAsientos extends JPanel {
 
 		pn_asientos.add(lbl_asiento);
 		this.btncomprar.setEnabled(false);
+
 		
-		Botones();
-		/************** NEcesito Numero sala ***////////////////////
-		mostrarAsientos(sala.getId());
-		generar();
-		comprar();
-		System.out.println(ctrView.getContador());
+	
 		
-		cancelar();
+
+		
 		// init();
 	}
 
@@ -129,15 +166,16 @@ public class SeleccionarAsientos extends JPanel {
 	public void generarBotones(int numFil, int numCol) {
 
 		asientos = new JButton[numFil][numCol];
-	
+
 		for (int i = 0; i < asientos.length; i++) {
 			for (int j = 0; j < asientos[i].length; j++) {
 				JButton b1 = new JButton();
-			
+
 				b1.setOpaque(false);
 				b1.setContentAreaFilled(false);
 				b1.setBorderPainted(false);
-				b1.setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
+				b1.setIcon(new ImageIcon(
+						SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
 				b1.setText(".");
 				b1.setHorizontalTextPosition(SwingConstants.CENTER);
 				b1.setForeground(Color.white);
@@ -162,7 +200,7 @@ public class SeleccionarAsientos extends JPanel {
 			n = 2;
 			for (int j2 = 0; j2 < asientos[j].length; j2++) {
 				GridBagConstraints gbc_btn = new GridBagConstraints();
-				
+
 				gbc_btn.insets = new Insets(0, 0, 5, 5);
 				gbc_btn.gridx = n;
 				gbc_btn.gridy = m;
@@ -196,8 +234,7 @@ public class SeleccionarAsientos extends JPanel {
 	}
 
 	public void generar() {
-		
-		
+
 		for (int j = 0; j < asientos.length; j++) {
 			for (int j2 = 0; j2 < asientos[j].length; j2++) {
 				asientos[j][j2].addActionListener(new ActionListener() {
@@ -211,7 +248,8 @@ public class SeleccionarAsientos extends JPanel {
 
 						if (p != 0) {
 							if (cont == 0) {
-								b.setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_seleccionado.png")));
+								b.setIcon(new ImageIcon(SeleccionarAsientos.class
+										.getResource("/resources/asiento/asiento_seleccionado.png")));
 								b.setText("");
 								p--;
 								lbl_asiento.setText(p + "");
@@ -219,7 +257,8 @@ public class SeleccionarAsientos extends JPanel {
 								cont++;
 
 							} else {
-								b.setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
+								b.setIcon(new ImageIcon(SeleccionarAsientos.class
+										.getResource("/resources/asiento/asiento_disponible.png")));
 								b.setText(".");
 								p++;
 								lbl_asiento.setText(p + "");
@@ -229,7 +268,8 @@ public class SeleccionarAsientos extends JPanel {
 							}
 						} else {
 							if (b.getText().equals("")) {
-								b.setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
+								b.setIcon(new ImageIcon(SeleccionarAsientos.class
+										.getResource("/resources/asiento/asiento_disponible.png")));
 								b.setText(".");
 								p++;
 								lbl_asiento.setText(p + "");
@@ -254,7 +294,6 @@ public class SeleccionarAsientos extends JPanel {
 
 	}
 
-	
 	private String puestos = "";
 
 	public void comprar() {
@@ -272,7 +311,8 @@ public class SeleccionarAsientos extends JPanel {
 				for (int j = 0; j < asientos.length; j++) {
 					for (int k = 0; k < asientos[j].length; k++) {
 						if (asientos[j][k].getText().equals("")) {
-							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_desabilitado.png")));
+							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class
+									.getResource("/resources/asiento/asiento_desabilitado.png")));
 							asientos[j][k].setEnabled(false);
 							asientos[j][k].setText("..");
 							asientos[j][k].setHorizontalTextPosition(SwingConstants.CENTER);
@@ -305,7 +345,8 @@ public class SeleccionarAsientos extends JPanel {
 				for (int j = 0; j < asientos.length; j++) {
 					for (int k = 0; k < asientos[j].length; k++) {
 						if (asientos[j][k].getText().equals("")) {
-							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
+							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class
+									.getResource("/resources/asiento/asiento_disponible.png")));
 							asientos[j][k].setText(".");
 							asientos[j][k].setHorizontalTextPosition(SwingConstants.CENTER);
 							asientos[j][k].setForeground(Color.white);
@@ -329,7 +370,8 @@ public class SeleccionarAsientos extends JPanel {
 		for (int j = 0; j < asientos.length; j++) {
 			for (int k = 0; k < asientos[j].length; k++) {
 				if (asientos[j][k].getText().equals("..")) {
-					asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
+					asientos[j][k].setIcon(new ImageIcon(
+							SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
 					asientos[j][k].setText(".");
 					asientos[j][k].setHorizontalTextPosition(SwingConstants.CENTER);
 					asientos[j][k].setForeground(Color.white);

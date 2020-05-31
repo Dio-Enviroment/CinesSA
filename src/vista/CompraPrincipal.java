@@ -34,20 +34,20 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class CompraPrincipal extends JPanel{
-	public JTextField txt_cedula;
-	public JTextField txt_nombre;
-	public JTextField txt_fono;
-	public JTextField txt_direccion;
+	private JTextField txt_cedula;
+	private JTextField txt_nombre;
+	private JTextField txt_fono;
+	private JTextField txt_direccion;
 	private JLabel lbl_pelicula;
-	public JLabel lbl_tituloPelicula;
+	private JLabel lbl_tituloPelicula;
 	private JLabel lbl_boletos;
 	private JLabel lbl_ninios;
-	public JSpinner sp_ninios = new JSpinner();;
+	private JSpinner sp_ninios = new JSpinner();;
 	private JLabel lbl_adultos;
 
-	public JSpinner sp_adultos = new JSpinner();
-	public JButton btn_selecionAsiento;
-	public JLabel lbl_contador;
+	private JSpinner sp_adultos = new JSpinner();
+	private JButton btn_selecionAsiento;
+	private JLabel lbl_contador;
 	private JLabel lbl_subtotal;
 	private JLabel lbl_valor_Subtotal;
 	private JLabel lbl_iva;
@@ -61,9 +61,9 @@ public class CompraPrincipal extends JPanel{
 	private JLabel lbl_telefono;
 	private JLabel lbl_direccion;
 	private JButton btn_anterior;
-	public JButton btn_siguiente;
+	private JButton btn_siguiente;
 	private JPanel pn_controlBotones;
-	public JLabel lbl_tiiposala;
+	private JLabel lbl_tiiposala;
 	private JLabel lbl_sp;
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
