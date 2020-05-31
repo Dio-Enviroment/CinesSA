@@ -6,6 +6,8 @@ import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
@@ -127,9 +129,11 @@ public class SeleccionarAsientos extends JPanel {
 	public void generarBotones(int numFil, int numCol) {
 
 		asientos = new JButton[numFil][numCol];
+	
 		for (int i = 0; i < asientos.length; i++) {
 			for (int j = 0; j < asientos[i].length; j++) {
 				JButton b1 = new JButton();
+			
 				b1.setOpaque(false);
 				b1.setContentAreaFilled(false);
 				b1.setBorderPainted(false);
@@ -158,6 +162,7 @@ public class SeleccionarAsientos extends JPanel {
 			n = 2;
 			for (int j2 = 0; j2 < asientos[j].length; j2++) {
 				GridBagConstraints gbc_btn = new GridBagConstraints();
+				
 				gbc_btn.insets = new Insets(0, 0, 5, 5);
 				gbc_btn.gridx = n;
 				gbc_btn.gridy = m;
