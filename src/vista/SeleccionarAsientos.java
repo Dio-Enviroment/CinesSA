@@ -107,12 +107,12 @@ public class SeleccionarAsientos extends CustomPanel {
 		setLayout(null);
 
 		pn_asientos = new JPanel();
-		pn_asientos.setBounds(12, 13, 661, 505);
+		pn_asientos.setBounds(12, 13, 1000, 1000);
 		//add(pn_asientos);
 		pn_asientos.setLayout(null);
 
 		pn_seleccionarAsiento = new JPanel();
-		pn_seleccionarAsiento.setBounds(12, 30, 637, 415);
+		pn_seleccionarAsiento.setBounds(12, 30, 850, 600);
 		//pn_asientos.add(pn_seleccionarAsiento);
 		pn_seleccionarAsiento.setBorder(new LineBorder(Color.MAGENTA, 2, true));
 		GridBagLayout gbl_pn_seleccionarAsiento = new GridBagLayout();
@@ -123,9 +123,8 @@ public class SeleccionarAsientos extends CustomPanel {
 		gbl_pn_seleccionarAsiento.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 				0.0, 0.0, Double.MIN_VALUE };
 		pn_seleccionarAsiento.setLayout(gbl_pn_seleccionarAsiento);
-
 		panel = new JPanel();
-		panel.setBounds(437, 446, 212, 25);
+		panel.setBounds(645,645, 212, 25);
 		//pn_asientos.add(panel);
 		panel.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));

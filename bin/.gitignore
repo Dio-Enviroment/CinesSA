@@ -1,10 +1,5 @@
-/componentes/
-<<<<<<< HEAD
 /controlador/
-=======
->>>>>>> branch 'master' of https://github.com/Dio-Enviroment/CinesSA.git
-/data/
-/img/
-/modelo/
-/resources/
 /vista/
+/componentes/
+/data/
+/resources/

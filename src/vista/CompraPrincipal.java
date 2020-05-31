@@ -370,6 +370,7 @@ public class CompraPrincipal extends CustomPanel{
 		pn_controlBotones.add(btn_siguiente);
 	
 		this.btn_siguiente.setEnabled(false);
+		
 		//ra.a�adirSalas();
 
 		// ************** NEcesito Numero sala ***////////////////////
@@ -405,6 +406,7 @@ public class CompraPrincipal extends CustomPanel{
 	SpinnerNumberModel nn = new SpinnerNumberModel();
 	BasicArrowButton arribaA = (BasicArrowButton) sp_adultos.getComponent(0);
 	BasicArrowButton arribaN = (BasicArrowButton) sp_ninios.getComponent(0);
+	
 	private int maxA;
 	private int aux;
 
@@ -413,8 +415,6 @@ public class CompraPrincipal extends CustomPanel{
 		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
 		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
-		this.sp_ninios.setEnabled(false);
-		censura();
 
 		txt_cedula.addKeyListener(new KeyAdapter() {
 			@Override
@@ -582,19 +582,24 @@ public class CompraPrincipal extends CustomPanel{
 		this.lbl_valor_total.setText("0");
 	}
 	public void cargardata() {
+<<<<<<< HEAD
 		showcomponet(true);
 		//this.sp_adultos.setEnabled(ctrView.getActivador());
 		//this.sp_ninios.setEnabled(ctrView.getActivador());
+=======
+		
+		//this.sp_adultos.setEditor(null);
+		sp_adultos.setEditor(new JSpinner.DefaultEditor(sp_adultos));
+		sp_ninios.setEditor(new JSpinner.DefaultEditor(sp_ninios));
+>>>>>>> 225cd1acfeac94d7b2f44c309156c3344bb4f27a
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
-
-	
-
 		limitarValoresJpinner();
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		aux=0;
 		asientos="";
 		estado=false;
+		censura();
 		activar();
 		init();
 
