@@ -36,7 +36,6 @@ import modelo.Sala;
 import javax.swing.UIManager;
 
 public class SeleccionarAsientos extends CustomPanel {
-	private JLabel lbl_A;
 	private JPanel panel;
 	private JButton btncomprar;
 	private JButton btn_cancelar;
@@ -52,8 +51,9 @@ public class SeleccionarAsientos extends CustomPanel {
 	private JPanel pn_asientos;
 	private String puestos ;
 
-	public void cargarData() {
+	public void cargardata() {
 		sala= this.ctrSala.getSala(0);
+		this.btncomprar.setEnabled(false);
 		letras[0]="H";
 		letras[1]="G";
 		letras[2]="F";
@@ -80,7 +80,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	}
 
 	
-	public void descargarData() {
+	public void descargardata() {
 		 letras = null;
 		numeros =null;
 		puestos ="";
@@ -89,7 +89,6 @@ public class SeleccionarAsientos extends CustomPanel {
 
 	public void showcomponet(boolean visible) {
 		
-		lbl_A.setVisible(visible);
 		pn_asientos.setVisible(visible);
 		panel.setVisible(visible);
 		btncomprar.setVisible(visible);
@@ -150,7 +149,6 @@ public class SeleccionarAsientos extends CustomPanel {
 		lbl_asiento.setBounds(108, 14, 56, 16);
 
 		pn_asientos.add(lbl_asiento);
-		this.btncomprar.setEnabled(false);
 
 	}
 
@@ -194,8 +192,6 @@ public class SeleccionarAsientos extends CustomPanel {
 
 	public void mostrarAsientos(int num_sala) {
 		int n = 2, m = 2, ln = 2;
-		lbl_A = new JLabel();
-		lbl_A.setFont(new Font("Verdana", Font.BOLD, 14));
 		int aux = asientos.length;
 		int aux2 = asientos[0].length;
 		for (int j = 0; j < asientos.length; j++) {
@@ -318,7 +314,6 @@ public class SeleccionarAsientos extends CustomPanel {
 						}
 					}
 				}
-			
 				ctrView.changeCompraPrincipal();
 			}
 

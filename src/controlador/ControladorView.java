@@ -99,14 +99,15 @@ public class ControladorView {
 
     private void cargarPanel(CustomPanel customPanel){
         if(this.actPanel!=null){
-            this.actPanel.showcomponet(false);
             this.actPanel.descargadata();
+            this.actPanel.showcomponet(false);
+            this.container.remove(this.actPanel);
         }
 
         this.actPanel=customPanel;
+        this.actPanel.showcomponet(true);
         this.actPanel.cargardata();
-        this.actPanel.showcomponet(true);
-        this.actPanel.showcomponet(true);
+        //this.actPanel.showcomponet(true);
         repaint();
     }
 
