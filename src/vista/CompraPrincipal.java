@@ -139,7 +139,7 @@ public class CompraPrincipal extends CustomPanel{
 		gbc_lbl_nombre.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_nombre.gridx = 1;
 		gbc_lbl_nombre.gridy = 2;
-		//pn_datoPersona.add(lbl_nombre, gbc_lbl_nombre);
+		pn_datoPersona.add(lbl_nombre, gbc_lbl_nombre);
 
 		txt_nombre = new JTextField();
 		 gbc_txt_nombre = new GridBagConstraints();
@@ -158,7 +158,7 @@ public class CompraPrincipal extends CustomPanel{
 		gbc_lbl_telefono.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_telefono.gridx = 1;
 		gbc_lbl_telefono.gridy = 3;
-		//pn_datoPersona.add(lbl_telefono, gbc_lbl_telefono);
+		pn_datoPersona.add(lbl_telefono, gbc_lbl_telefono);
 
 		txt_fono = new JTextField();
 		 gbc_txt_fono = new GridBagConstraints();
@@ -177,7 +177,7 @@ public class CompraPrincipal extends CustomPanel{
 		gbc_lbl_direccion.insets = new Insets(0, 0, 0, 5);
 		gbc_lbl_direccion.gridx = 1;
 		gbc_lbl_direccion.gridy = 4;
-		//pn_datoPersona.add(lbl_direccion, gbc_lbl_direccion);
+		pn_datoPersona.add(lbl_direccion, gbc_lbl_direccion);
 
 		txt_direccion = new JTextField();
 		txt_direccion.setText("");
@@ -370,7 +370,7 @@ public class CompraPrincipal extends CustomPanel{
 		pn_controlBotones.add(btn_siguiente);
 	
 		this.btn_siguiente.setEnabled(false);
-		
+		showcomponet(false);
 		//ra.a�adirSalas();
 
 		// ************** NEcesito Numero sala ***////////////////////
@@ -582,16 +582,13 @@ public class CompraPrincipal extends CustomPanel{
 		this.lbl_valor_total.setText("0");
 	}
 	public void cargardata() {
-<<<<<<< HEAD
 		showcomponet(true);
 		//this.sp_adultos.setEnabled(ctrView.getActivador());
 		//this.sp_ninios.setEnabled(ctrView.getActivador());
-=======
 		
 		//this.sp_adultos.setEditor(null);
 		sp_adultos.setEditor(new JSpinner.DefaultEditor(sp_adultos));
 		sp_ninios.setEditor(new JSpinner.DefaultEditor(sp_ninios));
->>>>>>> 225cd1acfeac94d7b2f44c309156c3344bb4f27a
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
 		limitarValoresJpinner();
@@ -605,38 +602,68 @@ public class CompraPrincipal extends CustomPanel{
 
 	}
 	public void showcomponet(boolean visible){
-		 txt_cedula.setVisible(visible);
-		 txt_nombre.setVisible(visible);
-		 txt_fono.setVisible(visible);
-		 txt_direccion.setVisible(visible);
-		 lbl_pelicula.setVisible(visible);
-		 lbl_tituloPelicula.setVisible(visible);
-		 lbl_boletos.setVisible(visible);
-		 lbl_ninios.setVisible(visible);
-		 sp_ninios.setVisible(visible) ;
-		 lbl_adultos.setVisible(visible);
+	txt_cedula.setVisible(visible);
+	txt_nombre.setVisible(visible);
+	txt_fono.setVisible(visible);
+	txt_direccion.setVisible(visible);
+	lbl_pelicula.setVisible(visible);
+	lbl_tituloPelicula.setVisible(visible);
+	lbl_boletos.setVisible(visible);
+	lbl_ninios.setVisible(visible);
+	sp_ninios.setVisible(visible);
+	lbl_adultos.setVisible(visible);
+	sp_adultos.setVisible(visible);
+	btn_selecionAsiento.setVisible(visible);
+	lbl_contador.setVisible(visible);
+	lbl_subtotal.setVisible(visible);
+	lbl_valor_Subtotal.setVisible(visible);
+	lbl_iva.setVisible(visible);
+	lbl_valor_iva.setVisible(visible);
+	lbl_total.setVisible(visible);
+	lbl_valor_total.setVisible(visible);
+	pn_datoBoleto.setVisible(visible);
+	pn_datoPersona.setVisible(visible);
+	lbl_cedula.setVisible(visible);
+	lbl_nombre.setVisible(visible);
+	lbl_telefono.setVisible(visible);
+	lbl_direccion.setVisible(visible);
+	btn_anterior.setVisible(visible);
+	btn_siguiente.setVisible(visible);
+	pn_controlBotones.setVisible(visible);
+	lbl_tiiposala.setVisible(visible);
+	lbl_sp.setVisible(visible);
+		//  txt_cedula.setVisible(visible);
+		//  txt_nombre.setVisible(visible);
+		//  txt_fono.setVisible(visible);
+		//  txt_direccion.setVisible(visible);
+		//  lbl_pelicula.setVisible(visible);
+		//  lbl_tituloPelicula.setVisible(visible);
+		//  lbl_boletos.setVisible(visible);
+		//  lbl_ninios.setVisible(visible);
+		//  sp_ninios.setVisible(visible) ;
+		//  lbl_adultos.setVisible(visible);
 
-		 sp_adultos.setVisible(visible) ;
-		 btn_selecionAsiento.setVisible(visible);
-		 lbl_contador.setVisible(visible);
-		 lbl_subtotal.setVisible(visible);
-		 lbl_valor_Subtotal.setVisible(visible);
-		 lbl_iva.setVisible(visible);
-		 lbl_valor_iva.setVisible(visible);
-	     lbl_total.setVisible(visible);
-		 lbl_valor_total.setVisible(visible);
-	     pn_datoBoleto.setVisible(visible);
-		 pn_datoPersona.setVisible(visible);
-		 lbl_cedula.setVisible(visible);
-		 lbl_nombre.setVisible(visible);
-		 lbl_telefono.setVisible(visible);
-		 lbl_direccion.setVisible(visible);
-	     btn_anterior.setVisible(visible);
-		 btn_siguiente.setVisible(visible);
-		 pn_controlBotones.setVisible(visible);
-	     lbl_tiiposala.setVisible(visible);
-		 lbl_sp.setVisible(visible);
-		 pn_compra.setVisible(visible);
+		//  sp_adultos.setVisible(visible) ;
+		//  btn_selecionAsiento.setVisible(visible);
+		//  lbl_contador.setVisible(visible);
+		//  lbl_subtotal.setVisible(visible);
+		//  lbl_valor_Subtotal.setVisible(visible);
+		//  lbl_iva.setVisible(visible);
+		//  lbl_valor_iva.setVisible(visible);
+	    //  lbl_total.setVisible(visible);
+		//  lbl_valor_total.setVisible(visible);
+	    //  pn_datoBoleto.setVisible(visible);
+		//  pn_datoPersona.setVisible(visible);
+		//  lbl_cedula.setVisible(visible);
+		//  lbl_nombre.setVisible(visible);
+		//  lbl_telefono.setVisible(visible);
+		//  lbl_direccion.setVisible(visible);
+	    //  btn_anterior.setVisible(visible);
+		//  btn_siguiente.setVisible(visible);
+		//  pn_controlBotones.setVisible(visible);
+	    //  lbl_tiiposala.setVisible(visible);
+		//  lbl_sp.setVisible(visible);
+		//  pn_compra.setVisible(visible);
 		 //dfgdfgf
 
 		//  add(pn_compra);
