@@ -150,6 +150,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		lbl_asiento.setBounds(108, 14, 56, 16);
 
 		pn_asientos.add(lbl_asiento);
+		
 		showcomponet(false);
 	}
 
@@ -303,8 +304,7 @@ public class SeleccionarAsientos extends CustomPanel {
 				for (int j = 0; j < asientos.length; j++) {
 					for (int k = 0; k < asientos[j].length; k++) {
 						if (asientos[j][k].getText().equals("")) {
-							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class
-									.getResource("/resources/asiento/asiento_desabilitado.png")));
+							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_desabilitado.png")));
 							asientos[j][k].setEnabled(false);
 							asientos[j][k].setText("..");
 							asientos[j][k].setHorizontalTextPosition(SwingConstants.CENTER);
@@ -343,7 +343,7 @@ public class SeleccionarAsientos extends CustomPanel {
 						}
 					}
 				}
-				ctrView.setActivador(true);
+				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();
 			}

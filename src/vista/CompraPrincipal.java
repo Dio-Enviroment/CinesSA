@@ -408,7 +408,7 @@ public class CompraPrincipal extends CustomPanel{
 
 		sp_adultos.setEditor(new JSpinner.DefaultEditor(sp_adultos));
 		sp_ninios.setEditor(new JSpinner.DefaultEditor(sp_ninios));
-		editor= sp_adultos.getEditor();
+		editor2= sp_adultos.getEditor();
 		editor= sp_ninios.getEditor();
 		init();
 	}
@@ -429,7 +429,7 @@ public class CompraPrincipal extends CustomPanel{
 			((DefaultEditor)editor).getTextField().setValue(0);
 		}
 		if (editor2 instanceof DefaultEditor) {
-			((DefaultEditor)editor).getTextField().setValue(0);
+			((DefaultEditor)editor2).getTextField().setValue(0);
 		}
 		
 		this.sp_adultos.setModel(ad);
@@ -525,7 +525,6 @@ public class CompraPrincipal extends CustomPanel{
 				// lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),Integer.parseInt(sp_ninios.getValue().toString()), 1, "Pelicula") * 100) / 100d) + "");
 				// lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText())) * 100) / 100d) + "");
 				// lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText())) * 100) / 100d) + "");
-				System.out.println(pr);
 				lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()), Integer.parseInt(sp_ninios.getValue().toString()), ctrProyeccion)*100)/100d)+"");
 				lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText()))*100)/100d)+"");
 				lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText()))*100)/100d)+"");
@@ -580,9 +579,8 @@ public class CompraPrincipal extends CustomPanel{
 
 	public void activar() {
 		if( ctrView.getActivador2() ) {
-			arribaN.setEnabled(false);
-			arribaA.setEnabled(false);
-			
+			this.sp_ninios.setEnabled(false);
+			this.sp_adultos.setEnabled(false);
 		}
 	}
 	
@@ -604,16 +602,15 @@ public class CompraPrincipal extends CustomPanel{
 		
 	}
 	public void descargardata() {
+		//ctrView.setActivador(true);
 		showcomponet(false);		
 		if (editor instanceof DefaultEditor) {
 			((DefaultEditor)editor).getTextField().setValue(0);
 		}
 		if (editor2 instanceof DefaultEditor) {
-			((DefaultEditor)editor).getTextField().setValue(0);
+			((DefaultEditor)editor2).getTextField().setValue(0);
 		}
-		//this.sp_adultos.setModel(ad);
-		//this.sp_ninios.setModel(nn);
-		maxA=0;//
+		maxA=0;
 		asientos="";
 		estado=false;
 		
@@ -624,7 +621,7 @@ public class CompraPrincipal extends CustomPanel{
 		this.lbl_valor_Subtotal.setText("0");
 		this.lbl_valor_total.setText("0");
 		this.sp_adultos.getModel().setValue("0");
-		this.sp_ninios.setValue("0");
+		this.sp_ninios.getModel().setValue("0");
 	}
 	public void cargardata() {
 		showcomponet(true);
@@ -632,17 +629,6 @@ public class CompraPrincipal extends CustomPanel{
 		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
 		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
-
-		//this.sp_adultos.setValue("0");
-		//this.sp_ninios.setValue(5);
-		
-		//this.sp_ninios.setModel(ad);
-
-		//this.sp_adultos.setEnabled(ctrView.getActivador());
-		//this.sp_ninios.setEnabled(ctrView.getActivador());
-		
-		//this.sp_adultos.setEditor(null);
-		
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
 		limitarValoresJpinner();

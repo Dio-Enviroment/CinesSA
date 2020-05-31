@@ -167,6 +167,8 @@ public class ResumenCompra extends CustomPanel {
 		btn_cancelar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ctrView.setActivador(false);
+				ctrView.setActivador2(false);
 				ctrView.changeCartelera();
 			}
 
