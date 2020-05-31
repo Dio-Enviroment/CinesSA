@@ -70,13 +70,16 @@ public class SeleccionarAsientos extends JPanel {
 	}
 
 	public void showcomponet(boolean visible) {
+		
 		lbl_A.setVisible(visible);
+		pn_asientos.setVisible(visible);
 		panel.setVisible(visible);
 		btncomprar.setVisible(visible);
 		btn_cancelar.setVisible(visible);
 		pn_seleccionarAsiento.setVisible(visible);
 		lbl_asientos.setVisible(visible);
 		lbl_asiento.setVisible(visible);
+		
 	}
 
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
