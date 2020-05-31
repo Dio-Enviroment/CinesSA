@@ -178,10 +178,11 @@ public class SeleccionarAsientos extends CustomPanel {
 		for (int i = 0; i < asientos.length; i++) {
 			for (int j = 0; j < asientos[i].length; j++) {
 				Object[] paths = { workingDirectory + "//src//resources//asiento//asiento_disponible.png",
-								workingDirectory + "//src//resources//asiento//asiento_disponible.png",
-								workingDirectory + "//src//resources//asiento//asiento_disponible.png", i,j };
+								workingDirectory + "//src//resources//asiento//asiento_seleccionado.png",
+								workingDirectory + "//src//resources//asiento//asiento_desabilitado.png", i,j };
 				CustomButton b1 = new CustomButton(paths);
 				b1.setBounds(0, 0, 62, 47);
+				b1.changeIcon(0);
 				b1.setIcon(new ImageIcon(
 						SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
 				b1.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -250,8 +251,9 @@ public class SeleccionarAsientos extends CustomPanel {
 
 						if (p != 0) {
 							if (cont == 0) {
-								b.setIcon(new ImageIcon(SeleccionarAsientos.class
-										.getResource("/resources/asiento/asiento_seleccionado.png")));
+								b.changeIcon(1);
+								// b.setIcon(new ImageIcon(SeleccionarAsientos.class
+								// 		.getResource("/resources/asiento/asiento_seleccionado.png")));
 								sala.ocuparAsiento((int)b.getCustomParameter(0), (int)b.getCustomParameter(1));
 								System.out.println((int)b.getCustomParameter(0)+" "+(int)b.getCustomParameter(1)+": Seleccionar seleccionado");
 								p--;
@@ -260,8 +262,9 @@ public class SeleccionarAsientos extends CustomPanel {
 								cont++;
 
 							} else {
-								b.setIcon(new ImageIcon(SeleccionarAsientos.class
-										.getResource("/resources/asiento/asiento_disponible.png")));
+								b.changeIcon(0);
+								// b.setIcon(new ImageIcon(SeleccionarAsientos.class
+								// 		.getResource("/resources/asiento/asiento_disponible.png")));
 								sala.vaciarAsiento((int)b.getCustomParameter(0), (int)b.getCustomParameter(1));
 								System.out.println((int)b.getCustomParameter(0)+" "+(int)b.getCustomParameter(1)+": Seleccionar disponible");
 								p++;
@@ -272,8 +275,9 @@ public class SeleccionarAsientos extends CustomPanel {
 							}
 						} else {
 							if (sala.getAsiento((int)b.getCustomParameter(0), (int)b.getCustomParameter(1))) {
-								b.setIcon(new ImageIcon(SeleccionarAsientos.class
-										.getResource("/resources/asiento/asiento_disponible.png")));
+								b.changeIcon(0);
+								// b.setIcon(new ImageIcon(SeleccionarAsientos.class
+								// 		.getResource("/resources/asiento/asiento_disponible.png")));
 								System.out.println((int)b.getCustomParameter(0)+" "+(int)b.getCustomParameter(1)+": Seleccionar disponible");
 								p++;
 								lbl_asiento.setText(p + "");
@@ -310,7 +314,8 @@ public class SeleccionarAsientos extends CustomPanel {
 					for (int k = 0; k < asientosColumnas.length; k++) {
 						boolean asiento=asientosColumnas[k];
 						if (asiento) {
-							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_desabilitado.png")));
+							asientos[j][k].changeIcon(2);
+							// asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_desabilitado.png")));
 							System.out.println((int)asientos[j][k].getCustomParameter(0)+" "+(int)asientos[j][k].getCustomParameter(1)+": enabled");
 							asientos[j][k].setEnabled(false);
 							asientos[j][k].setHorizontalTextPosition(SwingConstants.CENTER);
@@ -339,8 +344,9 @@ public class SeleccionarAsientos extends CustomPanel {
 				for (int j = 0; j < asientos.length; j++) {
 					for (int k = 0; k < asientos[j].length; k++) {
 						if (asientos[j][k].getText().equals("")) {
-							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class
-									.getResource("/resources/asiento/asiento_disponible.png")));
+							asientos[j][k].changeIcon(0);
+							// asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class
+							// 		.getResource("/resources/asiento/asiento_disponible.png")));
 							asientos[j][k].setText(".");
 							asientos[j][k].setHorizontalTextPosition(SwingConstants.CENTER);
 							asientos[j][k].setForeground(Color.white);
@@ -362,8 +368,9 @@ public class SeleccionarAsientos extends CustomPanel {
 		for (int j = 0; j < asientos.length; j++) {
 			for (int k = 0; k < asientos[j].length; k++) {
 				if (asientos[j][k].getText().equals("..")) {
-					asientos[j][k].setIcon(new ImageIcon(
-							SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
+					asientos[j][k].changeIcon(0);
+					// asientos[j][k].setIcon(new ImageIcon(
+					// 		SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
 					asientos[j][k].setText(".");
 					asientos[j][k].setHorizontalTextPosition(SwingConstants.CENTER);
 					asientos[j][k].setForeground(Color.white);
