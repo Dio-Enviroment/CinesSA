@@ -282,7 +282,6 @@ public class SeleccionarAsientos extends CustomPanel {
 							} else {
 								System.out.println("No puede seleccionar mas asientos");
 							}
-
 						}
 						if (lbl_asiento.getText().equals("0")) {
 							btncomprar.setEnabled(true);
