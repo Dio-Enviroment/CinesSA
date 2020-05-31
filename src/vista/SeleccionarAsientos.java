@@ -266,9 +266,7 @@ public class SeleccionarAsientos extends CustomPanel {
 								System.out.println((int)b.getCustomParameter(0)+" "+(int)b.getCustomParameter(1)+": Seleccionar disponible");
 								p++;
 								lbl_asiento.setText(p + "");
-
 								cont--;
-
 							}
 						} else {
 							if (sala.getAsiento((int)b.getCustomParameter(0), (int)b.getCustomParameter(1))) {
