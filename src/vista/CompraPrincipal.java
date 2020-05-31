@@ -549,6 +549,7 @@ public class CompraPrincipal extends CustomPanel{
 			}
 			else {
 				this.sp_ninios.setEnabled(true);
+				this.sp_adultos.setEnabled(true);
 			}
 		}
 		else {
