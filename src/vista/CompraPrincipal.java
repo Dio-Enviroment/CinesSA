@@ -384,7 +384,24 @@ public class CompraPrincipal extends CustomPanel{
 		// this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
 	
 		// censura();
+		this.btn_siguiente.addActionListener(new ActionListener(){
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeResumenCompra();
+
+			}
+
+		});
+
+		this.btn_anterior.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeBoleteria();
+			}
+
+		});
 	}
 
 

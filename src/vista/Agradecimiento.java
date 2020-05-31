@@ -8,20 +8,22 @@ import java.awt.Font;
 import java.awt.Insets;
 import javax.swing.border.LineBorder;
 
+import componentes.CustomPanel;
 import controlador.ControladorBoleto;
+import controlador.ControladorSala;
 import controlador.ControladorView;
 
 import java.awt.Color;
 
-public class Agradecimiento extends JPanel {
+public class Agradecimiento extends CustomPanel {
 	public JLabel lbl_nombreCliente;
 
 	/**
 	 * Create the panel.
 	 */
-	public Agradecimiento(int width,int height,ControladorBoleto ctrBoleto, ControladorView ctrView) {
+	public Agradecimiento(int width,int height,ControladorSala ctrSala, ControladorView ctrView) {
 		setLayout(null);
-		
+		setBounds(0, 0, width, height);
 		JPanel pn_agradecimiento = new JPanel();
 		pn_agradecimiento.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		pn_agradecimiento.setBounds(29, 29, 238, 76);

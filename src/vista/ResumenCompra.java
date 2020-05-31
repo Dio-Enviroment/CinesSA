@@ -4,9 +4,12 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.border.TitledBorder;
 
+import componentes.CustomPanel;
 // import controlador.Registro_asiento;
 // import Modelo.DatosCliente;
 import controlador.ControladorBoleto;
+import controlador.ControladorSala;
+import controlador.ControladorView;
 
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -25,7 +28,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class ResumenCompra extends JPanel {
+public class ResumenCompra extends CustomPanel {
 	private JPanel pn_resumenCompra;
 	private JLabel lbl_salaR;
 	private JLabel lbl_peliculaR;
@@ -45,9 +48,9 @@ public class ResumenCompra extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ResumenCompra(int width,int height, ControladorBoleto ctrBoleto) {
+	public ResumenCompra(int width,int height, ControladorSala ctrSala, ControladorView ctrView) {
 		setLayout(null);
-
+		setBounds(0, 0, width, height);
 		pn_resumen = new JPanel();
 		pn_resumen.setBounds(26, 30, 386, 285);
 		add(pn_resumen);
