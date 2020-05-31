@@ -17,14 +17,14 @@ import java.awt.Color;
 
 public class Agradecimiento extends CustomPanel {
 	public JLabel lbl_nombreCliente;
+	public JPanel pn_agradecimiento;
+	public JLabel lblNewLabel;
+	public JLabel lbl_nombreCliente_1;
 
-	/**
-	 * Create the panel.
-	 */
 	public Agradecimiento(int width,int height,ControladorSala ctrSala, ControladorView ctrView) {
 		setLayout(null);
 		setBounds(0, 0, width, height);
-		JPanel pn_agradecimiento = new JPanel();
+		pn_agradecimiento = new JPanel();
 		pn_agradecimiento.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		pn_agradecimiento.setBounds(29, 29, 238, 76);
 		add(pn_agradecimiento);
@@ -35,7 +35,7 @@ public class Agradecimiento extends CustomPanel {
 		gbl_pn_agradecimiento.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		pn_agradecimiento.setLayout(gbl_pn_agradecimiento);
 		
-		JLabel lblNewLabel = new JLabel("Gracias por su compra");
+		lblNewLabel = new JLabel("Gracias por su compra");
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 14));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
@@ -51,7 +51,7 @@ public class Agradecimiento extends CustomPanel {
 		gbc_lbl_nombreCliente.gridy = 1;
 		pn_agradecimiento.add(lbl_nombreCliente, gbc_lbl_nombreCliente);
 		
-		JLabel lbl_nombreCliente_1 = new JLabel("Disfrute su pel\u00EDcula");
+		lbl_nombreCliente_1 = new JLabel("Disfrute su pel\u00EDcula");
 		lbl_nombreCliente_1.setFont(new Font("Verdana", Font.BOLD, 14));
 		GridBagConstraints gbc_lbl_nombreCliente_1 = new GridBagConstraints();
 		gbc_lbl_nombreCliente_1.insets = new Insets(0, 0, 5, 5);
@@ -59,5 +59,20 @@ public class Agradecimiento extends CustomPanel {
 		gbc_lbl_nombreCliente_1.gridy = 2;
 		pn_agradecimiento.add(lbl_nombreCliente_1, gbc_lbl_nombreCliente_1);
 
+	}
+
+	public void descargardata() {
+		showcomponet(false);
+	}
+
+	public void cargardata() {
+		showcomponet(true);
+	}
+
+	public void showcomponet(boolean visible){
+		lbl_nombreCliente.setVisible(visible);
+		pn_agradecimiento.setVisible(visible);
+		lblNewLabel.setVisible(visible);
+		lbl_nombreCliente_1.setVisible(visible);
 	}
 }

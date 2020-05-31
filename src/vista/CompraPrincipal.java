@@ -23,8 +23,10 @@ import componentes.CustomPanel;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JSpinner;
+import javax.swing.JSpinner.DefaultEditor;
 import javax.swing.JSpinner.NumberEditor;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.BoxLayout;
 import javax.swing.border.MatteBorder;
@@ -76,6 +78,7 @@ public class CompraPrincipal extends CustomPanel{
 	private ControladorView ctrView;
 	private ControladorSala ctrSala;
 	private Precio pr=new Precio();
+	private JComponent editor,editor2;
 
 	private GridBagConstraints gbc_lbl_cedula,
 	gbc_txt_cedula,gbc_lbl_nombre,gbc_txt_nombre,
@@ -370,6 +373,7 @@ public class CompraPrincipal extends CustomPanel{
 		pn_controlBotones.add(btn_siguiente);
 	
 		this.btn_siguiente.setEnabled(false);
+		
 		showcomponet(false);
 		//ra.a�adirSalas();
 
@@ -389,7 +393,6 @@ public class CompraPrincipal extends CustomPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ctrView.changeResumenCompra();
-
 			}
 
 		});
@@ -402,6 +405,12 @@ public class CompraPrincipal extends CustomPanel{
 			}
 
 		});
+
+		sp_adultos.setEditor(new JSpinner.DefaultEditor(sp_adultos));
+		sp_ninios.setEditor(new JSpinner.DefaultEditor(sp_ninios));
+		editor= sp_adultos.getEditor();
+		editor= sp_ninios.getEditor();
+		init();
 	}
 
 
@@ -415,6 +424,14 @@ public class CompraPrincipal extends CustomPanel{
 		nn.setMaximum(ctrSala.getLimiteBoletos());
 		nn.setMinimum(0);
 		nn.setStepSize(1);
+
+		if (editor instanceof DefaultEditor) {
+			((DefaultEditor)editor).getTextField().setValue(0);
+		}
+		if (editor2 instanceof DefaultEditor) {
+			((DefaultEditor)editor).getTextField().setValue(0);
+		}
+		
 		this.sp_adultos.setModel(ad);
 		this.sp_ninios.setModel(nn);
 	}
@@ -429,9 +446,9 @@ public class CompraPrincipal extends CustomPanel{
 
 	public void init() {
 
-		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
-		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
-		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
+		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
+		// this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
+		// this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
 
 		txt_cedula.addKeyListener(new KeyAdapter() {
 			@Override
@@ -587,25 +604,45 @@ public class CompraPrincipal extends CustomPanel{
 		
 	}
 	public void descargardata() {
+		showcomponet(false);		
+		if (editor instanceof DefaultEditor) {
+			((DefaultEditor)editor).getTextField().setValue(0);
+		}
+		if (editor2 instanceof DefaultEditor) {
+			((DefaultEditor)editor).getTextField().setValue(0);
+		}
+		//this.sp_adultos.setModel(ad);
+		//this.sp_ninios.setModel(nn);
 		maxA=0;//
 		asientos="";
 		estado=false;
-		showcomponet(false);
+		
 		this.lbl_contador.setText("0");
 		this.lbl_tituloPelicula.setText("");
 		this.lbl_tiiposala.setText("");
 		this.lbl_valor_iva.setText("0");
 		this.lbl_valor_Subtotal.setText("0");
 		this.lbl_valor_total.setText("0");
+		this.sp_adultos.getModel().setValue("0");
+		this.sp_ninios.setValue("0");
 	}
 	public void cargardata() {
 		showcomponet(true);
+		
+		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
+		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
+		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
+
+		//this.sp_adultos.setValue("0");
+		//this.sp_ninios.setValue(5);
+		
+		//this.sp_ninios.setModel(ad);
+
 		//this.sp_adultos.setEnabled(ctrView.getActivador());
 		//this.sp_ninios.setEnabled(ctrView.getActivador());
 		
 		//this.sp_adultos.setEditor(null);
-		sp_adultos.setEditor(new JSpinner.DefaultEditor(sp_adultos));
-		sp_ninios.setEditor(new JSpinner.DefaultEditor(sp_ninios));
+		
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
 		limitarValoresJpinner();
@@ -615,7 +652,7 @@ public class CompraPrincipal extends CustomPanel{
 		estado=false;
 		censura();
 		activar();
-		init();
+		//
 
 	}
 	public void showcomponet(boolean visible){
@@ -649,70 +686,5 @@ public class CompraPrincipal extends CustomPanel{
 	pn_controlBotones.setVisible(visible);
 	lbl_tiiposala.setVisible(visible);
 	lbl_sp.setVisible(visible);
-		//  txt_cedula.setVisible(visible);
-		//  txt_nombre.setVisible(visible);
-		//  txt_fono.setVisible(visible);
-		//  txt_direccion.setVisible(visible);
-		//  lbl_pelicula.setVisible(visible);
-		//  lbl_tituloPelicula.setVisible(visible);
-		//  lbl_boletos.setVisible(visible);
-		//  lbl_ninios.setVisible(visible);
-		//  sp_ninios.setVisible(visible) ;
-		//  lbl_adultos.setVisible(visible);
-
-		//  sp_adultos.setVisible(visible) ;
-		//  btn_selecionAsiento.setVisible(visible);
-		//  lbl_contador.setVisible(visible);
-		//  lbl_subtotal.setVisible(visible);
-		//  lbl_valor_Subtotal.setVisible(visible);
-		//  lbl_iva.setVisible(visible);
-		//  lbl_valor_iva.setVisible(visible);
-	    //  lbl_total.setVisible(visible);
-		//  lbl_valor_total.setVisible(visible);
-	    //  pn_datoBoleto.setVisible(visible);
-		//  pn_datoPersona.setVisible(visible);
-		//  lbl_cedula.setVisible(visible);
-		//  lbl_nombre.setVisible(visible);
-		//  lbl_telefono.setVisible(visible);
-		//  lbl_direccion.setVisible(visible);
-	    //  btn_anterior.setVisible(visible);
-		//  btn_siguiente.setVisible(visible);
-		//  pn_controlBotones.setVisible(visible);
-	    //  lbl_tiiposala.setVisible(visible);
-		//  lbl_sp.setVisible(visible);
-		//  pn_compra.setVisible(visible);
-		 //dfgdfgf
-
-		//  add(pn_compra);
-		//  pn_compra.add(pn_datoPersona);
-		//  pn_datoPersona.add(lbl_cedula, gbc_lbl_cedula);
-		//  pn_datoPersona.add(txt_cedula, gbc_txt_cedula);
-		//  pn_datoPersona.add(lbl_nombre, gbc_lbl_nombre);
-		//  pn_datoPersona.add(txt_nombre, gbc_txt_nombre);
-		//  pn_datoPersona.add(lbl_telefono, gbc_lbl_telefono);
-		//  pn_datoPersona.add(txt_fono, gbc_txt_fono);
-		//  pn_datoPersona.add(lbl_direccion, gbc_lbl_direccion);
-		//  pn_datoPersona.add(txt_direccion, gbc_txt_direccion);
-		//  pn_compra.add(pn_datoBoleto);
-		//  pn_datoBoleto.add(lbl_pelicula, gbc_lbl_pelicula);
-		//  pn_datoBoleto.add(lbl_tituloPelicula, gbc_lbl_tituloPelicula);
-		//  pn_datoBoleto.add(lbl_tiiposala, gbc_lbl_tiiposala);
-		//  pn_datoBoleto.add(lbl_boletos, gbc_lbl_boletos);
-		//  pn_datoBoleto.add(lbl_sp, gbc_lbl_sp);
-		//  pn_datoBoleto.add(lbl_ninios, gbc_lbl_ninios);
-		//  pn_datoBoleto.add(sp_ninios, gbc_sp_ninios);
-		//  pn_datoBoleto.add(lbl_adultos, gbc_lbl_adultos);
-		//  pn_datoBoleto.add(sp_adultos, gbc_sp_adultos);
-		//  pn_datoBoleto.add(btn_selecionAsiento, gbc_btn_selecionAsiento);
-		//  pn_datoBoleto.add(lbl_contador, gbc_lbl_contador);
-		//  pn_datoBoleto.add(lbl_subtotal, gbc_lbl_subtotal);
-		//  pn_datoBoleto.add(lbl_valor_Subtotal, gbc_lbl_valor_Subtotal);
-		//  pn_datoBoleto.add(lbl_iva, gbc_lbl_iva);
-		//  pn_datoBoleto.add(lbl_valor_iva, gbc_lbl_valor_iva);
-		//  pn_datoBoleto.add(lbl_total, gbc_lbl_total);
-		//  pn_datoBoleto.add(lbl_valor_total, gbc_lbl_valor_total);
-		//  pn_compra.add(pn_controlBotones);
-		//  pn_controlBotones.add(btn_anterior);
-		//  pn_controlBotones.add(btn_siguiente);
 	}
 }

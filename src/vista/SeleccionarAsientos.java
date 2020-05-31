@@ -53,7 +53,7 @@ public class SeleccionarAsientos extends CustomPanel {
 
 	public void cargardata() {
 		sala= this.ctrSala.getSala(0);
-		this.btncomprar.setEnabled(true);
+		this.btncomprar.setEnabled(false);
 
 		showcomponet(true);
 
@@ -93,12 +93,12 @@ public class SeleccionarAsientos extends CustomPanel {
 
 	public void showcomponet(boolean visible) {
 		panel.setVisible(visible);
-		btncomprar.setEnabled(visible);
-		btn_cancelar.setEnabled(visible);
-		pn_seleccionarAsiento.setEnabled(visible);
-		lbl_asientos.setEnabled(visible);
-		lbl_asiento.setEnabled(visible);
-		pn_asientos.setEnabled(visible);
+		btncomprar.setVisible(visible);
+		btn_cancelar.setVisible(visible);
+		pn_seleccionarAsiento.setVisible(visible);
+		lbl_asientos.setVisible(visible);
+		lbl_asiento.setVisible(visible);
+		pn_asientos.setVisible(visible);
 	}
 
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
@@ -150,7 +150,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		lbl_asiento.setBounds(108, 14, 56, 16);
 
 		pn_asientos.add(lbl_asiento);
-		showcomponet(true);
+		showcomponet(false);
 	}
 
 	public void ini() {

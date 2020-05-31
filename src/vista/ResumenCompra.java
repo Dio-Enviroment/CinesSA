@@ -164,17 +164,62 @@ public class ResumenCompra extends CustomPanel {
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
 		btn_cancelar = new JButton("CANCELAR");
+		btn_cancelar.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeCartelera();
+			}
+
+		});
 		btn_cancelar.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel.add(btn_cancelar);
 
 		btn_comprar = new JButton("COMPRAR");
+		btn_comprar.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeAgradecimiento();
+			}
+
+		});
 		btn_comprar.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel.add(btn_comprar);
-
+		showcomponet(false);
 	}
 
+	public void descargardata() {
+		// maxA=0;//
+		// asientos="";
+		// estado=false;
+		showcomponet(false);
+		// this.lbl_contador.setText("0");
+		// this.lbl_tituloPelicula.setText("");
+		// this.lbl_tiiposala.setText("");
+		// this.lbl_valor_iva.setText("0");
+		// this.lbl_valor_Subtotal.setText("0");
+		// this.lbl_valor_total.setText("0");
+	}
+	public void cargardata() {
+		showcomponet(true);
+	}
 
-	
+	public void showcomponet(boolean visible){
+		pn_resumenCompra.setVisible(visible);
+		lbl_salaR.setVisible(visible);
+		lbl_peliculaR.setVisible(visible);
+		lbl_boletosR.setVisible(visible);
+		lbl_totalR.setVisible(visible);
+		lbl_asientosR.setVisible(visible);
+		lbl_numSalaR.setVisible(visible);
+		lbl_numAsiemtosR.setVisible(visible);
+		lbl_numBoletasR.setVisible(visible);
+		lbl_numTotalR.setVisible(visible);
+		panel.setVisible(visible);
+		btn_cancelar.setVisible(visible);
+		btn_comprar.setVisible(visible);
+		pn_resumen.setVisible(visible);
+		lbl_tituloPeliculaR.setVisible(visible);
+	}
 	
 }
 

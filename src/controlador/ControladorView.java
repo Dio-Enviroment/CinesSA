@@ -34,13 +34,15 @@ public class ControladorView {
         //this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
         this.seleccionarAsientos=new SeleccionarAsientos(1008, 729,ctrSala,this);
         this.resumenCompra=new ResumenCompra(1008, 729,ctrSala,this);
-        //this.agradecimiento=new Agradecimiento(1008, 729,ctrSala,this);
+        this.agradecimiento=new Agradecimiento(1008, 729,ctrSala,this);
 
         this.container.add(cartelera);
         //this.container.add(selectPelicula);
         this.container.add(boleteria);
         this.container.add(compraPrincipal);
         this.container.add(seleccionarAsientos);
+        this.container.add(resumenCompra);
+        this.container.add(agradecimiento);
     }
     
     public boolean getActivador2() {
