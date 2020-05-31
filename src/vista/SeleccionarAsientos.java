@@ -10,6 +10,9 @@ import java.awt.Dimension;
 
 import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
+
+import componentes.CustomPanel;
+
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.JLabel;
@@ -32,7 +35,7 @@ import modelo.Sala;
 
 import javax.swing.UIManager;
 
-public class SeleccionarAsientos extends JPanel {
+public class SeleccionarAsientos extends CustomPanel {
 	private JLabel lbl_A;
 	private JPanel panel;
 	private JButton btncomprar;

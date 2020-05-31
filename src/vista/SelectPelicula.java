@@ -17,7 +17,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.AlphaComposite;
 
-public class SelectPelicula extends JPanel {
+public class SelectPelicula extends CustomPanel {
 
 	public SelectPelicula(int width,int height,ControladorProyeccion ctrProyeccion,ControladorView ctrView) {
 		setLayout(null);

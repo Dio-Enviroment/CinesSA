@@ -1,4 +1,5 @@
 package vista;
+
 import modelo.*;
 import controlador.*;
 import javax.swing.JPanel;
@@ -17,6 +18,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.plaf.basic.BasicArrowButton;
 
+import componentes.CustomPanel;
+
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JSpinner;
@@ -33,7 +36,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class CompraPrincipal extends JPanel{
+public class CompraPrincipal extends CustomPanel{
 	private JTextField txt_cedula;
 	private JTextField txt_nombre;
 	private JTextField txt_fono;

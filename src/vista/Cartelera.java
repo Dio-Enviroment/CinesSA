@@ -47,7 +47,7 @@ public class Cartelera extends CustomPanel {
 	}
 
 	public void cargardata() {
-		//ss
+		System.out.println("x");
 	}
 
 	public void descargadata() {}
