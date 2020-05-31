@@ -25,5 +25,4 @@ public class ControladorBoleto {
         return boletos;
     }
     //getBoletos () numero totales de bolestos de cada sala
-    //System.o
 }
