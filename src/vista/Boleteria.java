@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import componentes.CustomButton;
+import componentes.CustomPanel;
 import componentes.ImageAdaptable;
 import componentes.TransparentPanel;
 import controlador.ControladorProyeccion;
@@ -18,7 +19,7 @@ import java.awt.Component;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
-public class Boleteria extends JPanel {
+public class Boleteria extends CustomPanel {
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
 	private ImageAdaptable back,front;
@@ -82,19 +83,15 @@ public class Boleteria extends JPanel {
 		
 	}
 
-	public void innerVisible(boolean value) {
-		back.setVisible(value);
-		front.setVisible(value);
-		formulary.setVisible(value);
-		title.setVisible(value);
-		title2.setVisible(value);
-	}
-
 	public void cargardata() {}
 
 	public void descargadata() {}
 
 	public void showcomponet(boolean visible){
-		
+		back.setVisible(visible);
+		front.setVisible(visible);
+		formulary.setVisible(visible);
+		title.setVisible(visible);
+		title2.setVisible(visible);
 	}
 }

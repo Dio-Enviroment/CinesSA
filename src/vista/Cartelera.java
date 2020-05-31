@@ -8,11 +8,12 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import componentes.CustomButton;
+import componentes.CustomPanel;
 import componentes.Slider;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 
-public class Cartelera extends JPanel {
+public class Cartelera extends CustomPanel {
 	private CustomButton btn_comprar;
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;

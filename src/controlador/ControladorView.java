@@ -3,14 +3,14 @@ package controlador;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
+import componentes.CustomPanel;
 
 import java.awt.BorderLayout;
 import vista.*;
 
 public class ControladorView {
     private JFrame container;
-    private JPanel actPanel;
+    private CustomPanel actPanel;
     private Cartelera cartelera;
     private Boleteria boleteria;
     private SelectPelicula selectPelicula;
@@ -63,7 +63,7 @@ public class ControladorView {
     public void changeBoleteria() {
         //clean();
         this.actPanel.setVisible(false);
-        //this.boleteria.innerVisible(true);
+        this.boleteria.showcomponet(true);
         this.actPanel=this.boleteria;
         this.actPanel.setVisible(true);
         repaint();
@@ -98,7 +98,7 @@ public class ControladorView {
         //clean();
         this.actPanel.setVisible(false);
         this.actPanel=this.seleccionarAsientos;
-        this.seleccionarAsientos.ini();
+        this.seleccionarAsientos.cargarData();
         repaint();
     }
 
