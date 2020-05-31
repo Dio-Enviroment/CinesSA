@@ -26,6 +26,7 @@ public class ControladorView {
         this.container=container;
         this.cartelera=new Cartelera(1008,729,ctrProyeccion,this);
         this.selectPelicula=new SelectPelicula(1008, 729,ctrProyeccion,this);
+        this.selectPelicula.setBounds(10, 10, 500, 500);
         this.boleteria=new Boleteria(1008, 729,ctrProyeccion,this);
         this.compraPrincipal=new CompraPrincipal(1008, 729,ctrProyeccion, ctrSala, this);
         // this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
@@ -49,21 +50,27 @@ public class ControladorView {
 
 
     public void changeCartelera() {
-        clean();
+        //clean();
+        if (this.actPanel!=null) {
+            this.actPanel.setVisible(false);
+        }
         this.actPanel=this.cartelera;
+        this.actPanel.setVisible(true);
         repaint();
     }
 
     public void changeBoleteria() {
-        clean();
+        //clean();
+        this.actPanel.setVisible(false);
         this.actPanel=this.boleteria;
+        this.actPanel.setVisible(true);
         repaint();
     }
 
     public void changeSelectPelicula() {
-        clean();
+        //clean();
         this.actPanel=this.selectPelicula;
-        repaint();
+        //repaint();
     }
 
     // public void changeDetallePelicula() {
@@ -73,17 +80,18 @@ public class ControladorView {
     // }
 
     public void changeCompraPrincipal() {
-        clean();
+        //clean();
         this.actPanel=this.compraPrincipal;
-        repaint();
-        CompraPrincipal c=(CompraPrincipal)this.actPanel;
-        c.init();
+        this.compraPrincipal.init();;
+        //repaint();
+        //CompraPrincipal c=(CompraPrincipal)this.actPanel;
+        //c.init();
     }
 
     public void changeSeleccionarAsientos() {
-        clean();
+        //clean();
         this.actPanel=this.seleccionarAsientos;
-        repaint();
+        //repaint();
         this.seleccionarAsientos.ini();
     }
 

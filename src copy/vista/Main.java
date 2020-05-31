@@ -38,15 +38,15 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
-		contentPane = new JPanel();
+		//contentPane = new JPanel();
 		ControladorPrincipal controladorPrincipal = new ControladorPrincipal(this);
 		ControladorView controladorView = controladorPrincipal.getCtrView();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1024, 768);
 	
-		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
-		contentPane.setLayout(new BorderLayout(0, 0));
+		//contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
+		//contentPane.setLayout(null);
 		
 		controladorView.changeCartelera();
 	}
