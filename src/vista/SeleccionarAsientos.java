@@ -44,14 +44,29 @@ public class SeleccionarAsientos extends JPanel {
 	private ControladorSala ctrSala;
 	private JLabel lbl_asientos;
 	private JLabel lbl_asiento;
-	private String[] letras ;
-	private String[] numeros ;
+	private String[] letras=new String[8];
+	private String[] numeros=new String[8]; ;
 	private JPanel pn_asientos;
 	private String puestos ;
+
 	public void cargarData() {
-		Sala sala= this.ctrSala.getSala(0);
-		String [] letras = { "H", "G", "F", "E", "D", "C", "B", "A" };
-		String[] numeros = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+		sala= this.ctrSala.getSala(0);
+		letras[0]="H";
+		letras[1]="G";
+		letras[2]="F";
+		letras[3]="E";
+		letras[4]="D";
+		letras[5]="C";
+		letras[6]="B";
+		letras[7]="A";
+		numeros[0]="1";
+		numeros[1]="2";
+		numeros[2]="3";
+		numeros[3]="4";
+		numeros[4]="5";
+		numeros[5]="6";
+		numeros[6]="7";
+		numeros[7]="8";
 		puestos ="";
 		Botones();
 		mostrarAsientos(sala.getId());
