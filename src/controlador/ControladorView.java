@@ -62,6 +62,7 @@ public class ControladorView {
     public void changeBoleteria() {
         //clean();
         this.actPanel.setVisible(false);
+        //this.boleteria.innerVisible(true);
         this.actPanel=this.boleteria;
         this.actPanel.setVisible(true);
         repaint();
@@ -81,8 +82,9 @@ public class ControladorView {
 
     public void changeCompraPrincipal() {
         //clean();
+        this.actPanel.setVisible(false);
         this.actPanel=this.compraPrincipal;
-        this.compraPrincipal.init();;
+        this.compraPrincipal.init();
         repaint();
         //CompraPrincipal c=(CompraPrincipal)this.actPanel;
         //c.init();
@@ -90,6 +92,7 @@ public class ControladorView {
 
     public void changeSeleccionarAsientos() {
         //clean();
+        this.actPanel.setVisible(false);
         this.actPanel=this.seleccionarAsientos;
         this.seleccionarAsientos.ini();
         repaint();
