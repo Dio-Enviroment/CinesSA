@@ -108,7 +108,7 @@ public class ControladorView {
         this.actPanel=customPanel;
         this.actPanel.showcomponet(true);
         this.actPanel.cargardata();
-        //this.actPanel.showcomponet(true);
+        //this.actPanel.showcomponet(true);ss
         repaint();
     }
 
