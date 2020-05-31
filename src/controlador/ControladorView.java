@@ -32,6 +32,7 @@ public class ControladorView {
         // this.agradecimiento=new Agradecimiento(1008, 729,ctrBoleto,this);
     }
 
+    //a
     private void clean(){
         if (this.actPanel!=null) {
             this.actPanel.removeAll();
