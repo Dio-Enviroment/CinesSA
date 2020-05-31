@@ -34,15 +34,15 @@ public class Sala {
 	}
 
 	public void vaciarAsiento(int numFil, int numCol){
-		asientos[numCol][numFil]=false;
+		asientos[numFil][numCol]=false;
 	}
 
 	public void ocuparAsiento(int numFil, int numCol){
-		asientos[numCol][numFil]=true;
+		asientos[numFil][numCol]=true;
 	}
 
 	public boolean getAsiento(int numFil, int numCol) {
-		return asientos[numCol][numFil];
+		return asientos[numFil][numCol];
 	}
 
 	public int getId() {
