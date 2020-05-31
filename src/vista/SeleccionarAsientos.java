@@ -61,6 +61,7 @@ public class SeleccionarAsientos extends JPanel {
 		generar();
 		comprar();
 		cancelar();
+		
 	}
 
 	
