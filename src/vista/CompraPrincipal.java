@@ -265,24 +265,25 @@ public class CompraPrincipal extends JPanel{
 		gbc_sp_adultos.gridx = 2;
 		gbc_sp_adultos.gridy = 4;
 		pn_datoBoleto.add(sp_adultos, gbc_sp_adultos);
-
-		btn_selecionAsiento = new JButton("SELECCIONAR ASIENTOS");
-		btn_selecionAsiento.setFont(new Font("Verdana", Font.BOLD, 13));
-		btn_selecionAsiento.setForeground(new Color(102, 0, 102));
-		GridBagConstraints gbc_btn_selecionAsiento = new GridBagConstraints();
-		gbc_btn_selecionAsiento.insets = new Insets(0, 0, 5, 5);
-		gbc_btn_selecionAsiento.gridx = 2;
-		gbc_btn_selecionAsiento.gridy = 5;
-		pn_datoBoleto.add(btn_selecionAsiento, gbc_btn_selecionAsiento);
-
-		lbl_contador = new JLabel("0");
-		lbl_contador.setFont(new Font("Verdana", Font.BOLD, 14));
-		GridBagConstraints gbc_lbl_contador = new GridBagConstraints();
-		gbc_lbl_contador.anchor = GridBagConstraints.WEST;
-		gbc_lbl_contador.insets = new Insets(0, 0, 5, 5);
-		gbc_lbl_contador.gridx = 3;
-		gbc_lbl_contador.gridy = 5;
-		pn_datoBoleto.add(lbl_contador, gbc_lbl_contador);
+		
+				btn_selecionAsiento = new JButton("SELEC ASIENTOS");
+				btn_selecionAsiento.setFont(new Font("Verdana", Font.BOLD, 13));
+				btn_selecionAsiento.setForeground(new Color(102, 0, 102));
+				GridBagConstraints gbc_btn_selecionAsiento = new GridBagConstraints();
+				gbc_btn_selecionAsiento.insets = new Insets(0, 0, 5, 5);
+				gbc_btn_selecionAsiento.gridx = 1;
+				gbc_btn_selecionAsiento.gridy = 5;
+				pn_datoBoleto.add(btn_selecionAsiento, gbc_btn_selecionAsiento);
+				this.btn_selecionAsiento.setEnabled(false);
+		
+				lbl_contador = new JLabel("0");
+				lbl_contador.setFont(new Font("Verdana", Font.BOLD, 14));
+				GridBagConstraints gbc_lbl_contador = new GridBagConstraints();
+				gbc_lbl_contador.anchor = GridBagConstraints.WEST;
+				gbc_lbl_contador.insets = new Insets(0, 0, 5, 5);
+				gbc_lbl_contador.gridx = 2;
+				gbc_lbl_contador.gridy = 5;
+				pn_datoBoleto.add(lbl_contador, gbc_lbl_contador);
 
 		lbl_subtotal = new JLabel("SUBTOTAL:");
 		lbl_subtotal.setForeground(new Color(102, 0, 102));
@@ -340,7 +341,6 @@ public class CompraPrincipal extends JPanel{
 		gbc_lbl_valor_total.gridx = 2;
 		gbc_lbl_valor_total.gridy = 8;
 		pn_datoBoleto.add(lbl_valor_total, gbc_lbl_valor_total);
-		this.btn_selecionAsiento.setEnabled(false);
 
 		pn_controlBotones = new JPanel();
 		pn_controlBotones.setBounds(293, 473, 213, 40);

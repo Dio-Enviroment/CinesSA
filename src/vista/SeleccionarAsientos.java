@@ -132,6 +132,7 @@ public class SeleccionarAsientos extends JPanel {
 				JButton b1 = new JButton();
 				b1.setOpaque(false);
 				b1.setContentAreaFilled(false);
+				b1.setBounds(0, 0, 300, 344);
 				b1.setBorderPainted(false);
 				b1.setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
 				b1.setText(".");
