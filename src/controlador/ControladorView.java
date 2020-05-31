@@ -66,8 +66,7 @@ public class ControladorView {
 	}
 
 	private void repaint(){
-        this.container.getContentPane().add(this.actPanel);
-        this.container.validate();
+        
     }
 
 
@@ -122,15 +121,16 @@ public class ControladorView {
         if(this.actPanel!=null){
             this.actPanel.descargadata();
             this.actPanel.showcomponet(false);
+            this.actPanel.removeAll();
             this.container.remove(this.actPanel);
-            repaint();
         }
 
         this.actPanel=customPanel;
         this.actPanel.showcomponet(true);
         this.actPanel.cargardata();
         //this.actPanel.showcomponet(true);ss
-        repaint();
+        this.container.getContentPane().add(this.actPanel);
+        this.container.validate();
     }
 
     public void changeCompraPrincipal() {
