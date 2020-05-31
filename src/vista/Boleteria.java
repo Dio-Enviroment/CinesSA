@@ -21,6 +21,9 @@ import java.awt.image.BufferedImage;
 public class Boleteria extends JPanel {
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
+	private ImageAdaptable back,front;
+	private TransparentPanel formulary;
+	private CustomButton title,title2;
 
 	public Boleteria(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
 		this.ctrProyeccion = ctrProyeccion;
@@ -34,28 +37,28 @@ public class Boleteria extends JPanel {
 		String[] rawtitle = { workingDirectory + "//src//img//peli_0_boleteria_titulo.png" };
 		setLayout(null);
 
-		ImageAdaptable back = new ImageAdaptable(rawback[0]);
+		back = new ImageAdaptable(rawback[0]);
 		back.setLocation(0, 0);
 
-		ImageAdaptable front = new ImageAdaptable(rawfront[0]);
+		front = new ImageAdaptable(rawfront[0]);
 		front.setLocation(0, 0);
 
 		int formularyWidth = 354;
-		Component[] sendComponets = { front };
-		TransparentPanel formulary = new TransparentPanel();
+
+		formulary = new TransparentPanel();
 		formulary.setBounds(width - formularyWidth, 0, formularyWidth, height);
 
 		Object titleS = rawtitle[0];
-		CustomButton title = new CustomButton(titleS);
+		title = new CustomButton(titleS);
 		title.setBounds(10, 100, formularyWidth - 20, 60);
-		CustomButton title2 = new CustomButton("titleS");
+		title2 = new CustomButton("titleS");
 		title2.setBounds(10, 450, formularyWidth - 50, 60);
 		title2.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ctrView.changeCompraPrincipal();
-
+				//ctrView.changeCartelera();
 			}
 			
 		});
@@ -76,5 +79,13 @@ public class Boleteria extends JPanel {
 		add(formulary);
 		add(back);
 		
+	}
+
+	public void innerVisible(boolean value) {
+		back.setVisible(value);
+		front.setVisible(value);
+		formulary.setVisible(value);
+		title.setVisible(value);
+		title2.setVisible(value);
 	}
 }
