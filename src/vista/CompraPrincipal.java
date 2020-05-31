@@ -409,8 +409,6 @@ public class CompraPrincipal extends CustomPanel{
 		Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
 		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
-		this.sp_ninios.setEnabled(false);
-		censura();
 
 		txt_cedula.addKeyListener(new KeyAdapter() {
 			@Override
@@ -582,14 +580,14 @@ public class CompraPrincipal extends CustomPanel{
 		//this.sp_ninios.setEnabled(ctrView.getActivador());
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
-
-	
-
 		limitarValoresJpinner();
+		this.sp_adultos.setValue(0);
+		this.sp_ninios.setValue(0);
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		aux=0;
 		asientos="";
 		estado=false;
+		censura();
 		activar();
 		init();
 
