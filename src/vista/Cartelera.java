@@ -24,6 +24,7 @@ public class Cartelera extends CustomPanel {
 		this.ctrProyeccion=ctrProyeccion;
 		this.ctrView=ctrView;
 		setLayout(null);
+		setBounds(0, 0, width, height);
 
 		btn_comprar = new CustomButton("Comprar");
 		

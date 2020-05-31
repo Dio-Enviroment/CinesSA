@@ -9,7 +9,7 @@ public class ControladorPrincipal {
     private ControladorBoleto ctrBoleto;
     private ControladorView ctrView;
 
-    public ControladorPrincipal(JFrame container) {
+    public ControladorPrincipal(JPanel container) {
         this.ctrSala = new ControladorSala();
         this.ctrProyeccion = new ControladorProyeccion();
         this.ctrBoleto = new ControladorBoleto();
