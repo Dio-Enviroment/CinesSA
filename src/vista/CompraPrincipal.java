@@ -568,7 +568,6 @@ public class CompraPrincipal extends CustomPanel{
 	}
 	public void cargardata() {
 	
-		
 		limitarValoresJpinner();
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		aux=0;
