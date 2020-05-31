@@ -3,7 +3,7 @@ package controlador;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import componentes.CustomPanel;
+
 
 import java.awt.BorderLayout;
 import vista.*;
@@ -19,7 +19,9 @@ public class ControladorView {
     private SeleccionarAsientos seleccionarAsientos;
     private ResumenCompra resumenCompra;
     private Agradecimiento agradecimiento;
-
+    private String contador;
+    
+    
     public ControladorView(JFrame container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
         this.container=container;
         this.cartelera=new Cartelera(1008,729,ctrProyeccion,this);
@@ -32,8 +34,26 @@ public class ControladorView {
         // this.agradecimiento=new Agradecimiento(1008, 729,ctrBoleto,this);
     }
 
+<<<<<<< HEAD
     //a
     private void clean(){
+=======
+    
+    
+    public String getContador() {
+		return contador;
+	}
+
+
+
+	public void setContador(String contador) {
+		this.contador = contador;
+	}
+
+
+
+	private void clean(){
+>>>>>>> 897c80576b0cc0ce6eb1de3aa808eb33f0c6e0c7
         if (this.actPanel!=null) {
             this.actPanel.removeAll();
             this.container.remove(this.actPanel);

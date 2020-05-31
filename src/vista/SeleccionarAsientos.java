@@ -39,6 +39,8 @@ public class SeleccionarAsientos extends JPanel {
 	private Sala sala;
 	private JButton asientos[][];
 	private ControladorView ctrView;
+	private JLabel lbl_asientos;
+	private JLabel lbl_asiento;
 	//String
 
 	// public Prueba fr = new Prueba();
@@ -95,11 +97,13 @@ public class SeleccionarAsientos extends JPanel {
 
 		pn_asientos.add(lbl_asiento);
 		this.btncomprar.setEnabled(false);
+		
 		Botones();
 		/************** NEcesito Numero sala ***////////////////////
 		mostrarAsientos(sala.getId());
 		generar();
 		comprar();
+		this.lbl_asiento.setText(ctrView.getContador());
 		cancelar();
 		// init();
 	}
@@ -158,7 +162,7 @@ public class SeleccionarAsientos extends JPanel {
 			m++;
 		}
 
-		for (int i = 0; i < aux; i++) {
+		for (int i = letras.length - aux; i < letras.length; i++) {
 			GridBagConstraints gbc_lbl = new GridBagConstraints();
 			gbc_lbl.insets = new Insets(0, 0, 0, 5);
 			gbc_lbl.gridx = 1;
@@ -182,6 +186,8 @@ public class SeleccionarAsientos extends JPanel {
 	}
 
 	public void generar() {
+		
+		
 		for (int j = 0; j < asientos.length; j++) {
 			for (int j2 = 0; j2 < asientos[j].length; j2++) {
 				asientos[j][j2].addActionListener(new ActionListener() {
@@ -231,7 +237,6 @@ public class SeleccionarAsientos extends JPanel {
 					}
 
 				});
-
 			}
 		}
 		// }
@@ -239,9 +244,8 @@ public class SeleccionarAsientos extends JPanel {
 
 	}
 
-	public JLabel lbl_asientos;
-	public JLabel lbl_asiento;
-	public String puestos = "";
+	
+	private String puestos = "";
 
 	public void comprar() {
 
