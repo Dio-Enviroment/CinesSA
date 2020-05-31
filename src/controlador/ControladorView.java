@@ -9,7 +9,7 @@ import java.awt.BorderLayout;
 import vista.*;
 
 public class ControladorView {
-    private JFrame container;
+    private JPanel container;
     private CustomPanel actPanel;
     private CustomPanel cartelera;
     private CustomPanel boleteria;
@@ -25,17 +25,22 @@ public class ControladorView {
     private boolean inicompraPrincipal=true;
     
     
-    public ControladorView(JFrame container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
+    public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
         this.container=container;
         this.cartelera=new Cartelera(1008,729,ctrProyeccion,this);
         this.selectPelicula=new SelectPelicula(1008, 729,ctrProyeccion,this);
-        this.selectPelicula.setBounds(10, 10, 500, 500);
         this.boleteria=new Boleteria(1008, 729,ctrProyeccion,this);
         this.compraPrincipal=new CompraPrincipal(1008, 729,ctrProyeccion, ctrSala, this);
         // this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
         this.seleccionarAsientos=new SeleccionarAsientos(1008, 729,ctrSala,this);
         // this.resumenCompra=new ResumenCompra(1008, 729,ctrBoleto,this);
         // this.agradecimiento=new Agradecimiento(1008, 729,ctrBoleto,this);
+
+        this.container.add(cartelera);
+        this.container.add(selectPelicula);
+        this.container.add(boleteria);
+        this.container.add(compraPrincipal);
+        this.container.add(seleccionarAsientos);
     }
 
     //a
@@ -120,17 +125,20 @@ public class ControladorView {
     private void cargarPanel(CustomPanel customPanel){
         if(this.actPanel!=null){
             this.actPanel.descargadata();
-            this.actPanel.showcomponet(false);
-            this.actPanel.removeAll();
-            this.container.remove(this.actPanel);
+            //this.container.remove(this.actPanel);
+            //this.actPanel.removeAll();
+            //this.container.validate();
+            this.actPanel.setVisible(false);
         }
 
         this.actPanel=customPanel;
-        this.actPanel.showcomponet(true);
+        //this.actPanel.showcomponet(true);
+        this.actPanel.setVisible(true);
         this.actPanel.cargardata();
         //this.actPanel.showcomponet(true);ss
-        this.container.getContentPane().add(this.actPanel);
-        this.container.validate();
+        //this.container.add(this.actPanel);
+        //this.container.getContentPane().add(this.actPanel);
+        //this.container.validate();
     }
 
     public void changeCompraPrincipal() {
