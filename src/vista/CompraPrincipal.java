@@ -519,7 +519,6 @@ public class CompraPrincipal extends CustomPanel{
 			this.btn_selecionAsiento.setEnabled(true);
 		}
 	}
-
 	boolean estado;
 	private JPanel pn_compra;
 	
@@ -541,14 +540,24 @@ public class CompraPrincipal extends CustomPanel{
 		return estado;
 	}
 
+	public void activar() {
+		if( ctrView.getActivador2() ) {
+			arribaN.setEnabled(false);
+			arribaA.setEnabled(false);
+			
+		}
+	}
+	
 	public void censura() {
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		if (actProyeccion instanceof Pelicula) {
 			if (((Pelicula) actProyeccion).getEdad()<12) {
 				this.sp_ninios.setEnabled(false);
+				this.sp_adultos.setEnabled(true);
 			}
 			else {
 				this.sp_ninios.setEnabled(true);
+				this.sp_adultos.setEnabled(true);
 			}
 		}
 		else {
@@ -569,8 +578,8 @@ public class CompraPrincipal extends CustomPanel{
 	}
 	public void cargardata() {
 
-		this.sp_adultos.setEnabled(ctrView.getActivador());
-		this.sp_ninios.setEnabled(ctrView.getActivador());
+		//this.sp_adultos.setEnabled(ctrView.getActivador());
+		//this.sp_ninios.setEnabled(ctrView.getActivador());
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
 
@@ -581,6 +590,7 @@ public class CompraPrincipal extends CustomPanel{
 		aux=0;
 		asientos="";
 		estado=false;
+		activar();
 		init();
 
 	}
