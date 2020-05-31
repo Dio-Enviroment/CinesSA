@@ -49,6 +49,8 @@ public class Main extends JFrame {
 		//contentPane.setLayout(null);
 		
 		controladorView.changeCartelera();
+		
+	//asasaas
 	}
 
 	
