@@ -364,6 +364,7 @@ public class CompraPrincipal extends CustomPanel{
 		btn_siguiente.setForeground(new Color(102, 0, 102));
 		btn_siguiente.setFont(new Font("Verdana", Font.PLAIN, 13));
 		pn_controlBotones.add(btn_siguiente);
+	
 		this.btn_siguiente.setEnabled(false);
 		//ra.a�adirSalas();
 
@@ -376,7 +377,7 @@ public class CompraPrincipal extends CustomPanel{
 		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 		// this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
 		// this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
-		this.sp_ninios.setEnabled(false);
+	
 		// censura();
 
 	}
@@ -565,17 +566,21 @@ public class CompraPrincipal extends CustomPanel{
 		this.lbl_valor_iva.setText("0");
 		this.lbl_valor_Subtotal.setText("0");
 		this.lbl_valor_total.setText("0");
+		
 	}
 	public void cargardata() {
-	
-		
+		this.sp_adultos.setEnabled(ctrView.getActivador());
+		this.sp_ninios.setEnabled(ctrView.getActivador());
+		this.arribaN.setEnabled(ctrView.getActivador());
+		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
+		this.btn_siguiente.setEnabled(ctrView.getActivador2());
 		limitarValoresJpinner();
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		aux=0;
 		asientos="";
 		estado=false;
 		init();
-		//hgt
+
 	}
 	public void showcomponet(boolean visible){
 		 txt_cedula.setVisible(visible);

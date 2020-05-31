@@ -314,6 +314,8 @@ public class SeleccionarAsientos extends CustomPanel {
 						}
 					}
 				}
+				ctrView.setActivador(false);
+				ctrView.setActivador2(true);
 				ctrView.changeCompraPrincipal();
 			}
 
@@ -340,6 +342,8 @@ public class SeleccionarAsientos extends CustomPanel {
 						}
 					}
 				}
+				ctrView.setActivador(true);
+				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();
 			}
 			

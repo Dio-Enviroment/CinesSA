@@ -20,6 +20,8 @@ public class ControladorView {
     private ResumenCompra resumenCompra;
     private Agradecimiento agradecimiento;
     private String contador;
+    private boolean activador;
+    private boolean activador2;
     private boolean inicompraPrincipal=true;
     
     
@@ -37,14 +39,33 @@ public class ControladorView {
     }
 
     //a
+    
+    
+    
     private void clean(){
         if (this.actPanel!=null) {
             this.actPanel.removeAll();
             this.container.remove(this.actPanel);
         }
     }
+    
+    public boolean getActivador2() {
+		return activador2;
+	}
 
-    private void repaint(){
+	public void setActivador2(boolean activador2) {
+		this.activador2 = activador2;
+	}
+
+	public boolean getActivador() {
+		return activador;
+	}
+
+	public void setActivador(boolean activador) {
+		this.activador = activador;
+	}
+
+	private void repaint(){
         this.container.getContentPane().add(this.actPanel);
         this.container.validate();
     }
