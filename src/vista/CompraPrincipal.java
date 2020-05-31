@@ -566,6 +566,7 @@ public class CompraPrincipal extends JPanel{
 		asientos="";
 		estado=false;
 		init();
+		//hgt
 	}
 	public void showcomponet(boolean visible){
 		 txt_cedula.setVisible(visible);
