@@ -575,7 +575,7 @@ public class CompraPrincipal extends CustomPanel{
 		asientos="";
 		estado=false;
 		init();
-		//hgt
+		//hgts
 	}
 	public void showcomponet(boolean visible){
 		 txt_cedula.setVisible(visible);
