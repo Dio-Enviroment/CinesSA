@@ -83,7 +83,7 @@ public class ControladorView {
         //clean();
         this.actPanel=this.compraPrincipal;
         this.compraPrincipal.init();;
-        //repaint();
+        repaint();
         //CompraPrincipal c=(CompraPrincipal)this.actPanel;
         //c.init();
     }
@@ -91,8 +91,8 @@ public class ControladorView {
     public void changeSeleccionarAsientos() {
         //clean();
         this.actPanel=this.seleccionarAsientos;
-        //repaint();
         this.seleccionarAsientos.ini();
+        repaint();
     }
 
     public String getContador() {
