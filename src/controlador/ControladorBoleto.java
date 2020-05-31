@@ -10,8 +10,15 @@ import modelo.Cliente;
 public class ControladorBoleto {
     private ArrayList<Boleto> boletos=new ArrayList<Boleto>();
 
+    public ControladorBoleto() {
+        
+    }
+
+
+
     public void addBoleto(Cliente cliente,Proyeccion proyeccion, Asiento asiento){
         boletos.add(new Boleto(cliente,proyeccion, asiento));
+        
     }
 
     public ArrayList<Boleto> getBoletos() {

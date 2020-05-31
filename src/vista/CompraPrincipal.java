@@ -68,8 +68,7 @@ public class CompraPrincipal extends JPanel{
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
 	private ControladorSala ctrSala;
-	private ControladorBoleto ctrBoleto;
-	private Precio pr;
+	private Precio pr=new Precio();
 
 	/**
 	 * Create the panel.
@@ -77,12 +76,11 @@ public class CompraPrincipal extends JPanel{
 
 	
 
-	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion,ControladorSala ctrSala, ControladorBoleto ctrBoleto, ControladorView ctrView) {
+	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion,ControladorSala ctrSala,  ControladorView ctrView) {
 		
 		this.ctrProyeccion = ctrProyeccion;
 		this.ctrView= ctrView;
 		this.ctrSala=ctrSala;
-		this.ctrBoleto=ctrBoleto;
 		setLayout(null);
 
 		pn_compra = new JPanel();
@@ -380,10 +378,11 @@ public class CompraPrincipal extends JPanel{
 	//Registro_asiento ra = new Registro_asiento();
 
 	public void limitarValoresJpinner() {
-		ad.setMaximum(ctrBoleto.getBoletos().size());
+		int a=ctrSala.getLimiteBoletos();
+		ad.setMaximum(ctrSala.getLimiteBoletos());
 		ad.setMinimum(0);
 		ad.setStepSize(1);
-		nn.setMaximum(ctrBoleto.getBoletos().size());
+		nn.setMaximum(ctrSala.getLimiteBoletos());
 		nn.setMinimum(0);
 		nn.setStepSize(1);
 		this.sp_adultos.setModel(ad);
@@ -480,6 +479,7 @@ public class CompraPrincipal extends JPanel{
 				// lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),Integer.parseInt(sp_ninios.getValue().toString()), 1, "Pelicula") * 100) / 100d) + "");
 				// lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText())) * 100) / 100d) + "");
 				// lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText())) * 100) / 100d) + "");
+				System.out.println(pr);
 				lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()), Integer.parseInt(sp_ninios.getValue().toString()), ctrProyeccion)*100)/100d)+"");
 				lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText()))*100)/100d)+"");
 				lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText()))*100)/100d)+"");
@@ -487,12 +487,18 @@ public class CompraPrincipal extends JPanel{
 				lbl_valor_iva.setText(lbl_valor_iva.getText() + " $");
 				lbl_valor_total.setText(lbl_valor_total.getText() + " $");
 				activadorSeleccion();
-				System.out.print("hola");
 			}
 
 		});
 
-		
+		btn_selecionAsiento.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeSeleccionarAsientos();
+			}
+
+		});
 		
 
 	}

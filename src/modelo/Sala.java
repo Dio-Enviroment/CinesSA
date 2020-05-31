@@ -3,12 +3,22 @@ public class Sala {
 	private int id;
 	private String tipo;
 	private boolean[][] asientos;
+	private int asientosDisponibles;
+
 	public Sala(int id, String tipo,int numFil,int numCol) {
 		this.id = id;
 		this.tipo = tipo;
 		this.asientos=new boolean[numFil][numCol];
-
+		this.asientosDisponibles=numFil*numCol;
 		generarAsientos();
+	}
+
+	public int getAsientosDisponibles() {
+		return asientosDisponibles;
+	}
+
+	public void restarAsientosDisponibles() {
+		this.asientosDisponibles--;
 	}
 
 	public boolean[][] getAsientos() {

@@ -10,17 +10,5 @@ public class Boleto {
 		this.proyeccion=proyeccion;
 		this.asiento=asiento;
 	}
-	public String getPoster() {
-		return proyeccion.getPoster();
-	}
-	public String getTitulo() {
-		return proyeccion.getTitulo();
-	}
-	public int getDuracion() {
-		return proyeccion.getDuracion();
-	}
-
-	public Asiento getAsiento() {
-		return asiento;
-	}
+	
 }

@@ -25,6 +25,7 @@ import javax.swing.ImageIcon;
 import javax.swing.BoxLayout;
 import javax.swing.border.EmptyBorder;
 import controlador.ControladorSala;
+import controlador.ControladorView;
 import modelo.Sala;
 
 import javax.swing.UIManager;
@@ -37,15 +38,16 @@ public class SeleccionarAsientos extends JPanel {
 	public JPanel pn_seleccionarAsiento;
 	private Sala sala;
 	private JButton asientos[][];
+	private ControladorView ctrView;
 	//String
 
 	// public Prueba fr = new Prueba();
 	/**
 	 * Create the panel.
 	 */
-	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala) {
+	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
 		this.sala = ctrSala.getSala(0);
-
+		this.ctrView=ctrView;
 		setLayout(null);
 
 		pn_asientos = new JPanel();
@@ -269,7 +271,7 @@ public class SeleccionarAsientos extends JPanel {
 				}
 				// }
 				// }
-				System.out.println("Asientos Seleccionados");
+				ctrView.changeCompraPrincipal();
 			}
 
 		});
