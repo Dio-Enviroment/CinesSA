@@ -41,41 +41,23 @@ public class SeleccionarAsientos extends JPanel {
 	private Sala sala;
 	private JButton asientos[][];
 	private ControladorView ctrView;
+	private ControladorSala ctrSala;
 	private JLabel lbl_asientos;
 	private JLabel lbl_asiento;
 
 	public void cargarData() {
-		JLabel lbl_A;
-		JPanel panel;
-		JButton btncomprar;
-		JButton btn_cancelar;
-		JPanel pn_seleccionarAsiento;
-		Sala sala;
-		JButton asientos[][];
-		ControladorView ctrView;
-		JLabel lbl_asientos;
-		JLabel lbl_asiento;
-		
+		Sala sala= this.ctrSala.getSala(0);
 		Botones();
 		mostrarAsientos(sala.getId());
 		generar();
 		comprar();
 		cancelar();
-		
+
 	}
 
 	
 	public void descargarData() {
-		JLabel lbl_A = null;
-		JPanel panel = null;
-		JButton btncomprar = null;
-		JButton btn_cancelar = null;
-		JPanel pn_seleccionarAsiento = null;
-		Sala sala = null;
-		JButton asientos[][] = null;
-		ControladorView ctrView = null;
-		JLabel lbl_asientos = null;
-		JLabel lbl_asiento = null;
+		asientos = null;
 	}
 
 	public void showcomponet(boolean visible) {
@@ -84,14 +66,13 @@ public class SeleccionarAsientos extends JPanel {
 		btncomprar.setVisible(visible);
 		btn_cancelar.setVisible(visible);
 		pn_seleccionarAsiento.setVisible(visible);
-		asientos = null;
 		lbl_asientos.setVisible(visible);
 		lbl_asiento.setVisible(visible);
 	}
 
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
 
-		this.sala = ctrSala.getSala(0);
+		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
 		setLayout(null);
 
