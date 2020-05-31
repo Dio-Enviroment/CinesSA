@@ -45,7 +45,9 @@ public class Cartelera extends JPanel {
 		iniComponentEvents();
 	}
 
-	public void cargardata() {}
+	public void cargardata() {
+		//ss
+	}
 
 	public void descargadata() {}
 
