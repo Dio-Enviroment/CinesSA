@@ -25,6 +25,7 @@ public class Boleteria extends CustomPanel {
 	private ImageAdaptable back,front;
 	private TransparentPanel formulary;
 	private CustomButton title,title2;
+	private JLabel lb1,lb2;
 
 	public Boleteria(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
 		this.ctrProyeccion = ctrProyeccion;
@@ -64,21 +65,21 @@ public class Boleteria extends CustomPanel {
 			
 		});
 
-		JLabel lb1=new JLabel("Tipo");
+		lb1=new JLabel("Tipo");
 		lb1.setForeground(Color.WHITE);
 		lb1.setBounds(10, 250, formularyWidth-20, 60);
-		JLabel lb2=new JLabel("Horario");
+		lb2=new JLabel("Horario");
 		lb2.setForeground(Color.WHITE);
 		lb2.setBounds(10, 270, formularyWidth-20, 60);
 		
-		formulary.add(title);
-		formulary.add(title2);
-		formulary.add(lb2);
-		formulary.add(lb1);
+		// formulary.add(title);
+		// formulary.add(title2);
+		// formulary.add(lb2);
+		// formulary.add(lb1);
 		
-		add(front);
-		add(formulary);
-		add(back);
+		// add(front);
+		// add(formulary);
+		// add(back);
 		//ss
 		
 	}
@@ -88,10 +89,18 @@ public class Boleteria extends CustomPanel {
 	public void descargadata() {}
 
 	public void showcomponet(boolean visible){
-		back.setVisible(visible);
-		front.setVisible(visible);
-		formulary.setVisible(visible);
-		title.setVisible(visible);
-		title2.setVisible(visible);
+		// back.setVisible(visible);
+		// front.setVisible(visible);
+		// formulary.setVisible(visible);
+		// title.setVisible(visible);
+		// title2.setVisible(visible);
+		formulary.add(title);
+		formulary.add(title2);
+		formulary.add(lb2);
+		formulary.add(lb1);
+		
+		add(front);
+		add(formulary);
+		add(back);
 	}
 }

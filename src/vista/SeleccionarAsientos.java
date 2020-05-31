@@ -89,14 +89,20 @@ public class SeleccionarAsientos extends CustomPanel {
 
 	public void showcomponet(boolean visible) {
 		
-		pn_asientos.setVisible(visible);
-		panel.setVisible(visible);
-		btncomprar.setVisible(visible);
-		btn_cancelar.setVisible(visible);
-		pn_seleccionarAsiento.setVisible(visible);
-		lbl_asientos.setVisible(visible);
-		lbl_asiento.setVisible(visible);
-		
+		// pn_asientos.setVisible(visible);
+		// panel.setVisible(visible);
+		// btncomprar.setVisible(visible);
+		// btn_cancelar.setVisible(visible);
+		// pn_seleccionarAsiento.setVisible(visible);
+		// lbl_asientos.setVisible(visible);
+		// lbl_asiento.setVisible(visible);
+		add(pn_asientos);
+		pn_asientos.add(pn_seleccionarAsiento);
+		pn_asientos.add(panel);
+		panel.add(btn_cancelar);
+		panel.add(btncomprar);
+		pn_asientos.add(lbl_asientos);
+		pn_asientos.add(lbl_asiento);
 	}
 
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
@@ -107,12 +113,12 @@ public class SeleccionarAsientos extends CustomPanel {
 
 		pn_asientos = new JPanel();
 		pn_asientos.setBounds(12, 13, 661, 505);
-		add(pn_asientos);
+		//add(pn_asientos);
 		pn_asientos.setLayout(null);
 
 		pn_seleccionarAsiento = new JPanel();
 		pn_seleccionarAsiento.setBounds(12, 30, 637, 415);
-		pn_asientos.add(pn_seleccionarAsiento);
+		//pn_asientos.add(pn_seleccionarAsiento);
 		pn_seleccionarAsiento.setBorder(new LineBorder(Color.MAGENTA, 2, true));
 		GridBagLayout gbl_pn_seleccionarAsiento = new GridBagLayout();
 		gbl_pn_seleccionarAsiento.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -125,30 +131,30 @@ public class SeleccionarAsientos extends CustomPanel {
 
 		panel = new JPanel();
 		panel.setBounds(437, 446, 212, 25);
-		pn_asientos.add(panel);
+		//pn_asientos.add(panel);
 		panel.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
 		btn_cancelar = new JButton("CANCELAR");
 		btn_cancelar.setFont(new Font("Verdana", Font.BOLD, 13));
-		panel.add(btn_cancelar);
+		//panel.add(btn_cancelar);
 
 		btncomprar = new JButton("COMPRAR");
 		btncomprar.setFont(new Font("Verdana", Font.BOLD, 13));
-		panel.add(btncomprar);
+		//panel.add(btncomprar);
 
 		lbl_asientos = new JLabel("ASIENTOS:");
 		lbl_asientos.setForeground(UIManager.getColor("InternalFrame.inactiveTitleForeground"));
 		lbl_asientos.setFont(new Font("Verdana", Font.BOLD, 14));
 		lbl_asientos.setBounds(12, 14, 101, 16);
 
-		pn_asientos.add(lbl_asientos);
+		//pn_asientos.add(lbl_asientos);
 
 		lbl_asiento = new JLabel("0");
 		lbl_asiento.setFont(new Font("Verdana", Font.BOLD, 14));
 		lbl_asiento.setBounds(108, 14, 56, 16);
 
-		pn_asientos.add(lbl_asiento);
+		//pn_asientos.add(lbl_asiento);
 
 	}
 
