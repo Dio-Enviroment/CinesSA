@@ -19,6 +19,7 @@ public class CustomButton extends JButton{
     private static final long serialVersionUID = 1L;
     private int mode = 0;
     private Color idle, press;
+    private Object[] customParameter;
 
     public CustomButton(String txt) {
         super(txt);
@@ -30,10 +31,22 @@ public class CustomButton extends JButton{
         this.press=new Color(101, 35, 34, 255);
     }
 
-    public CustomButton(Object path) {
+    public CustomButton(Object[] path) {
+        int cont=0;
         this.mode = 1;
-        this.setUI(new CustomButtonUI(mode,path.toString()));
+        this.setUI(new CustomButtonUI(mode,path[0].toString()));
         this.setBorder(new EmptyBorder(5, 15, 5, 15));
+        if(path.length>1 && path.length>path.length-2){
+            customParameter=new Object[path.length-3];
+            for (int i = path.length-2; i < path.length; i++) {
+                customParameter[cont]=path[i];
+                cont++;
+            }
+        }
+    }
+
+    public Object getCustomParameter(int pos){
+        return customParameter[pos];
     }
 
     @Override

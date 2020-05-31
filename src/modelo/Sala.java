@@ -41,6 +41,10 @@ public class Sala {
 		asientos[numCol][numFil]=true;
 	}
 
+	public boolean getAsiento(int numFil, int numCol) {
+		return asientos[numCol][numFil];
+	}
+
 	public int getId() {
 		return id;
 	}

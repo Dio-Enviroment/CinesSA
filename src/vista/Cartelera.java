@@ -3,13 +3,14 @@ package vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.TimerTask;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import componentes.CustomButton;
 import componentes.CustomPanel;
-import componentes.Slider;
+import componentes.Slide;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 
@@ -17,7 +18,7 @@ public class Cartelera extends CustomPanel {
 	private CustomButton btn_comprar;
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
-	private Slider slider;
+	private Slide slide;
 	private JButton j;
 
 	public Cartelera(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
@@ -31,9 +32,9 @@ public class Cartelera extends CustomPanel {
 		File workingDirectory = new File(System.getProperty("user.dir"));
 		String[] paths = { workingDirectory + "//src//img//peli_0_carteleta_back.png",
 		workingDirectory + "//src//img//fondoPrueba2.png" };
-		slider = new Slider(paths, 1008, 729);
+		slide = new Slide(paths, 1008, 729);
 		
-		slider.setBounds(0, 0, 1008, 729);
+		slide.setBounds(0, 0, 1008, 729);
 		btn_comprar.setBounds(140, 603, 718, 40);
 		
 		j=new JButton("sd");
@@ -42,20 +43,20 @@ public class Cartelera extends CustomPanel {
 		add(j);
 		
 		add(btn_comprar);
-		add(slider);
+		add(slide);
 
 		iniComponentEvents();
 	}
 
 	public void cargardata() {
-		System.out.println("x");
+		slide.setPos(0);
 	}
 
 	public void descargadata() {}
 
 	public void showcomponet(boolean visible){
 		btn_comprar.setVisible(visible);
-		slider.setVisible(visible);
+		slide.setVisible(visible);
 		j.setVisible(visible);
 	}
 
@@ -64,7 +65,7 @@ public class Cartelera extends CustomPanel {
 		btn_comprar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ctrProyeccion.setActProyeccion(slider.getPos());
+				ctrProyeccion.setActProyeccion(slide.getPos());
 				ctrView.changeBoleteria();
 			}
 		});
@@ -73,7 +74,7 @@ public class Cartelera extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				slider.setPos(1);
+				slide.setPos(1);
 				btn_comprar.repaint();
 			}
 

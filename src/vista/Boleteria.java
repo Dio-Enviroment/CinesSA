@@ -51,7 +51,7 @@ public class Boleteria extends CustomPanel {
 		formulary = new TransparentPanel();
 		formulary.setBounds(width - formularyWidth, 0, formularyWidth, height);
 
-		Object titleS = rawtitle[0];
+		Object[] titleS ={ rawtitle[0]};
 		title = new CustomButton(titleS);
 		title.setVisible(false);
 		title.setBounds(10, 100, formularyWidth - 20, 60);

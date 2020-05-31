@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 
+import componentes.CustomButton;
 import componentes.CustomPanel;
 
 import javax.swing.border.BevelBorder;
@@ -41,7 +42,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	private JButton btn_cancelar;
 	private JPanel pn_seleccionarAsiento;
 	private Sala sala;
-	private JButton asientos[][];
+	private CustomButton asientos[][];
 	private ControladorView ctrView;
 	private ControladorSala ctrSala;
 	private JLabel lbl_asientos;
@@ -170,21 +171,20 @@ public class SeleccionarAsientos extends CustomPanel {
 	}
 
 	public void generarBotones(int numFil, int numCol) {
-
-		asientos = new JButton[numFil][numCol];
+		File workingDirectory = new File(System.getProperty("user.dir"));
+		
+		asientos = new CustomButton[numFil][numCol];
 
 		for (int i = 0; i < asientos.length; i++) {
 			for (int j = 0; j < asientos[i].length; j++) {
-				JButton b1 = new JButton();
-
-				b1.setOpaque(false);
-				b1.setContentAreaFilled(false);
-				b1.setBorderPainted(false);
+				Object[] paths = { workingDirectory + "//src//resources//asiento//asiento_disponible.png",
+								workingDirectory + "//src//resources//asiento//asiento_disponible.png",
+								workingDirectory + "//src//resources//asiento//asiento_disponible.png", i,j };
+				CustomButton b1 = new CustomButton(paths);
+				b1.setBounds(0, 0, 62, 47);
 				b1.setIcon(new ImageIcon(
 						SeleccionarAsientos.class.getResource("/resources/asiento/asiento_disponible.png")));
-				b1.setText(".");
 				b1.setHorizontalTextPosition(SwingConstants.CENTER);
-				b1.setForeground(Color.white);
 				asientos[i][j] = b1;
 			}
 		}
@@ -194,6 +194,8 @@ public class SeleccionarAsientos extends CustomPanel {
 
 	public void mostrarAsientos(int num_sala) {
 		int n = 2, m = 2, ln = 2;
+		// int aux = asientos.length;
+		// int aux2 = asientos[0].length;
 		int aux = asientos.length;
 		int aux2 = asientos[0].length;
 		for (int j = 0; j < asientos.length; j++) {
@@ -243,14 +245,15 @@ public class SeleccionarAsientos extends CustomPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						JButton b = (JButton) e.getSource();
+						CustomButton b = (CustomButton) e.getSource();
 						p = Integer.parseInt(lbl_asiento.getText());
 
 						if (p != 0) {
 							if (cont == 0) {
 								b.setIcon(new ImageIcon(SeleccionarAsientos.class
 										.getResource("/resources/asiento/asiento_seleccionado.png")));
-								b.setText("");
+								sala.ocuparAsiento((int)b.getCustomParameter(0), (int)b.getCustomParameter(1));
+								System.out.println((int)b.getCustomParameter(0)+" "+(int)b.getCustomParameter(1)+": Seleccionar seleccionado");
 								p--;
 								lbl_asiento.setText(p + "");
 
@@ -259,7 +262,8 @@ public class SeleccionarAsientos extends CustomPanel {
 							} else {
 								b.setIcon(new ImageIcon(SeleccionarAsientos.class
 										.getResource("/resources/asiento/asiento_disponible.png")));
-								b.setText(".");
+								sala.vaciarAsiento((int)b.getCustomParameter(0), (int)b.getCustomParameter(1));
+								System.out.println((int)b.getCustomParameter(0)+" "+(int)b.getCustomParameter(1)+": Seleccionar disponible");
 								p++;
 								lbl_asiento.setText(p + "");
 
@@ -267,10 +271,10 @@ public class SeleccionarAsientos extends CustomPanel {
 
 							}
 						} else {
-							if (b.getText().equals("")) {
+							if (sala.getAsiento((int)b.getCustomParameter(0), (int)b.getCustomParameter(1))) {
 								b.setIcon(new ImageIcon(SeleccionarAsientos.class
 										.getResource("/resources/asiento/asiento_disponible.png")));
-								b.setText(".");
+								System.out.println((int)b.getCustomParameter(0)+" "+(int)b.getCustomParameter(1)+": Seleccionar disponible");
 								p++;
 								lbl_asiento.setText(p + "");
 
@@ -300,15 +304,16 @@ public class SeleccionarAsientos extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent er) {
 				puestos = "";
-				
-				for (int j = 0; j < asientos.length; j++) {
-					for (int k = 0; k < asientos[j].length; k++) {
-						if (asientos[j][k].getText().equals("")) {
+				boolean[][] asientosFilas=sala.getAsientos();
+				for (int j = 0; j < asientosFilas.length; j++) {
+					boolean [] asientosColumnas=asientosFilas[j];
+					for (int k = 0; k < asientosColumnas.length; k++) {
+						boolean asiento=asientosColumnas[k];
+						if (asiento) {
 							asientos[j][k].setIcon(new ImageIcon(SeleccionarAsientos.class.getResource("/resources/asiento/asiento_desabilitado.png")));
+							System.out.println((int)asientos[j][k].getCustomParameter(0)+" "+(int)asientos[j][k].getCustomParameter(1)+": enabled");
 							asientos[j][k].setEnabled(false);
-							asientos[j][k].setText("..");
 							asientos[j][k].setHorizontalTextPosition(SwingConstants.CENTER);
-							asientos[j][k].setForeground(Color.white);
 							sala.ocuparAsiento(j, k);
 							puestos = puestos + letras[j] + (k + 1) + " ";
 
