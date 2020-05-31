@@ -44,19 +44,28 @@ public class SeleccionarAsientos extends JPanel {
 	private ControladorSala ctrSala;
 	private JLabel lbl_asientos;
 	private JLabel lbl_asiento;
-
+	private String[] letras ;
+	private String[] numeros ;
+	private JPanel pn_asientos;
+	private String puestos ;
 	public void cargarData() {
 		Sala sala= this.ctrSala.getSala(0);
+		String [] letras = { "H", "G", "F", "E", "D", "C", "B", "A" };
+		String[] numeros = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+		puestos ="";
 		Botones();
 		mostrarAsientos(sala.getId());
 		generar();
 		comprar();
 		cancelar();
-
+		ini();
 	}
 
 	
 	public void descargarData() {
+		 letras = null;
+		numeros =null;
+		puestos ="";
 		asientos = null;
 	}
 
@@ -122,12 +131,6 @@ public class SeleccionarAsientos extends JPanel {
 		pn_asientos.add(lbl_asiento);
 		this.btncomprar.setEnabled(false);
 
-		
-	
-		
-
-		
-		// init();
 	}
 
 	public void ini() {
@@ -166,9 +169,7 @@ public class SeleccionarAsientos extends JPanel {
 		}
 	}
 
-	public String[] letras = { "H", "G", "F", "E", "D", "C", "B", "A" };
-	public String[] numeros = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-	public JPanel pn_asientos;
+	
 
 	public void mostrarAsientos(int num_sala) {
 		int n = 2, m = 2, ln = 2;
@@ -176,8 +177,6 @@ public class SeleccionarAsientos extends JPanel {
 		lbl_A.setFont(new Font("Verdana", Font.BOLD, 14));
 		int aux = asientos.length;
 		int aux2 = asientos[0].length;
-		// for (int i = 0; i < salas.size(); i++) {
-		// if (i == num_sala) {
 		for (int j = 0; j < asientos.length; j++) {
 			n = 2;
 			for (int j2 = 0; j2 < asientos[j].length; j2++) {
@@ -271,12 +270,9 @@ public class SeleccionarAsientos extends JPanel {
 				});
 			}
 		}
-		// }
-		// }
-
 	}
 
-	private String puestos = "";
+
 
 	public void comprar() {
 
@@ -284,12 +280,8 @@ public class SeleccionarAsientos extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent er) {
-
-				// ArrayList<JButton[][]> asientos = new ArrayList<JButton[][]>();
-				// asientos = getSalas();
-				// for (int i = 0; i < asientos.size(); i++) {
 				puestos = "";
-				// if (i == num_sala) {
+				
 				for (int j = 0; j < asientos.length; j++) {
 					for (int k = 0; k < asientos[j].length; k++) {
 						if (asientos[j][k].getText().equals("")) {
@@ -305,8 +297,7 @@ public class SeleccionarAsientos extends JPanel {
 						}
 					}
 				}
-				// }
-				// }
+			
 				ctrView.changeCompraPrincipal();
 			}
 
@@ -320,10 +311,7 @@ public class SeleccionarAsientos extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// ArrayList<JButton[][]> asientos = new ArrayList<JButton[][]>();
-				// asientos = getSalas();
-				// for (int i = 0; i < asientos.size(); i++) {
-				// if (i == num_sala) {
+			
 				for (int j = 0; j < asientos.length; j++) {
 					for (int k = 0; k < asientos[j].length; k++) {
 						if (asientos[j][k].getText().equals("")) {
@@ -336,8 +324,7 @@ public class SeleccionarAsientos extends JPanel {
 						}
 					}
 				}
-				// }
-				// }
+			
 			}
 
 		});
@@ -345,10 +332,7 @@ public class SeleccionarAsientos extends JPanel {
 
 	public void limpiarValore(int num_sala) {
 
-		// ArrayList<JButton[][]> asientos = new ArrayList<JButton[][]>();
-		// asientos = getSalas();
-		// for (int i = 0; i < asientos.size(); i++) {
-		// if (i == num_sala) {
+		
 		for (int j = 0; j < asientos.length; j++) {
 			for (int k = 0; k < asientos[j].length; k++) {
 				if (asientos[j][k].getText().equals("..")) {
@@ -363,7 +347,5 @@ public class SeleccionarAsientos extends JPanel {
 				}
 			}
 		}
-		// }
-		// }
 	}
 }
