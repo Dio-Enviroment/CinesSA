@@ -102,12 +102,13 @@ public class SeleccionarAsientos extends CustomPanel {
 		pn_asientos.add(pn_seleccionarAsiento);
 		pn_seleccionarAsiento.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 3), null, TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		pn_seleccionarAsiento.setLayout(null);
-		
+		this.btncomprar.setEnabled(false);
 		generarBotones();
 		Jlabels();
 		invisibleL();
 		invisibleN();
 		invisible();
+	
 		iniComponentEvents();
 		showcomponet(false);
 	}
@@ -143,6 +144,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	public void descargardata() {
 		numeros=null;
 		letras=null;
+		this.lbl_asiento.setText("0");
 		invisible();
 		invisibleL();
 		invisibleN() ;
@@ -178,6 +180,8 @@ public class SeleccionarAsientos extends CustomPanel {
 			let[i].setText(letras[i]);
 			let[i].setVisible(true);
 		}
+		this.lbl_asiento.setText(ctrView.getContador());
+		this.btncomprar.setEnabled(false);
 		refreshBotones(asientos);
 		
 		showcomponet(true);
@@ -264,11 +268,25 @@ public class SeleccionarAsientos extends CustomPanel {
 		}
 	}
 	
+	/*public void validarAsiento() {
+		if(this.lbl_asiento.getText().equals("0")) {
+			this.btncomprar.setEnabled(true);
+		}
+		else {
+			this.btncomprar.setEnabled(false);
+		}
+	}*/
+	
+	
+	
 	private void generarBotones() {
 		int itemWidth = 62, itemHeight = 47;
 		int iniX = 5, iniY =5, spaceX = 15, spaceY = 15;
 		int itemOnly7 = 0;
 		int x = iniX, y = iniY;
+		
+		
+		
 		
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 7; j++) {
@@ -280,21 +298,46 @@ public class SeleccionarAsientos extends CustomPanel {
 
 				b1.addActionListener(new ActionListener() {
 					@Override
+					
 					public void actionPerformed(ActionEvent e) {
+						int aux=Integer.parseInt(lbl_asiento.getText());;
 						CustomButton btn = (CustomButton) e.getSource();
 						int x = (int) btn.getCustomParameter(0);
 						int y = (int) btn.getCustomParameter(1);
 						boolean interuptor = (boolean) btn.getCustomParameter(2);
-						if (interuptor) {
+						
+						if ( aux == 0) {
 							
-							btn.changeIcon(1);
-							btn.setCustomParameter(2, false);
-							sala.ocuparAsiento(x, y);
-						} else {
-							btn.changeIcon(0);
-							btn.setCustomParameter(2, true);
-							sala.vaciarAsiento(x, y);
+							if (!interuptor) {
+								btn.changeIcon(0);
+								btn.setCustomParameter(2, true);
+								sala.vaciarAsiento(x, y);
+								aux++;
+								lbl_asiento.setText(aux+"");
+							    btncomprar.setEnabled(false);
+							}
+							
 						}
+						else {
+							if (interuptor) {
+								btn.changeIcon(1);
+								btn.setCustomParameter(2, false);
+								sala.ocuparAsiento(x, y);
+								aux--;
+								lbl_asiento.setText(aux+"");
+								if(aux==0) {
+									btncomprar.setEnabled(true);
+								}
+							} else {
+								
+								btn.changeIcon(0);
+								btn.setCustomParameter(2, true);
+								sala.vaciarAsiento(x, y);
+								aux++;
+								lbl_asiento.setText(aux+"");
+							}
+						}
+						
 					}
 
 				});

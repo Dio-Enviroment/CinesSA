@@ -79,7 +79,7 @@ public class CompraPrincipal extends CustomPanel{
 	private ControladorSala ctrSala;
 	private Precio pr=new Precio();
 	private JComponent editor,editor2;
-
+	
 	private GridBagConstraints gbc_lbl_cedula,
 	gbc_txt_cedula,gbc_lbl_nombre,gbc_txt_nombre,
 	gbc_lbl_telefono,gbc_txt_fono,gbc_lbl_direccion,
@@ -133,7 +133,7 @@ public class CompraPrincipal extends CustomPanel{
 		gbc_txt_cedula.gridy = 1;
 		pn_datoPersona.add(txt_cedula, gbc_txt_cedula);
 		txt_cedula.setColumns(10);
-
+	
 		lbl_nombre = new JLabel("NOMBRE:");
 		lbl_nombre.setForeground(new Color(102, 0, 102));
 		lbl_nombre.setFont(new Font("Verdana", Font.BOLD, 14));
