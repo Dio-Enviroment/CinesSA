@@ -15,7 +15,7 @@ public class ControladorSala {
 	int numSalasPelicula = conferencias.length;
 	int numSalasConferencia = peliculas.length;
 	private Sala actSala;
-	private Stack<Integer> salaPreview = new Stack<Integer>();
+	private boolean [][] salaPre = new boolean[8][8];
 
 	public ControladorSala() {
 		generarSalas();
@@ -58,17 +58,16 @@ public class ControladorSala {
 	}
 
 	public void anadirSalaPre(int valorx, int valory) {
-		salaPreview.push(valorx);
-		salaPreview.push(valory);
+		salaPre[valorx][valory]=true;
 	}
-	public Stack<Integer> getSalaPre() {
-		return salaPreview;
+	public boolean[] []getSalaPre() {
+		return salaPre;
 	}
 
-	public void vaciarSeleccionados() {
-		salaPreview.pop();
-		salaPreview.pop(); 
-		// ADSF
+	public void vaciarSeleccionados(int valorx, int valory) {
+		salaPre[valorx][valory]=false;
+		
+		
 	}
 
 	public void ocuparAsiento(int id, int numFil, int numCol) {
