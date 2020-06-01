@@ -114,4 +114,15 @@ public class ControladorView {
     public void changeAgradecimiento() {
         cargarPanel(this.agradecimiento);
     }
+<<<<<<< Upstream, based on origin/master
+=======
+    public String getNombre () {
+    	return this.nombre;
+    }
+    public void setNombre(String nombre) {
+    	this.nombre=nombre;
+    	//obtener
+    }
+    
+>>>>>>> 1b433de popio
 }
