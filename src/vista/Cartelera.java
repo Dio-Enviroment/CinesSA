@@ -88,13 +88,13 @@ public class Cartelera extends CustomPanel {
 
 		});
 
-		slide.addChangeItem(new componentes.ChangeItemListener(){
+		// slide.addChangeItem(new componentes.ChangeItemListener(){
 		
-			@Override
-			public void ChangeItemEvent(ChangeItem evt) {
-				// TODO Auto-generated method stub
+		// 	@Override
+		// 	public void ChangeItemEvent(ChangeItem evt) {
+		// 		System.out.println("x");
 				
-			}
-		});
+		// 	}
+		// });
 	}
 }
