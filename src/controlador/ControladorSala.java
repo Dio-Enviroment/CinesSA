@@ -66,9 +66,6 @@ public class ControladorSala {
 	}
 
 	public void vaciarSeleccionados() {
-
-		boolean salaPre[][] = actSala.getAsientos();
-
 		salaPreview.pop();
 		salaPreview.pop(); 
 		// ADSF
