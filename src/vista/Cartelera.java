@@ -30,8 +30,11 @@ public class Cartelera extends CustomPanel {
 		btn_comprar = new CustomButton("Comprar");
 		
 		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] paths = { workingDirectory + "//src//img//peli_0_carteleta_back.png",
-		workingDirectory + "//src//img//fondoPrueba2.png" };
+		String[] paths = { 
+			workingDirectory + "//src//img//peli_0_carteleta_back.png",
+			workingDirectory + "//src//img//fondoPrueba2.png",
+			workingDirectory + "//src//img//peli_0_carteleta_back.png", 
+		};
 		slide = new Slide(paths, 1008, 729);
 		
 		slide.setBounds(0, 0, 1008, 729);
@@ -50,6 +53,7 @@ public class Cartelera extends CustomPanel {
 
 	public void cargardata() {
 		slide.setPos(0);
+		slide.initTransition();
 	}
 
 	public void descargadata() {}
