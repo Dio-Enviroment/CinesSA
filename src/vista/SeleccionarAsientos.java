@@ -57,14 +57,12 @@ public class SeleccionarAsientos extends CustomPanel {
 	
 	private JLabel[] num = new JLabel[8];
 	private JLabel[] let = new JLabel[8];
-	
+	//private Stack <Integer> salaPre ;
 	
 	private JPanel pn_letras;
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
 		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
-		Stack <Integer> salaPre = new Stack<Integer>();
-		salaPre = ctrSala.getSalaPre();
 		setBounds(0, 0, width, height);
 		setLayout(null);
 		
@@ -155,6 +153,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	public void descargardata() {
 		numeros=null;
 		letras=null;
+		//salaPre=null;
 		this.lbl_asiento.setText("0");
 		invisible();
 		invisibleL();
@@ -193,6 +192,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		}
 		this.lbl_asiento.setText(ctrView.getContador());
 		this.btncomprar.setEnabled(false);
+		//salaPre = ctrSala.getSalaPre();
 		refreshBotones(asientos);
 		
 		showcomponet(true);
@@ -239,6 +239,9 @@ public class SeleccionarAsientos extends CustomPanel {
 		int y = dim[0].length;
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
+				//if(salaPre.empty()) {
+				
+				//}
 				//if(ctrSala.existPreview()){///ctrSala.existPreview() boolean
 					//if (ctrSala.getPreview()) {///boolean[][]
 						//botones[i][j].changeIcon(0);
@@ -329,7 +332,7 @@ public class SeleccionarAsientos extends CustomPanel {
 								btn.changeIcon(0);
 								btn.setCustomParameter(2, true);
 								sala.vaciarAsiento(x, y);
-								
+								//ctrSala.vaciarSeleccionados();
 								aux++;
 								lbl_asiento.setText(aux+"");
 							    btncomprar.setEnabled(false);
@@ -341,6 +344,7 @@ public class SeleccionarAsientos extends CustomPanel {
 								btn.changeIcon(1);
 								btn.setCustomParameter(2, false);
 								sala.ocuparAsiento(x, y);
+								//ctrSala.anadirSalaPre(x, y);
 								aux--;
 								lbl_asiento.setText(aux+"");
 								if(aux==0) {
@@ -351,6 +355,7 @@ public class SeleccionarAsientos extends CustomPanel {
 								btn.changeIcon(0);
 								btn.setCustomParameter(2, true);
 								sala.vaciarAsiento(x, y);
+								//ctrSala.vaciarSeleccionados();
 								aux++;
 								lbl_asiento.setText(aux+"");
 							}

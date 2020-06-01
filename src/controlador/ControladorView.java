@@ -23,8 +23,8 @@ public class ControladorView {
     private boolean activador;
     private boolean activador2;
     private boolean inicompraPrincipal=true;
-    private String nombre;
-    
+    private String nombre ;
+	
     
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
         this.container=container;
@@ -121,7 +121,7 @@ public class ControladorView {
     }
     public void setNombre(String nombre) {
     	this.nombre=nombre;
-
+    	
     }
     
 

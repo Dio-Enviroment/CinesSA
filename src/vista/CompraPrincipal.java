@@ -75,29 +75,29 @@ public class CompraPrincipal extends CustomPanel {
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
 	private ControladorSala ctrSala;
-<<<<<<< Upstream, based on origin/master
+
 	private Precio pr=new Precio();
 	private JComponent editor,editor2;
 	
-	private GridBagConstraints gbc_lbl_cedula,
+	/*private GridBagConstraints gbc_lbl_cedula,
 	gbc_txt_cedula,gbc_lbl_nombre,gbc_txt_nombre,
 	gbc_lbl_telefono,gbc_txt_fono,gbc_lbl_direccion,
 	gbc_txt_direccion,gbc_lbl_pelicula,gbc_lbl_tituloPelicula,
 	gbc_lbl_tiiposala,gbc_lbl_boletos,gbc_lbl_sp,gbc_lbl_ninios,
 	gbc_sp_ninios,gbc_lbl_adultos,gbc_sp_adultos,gbc_btn_selecionAsiento,
 	gbc_lbl_contador,gbc_lbl_subtotal,gbc_lbl_valor_Subtotal,
-	gbc_lbl_iva,gbc_lbl_valor_iva,gbc_lbl_total,gbc_lbl_valor_total;
+	gbc_lbl_iva,gbc_lbl_valor_iva,gbc_lbl_total,gbc_lbl_valor_total;*/
 	
-=======
-	private Precio pr = new Precio();
-	private JComponent editor, editor2;
+
+	/*private Precio pr = new Precio();
+	private JComponent editor, editor2;*/
 
 	private GridBagConstraints gbc_lbl_cedula, gbc_txt_cedula, gbc_lbl_nombre, gbc_txt_nombre, gbc_lbl_telefono,
 			gbc_txt_fono, gbc_lbl_direccion, gbc_txt_direccion, gbc_lbl_pelicula, gbc_lbl_tituloPelicula,
 			gbc_lbl_tiiposala, gbc_lbl_boletos, gbc_lbl_sp, gbc_lbl_ninios, gbc_sp_ninios, gbc_lbl_adultos,
 			gbc_sp_adultos, gbc_btn_selecionAsiento, gbc_lbl_contador, gbc_lbl_subtotal, gbc_lbl_valor_Subtotal,
 			gbc_lbl_iva, gbc_lbl_valor_iva, gbc_lbl_total, gbc_lbl_valor_total;
->>>>>>> bbb677f compraprin
+
 
 	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorSala ctrSala,
 			ControladorView ctrView) {

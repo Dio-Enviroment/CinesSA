@@ -52,10 +52,6 @@ public class Main extends JFrame {
 		
 		controladorView.changeCartelera();
 		
-<<<<<<< Upstream, based on origin/master
-=======
-	
->>>>>>> bbb677f compraprin
 	}
 
 	

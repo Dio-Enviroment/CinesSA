@@ -79,7 +79,7 @@ public class Boleteria extends CustomPanel {
 		formulary.add(title2);
 		formulary.add(lb2);
 		formulary.add(lb1);
-		
+	
 		add(front);
 		add(formulary);
 		add(back);
