@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.Graphics;
-
+import java.awt.Component;
 public class Slide extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -22,6 +22,10 @@ public class Slide extends JPanel {
 
 	private Timer timer = new Timer();
 	private TimerTask task;
+
+	private int location = 0;
+	private int timeTransition = 2000, delayTransition = 2000;
+	private Component externalComponet; 
 
 	protected EventListenerList listenerList = new EventListenerList();
 
@@ -44,8 +48,11 @@ public class Slide extends JPanel {
 
 	}
 
-	private int location = 0;
-	private int timeTransition = 2000, delayTransition = 2000;
+
+
+	public void setExternalComponent(Component component){
+		this.externalComponet=component;
+	}
 
 	public void initTransition() {
 		setPos(0);
@@ -56,9 +63,18 @@ public class Slide extends JPanel {
 			public void run() {
 				int calFin = slideItems.length * width - width;
 				int calPos = location % width;
-
+				
 				slideContainer.setLocation(location * -1, 0);
-
+				System.out.println(Thread.currentThread().getName());
+				if (externalComponet.isVisible()) {
+					externalComponet.repaint();
+					externalComponet.setVisible(true);
+				}
+				else{
+					System.out.println("x");
+				}
+				
+				
 				if (retorno) {
 					if (location < calFin) {
 						location++;
@@ -87,7 +103,8 @@ public class Slide extends JPanel {
 					}
 					fireChangePos(new ChangePos(this));
 					try {
-						Thread.currentThread().sleep(1000);
+						Thread.currentThread();
+						Thread.sleep(1000);
 					} catch (InterruptedException ex) {
 						Thread.currentThread().interrupt();
 					}
