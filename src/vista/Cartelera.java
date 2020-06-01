@@ -8,9 +8,11 @@ import java.util.TimerTask;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import componentes.ChangeItem;
 import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.Slide;
+import componentes.Slide.ChangeItemListener;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 
@@ -84,6 +86,15 @@ public class Cartelera extends CustomPanel {
 				btn_comprar.repaint();
 			}
 
+		});
+
+		slide.addChangeItem(new componentes.ChangeItemListener(){
+		
+			@Override
+			public void ChangeItemEvent(ChangeItem evt) {
+				// TODO Auto-generated method stub
+				
+			}
 		});
 	}
 }

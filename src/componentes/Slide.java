@@ -9,8 +9,13 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.Graphics;
+import java.util.EventListener;
+import java.util.EventObject;
+
+import javax.swing.event.EventListenerList;
 
 public class Slide extends JPanel {
+	protected EventListenerList listenerList = new EventListenerList();
 
 	private static final long serialVersionUID = 1L;
 	private SlideItem[] slideItems;
@@ -118,6 +123,19 @@ public class Slide extends JPanel {
 		return this.pos;
 	}
 
+	public void addChangeItem(ChangeItemListener listener) {
+		listenerList.add(ChangeItemListener.class, listener);
+	}
+
+	void fireMyEvent(ChangeItem evt) {
+		Object[] listeners = listenerList.getListenerList();
+		for (int i = 0; i < listeners.length; i = i+2) {
+		  if (listeners[i] == ChangeItemListener.class) {
+			((ChangeItemListener) listeners[i+1]).ChangeItemEvent(evt);
+		  }
+		}
+	  }
+
 	class SlideContainer extends JPanel{
 	
 		private static final long serialVersionUID = 1L;
@@ -152,4 +170,19 @@ public class Slide extends JPanel {
 		}
 	
 	}
+}
+
+public class ChangeItem extends EventObject {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public ChangeItem(Object source) {
+	  super(source);
+	}
+}
+
+public interface ChangeItemListener extends EventListener {
+	public void ChangeItemEvent(ChangeItem evt);
 }

@@ -135,7 +135,7 @@ public class SeleccionarAsientos extends CustomPanel {
 				// TODO Auto-generated method stub
 		
 				
-				ctrSala.vaciarSeleccionados();
+				//ctrSala.vaciarSeleccionados();
 				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();
 			}
@@ -235,6 +235,12 @@ public class SeleccionarAsientos extends CustomPanel {
 		int y = dim[0].length;
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
+				//if(ctrSala.existPreview()){///ctrSala.existPreview() boolean
+					//if (ctrSala.getPreview()) {///boolean[][]
+						//botones[i][j].changeIcon(0);
+						//botones[i][j].setEnabled(true);
+					//}
+				//}
 				if (asientos[i][j]) {
 					botones[i][j].changeIcon(2);
 					botones[i][j].setEnabled(false);

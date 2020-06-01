@@ -57,9 +57,9 @@ public class ControladorSala {
         cont--;
     }
     
-    public void añadirSalaPre(int valor) {
-    	salaPreview.push(valor);
-    }
+    // public void anadirSalaPre(int valor) {
+    // 	salaPreview.push(valor);
+    // }
     
     
     
