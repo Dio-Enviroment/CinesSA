@@ -57,17 +57,21 @@ public class SeleccionarAsientos extends CustomPanel {
 	private JLabel[] num = new JLabel[8];
 	private JLabel[] let = new JLabel[8];
 
+	private JPanel pn_letras;
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
 		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
 		setBounds(0, 0, width, height);
 		setLayout(null);
-
+		
+		
 		pn_asientos = new JPanel();
 		pn_asientos.setBounds(12, 13, 1000, 1000);
 		add(pn_asientos);
+		pn_letras = new JPanel();
+		pn_letras.setLayout(null);
 		pn_asientos.setLayout(null);
-
+		pn_asientos.add(pn_letras);
 		pn_seleccionarAsiento = new JPanel();
 		panel = new JPanel();
 		panel.setBounds(645, 645, 212, 25);
@@ -96,8 +100,6 @@ public class SeleccionarAsientos extends CustomPanel {
 
 		pn_asientos.add(lbl_asiento);
 		pn_asientos.add(pn_seleccionarAsiento);
-		// pn_seleccionarAsiento.setBackground(Color.red);
-		
 		pn_seleccionarAsiento.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 3), null, TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		pn_seleccionarAsiento.setLayout(null);
 		
@@ -156,22 +158,23 @@ public class SeleccionarAsientos extends CustomPanel {
 		numeros[5]="6";
 		numeros[6]="7";
 		numeros[7]="8";
-		 letras[0]="H";
-		 letras[1]="G";
-		 letras[2]="F";
-		 letras[3]="E";
-		 letras[4]="D";
-		 letras[5]="C";
-		 letras[6]="B";
-		 letras[7]="A";
+		 letras[0]="A";
+		 letras[1]="B";
+		 letras[2]="C";
+		 letras[3]="D";
+		 letras[4]="E";
+		 letras[5]="F";
+		 letras[6]="G";
+		 letras[7]="H";
 		sala = ctrSala.getSala(0);
 		asientos = sala.getAsientos();
+		pn_letras.setBounds(155, 120, 40, 62* asientos.length);
 		pn_seleccionarAsiento.setBounds(200, 120, 77*asientos[0].length , 62* asientos.length);
 		for (int i = 0; i < asientos[0].length; i++) {
 			num[i].setText(numeros[i]);
 			num[i].setVisible(true);
 		}
-		for (int i = 8-asientos.length; i < 8 ; i++) {
+		for (int i = 0; i < asientos.length ; i++) {
 			let[i].setText(letras[i]);
 			let[i].setVisible(true);
 		}
@@ -193,19 +196,18 @@ public class SeleccionarAsientos extends CustomPanel {
 			pn_asientos.add(num[i]);
 		}
 		
-		int w =160;
-		int z =20;
+		int w =10;
+		int z =10;
+		
 		for (int i = 0; i < let.length; i++) {
 			JLabel l = new JLabel();
 			l.setFont(new Font("Verdana", Font.BOLD, 18));
-			l.setBounds(w,z, 15, 18);
-			z+=65;
+			l.setBounds(w,z, 15, 40);
+			z+=58;
 			let[i]=l;
-			pn_asientos.add(let[i]);
+			pn_letras.add(let[i]);
 		}
 	}
-	
-	//pn_seleccionarAsiento.setBounds(200, 120, 77*asientos[0].length , 62* asientos.length);
 	public void showcomponet(boolean visible) {
 		panel.setVisible(visible);
 		btncomprar.setVisible(visible);
@@ -214,6 +216,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		lbl_asientos.setVisible(visible);
 		lbl_asiento.setVisible(visible);
 		pn_asientos.setVisible(visible);
+		pn_letras.setVisible(visible);
 	}
 
 	private void refreshBotones(boolean[][] dim) {
@@ -231,7 +234,6 @@ public class SeleccionarAsientos extends CustomPanel {
 			}
 		}
 	}
-
 	/*private void valorIni(boolean[][] dim) {
 		int x = dim.length;
 		int y = dim[0].length;
