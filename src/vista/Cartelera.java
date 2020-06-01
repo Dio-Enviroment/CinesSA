@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import componentes.ChangeItem;
+import componentes.ChangePos;
+import componentes.ChangePosListener;
 import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.Slide;
@@ -88,13 +90,13 @@ public class Cartelera extends CustomPanel {
 
 		});
 
-		// slide.addChangeItem(new componentes.ChangeItemListener(){
+		slide.addChangePos(new ChangePosListener(){
 		
-		// 	@Override
-		// 	public void ChangeItemEvent(ChangeItem evt) {
-		// 		System.out.println("x");
+			@Override
+			public void ChangePosEvent(ChangePos evt) {
+				System.out.println(slide.getPos());
 				
-		// 	}
-		// });
+			}
+		});
 	}
 }
