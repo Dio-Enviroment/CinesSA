@@ -23,6 +23,7 @@ public class ControladorView {
     private boolean activador;
     private boolean activador2;
     private boolean inicompraPrincipal=true;
+    private String nombre;
     
     
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
@@ -114,15 +115,14 @@ public class ControladorView {
     public void changeAgradecimiento() {
         cargarPanel(this.agradecimiento);
     }
-<<<<<<< Upstream, based on origin/master
-=======
+
     public String getNombre () {
     	return this.nombre;
     }
     public void setNombre(String nombre) {
     	this.nombre=nombre;
-    	//obtener
+
     }
     
->>>>>>> 1b433de popio
+
 }

@@ -20,10 +20,12 @@ public class Agradecimiento extends CustomPanel {
 	public JPanel pn_agradecimiento;
 	public JLabel lblNewLabel;
 	public JLabel lbl_nombreCliente_1;
+	private ControladorView ctrView;
 
 	public Agradecimiento(int width,int height,ControladorSala ctrSala, ControladorView ctrView) {
 		setLayout(null);
 		setBounds(0, 0, width, height);
+		this.ctrView=ctrView;
 		pn_agradecimiento = new JPanel();
 		pn_agradecimiento.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		pn_agradecimiento.setBounds(29, 29, 238, 76);
