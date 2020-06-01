@@ -16,6 +16,7 @@ public class Slide extends JPanel {
 	private SlideItem[] slideItems;
 	private SlideContainer slideContainer;
 	private int width,pos;
+	private boolean retorno=true;
 
 	private Timer timer=new Timer();
 	private TimerTask task;
@@ -36,21 +37,66 @@ public class Slide extends JPanel {
 		slideContainer.setBounds(0, 0, width*paths.length, height);
 		add(slideContainer);
 
-		setPos(0);
+		
 	}
 
-	private void initTransition(){
-		// task = new TimerTask(){
-		
-		// 	@Override
-		// 	public void run() {
+	private int location=0;
+	private int timeTransition=2000,delayTransition=2000;
+
+	public void initTransition(){
+		setPos(0);
+		location=0;
+		task=null;
+		task = new TimerTask(){
+			@Override
+			public void run() {
+				int calFin=slideItems.length*width-width;
+				int calPos=location%width;
 				
-		// 	}
-		// };
+				slideContainer.setLocation(location*-1, 0);
+				if (retorno) {
+					if (location<=calFin) {
+						location++;
+					}
+					else{
+						setPos(getPos()+1);
+						location--;
+						retorno=false;
+					}
+				}
+				else{
+					if (location>=0) {
+						location--;
+					}
+					else{
+						setPos(0);
+						location++;
+						retorno=true;
+					}
+				}				
+				
+				if (calPos==0) {
+					System.out.println(getPos()+" "+width*slideItems.length/location);
+					
+					try
+					{
+    					Thread.sleep(1000);
+					}
+					catch(InterruptedException ex)
+					{
+    					Thread.currentThread().interrupt();
+					}
+				}
+
+			}
+		};
+		timer.schedule(task, timeTransition/width,delayTransition/width);
 	}
+
+	
+
 
 	public void setPos(int pos) {
-		
 		this.pos=pos;
 		slideContainer.setLocation(pos*width*-1, 0);
 	}
