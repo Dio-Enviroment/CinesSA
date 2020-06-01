@@ -61,7 +61,6 @@ public class ControladorSala {
 		salaPreview.push(valorx);
 		salaPreview.push(valory);
 	}
-
 	public Stack<Integer> getSalaPre() {
 		return salaPreview;
 	}
@@ -71,8 +70,8 @@ public class ControladorSala {
 		boolean salaPre[][] = actSala.getAsientos();
 
 		salaPreview.pop();
-		salaPreview.pop();
-
+		salaPreview.pop(); 
+		// ADSF
 	}
 
 	public void ocuparAsiento(int id, int numFil, int numCol) {
