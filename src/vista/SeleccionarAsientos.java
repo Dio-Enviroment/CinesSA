@@ -134,11 +134,18 @@ public class SeleccionarAsientos extends CustomPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 		
+				
+				ctrView.vaciarSeleccionados();
 				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();
 			}
 
 		});
+		
+		
+		
+		
+		
 	}
 
 	public void descargardata() {
@@ -307,7 +314,7 @@ public class SeleccionarAsientos extends CustomPanel {
 						boolean interuptor = (boolean) btn.getCustomParameter(2);
 						
 						if ( aux == 0) {
-							
+
 							if (!interuptor) {
 								btn.changeIcon(0);
 								btn.setCustomParameter(2, true);
@@ -339,7 +346,6 @@ public class SeleccionarAsientos extends CustomPanel {
 						}
 						
 					}
-
 				});
 
 				b1.setBounds(x, y, itemWidth, itemHeight);
@@ -354,6 +360,5 @@ public class SeleccionarAsientos extends CustomPanel {
 				pn_seleccionarAsiento.add(b1);
 			}
 		}
-		
 	}
 }

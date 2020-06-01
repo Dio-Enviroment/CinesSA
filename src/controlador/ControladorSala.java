@@ -1,6 +1,7 @@
 package controlador;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 import modelo.Boleto;
 import modelo.Sala;
@@ -15,7 +16,7 @@ public class ControladorSala {
     int numSalasPelicula=conferencias.length;
     int numSalasConferencia=peliculas.length;
     private Sala actSala;
-
+    private Stack <Integer> salaPreview = new Stack <Integer>();
     public ControladorSala(){
         generarSalas();
         setSala(0);
@@ -54,6 +55,20 @@ public class ControladorSala {
             cont++;
         }
         cont--;
+    }
+    
+    public void vaciarSeleccionados() {
+    	
+    	boolean salaPre [][] = actSala.getAsientos();
+    	for (int i = 0; i < salaPre.length; i++) {
+			for (int j = 0; j < salaPre[i].length; j++) {
+				if(salaPre[i][j] == true) {
+					int fila = salaPreview.pop();
+			    	int columna = salaPreview.pop();
+			    	salaPre[fila][columna]=false;
+				}
+			}
+		}
     }
     
     public void ocuparAsiento(int id,int numFil,int numCol){
