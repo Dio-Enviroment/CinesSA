@@ -35,7 +35,7 @@ public class Cartelera extends CustomPanel {
 		String[] paths = { 
 			workingDirectory + "//src//img//peli_0_carteleta_back.png",
 			workingDirectory + "//src//img//fondoPrueba2.png",
-			workingDirectory + "//src//img//peli_1_carteleta_back.png", 
+			workingDirectory + "//src//img//peli_0_carteleta_back.png", 
 		};
 		slide = new Slide(paths, 1008, 729);
 		
