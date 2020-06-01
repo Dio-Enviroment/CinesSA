@@ -25,6 +25,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Stack;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -56,11 +57,14 @@ public class SeleccionarAsientos extends CustomPanel {
 	
 	private JLabel[] num = new JLabel[8];
 	private JLabel[] let = new JLabel[8];
-
+	
+	
 	private JPanel pn_letras;
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
 		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
+		Stack <Integer> salaPre = new Stack<Integer>();
+		salaPre = ctrSala.getSalaPre();
 		setBounds(0, 0, width, height);
 		setLayout(null);
 		

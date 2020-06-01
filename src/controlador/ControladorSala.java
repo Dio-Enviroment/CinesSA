@@ -57,11 +57,14 @@ public class ControladorSala {
         cont--;
     }
     
-    // public void anadirSalaPre(int valor) {
-    // 	salaPreview.push(valor);
-    // }
+    public void anadirSalaPre(int valorx, int valory) {
+    	salaPreview.push(valory);
+    	salaPreview.push(valorx);
+    }
     
-    
+    public Stack<Integer> getSalaPre(){
+    	return salaPreview;
+    }
     
     
     public void vaciarSeleccionados() {
