@@ -84,8 +84,8 @@ public class ControladorView {
         }
 
         this.actPanel=customPanel;
-        this.actPanel.setVisible(true);
         this.actPanel.cargardata();
+        this.actPanel.setVisible(true);
 
     }
 

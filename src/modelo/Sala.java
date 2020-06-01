@@ -26,9 +26,9 @@ public class Sala {
 	}
 
 	private void generarAsientos(){
-		for (int j = 0; j < asientos.length; j++) {
-			for (int j2 = 0; j2 < asientos[j].length; j2++) {
-				asientos[j][j2] = false;
+		for (int i = 0; i < asientos.length; i++) {
+			for (int j = 0; j < asientos[i].length; j++) {
+				asientos[i][j] = false;
 			}
 		}
 	}

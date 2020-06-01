@@ -32,23 +32,36 @@ public class CustomButton extends JButton{
         this.press=new Color(101, 35, 34, 255);
     }
 
-    public CustomButton(Object[] path) {
+    public CustomButton(Object[] path,int num_img) {
         int cont=0;
         this.mode = 1;
         this.setUI(new CustomButtonUI(mode,path[0].toString()));
         this.setBorder(new EmptyBorder(5, 15, 5, 15));
-        if(path.length>1 && path.length>path.length-2){
-            paths=new String[path.length-2];
-            customParameter=new Object[path.length-3];
-            for (int i = 0; i < path.length-2; i++) {
-                paths[i]=(String)path[i];
-            }
+        // if(path.length>1 && path.length>path.length-2){
+        //     paths=new String[path.length-2];
+        //     customParameter=new Object[path.length-3];
+        //     for (int i = 0; i < path.length-2; i++) {
+        //         paths[i]=(String)path[i];
+        //     }
 
-            for (int i = path.length-2; i < path.length; i++) {
+        //     for (int i = path.length-2; i < path.length; i++) {
+        //         customParameter[cont]=path[i];
+        //         cont++;
+        //     }
+        // }
+        paths=new String[num_img];
+        for (int i = 0; i < num_img; i++) {
+            paths[i]=(String)path[i];
+        }
+
+        customParameter=new Object[path.length-num_img];
+        if (path.length>num_img) {
+            for (int i = num_img; i < path.length; i++) {
                 customParameter[cont]=path[i];
                 cont++;
             }
         }
+
     }
 
     public void changeIcon(int pos){
@@ -57,6 +70,10 @@ public class CustomButton extends JButton{
 
     public Object getCustomParameter(int pos){
         return customParameter[pos];
+    }
+
+    public void setCustomParameter(int pos,Object value){
+        customParameter[pos]=value;
     }
 
     @Override
