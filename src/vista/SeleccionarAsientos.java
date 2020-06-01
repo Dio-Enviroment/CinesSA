@@ -135,7 +135,7 @@ public class SeleccionarAsientos extends CustomPanel {
 				// TODO Auto-generated method stub
 		
 				
-				ctrView.vaciarSeleccionados();
+				ctrSala.vaciarSeleccionados();
 				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();
 			}
@@ -319,6 +319,7 @@ public class SeleccionarAsientos extends CustomPanel {
 								btn.changeIcon(0);
 								btn.setCustomParameter(2, true);
 								sala.vaciarAsiento(x, y);
+								
 								aux++;
 								lbl_asiento.setText(aux+"");
 							    btncomprar.setEnabled(false);
