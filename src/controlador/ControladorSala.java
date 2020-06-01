@@ -58,8 +58,8 @@ public class ControladorSala {
     }
     
     public void anadirSalaPre(int valorx, int valory) {
-    	salaPreview.push(valory);
     	salaPreview.push(valorx);
+    	salaPreview.push(valory);
     }
     
     public Stack<Integer> getSalaPre(){
@@ -70,15 +70,13 @@ public class ControladorSala {
     public void vaciarSeleccionados() {
     	
     	boolean salaPre [][] = actSala.getAsientos();
-    	for (int i = 0; i < salaPre.length; i++) {
-			for (int j = 0; j < salaPre[i].length; j++) {
-				if(salaPre[i][j] == true) {
-					int fila = salaPreview.pop();
+    	
 			    	int columna = salaPreview.pop();
+			    	int fila = salaPreview.pop();
 			    	salaPre[fila][columna]=false;
-				}
-			}
-		}
+			
+		
+    
     }
     
     public void ocuparAsiento(int id,int numFil,int numCol){
