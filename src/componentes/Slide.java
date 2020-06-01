@@ -104,8 +104,10 @@ public class Slide extends JPanel {
 		timer.schedule(task, timeTransition/width,delayTransition/width);
 	}
 
+	public void endTransition(){
+		task.cancel();
+	}
 	
-
 
 	public void setPos(int pos) {
 		this.pos=pos;
