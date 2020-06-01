@@ -87,8 +87,7 @@ public class Slide extends JPanel {
 					}
 					fireChangePos(new ChangePos(this));
 					try {
-						Thread.currentThread();
-						Thread.sleep(1000);
+						Thread.currentThread().sleep(1000);
 					} catch (InterruptedException ex) {
 						Thread.currentThread().interrupt();
 					}
