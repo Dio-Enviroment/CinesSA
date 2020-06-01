@@ -50,6 +50,7 @@ public class Agradecimiento extends CustomPanel {
 <<<<<<< Upstream, based on origin/master
 <<<<<<< Upstream, based on origin/master
 <<<<<<< Upstream, based on origin/master
+<<<<<<< Upstream, based on origin/master
 =======
 		//nombre
 =======
@@ -58,6 +59,9 @@ public class Agradecimiento extends CustomPanel {
 =======
 		//sdfgdg
 >>>>>>> 35093e6 jyjy
+=======
+		
+>>>>>>> 7220f5f dedede
 		lbl_nombreCliente_1.setText(ctrView.getNombre());
 >>>>>>> 346821e nombreeee
 		showcomponet(true);
