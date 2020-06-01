@@ -14,6 +14,7 @@ public class Slide extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private SlideItem[] slideItems;
+	private int[] itemsPos;
 	private SlideContainer slideContainer;
 	private int width,pos;
 	private boolean retorno=true;
@@ -25,9 +26,11 @@ public class Slide extends JPanel {
 	public Slide(String[] paths,int width,int height) {
 		this.width=width;
 		slideItems=new SlideItem[paths.length];
+		itemsPos=new int[paths.length];
 		
 		for (int i = 0; i < paths.length; i++) {
 			slideItems[i]=new SlideItem(paths[i]);
+			itemsPos[i]=i*width*-1;
 		}
 
 		slideContainer=new SlideContainer(slideItems,height,width);
@@ -54,30 +57,38 @@ public class Slide extends JPanel {
 				int calPos=location%width;
 				
 				slideContainer.setLocation(location*-1, 0);
+				
 				if (retorno) {
-					if (location<=calFin) {
+					if (location<calFin) {
 						location++;
 					}
 					else{
-						setPos(getPos()+1);
-						location--;
 						retorno=false;
 					}
 				}
 				else{
-					if (location>=0) {
+					if (location>0) {
 						location--;
 					}
 					else{
-						setPos(0);
-						location++;
 						retorno=true;
 					}
 				}				
 				
 				if (calPos==0) {
-					System.out.println(getPos()+" "+width*slideItems.length/location);
-					
+					if (retorno) {
+						location++;
+					}
+					else{
+						location--;
+					}
+
+					for (int i = 0; i < itemsPos.length; i++) {	
+						if(itemsPos[i]==slideContainer.getLocation().getX()){
+							setPos(i);
+						}
+					}
+
 					try
 					{
     					Thread.sleep(1000);
@@ -93,8 +104,10 @@ public class Slide extends JPanel {
 		timer.schedule(task, timeTransition/width,delayTransition/width);
 	}
 
+	public void endTransition(){
+		task.cancel();
+	}
 	
-
 
 	public void setPos(int pos) {
 		this.pos=pos;

@@ -56,7 +56,9 @@ public class Cartelera extends CustomPanel {
 		slide.initTransition();
 	}
 
-	public void descargadata() {}
+	public void descargadata() {
+		slide.endTransition();
+	}
 
 	public void showcomponet(boolean visible){
 		btn_comprar.setVisible(visible);
