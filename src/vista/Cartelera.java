@@ -8,13 +8,11 @@ import java.util.TimerTask;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import componentes.ChangeItem;
 import componentes.ChangePos;
 import componentes.ChangePosListener;
 import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.Slide;
-import componentes.Slide.ChangeItemListener;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 

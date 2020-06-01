@@ -33,11 +33,11 @@ public class Boleteria extends CustomPanel {
 		setBounds(0, 0, width, height);
 		// String[] back0,String[] back1, String[] title ,
 		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] rawback = { workingDirectory + "//src//img//peli_0_boleteria_back.png" };
+		String[] rawback = { workingDirectory + "//src//img//peli_6_boleteria_back.png" };
 
-		String[] rawfront = { workingDirectory + "//src//img//peli_0_boleteria_front.png" };
+		String[] rawfront = { workingDirectory + "//src//img//peli_6_boleteria_front.png" };
 
-		String[] rawtitle = { workingDirectory + "//src//img//peli_0_boleteria_titulo.png" };
+		String[] rawtitle = { workingDirectory + "//src//img//peli_6_boleteria_titulo.png" };
 		setLayout(null);
 
 		back = new ImageAdaptable(rawback[0]);
