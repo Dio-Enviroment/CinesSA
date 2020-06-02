@@ -245,8 +245,7 @@ public class ResumenCompra extends CustomPanel {
 		for (int i = 0; i < salaPre.length; i++) {
 			for (int j = 0; j < salaPre[i].length; j++) {
 				if(salaPre[i][j]) {
-					salaAct[i][j]=true;
-					
+					salaAct[i][j]=true;	
 				}
 			}
 		}
