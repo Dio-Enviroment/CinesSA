@@ -15,11 +15,7 @@ public class ImageAdaptable extends JPanel{
     private BufferedImage img;
 
     public ImageAdaptable(String path) {
-        try {                
-            img = ImageIO.read(new File(path+""));
-         } catch (IOException ex) {
-            System.out.println("No funciona la img");  
-         }
+        setImage(path);
     }
 
     public int getWidth() {
@@ -36,5 +32,14 @@ public class ImageAdaptable extends JPanel{
         g.drawImage(img, 0, 0, this);   
         g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0f));       
 		super.paintComponent(g);
-	}
+    }
+    
+    public void setImage(String path){
+        img=null;
+        try {                
+            img = ImageIO.read(new File(path+""));
+         } catch (IOException ex) {
+            System.out.println("No funciona la img");  
+         }
+    }
 }
