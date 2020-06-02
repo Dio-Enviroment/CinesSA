@@ -25,7 +25,7 @@ public class CustomButton extends JButton{
     public CustomButton(String txt) {
         super(txt);
         this.setForeground(Color.white);
-        this.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        this.setFont(new Font("Tahoma", Font.PLAIN, 20));
         this.setUI(new CustomButtonUI(mode));
         this.setBorder(new EmptyBorder(5, 15, 5, 15));
         this.idle=new Color(148, 48, 42, 255);

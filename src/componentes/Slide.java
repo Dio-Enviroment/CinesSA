@@ -47,19 +47,16 @@ public class Slide extends JPanel {
 
 	}
 
-	@Override
-	public void paintComponents(Graphics g){
-
-	}
-
 	public void initTransition() {
 		setPos(0);
 		location = 0;
 		task = null;
 		Slide s=this;
-		// CustomButton customButton=(CustomButton)s.getComponent(1);
-		// s.setComponentZOrder(customButton, 0);
-		// s.setComponentZOrder(slideContainer, 1);
+		if (s.getComponent(1) instanceof CustomButton){
+			CustomButton customButton=(CustomButton)s.getComponent(1);
+			s.setComponentZOrder(customButton, 0);
+			s.setComponentZOrder(slideContainer, 1);
+		}
 
 		task = new TimerTask() {
 			@Override
@@ -68,12 +65,6 @@ public class Slide extends JPanel {
 				int calPos = location % width;
 
 				slideContainer.setLocation(location * -1, 0);
-				
-				//externalComponet.setVisible(true);
-
-				//System.out.println(Thread.currentThread().getName());
-				
-				
 				
 				if (retorno) {
 					if (location < calFin) {
