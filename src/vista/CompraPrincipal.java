@@ -383,6 +383,7 @@ public class CompraPrincipal extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ctrView.setCliente(txt_nombre.getText());
 				ctrView.changeResumenCompra();
 			}
 

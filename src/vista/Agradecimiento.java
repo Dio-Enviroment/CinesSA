@@ -1,6 +1,7 @@
 package vista;
 
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -21,7 +22,7 @@ public class Agradecimiento extends CustomPanel {
 	public JLabel lblNewLabel;
 	public JLabel lbl_nombreCliente_1;
 	private ControladorView ctrView;
-
+	private JTextArea texto;
 	public Agradecimiento(int width,int height,ControladorSala ctrSala, ControladorView ctrView) {
 		setLayout(null);
 		setBounds(0, 0, width, height);
@@ -30,17 +31,17 @@ public class Agradecimiento extends CustomPanel {
 		pn_agradecimiento.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		pn_agradecimiento.setBounds(29, 29, 238, 76);
 		add(pn_agradecimiento);
+		texto = new JTextArea();
+		texto.setBounds(0, 0, 238, 76);
+		texto.setEditable(false);  
+		texto.setCursor(null);  
+		texto.setOpaque(false);  
+		texto.setFocusable(false);
+		texto.setLineWrap(true);
+		texto.setWrapStyleWord(true);
+		pn_agradecimiento.add(texto);
 		
 		
-		lblNewLabel = new JLabel("Gracias por su compra");
-		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 14));
-		
-		lbl_nombreCliente = new JLabel("nombreCliente");
-		lbl_nombreCliente.setFont(new Font("Verdana", Font.BOLD, 14));
-		
-		
-		lbl_nombreCliente_1 = new JLabel("Disfrute su pel\u00EDcula");
-		lbl_nombreCliente_1.setFont(new Font("Verdana", Font.BOLD, 14));
 		
 	}
 
@@ -49,16 +50,16 @@ public class Agradecimiento extends CustomPanel {
 	}
 
 	public void cargardata() {
-
-		lbl_nombreCliente_1.setText(ctrView.getNombre());
-
+		
+		texto.setText("              GRACIAS POR SU COMPRA \n" 
+				+"                     "+ctrView.getCliente() +" \n" 
+				+ "            DISFRUTE DE SU PELICULA");
 		showcomponet(true);
 	}
 
 	public void showcomponet(boolean visible){
-		lbl_nombreCliente.setVisible(visible);
-		pn_agradecimiento.setVisible(visible);
-		lblNewLabel.setVisible(visible);
-		lbl_nombreCliente_1.setVisible(visible);
+	
+		texto.setVisible(visible);
+		pn_agradecimiento.setVisible(visible);	
 	}
 }

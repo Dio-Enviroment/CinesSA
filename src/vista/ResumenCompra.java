@@ -186,7 +186,7 @@ public class ResumenCompra extends CustomPanel {
 				ctrView.setIva("0");
 				ctrView.setSubtotal("0");
 				puesto="";
-				
+				ctrView.setCliente("");
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				ctrSala.vaciarTodos();
@@ -212,8 +212,8 @@ public class ResumenCompra extends CustomPanel {
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				
-				ctrView.changeCartelera();
-				//ctrView.changeAgradecimiento();
+				//ctrView.changeCartelera();
+				ctrView.changeAgradecimiento();
 			}
 
 		});

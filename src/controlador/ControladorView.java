@@ -28,7 +28,7 @@ public class ControladorView {
 	private String subtotal="0";
 	private String iva="0";
 	private String puestos="0";
-    
+    private String cliente="";
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
         this.container=container;
         this.cartelera=new Cartelera(1008,729,ctrProyeccion,this);
@@ -49,12 +49,15 @@ public class ControladorView {
         this.container.add(agradecimiento);
     }
     
-    
-    
-    
-    
-    
-    public String getPuestos() {
+   
+    public String getCliente() {
+		return cliente;
+	}
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+
+	public String getPuestos() {
 		return puestos;
 	}
 
