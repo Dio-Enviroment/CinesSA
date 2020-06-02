@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
 import java.awt.AlphaComposite;
 import java.awt.Component;
 
@@ -22,7 +23,8 @@ public class TransparentPanel extends JPanel {
 		refresh();
 	}
 
-	public void refresh() {;
+
+	public void refresh() {
 		for (Component component : this.getComponents()) {
 			if (component instanceof JLabel) {
 				component.getIgnoreRepaint();
