@@ -25,7 +25,6 @@ public class Slide extends JPanel {
 
 	private int location = 0;
 	private int timeTransition = 2000, delayTransition = 2000;
-	private Component externalComponet; 
 
 	protected EventListenerList listenerList = new EventListenerList();
 
@@ -48,31 +47,33 @@ public class Slide extends JPanel {
 
 	}
 
+	@Override
+	public void paintComponents(Graphics g){
 
-
-	public void setExternalComponent(Component component){
-		this.externalComponet=component;
 	}
 
 	public void initTransition() {
 		setPos(0);
 		location = 0;
 		task = null;
+		Slide s=this;
+		//Cus
+		
+		System.out.println(s.getComponent(1));
 		task = new TimerTask() {
 			@Override
 			public void run() {
 				int calFin = slideItems.length * width - width;
 				int calPos = location % width;
-				
+				s.setComponentZOrder(slideContainer, 0);
+				//System.out.println(s.getComponentZOrder(s.getComponent(1)));
+				//slideContainer.setVisible(false);
 				slideContainer.setLocation(location * -1, 0);
-				System.out.println(Thread.currentThread().getName());
-				if (externalComponet.isVisible()) {
-					externalComponet.repaint();
-					externalComponet.setVisible(true);
-				}
-				else{
-					System.out.println("x");
-				}
+				
+				//externalComponet.setVisible(true);
+
+				//System.out.println(Thread.currentThread().getName());
+				
 				
 				
 				if (retorno) {
@@ -104,7 +105,7 @@ public class Slide extends JPanel {
 					fireChangePos(new ChangePos(this));
 					try {
 						Thread.currentThread();
-						Thread.sleep(1000);
+						Thread.sleep(delayTransition);
 					} catch (InterruptedException ex) {
 						Thread.currentThread().interrupt();
 					}

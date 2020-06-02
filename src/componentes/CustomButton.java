@@ -93,7 +93,6 @@ public class CustomButton extends JButton{
         public void paint(Graphics g, JComponent c) {
             AbstractButton b = (AbstractButton) c;
             Dimension d = c.getSize();
-            
             if (mode == 1) {
                 img(g,c);
             } else {

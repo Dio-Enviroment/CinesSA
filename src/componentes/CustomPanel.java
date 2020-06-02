@@ -1,6 +1,8 @@
 package componentes;
 
 import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.Component;
 
 public class CustomPanel extends JPanel implements Controlable {
 
@@ -21,5 +23,4 @@ public class CustomPanel extends JPanel implements Controlable {
         // TODO Auto-generated method stub
 
     }
-    
 }
