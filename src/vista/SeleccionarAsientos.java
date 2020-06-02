@@ -34,6 +34,7 @@ import javax.swing.BoxLayout;
 import javax.swing.border.EmptyBorder;
 import controlador.ControladorSala;
 import controlador.ControladorView;
+import modelo.Asiento;
 import modelo.Sala;
 
 import javax.swing.UIManager;
@@ -57,7 +58,7 @@ public class SeleccionarAsientos extends CustomPanel {
 
 	private JLabel[] num = new JLabel[8];
 	private JLabel[] let = new JLabel[8];
-	private boolean [][]salaPre;
+	private ArrayList<Asiento> salaPre;
 
 	private JPanel pn_letras;
 
@@ -137,7 +138,7 @@ public class SeleccionarAsientos extends CustomPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 
-				// ctrSala.vaciarSeleccionados();
+				ctrSala.vaciarTodos();
 				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();
 			}
@@ -235,17 +236,22 @@ public class SeleccionarAsientos extends CustomPanel {
 		int y = dim[0].length;
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
-				if (salaPre[i][j] && salaPre != null) {
-					botones[i][j].changeIcon(0);
-				} else {
+				// if (salaPre[i][j]) {
+				// 	botones[i][j].changeIcon(0);
+				// 	botones[i][j].setEnabled(true);
+				// 	botones[i][j].setCustomParameter(2, true);
+				// } else {
 					if (asientos[i][j]) {
 						botones[i][j].changeIcon(2);
 						botones[i][j].setEnabled(false);
+						botones[i][j].setCustomParameter(2, false);
 					} else {
 						botones[i][j].changeIcon(0);
+						botones[i][j].setEnabled(true);
+						botones[i][j].setCustomParameter(2, true);
 					}
 					botones[i][j].setVisible(true);
-				}
+				//}
 			}
 		}
 	}
@@ -312,7 +318,7 @@ public class SeleccionarAsientos extends CustomPanel {
 							if (!interuptor) {
 								btn.changeIcon(0);
 								btn.setCustomParameter(2, true);
-								sala.vaciarAsiento(x, y);
+								//sala.vaciarAsiento(x, y);
 								ctrSala.vaciarSeleccionados(x,y);
 								System.out.println(salaPre);
 								aux++;
@@ -324,9 +330,9 @@ public class SeleccionarAsientos extends CustomPanel {
 							if (interuptor) {
 								btn.changeIcon(1);
 								btn.setCustomParameter(2, false);
-								sala.ocuparAsiento(x, y);
+								//sala.ocuparAsiento(x, y);
 								ctrSala.anadirSalaPre(x, y);
-								System.out.println(salaPre[x][y]);
+								//System.out.println(salaPre[x][y]);
 								aux--;
 								lbl_asiento.setText(aux + "");
 								if (aux == 0) {
@@ -336,7 +342,7 @@ public class SeleccionarAsientos extends CustomPanel {
 
 								btn.changeIcon(0);
 								btn.setCustomParameter(2, true);
-								sala.vaciarAsiento(x, y);
+								//sala.vaciarAsiento(x, y);
 								ctrSala.vaciarSeleccionados(x,y);
 								aux++;
 								lbl_asiento.setText(aux + "");

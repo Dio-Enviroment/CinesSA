@@ -1,19 +1,19 @@
 package modelo;
 
 public class Asiento {
-    private String columna;
-    private String fila;
+    private int columna;
+    private int fila;
 
-    public Asiento(String asiento) {
-        this.columna=""+asiento.charAt(0);
-        this.fila=""+asiento.charAt(1);
+    public Asiento(int fil,int col) {
+        this.fila=fil;
+        this.columna=col;
     }
 
-    public String getColumna() {
+    public int getColumna() {
         return columna;
     }
 
-    public String getFila() {
+    public int getFila() {
         return fila;
     }
 }

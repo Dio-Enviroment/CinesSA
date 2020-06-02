@@ -10,6 +10,7 @@ import componentes.CustomPanel;
 import controlador.ControladorBoleto;
 import controlador.ControladorSala;
 import controlador.ControladorView;
+import modelo.Asiento;
 import modelo.Sala;
 
 import javax.swing.border.LineBorder;
@@ -48,7 +49,7 @@ public class ResumenCompra extends CustomPanel {
 	private ControladorSala ctrSala;
 	private ControladorView ctrView;
 	private Sala sala;
-	private boolean [][]salaPre;
+	private ArrayList<Asiento> salaPre;
 	private boolean [][]salaAct;
 	/**
 	 * Create the panel.
@@ -174,6 +175,7 @@ public class ResumenCompra extends CustomPanel {
 		btn_cancelar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				setAsientos();
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				ctrView.changeCartelera();
@@ -187,7 +189,7 @@ public class ResumenCompra extends CustomPanel {
 		btn_comprar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//setAsientos();
+				setAsientos();
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				
@@ -242,12 +244,8 @@ public class ResumenCompra extends CustomPanel {
 		lbl_tituloPeliculaR.setVisible(visible);
 	}
 	public void setAsientos() {
-		for (int i = 0; i < salaPre.length; i++) {
-			for (int j = 0; j < salaPre[i].length; j++) {
-				if(salaPre[i][j]) {
-					salaAct[i][j]=true;	
-				}
-			}
+		for (Asiento asiento: salaPre) {
+			salaAct[asiento.getFila()][asiento.getColumna()]=true;	
 		}
 	}
 }

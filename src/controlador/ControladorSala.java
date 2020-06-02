@@ -3,6 +3,7 @@ package controlador;
 import java.util.ArrayList;
 import java.util.Stack;
 
+import modelo.Asiento;
 import modelo.Boleto;
 import modelo.Sala;
 import data.*;
@@ -15,7 +16,7 @@ public class ControladorSala {
 	int numSalasPelicula = conferencias.length;
 	int numSalasConferencia = peliculas.length;
 	private Sala actSala;
-	private boolean [][] salaPre = new boolean[8][8];
+	private ArrayList<Asiento> salaPre = new ArrayList<Asiento>();
 
 	public ControladorSala() {
 		generarSalas();
@@ -58,16 +59,25 @@ public class ControladorSala {
 	}
 
 	public void anadirSalaPre(int valorx, int valory) {
-		salaPre[valorx][valory]=true;
+		salaPre.add(new Asiento(valorx,valory));
 	}
-	public boolean[] []getSalaPre() {
+	public ArrayList<Asiento> getSalaPre() {
 		return salaPre;
 	}
 
 	public void vaciarSeleccionados(int valorx, int valory) {
-		salaPre[valorx][valory]=false;
+		//salaPre[valorx][valory]=false;
 		
-		
+		for (Asiento asiento : salaPre) {
+			if (asiento.getFila()==valorx && asiento.getColumna()==valory) {
+				salaPre.remove(asiento);
+				break;
+			}
+		}
+	}
+
+	public void vaciarTodos(){
+		salaPre.clear();
 	}
 
 	public void ocuparAsiento(int id, int numFil, int numCol) {
