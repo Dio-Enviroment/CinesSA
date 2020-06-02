@@ -13,11 +13,11 @@ public class ControladorProyeccion {
 
     public ControladorProyeccion() {
         for (Peliculas pelicula : Peliculas.values()) {
-            proyecciones.add(new Pelicula(pelicula.getBoleteria_back(),pelicula.getBoleteria_front(),pelicula.getBoleteria_title(),pelicula.getTitulo(), pelicula.getDuracion(), pelicula.getHorario(),pelicula.getGenero(),pelicula.getEdad(),pelicula.getSinapsis(),pelicula.getSalaTipo()));
+            proyecciones.add(new Pelicula(pelicula.getBoleteria_back(),pelicula.getBoleteria_front(),pelicula.getBoleteria_title(),pelicula.getCartelera_back(),pelicula.getCartelera_front(),pelicula.getCartelera_title(),pelicula.getTitulo(), pelicula.getDuracion(), pelicula.getHorario(),pelicula.getGenero(),pelicula.getEdad(),pelicula.getSinapsis(),pelicula.getSalaTipo()));
         }
         
         for (Conferencias conferencia : Conferencias.values()) {
-            proyecciones.add(new Conferencia(conferencia.getBoleteria_back(),conferencia.getBoleteria_front(),conferencia.getBoleteria_title(),conferencia.getTitulo(), conferencia.getDuracion(), conferencia.getHorario(),conferencia.getPresentador(),conferencia.getTematica(),conferencia.getSalaTipo()));
+            proyecciones.add(new Conferencia(conferencia.getBoleteria_back(),conferencia.getBoleteria_front(),conferencia.getBoleteria_title(),conferencia.getCartelera_back(),conferencia.getCartelera_front(),conferencia.getCartelera_title(),conferencia.getTitulo(), conferencia.getDuracion(), conferencia.getHorario(),conferencia.getPresentador(),conferencia.getTematica(),conferencia.getSalaTipo()));
         }
     }
 

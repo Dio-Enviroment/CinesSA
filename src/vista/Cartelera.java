@@ -36,14 +36,10 @@ public class Cartelera extends CustomPanel {
 		btn_comprar = new CustomButton("Comprar");
 		
 		File workingDirectory = new File(System.getProperty("user.dir"));
-		// String[] paths = { 
-		// 	workingDirectory + "//src//img//peli_0_carteleta_back.png",
-		// 	workingDirectory + "//src//img//fondoPrueba2.png",
-		// 	workingDirectory + "//src//img//peli_0_carteleta_back.png", 
-		// };
+
 		String[] paths=new String[ctrProyeccion.getProyeccions().size()]; 
 		for (Proyeccion proyeccion : ctrProyeccion.getProyeccions()) {
-			paths[cont]=proyeccion.getBoleteriaBack();
+			paths[cont]=proyeccion.getCarteleraBack();
 			cont++;
 		}
 		slide = new Slide(paths, 1008, 729);

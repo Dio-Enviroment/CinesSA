@@ -8,6 +8,9 @@ public class Proyeccion {
 	protected String boleteria_back;
 	protected String boleteria_front;
 	protected String boleteria_title;
+	protected String cartelera_back;
+	protected String cartelera_front;
+	protected String cartelera_title;
 	protected String duracion;
 	protected String[] horario;
 	private String hora;
@@ -15,10 +18,13 @@ public class Proyeccion {
 	protected String salaTipo;
 	private String tipoEvento;
 	private File workingDirectory = new File(System.getProperty("user.dir"));
-	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String titulo,String duracion, String horario,String salaTipo) {
+	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String cartelera_front,String cartelera_title,String titulo,String duracion, String horario,String salaTipo) {
 		this.boleteria_back=workingDirectory+boleteria_back;
 		this.boleteria_front=workingDirectory+boleteria_front;
 		this.boleteria_title=workingDirectory+boleteria_title;
+		this.cartelera_back=workingDirectory+cartelera_back;
+		this.cartelera_front=workingDirectory+cartelera_front;
+		this.cartelera_title=workingDirectory+cartelera_title;
 		this.duracion=duracion;
 		if (this instanceof Pelicula) {
 			this.horario=horario.split("-");
@@ -29,6 +35,18 @@ public class Proyeccion {
 		}
 		this.titulo=titulo;
 		this.salaTipo=salaTipo;
+	}
+
+	public String getCarteleraBack() {
+		return this.cartelera_back;
+	}
+
+	public String getCarteleraFront() {
+		return this.cartelera_front;
+	}
+
+	public String getCarteleraTitle() {
+		return this.cartelera_title;
 	}
 
 	public String getBoleteriaBack() {
