@@ -57,9 +57,9 @@ public class Slide extends JPanel {
 		location = 0;
 		task = null;
 		Slide s=this;
-		CustomButton customButton=(CustomButton)s.getComponent(1);
-		s.setComponentZOrder(customButton, 0);
-		s.setComponentZOrder(slideContainer, 1);
+		// CustomButton customButton=(CustomButton)s.getComponent(1);
+		// s.setComponentZOrder(customButton, 0);
+		// s.setComponentZOrder(slideContainer, 1);
 
 		task = new TimerTask() {
 			@Override

@@ -182,6 +182,7 @@ public class ResumenCompra extends CustomPanel {
 				//setAsientos();
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
+				ctrSala.vaciarTodos();
 				ctrView.changeCartelera();
 			}
 

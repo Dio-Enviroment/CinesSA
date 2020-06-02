@@ -78,6 +78,7 @@ public class ControladorSala {
 
 	public void vaciarTodos(){
 		salaPre.clear();
+		System.out.println(salaPre.size());
 	}
 
 	public void ocuparAsiento(int id, int numFil, int numCol) {
