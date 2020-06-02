@@ -57,17 +57,16 @@ public class Slide extends JPanel {
 		location = 0;
 		task = null;
 		Slide s=this;
-		//Cus
-		
-		System.out.println(s.getComponent(1));
+		CustomButton customButton=(CustomButton)s.getComponent(1);
+		s.setComponentZOrder(customButton, 0);
+		s.setComponentZOrder(slideContainer, 1);
+
 		task = new TimerTask() {
 			@Override
 			public void run() {
 				int calFin = slideItems.length * width - width;
 				int calPos = location % width;
-				s.setComponentZOrder(slideContainer, 0);
-				//System.out.println(s.getComponentZOrder(s.getComponent(1)));
-				//slideContainer.setVisible(false);
+
 				slideContainer.setLocation(location * -1, 0);
 				
 				//externalComponet.setVisible(true);
