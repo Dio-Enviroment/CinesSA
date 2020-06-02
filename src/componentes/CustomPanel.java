@@ -5,22 +5,12 @@ import java.awt.Graphics;
 import java.awt.Component;
 
 public class CustomPanel extends JPanel implements Controlable {
+    @Override
+    public void cargardata() {}
 
     @Override
-    public void cargardata() {
-        // TODO Auto-generated method stub
-
-    }
+    public void descargadata() {}
 
     @Override
-    public void descargadata() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void showcomponet(boolean visible) {
-        // TODO Auto-generated method stub
-
-    }
+    public void showcomponet(boolean visible) {}
 }

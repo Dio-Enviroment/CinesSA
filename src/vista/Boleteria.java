@@ -24,7 +24,7 @@ public class Boleteria extends CustomPanel {
 	private ControladorView ctrView;
 	private ImageAdaptable back,front;
 	private TransparentPanel formulary;
-	private CustomButton title,title2;
+	private CustomButton title,compra;
 	private JLabel lb1,lb2;
 
 	public Boleteria(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
@@ -33,11 +33,11 @@ public class Boleteria extends CustomPanel {
 		setBounds(0, 0, width, height);
 		// String[] back0,String[] back1, String[] title ,
 		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] rawback = { workingDirectory + "//src//img//peli_6_boleteria_back.png" };
+		String[] rawback = { workingDirectory + "//src//img//peli_0_boleteria_back.png" };
 
-		String[] rawfront = { workingDirectory + "//src//img//peli_6_boleteria_front.png" };
+		String[] rawfront = { workingDirectory + "//src//img//peli_0_boleteria_front.png" };
 
-		String[] rawtitle = { workingDirectory + "//src//img//peli_6_boleteria_titulo.png" };
+		String[] rawtitle = { workingDirectory + "//src//img//peli_0_boleteria_titulo.png" };
 		setLayout(null);
 
 		back = new ImageAdaptable(rawback[0]);
@@ -55,15 +55,14 @@ public class Boleteria extends CustomPanel {
 		title = new CustomButton(titleS,1);
 		title.setVisible(false);
 		title.setBounds(10, 100, formularyWidth - 20, 60);
-		title2 = new CustomButton("titleS");
-		title2.setBounds(10, 450, formularyWidth - 50, 60);
-		title2.setVisible(false);
-		title2.addActionListener(new ActionListener() {
+		compra = new CustomButton("Compra");
+		compra.setBounds(10, 450, formularyWidth - 50, 60);
+		compra.setVisible(false);
+		compra.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ctrView.changeCompraPrincipal();
-				//ctrView.changeCartelera();
 			}
 			
 		});
@@ -75,26 +74,27 @@ public class Boleteria extends CustomPanel {
 		lb2.setForeground(Color.WHITE);
 		lb2.setBounds(10, 270, formularyWidth-20, 60);
 		
-		formulary.add(title);
-		formulary.add(title2);
-		formulary.add(lb2);
-		formulary.add(lb1);
+		formulary.add(title,0);
+		formulary.add(lb2,1);
+		formulary.add(lb1,2);
+		formulary.add(compra,3);
 	
 		add(front);
 		add(formulary);
 		add(back);
-		//ss
 		
 	}
 
+	
+
 	public void cargardata() {
 		title.setVisible(true);
-		title2.setVisible(true);
+		compra.setVisible(true);
 	}
 
 	public void descargadata() {
 		title.setVisible(false);
-		title2.setVisible(false);
+		compra.setVisible(false);
 	}
 
 	public void showcomponet(boolean visible){
@@ -102,14 +102,6 @@ public class Boleteria extends CustomPanel {
 		front.setVisible(visible);
 		formulary.setVisible(visible);
 		title.setVisible(visible);
-		title2.setVisible(visible);
-		// formulary.add(title);
-		// formulary.add(title2);
-		// formulary.add(lb2);
-		// formulary.add(lb1);
-		
-		// add(front);
-		// add(formulary);
-		// add(back);
+		compra.setVisible(visible);
 	}
 }
