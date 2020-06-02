@@ -2,139 +2,155 @@ package data;
 
 public enum Peliculas {
 
-
-	Peli_0("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","Iron Man 3", 
+	Peli_0("//src//img//peli_0_boleteria_back.png",
+			"//src//img//peli_0_boleteria_front.png",
+			"//src//img//peli_0_boleteria_titulo.png",
+			"Iron Man 3", 
 			duracion(130),
 			horarios(),
-			"Fant�stico. Ciencia ficci�n. Acci�n | Superh�roes. C�mic. Marvel Comics. Secuela. 3-D. Robots. Terrorismo",
+			"Fantastico. Ciencia ficcion. Accion | Superheroes. Comic. Marvel Comics. Secuela. 3-D. Robots. Terrorismo",
 			12, 
-			"El descarado y brillante empresario Tony Stark/Iron Man se enfrentar� a un enemigo cuyo poder no conoce "
-			+ "l�mites. Cuando Stark comprende que su enemigo ha destruido su universo personal, se embarca en una "
-			+ "angustiosa b�squeda para encontrar a los responsables. Este viaje pondr� a prueba su entereza una y "
-			+ "otra vez. Acorralado, Stark tendr� que sobrevivir por sus propios medios, confiando en su ingenio y"
-			+ " su instinto para proteger a las personas que quiere.",
-			"normal"),
-	Peli_1("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","American Pie 2", 
+			"El descarado y brillante empresario Tony Stark/Iron Man se enfrentara a un enemigo cuyo poder no conoce "
+					+ "limites. Cuando Stark comprende que su enemigo ha destruido su universo personal, se embarca en una "
+					+ "angustiosa busqueda para encontrar a los responsables. Este viaje pondra a prueba su entereza una y "
+					+ "otra vez. Acorralado, Stark tendra que sobrevivir por sus propios medios, confiando en su ingenio y"
+					+ " su instinto para proteger a las personas que quiere.",
+			"normal",
+			"//src//img//peli_0_boleteria_iron_man_frase.png"),
+	
+	Peli_1("//src//img//peli_1_boleteria_back.png",
+			"//src//img//peli_1_boleteria_front.png",
+			"//src//img//peli_1_boleteria_titulo.png",
+			"American Pie 2", 
 			duracion(104),
 			horarios(), 
 			"Comedia | Adolescencia. Comedia juvenil. Secuela",
 			18,
 			"Los protagonistas masculinos de la primera entrega, entonces obsesionados por perder la virginidad,"
-			+ " se reencuentran en su pueblo natal tras su primer a�o en la universidad. Ha pasado un a�o, y Jim "
-			+ "(Jason Biggs), Oz (Chris Klein), Kevin (Thomas Ian Nicholas) y Finch (Eddie Kay Thomas) deciden "
-			+ "para pasar juntos el verano. Para poder tener independencia y perseguir mujeres, como "
-			+ "tradicionalmente acostumbran, aunque sin �xito, deciden alquilar una casa en la playa. Como el"
-			+ " alquiler es algo caro deciden invitar tambi�n a Stifler (Seann William Scott), quien adem�s de "
-			+ "tener mucho dinero, supuestamente sabe mucho de mujeres, aunque su personalidad es detestable.",
-			"imax"),
-	Peli_2("//src//img//peli_0_boleteria_back.png",
-		"//src//img//peli_0_boleteria_front.png",
-		"//src//img//peli_0_boleteria_titulo.png",
+					+ " se reencuentran en su pueblo natal tras su primer ano en la universidad. Ha pasado un ano, y Jim "
+					+ "(Jason Biggs), Oz (Chris Klein), Kevin (Thomas Ian Nicholas) y Finch (Eddie Kay Thomas) deciden "
+					+ "para pasar juntos el verano. Para poder tener independencia y perseguir mujeres, como "
+					+ "tradicionalmente acostumbran, aunque sin exito, deciden alquilar una casa en la playa. Como el"
+					+ " alquiler es algo caro deciden invitar tambien a Stifler (Seann William Scott), quien ademas de "
+					+ "tener mucho dinero, supuestamente sabe mucho de mujeres, aunque su personalidad es detestable.",
+			"imax",
+			"//src//img//peli_1_boleteria_american_pie_frase.png"),
+	
+	Peli_2("//src//img//peli_2_boleteria_back.png",
+		"//src//img//peli_2_boleteria_front.png",
+		"//src//img//peli_2_boleteria_titulo.png",
 		"Drag Me To Hell",
 			duracion(95),
 			horarios(), 
 			"Terror. Thriller | Sobrenatural. Comedia de terror",
 			18,
-			"La joven Christine Brown (Alison Lohman), ambiciosa apoderada de un banco de Los �ngeles, sale con un"
-			+ " hombre encantador, el profesor Clay Dalton (Justin Long). El trabajo de Christine consiste en "
-			+ "conceder pr�stamos hipotecarios. Un d�a la se�ora Ganush, una misteriosa anciana (Lorna Raver), "
-			+ "va al banco para pedirle una moratoria, pero Christine se la niega, y la se�ora Ganush pierde su "
-			+ "casa. La anciana decide entonces vengarse lanz�ndole una maldici�n que convierte su vida en un infierno."
-			+ " Ante la incomprensi�n de su esc�ptico novio, Christine busca la ayuda de un vidente (Dileep Rao) para"
-			+ " salvar su alma de una condenaci�n eterna. Intentando ayudarla a recobrar una vida normal, el vidente"
-			+ " la gu�a en una fren�tica carrera para conjurar el hechizo. Pero las fuerzas del mal se acercan y Christine "
-			+ "debe enfrentarse a algo impensable.",
-			"normal"),
-			Peli_3("//src//img//peli_0_boleteria_back.png",
-			"//src//img//peli_0_boleteria_front.png",
-			"//src//img//peli_0_boleteria_titulo.png",
+			"La joven Christine Brown (Alison Lohman), ambiciosa apoderada de un banco de Los Angeles, sale con un"
+					+ " hombre encantador, el profesor Clay Dalton (Justin Long). El trabajo de Christine consiste en "
+					+ "conceder prestamos hipotecarios. Un dia la senora Ganush, una misteriosa anciana (Lorna Raver), "
+					+ "va al banco para pedirle una moratoria, pero Christine se la niega, y la senora Ganush pierde su "
+					+ "casa. La anciana decide entonces vengarse lanzandole una maldicion que convierte su vida en un infierno."
+					+ " Ante la incomprension de su esceptico novio, Christine busca la ayuda de un vidente (Dileep Rao) para"
+					+ " salvar su alma de una condenacion eterna. Intentando ayudarla a recobrar una vida normal, el vidente"
+					+ " la guia en una frenetica carrera para conjurar el hechizo. Pero las fuerzas del mal se acercan y Christine "
+					+ "debe enfrentarse a algo impensable.",
+			"normal",
+			"//src//img//peli_2_boleteria_drag_me_to_hell_frase.png"),
+	
+	Peli_3("//src//img//peli_3_boleteria_back.png",
+			"//src//img//peli_3_boleteria_front.png",
+			"//src//img//peli_3_boleteria_titulo.png",
 			"Kung Fu Panda",
 				duracion(95),
 				horarios(), 
-				"Ciencia ficci�n. Acci�n. Terror | Supervivencia. Pandemias. Vampiros. Remake. Futuro postapocal�ptico",
+				"Ciencia ficcion. Accion. Terror | Supervivencia. Pandemias. Vampiros. Remake. Futuro postapocaliptico",
 				12,
-				"El protagonista es un oso panda llamado Po, el m�s vago de todas las criaturas del Valle de la Paz. "+ 
-				"Con poderosos enemigos acerc�ndose, la esperanza es depositada en una antigua profec�a que dice que "+ 
-				"un h�roe se alzar� para salvarles. Voces originales de Jack Black, Angelina Jolie, Dustin Hoffman,"+ 
-				" Lucy Liu & Jackie Chan.",
-				"imax"
-			),
-	Peli_4("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","I Am Legend", 
+				"El protagonista es un oso panda llamado Po, el mas vago de todas las criaturas del Valle de la Paz. "
+						+ "Con poderosos enemigos acercandose, la esperanza es depositada en una antigua profecia que dice que "
+						+ "un heroe se alzara para salvarles. Voces originales de Jack Black, Angelina Jolie, Dustin Hoffman,"
+						+ " Lucy Liu & Jackie Chan.",
+				"imax",
+				"//src//img//peli_3_boleteria_kung_fu_panda_frase.png"),
+	
+	Peli_4("//src//img//peli_4_boleteria_back.png",
+			"//src//img//peli_4_boleteria_front.png",
+			"//src//img//peli_4_boleteria_titulo.png",
+			"I Am Legend", 
 			duracion(100),
 			horarios(), 
-			"Ciencia ficci�n. Acci�n. Terror | Supervivencia. Pandemias. Vampiros. Remake. Futuro postapocal�ptico",
+			"Ciencia ficcion. Accion. Terror | Supervivencia. Pandemias. Vampiros. Remake. Futuro postapocaliptico",
 			12,
-			"A�o 2012. Robert Neville (Will Smith) es el �ltimo hombre vivo que hay sobre la Tierra, pero no est� "
-			+ "solo. Los dem�s seres humanos se han convertido en vampiros y todos ans�an beber su sangre. Durante "
-			+ "el d�a vive en estado de alerta, como un cazador, y busca a los muertos vivientes mientras duermen; "
-			+ "pero durante la noche debe esconderse de ellos y esperar el amanecer. Esta pesadilla empez� hace tres"
-			+ " a�os: Neville era un brillante cient�fico, pero no pudo impedir la expansi�n de un terrible virus "
-			+ "creado por el hombre. �l ha sobrevivido porque es inmune al virus; todos los d�as env�a mensajes por "
-			+ "radio con la esperanza de que haya otros supervivientes, pero es in�til. Lo �nico que puede hacer es "
-			+ "buscar una f�rmula que le permita utilizar su sangre inmune para devolverles a los hombres su"
-			+ " naturaleza. Pero est� en inferioridad de condiciones y el tiempo se acaba.",
-			"normal"),
-	Peli_5("//src//img//peli_0_boleteria_back.png","//src//img//peli_0_boleteria_front.png","//src//img//peli_0_boleteria_titulo.png","Alice in Wonderland ",
+			"Ano 2012. Robert Neville (Will Smith) es el ultimo hombre vivo que hay sobre la Tierra, pero no esta "
+					+ "solo. Los demas seres humanos se han convertido en vampiros y todos ansian beber su sangre. Durante "
+					+ "el dia vive en estado de alerta, como un cazador, y busca a los muertos vivientes mientras duermen; "
+					+ "pero durante la noche debe esconderse de ellos y esperar el amanecer. Esta pesadilla empezo hace tres"
+					+ " anos: Neville era un brillante cientifico, pero no pudo impedir la expansion de un terrible virus "
+					+ "creado por el hombre. El ha sobrevivido porque es inmune al virus; todos los dias envia mensajes por "
+					+ "radio con la esperanza de que haya otros supervivientes, pero es inutil. Lo unico que puede hacer es "
+					+ "buscar una formula que le permita utilizar su sangre inmune para devolverles a los hombres su"
+					+ " naturaleza. Pero esta en inferioridad de condiciones y el tiempo se acaba.",
+			"normal",
+			"//src//img//peli_4_boleteria_i_am_legend_frase.png"),
+	
+	Peli_5("//src//img//peli_5_boleteria_back.png",
+			"//src//img//peli_5_boleteria_front.png",
+			"//src//img//peli_5_boleteria_titulo.png",
+			"Alice in Wonderland",
 			duracion(108),
 			horarios(), 
-			"Fant�stico. Animaci�n. Aventuras | Cuentos. 3-D",
+			"Fantastico. Animacion. Aventuras | Cuentos. 3-D",
 			10,
-			"Inspirada en la obra hom�nima de Lewis Carroll. Alicia (Mia Wasikowska), una joven de 19 a�os,"
-			+ " acude a una mansi�n victoriana para asistir a una fiesta de la alta sociedad. Cuando est� a "
-			+ "punto de recibir p�blicamente una propuesta de matrimonio, sale corriendo tras un conejo blanco "
-			+ "y va a parar al Pa�s de las Maravillas, un lugar que hab�a visitado diez a�os antes, aunque ya no "
-			+ "lo recuerda. Ese pa�s era un reino pac�fico hasta que la Reina Roja (Helena Bonham Carter) derroc� "
-			+ "a su hermana, la Reina Blanca (Anne Hathaway), pero las criaturas que viven en �l, dispuestas a "
-			+ "rebelarse, esperan contar con el apoyo de Alicia, a la que ayudan a recordar su primera visita al "
-			+ "fant�stico reino. ",
-			"imax"),
-	Peli_6("//src//img//peli_0_boleteria_back.png",
-		"//src//img//peli_0_boleteria_front.png",
-		"//src//img//peli_0_boleteria_titulo.png",
+			"Inspirada en la obra homonima de Lewis Carroll. Alicia (Mia Wasikowska), una joven de 19 anos,"
+					+ " acude a una mansion victoriana para asistir a una fiesta de la alta sociedad. Cuando esta a "
+					+ "punto de recibir publicamente una propuesta de matrimonio, sale corriendo tras un conejo blanco "
+					+ "y va a parar al Pais de las Maravillas, un lugar que habia visitado diez anos antes, aunque ya no "
+					+ "lo recuerda. Ese pais era un reino pacifico hasta que la Reina Roja (Helena Bonham Carter) derroco "
+					+ "a su hermana, la Reina Blanca (Anne Hathaway), pero las criaturas que viven en el, dispuestas a "
+					+ "rebelarse, esperan contar con el apoyo de Alicia, a la que ayudan a recordar su primera visita al "
+					+ "fantastico reino. ",
+			"imax",
+			"//src//img//peli_5_boleteria_Alice_in_Wonderland_frase.png"),
+	
+	Peli_6("//src//img//peli_6_boleteria_back.png",
+		"//src//img//peli_6_boleteria_front.png",
+		"//src//img//peli_6_boleteria_titulo.png",
 		"Spider-Man 3", 
 			duracion(140),
 			horarios(), 
-			"Fant�stico. Acci�n | Superh�roes. C�mic. Marvel Comics. Secuela",
+			"Fantastico. Accion | Superheroes. Comic. Marvel Comics. Secuela",
 			14,
 			"Tercera entrega de las aventuras del joven Peter Parker (Maguire). Parece que Parker ha conseguido por "
-			+ "fin el equilibrio entre su devoci�n por Mary Jane y sus deberes como superh�roe. Pero, de repente, su "
-			+ "traje se vuelve negro y adquiere nuevos poderes; tambi�n �l se transforma, mostrando el lado m�s oscuro "
-			+ "y vengativo de su personalidad. Bajo la influencia del nuevo traje, Peter se convierte en un ser ego�sta que"
-			+ " s�lo se preocupa por s� mismo. Tiene, pues, que afrontar un dilema: disfrutar de sus nuevos poderes o seguir"
-			+ " siendo un h�roe compasivo. Mientras tanto, sobre �l se cierne la amenaza de dos temibles enemigos: Venom y el "
-			+ "Hombre de Arena.",
-			"normal"),
-	Peli_7("//src//img//peli_0_boleteria_back.png",
-			"//src//img//peli_0_boleteria_front.png",
-			"//src//img//peli_0_boleteria_titulo.png",
+					+ "fin el equilibrio entre su devocion por Mary Jane y sus deberes como superheroe. Pero, de repente, su "
+					+ "traje se vuelve negro y adquiere nuevos poderes; tambien el se transforma, mostrando el lado mas oscuro "
+					+ "y vengativo de su personalidad. Bajo la influencia del nuevo traje, Peter se convierte en un ser egoista que"
+					+ " solo se preocupa por si mismo. Tiene, pues, que afrontar un dilema: disfrutar de sus nuevos poderes o seguir"
+					+ " siendo un heroe compasivo. Mientras tanto, sobre el se cierne la amenaza de dos temibles enemigos: Venom y el "
+					+ "Hombre de Arena.",
+			"normal",
+			"//src//img//peli_6_boleteria_Spider_Man_frase.png"),
+
+	Peli_7("//src//img//peli_7_boleteria_back.png",
+			"//src//img//peli_7_boleteria_front.png",
+			"//src//img//peli_7_boleteria_titulo.png",
 			"Annabelle",
 			duracion(98),
 			horarios(), 
-			"Terror | Sobrenatural. Mu�ecos. Spin-off. A�os 70",
+			"Terror | Sobrenatural. Munecos. Spin-off. Anos 70",
 			16,
-			"John Form encuentra el regalo perfecto para su mujer embarazada, Mia: una preciosa e inusual mu�eca "
-			+ "vintage que lleva un vestido de novia blanco inmaculado. Sin embargo, la alegr�a de Mia al recibir a "
-			+ "Annabelle no dura mucho. Durante una espantosa noche la pareja ve como miembros de una secta sat�nica"
-			+ " invaden su hogar y los atacan brutalmente. No s�lo dejan sangre derramada y terror tras su visita�los"
-			+ " miembros de la secta conjuran a un ente de tal maldad que nada de lo que han hecho se compara al siniestro "
-			+ "camino a la maldici�n que ahora es� Annabelle.",
-			"imax");
-/*	Peli_9("/Poster/LOS PITUFOS.jpg",
-			"The Smurfs ",
-			duracion(86),
-			horarios(), 
-			"Animaci�n. Comedia. Infantil | C�mic. Cine familiar. 3-D",
-			"Todos los P�blicos",
-			"Gargamel descubre la aldea m�gica de los Pitufos y provoca con sus malas artes que la"
-			+ " abandonen y se dispersen por el bosque. Por desgracia, Tont�n se equivoca de camino y, "
-			+ "junto con otros pitufos, entrar� en una ruta prohibida. La luna azul y un portal m�gico"
-			+ " los transportar�n a Central Park, en Nueva York. Sin embargo, Gargamel sigue persigui�ndolos,"
-			+ " por lo que los Pitufos buscar�n refugio en casa de un matrimonio.");*/
+			"John Form encuentra el regalo perfecto para su mujer embarazada, Mia: una preciosa e inusual muneca "
+					+ "vintage que lleva un vestido de novia blanco inmaculado. Sin embargo, la alegria de Mia al recibir a "
+					+ "Annabelle no dura mucho. Durante una espantosa noche la pareja ve como miembros de una secta satanica"
+					+ " invaden su hogar y los atacan brutalmente. No solo dejan sangre derramada y terror tras su visita�los"
+					+ " miembros de la secta conjuran a un ente de tal maldad que nada de lo que han hecho se compara al siniestro "
+					+ "camino a la maldicion que ahora es� Annabelle.",
+			"imax",
+			"//src//img//peli_7_boleteria_Annabelle_frase.png");
+
 	private final String duracion,horario,titulo,genero,sinapsis,salaTipo;
 	private String boleteria_back,boleteria_front,boleteria_title;
+	private String frase;
 	private int edad;
 
-	Peliculas(String boleteria_back,String boleteria_front,String boleteria_title, String titulo,String duracion,String horario, String genero, int edad, String sinapsis,String salaTipo){
+	Peliculas(String boleteria_back,String boleteria_front,String boleteria_title, String titulo,String duracion,String horario, String genero, int edad, String sinapsis,String salaTipo,String frase){
 		this.boleteria_back=boleteria_back;
 		this.boleteria_front=boleteria_front;
 		this.boleteria_title=boleteria_title;
@@ -145,6 +161,7 @@ public enum Peliculas {
 		this.edad = edad;
 		this.sinapsis = sinapsis;
 		this.salaTipo=salaTipo;
+		this.frase=frase;
 	}
 
 	public String getBoleteria_back() {
@@ -234,4 +251,9 @@ public enum Peliculas {
 	public String getSalaTipo() {
 		return salaTipo;
 	}
+
+	public String getFrase() {
+		return frase;
+	}
 }
+	

@@ -45,10 +45,10 @@ public class Boleteria extends CustomPanel {
 		String[] rawtitle = { workingDirectory + "//src//img//peli_0_boleteria_titulo.png" };
 		setLayout(null);
 
-		back = new ImageAdaptable(rawback[0]);
+		back = new ImageAdaptable(workingDirectory + "//src//img//peli_0_boleteria_back.png");
 		back.setLocation(0, 0);
 
-		front = new ImageAdaptable(rawfront[0]);
+		front = new ImageAdaptable(workingDirectory + "//src//img//peli_0_boleteria_front.png");
 		front.setLocation(0, 0);
 
 		int formularyWidth = 354;
@@ -56,21 +56,13 @@ public class Boleteria extends CustomPanel {
 		formulary = new TransparentPanel();
 		formulary.setBounds(width - formularyWidth, 0, formularyWidth, height);
 
-		Object[] titleS ={ rawtitle[0]};
+		Object[] titleS ={ workingDirectory + "//src//img//peli_0_boleteria_titulo.png"};
 		title = new CustomButton(titleS,1);
 		title.setVisible(false);
 		title.setBounds(10, 150, formularyWidth - 20, 78);
 		compra = new CustomButton("Comprar");
 		compra.setBounds(45, 450, formularyWidth - 90, 60);
 		compra.setVisible(false);
-		compra.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ctrView.changeCompraPrincipal();
-			}
-			
-		});
 
 		lb1=new JLabel("Tipo:");
 		lb1.setFont (lb1.getFont ().deriveFont (20.0f));
@@ -95,22 +87,18 @@ public class Boleteria extends CustomPanel {
 		add(front);
 		add(formulary);
 		add(back);
+		iniComponentEvents();
 		showcomponet(false);
 	}
 
 	
 
 	public void cargardata() {
-		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] rawback = { workingDirectory + "//src//img//peli_0_boleteria_back.png" };
-
-		String[] rawfront = { workingDirectory + "//src//img//peli_0_boleteria_front.png" };
-
-		String[] rawtitle = { workingDirectory + "//src//img//peli_0_boleteria_titulo.png" };
-
 		proyeccion=ctrProyeccion.getActProyeccion();
-		back.setImage(rawback[0]);
-		front.setImage(rawfront[0]);
+		Object[] titleS ={ proyeccion.getBoleteriaTitle()};
+		back.setImage(proyeccion.getBoleteriaBack());
+		front.setImage(proyeccion.getBoleteriaFront());
+		//title = new CustomButton(titleS,1);
 		showcomponet(true);
 	}
 
@@ -126,5 +114,14 @@ public class Boleteria extends CustomPanel {
 		compra.setVisible(visible);
 		tipo.setVisible(visible);
 		horario.setVisible(visible);;
+	}
+
+	public void iniComponentEvents() {
+		compra.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeCompraPrincipal();
+			}
+		});
 	}
 }

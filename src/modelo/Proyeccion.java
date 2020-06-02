@@ -1,5 +1,5 @@
 package modelo;
-
+import java.io.File;
 public class Proyeccion {
 	
 	
@@ -12,15 +12,29 @@ public class Proyeccion {
 	protected String horario;
 	protected String titulo;
 	protected String salaTipo;
+	private File workingDirectory = new File(System.getProperty("user.dir"));
 	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String titulo,String duracion, String horario,String salaTipo) {
-		this.boleteria_back=boleteria_back;
-		this.boleteria_front=boleteria_front;
-		this.boleteria_title=boleteria_title;
+		this.boleteria_back=workingDirectory+boleteria_back;
+		this.boleteria_front=workingDirectory+boleteria_front;
+		this.boleteria_title=workingDirectory+boleteria_title;
 		this.duracion=duracion;
 		this.horario=horario;
 		this.titulo=titulo;
 		this.salaTipo=salaTipo;
 	}
+
+	public String getBoleteriaBack() {
+		return this.boleteria_back;
+	}
+
+	public String getBoleteriaFront() {
+		return this.boleteria_front;
+	}
+
+	public String getBoleteriaTitle() {
+		return this.boleteria_title;
+	}
+
 	public String getTitulo() {
 		return this.titulo;
 	}
