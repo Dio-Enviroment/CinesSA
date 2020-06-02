@@ -155,7 +155,7 @@ public class Slide extends JPanel {
 			try {
 				img = ImageIO.read(new File(path + ""));
 			} catch (IOException ex) {
-				System.out.println("No funciona la img");
+				System.out.println(new File(path + ""));
 			}
 		}
 

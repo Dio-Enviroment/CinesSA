@@ -46,10 +46,10 @@ public class Boleteria extends CustomPanel {
 		File workingDirectory = new File(System.getProperty("user.dir"));
 		setLayout(null);
 
-		back = new ImageAdaptable(workingDirectory + "//src//img//peli_0_boleteria_back.png");
+		back = new ImageAdaptable(workingDirectory + "//src//img//boleteria//pelicula//peli_0//back.png");
 		back.setLocation(0, 0);
 
-		front = new ImageAdaptable(workingDirectory + "//src//img//peli_0_boleteria_front.png");
+		front = new ImageAdaptable(workingDirectory + "//src//img//boleteria//pelicula//peli_0//front.png");
 		front.setLocation(0, 0);
 
 		int formularyWidth = 354;
@@ -57,7 +57,7 @@ public class Boleteria extends CustomPanel {
 		formulary = new TransparentPanel();
 		formulary.setBounds(width - formularyWidth, 0, formularyWidth, height);
 
-		Object[] titleS = { workingDirectory + "//src//img//peli_0_boleteria_titulo.png" };
+		Object[] titleS = { workingDirectory + "//src//img//boleteria//pelicula//peli_0//titulo.png" };
 		title = new CustomButton(titleS, 1);
 		title.setVisible(false);
 		title.setBounds(10, 150, formularyWidth - 20, 78);

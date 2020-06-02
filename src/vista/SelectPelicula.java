@@ -28,18 +28,18 @@ public class SelectPelicula extends CustomPanel {
 		setBounds(0, 0, width, height);
 		File workingDirectory = new File(System.getProperty("user.dir"));
 		String[] rawback={
-			workingDirectory+"//src//img//peli_0_boleteria_back.png"
+			workingDirectory+"//src//img//boleteria//pelicula//peli_0//back.png"
 		};
 
 		String[] rawitem={
-			workingDirectory+"//src//img//item0.jpg",
-			workingDirectory+"//src//img//item0.jpg",
-			workingDirectory+"//src//img//item0.jpg",
-			workingDirectory+"//src//img//item0.jpg",
-			workingDirectory+"//src//img//item0.jpg",
-			workingDirectory+"//src//img//item0.jpg",
-			workingDirectory+"//src//img//item0.jpg",
-			workingDirectory+"//src//img//item0.jpg"
+			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png"
 		};
 		
 		generateGrid(rawitem);

@@ -1,115 +1,132 @@
 package data;
 
 public enum Conferencias {
-	Conf_0("//src//img//confe_0_boleteria_back.png",
-			"//src//img//confe_0_boleteria_front.png",
-			"//src//img//confe_0_boleteria_titulo.png",
+	Conf_0("//src//img//boleteria//conferecia//confe_0//back.png",
+			"//src//img//boleteria//conferecia//confe_0//front.png",
+			"//src//img//boleteria//conferecia//confe_0//titulo.png",
 			"EL DIA DEL MEDIO AMBIENTE Y EL DIA DEL METEOROLOGO",
 			duracion(120),horarios(),
 			"JIM CANTORES","CLIMATOLOGIA",
 			"imax",
-			"//src//img//confe_0_cartelera_back.png",
-			"//src//img//confe_0_cartelera_front.png",
-			"//src//img//confe_0_cartelera_titulo.png",
-			"//src//img//conf_0_boleteria_METEOROLOGO_frase.png",
-			"//src//img//conf_0_boleteria_METEOROLOGO_horario.png"),
+			"//src//img//cartelera//conferecia//confe_0//back.png",
+			"//src//img//cartelera//conferecia//confe_0//front.png",
+			"//src//img//cartelera//conferecia//confe_0//titulo.png",
+			"//src//img//cartelera//conferecia//confe_0//leyenda.png",
+			"//src//img//cartelera//conferecia//confe_0//horario.png",
+			"//src//img//detalle//conferecia//confe_0//min.png",
+			"//src//img//detalle//pelicula//confe_0//max.png"),
 	
-	Conf_1("//src//img//confe_1_boleteria_back.png",
-			"//src//img//confe_1_boleteria_front.png",
-			"//src//img//confe_1_boleteria_titulo.png",
+	Conf_1("//src//img//boleteria//conferecia//confe_1//back.png",
+	"//src//img//boleteria//conferecia//confe_1//front.png",
+	"//src//img//boleteria//conferecia//confe_1//titulo.png",
 			"FEERIA DEL LIBRO",
 			duracion(180),horarios(),
 			"JHON C. MAXWELL","LECTURA",
 			"normal",
-			"//src//img//confe_1_cartelera_back.png",
-			"//src//img//confe_1_cartelera_front.png",
-			"//src//img//confe_1_cartelera_titulo.png",
-			"//src//img//confe_1_boleteria_FEERIA_frase.png",
-			"//src//img//confe_1_boleteria_FEERIA_horario.png"),
+			"//src//img//cartelera//conferecia//confe_1//back.png",
+			"//src//img//cartelera//conferecia//confe_1//front.png",
+			"//src//img//cartelera//conferecia//confe_1//titulo.png",
+			"//src//img//cartelera//conferecia//confe_1//leyenda.png",
+			"//src//img//cartelera//conferecia//confe_1//horario.png",
+			"//src//img//detalle//conferecia//confe_1//min.png",
+			"//src//img//detalle//pelicula//confe_1//max.png"),
 
-	Conf_2("//src//img//confe_2_boleteria_back.png",
-			"//src//img//confe_2_boleteria_front.png",
-			"//src//img//confe_2_boleteria_titulo.png",
+	Conf_2("//src//img//boleteria//conferecia//confe_2//back.png",
+	"//src//img//boleteria//conferecia//confe_2//front.png",
+	"//src//img//boleteria//conferecia//confe_2//titulo.png",
 			"CONGRESO PSICOLOGIA EDUCATIVA NEUROCIENCIAS Y EMOCION",
 			duracion(150),horarios(),
 			"NATALIE PORTMAN","PSICOLOGIA",
 			"imax",
-			"//src//img//confe_2_cartelera_back.png",
-			"//src//img//confe_2_cartelera_front.png",
-			"//src//img//confe_2_cartelera_titulo.png",
-			"//src//img//confe_2_boleteria_PSICOLOGIA_frase.png",
-			"//src//img//confe_2_boleteria_PSICOLOGIA_horario.png"),
+			"//src//img//cartelera//conferecia//confe_2//back.png",
+			"//src//img//cartelera//conferecia//confe_2//front.png",
+			"//src//img//cartelera//conferecia//confe_2//titulo.png",
+			"//src//img//cartelera//conferecia//confe_2//leyenda.png",
+			"//src//img//cartelera//conferecia//confe_2//horario.png",
+			"//src//img//detalle//conferecia//confe_2//min.png",
+			"//src//img//detalle//pelicula//confe_2//max.png"),
 
-	Conf_3("//src//img//confe_3_boleteria_back.png",
-			"//src//img//confe_3_boleteria_front.png",
-			"//src//img//confe_3_boleteria_titulo.png",
+	Conf_3("//src//img//boleteria//conferecia//confe_3//back.png",
+	"//src//img//boleteria//conferecia//confe_3//front.png",
+	"//src//img//boleteria//conferecia//confe_3//titulo.png",
 			"CONGRESO",
 			duracion(196),horarios(),
 			"ISMAEL PASCUAL","POLITICA",
 			"normal",
-			"//src//img//confe_3_cartelera_back.png",
-			"//src//img//confe_3_cartelera_front.png",
-			"//src//img//confe_3_cartelera_titulo.png",
-			"//src//img//confe_3_boleteria_CONGRESO_frase.png",
-			"//src//img//confe_3_boleteria_CONGRESO_horario.png"),
+			"//src//img//cartelera//conferecia//confe_3//back.png",
+			"//src//img//cartelera//conferecia//confe_3//front.png",
+			"//src//img//cartelera//conferecia//confe_3//titulo.png",
+			"//src//img//cartelera//conferecia//confe_3//leyenda.png",
+			"//src//img//cartelera//conferecia//confe_3//horario.png",
+			"//src//img//detalle//conferecia//confe_3//min.png",
+			"//src//img//detalle//pelicula//confe_3//max.png"),
 
-	Conf_4("//src//img//confe_4_boleteria_back.png",
-			"//src//img//confe_4_boleteria_front.png",
-			"//src//img//confe_4_boleteria_titulo.png",
+	Conf_4("//src//img//boleteria//conferecia//confe_4//back.png",
+	"//src//img//boleteria//conferecia//confe_4//front.png",
+	"//src//img//boleteria//conferecia//confe_4//titulo.png",
 			"EDICACION CONTEPORANEA",
 			duracion(175),horarios(),
 			"MARIA DOLORES","CULTURA",
 			"imax",
-			"//src//img//confe_4_cartelera_back.png",
-			"//src//img//confe_4_cartelera_front.png",
-			"//src//img//confe_4_cartelera_titulo.png",
-			"//src//img//confe_4_boleteria_EDICACION_frase.png",
-			"//src//img//confe_4_boleteria_EDICACION_horario.png"),
+			"//src//img//cartelera//conferecia//confe_4//back.png",
+			"//src//img//cartelera//conferecia//confe_4//front.png",
+			"//src//img//cartelera//conferecia//confe_4//titulo.png",
+			"//src//img//cartelera//conferecia//confe_4//leyenda.png",
+			"//src//img//cartelera//conferecia//confe_4//horario.png",
+			"//src//img//detalle//conferecia//confe_4//min.png",
+			"//src//img//detalle//pelicula//confe_4//max.png"),
 
-	Conf_5("//src//img//confe_5_boleteria_back.png",
-			"//src//img//confe_5_boleteria_front.png",
-			"//src//img//confe_5_boleteria_titulo.png",
+	Conf_5("//src//img//boleteria//conferecia//confe_5//back.png",
+	"//src//img//boleteria//conferecia//confe_5//front.png",
+	"//src//img//boleteria//conferecia//confe_5//titulo.png",
 			"SEMANA DE INFORMATICA & SISTEMAS",
 			duracion(230),horarios(),
 			"PEDRO GOMEZ","TECNOLOGIA",
 			"normal",
-			"//src//img//confe_5_cartelera_back.png",
-			"//src//img//confe_5_cartelera_front.png",
-			"//src//img//confe_5_cartelera_titulo.png",
-			"//src//img//conf_5_boleteria_INFORMATICA_frase.png",
-			"//src//img//conf_5_boleteria_INFORMATICA_horario.png"),
+			"//src//img//cartelera//conferecia//confe_5//back.png",
+			"//src//img//cartelera//conferecia//confe_5//front.png",
+			"//src//img//cartelera//conferecia//confe_5//titulo.png",
+			"//src//img//cartelera//conferecia//confe_5//leyenda.png",
+			"//src//img//cartelera//conferecia//confe_5//horario.png",
+			"//src//img//detalle//conferecia//confe_5//min.png",
+			"//src//img//detalle//pelicula//confe_5//max.png"),
 
-	Conf_6("//src//img//confe_6_boleteria_back.png",
-			"//src//img//confe_6_boleteria_front.png",
-			"//src//img//confe_6_boleteria_titulo.png",
+	Conf_6("//src//img//boleteria//conferecia//confe_6//back.png",
+	"//src//img//boleteria//conferecia//confe_6//front.png",
+	"//src//img//boleteria//conferecia//confe_6//titulo.png",
 			"AUTOESTIMA Y PROYECTO DE VIDA",
 			duracion(160),horarios(),
 			"JAVIER GONZALES","PSICOLOGIA",
 			"imax",
-			"//src//img//confe_6_cartelera_back.png",
-			"//src//img//confe_6_cartelera_front.png",
-			"//src//img//confe_6_cartelera_titulo.png",
-			"//src//img//confe_6_boleteria_AUTOESTIMA_frase.png",
-			"//src//img//confe_6_boleteria_AUTOESTIMA_horario.png"),
+			"//src//img//cartelera//conferecia//confe_6//back.png",
+			"//src//img//cartelera//conferecia//confe_6//front.png",
+			"//src//img//cartelera//conferecia//confe_6//titulo.png",
+			"//src//img//cartelera//conferecia//confe_6//leyenda.png",
+			"//src//img//cartelera//conferecia//confe_6//horario.png",
+			"//src//img//detalle//conferecia//confe_6//min.png",
+			"//src//img//detalle//pelicula//confe_6//max.png"),
 
-	Conf_7("//src//img//confe_7_boleteria_back.png",
-			"//src//img//confe_7_boleteria_front.png",
-			"//src//img//confe_7_boleteria_titulo.png",
+	Conf_7("//src//img//boleteria//conferecia//confe_7//back.png",
+	"//src//img//boleteria//conferecia//confe_7//front.png",
+	"//src//img//boleteria//conferecia//confe_7//titulo.png",
 			"ARTES DE LA VIDA",
 			duracion(293),horarios(),
 			"LUCIA MUNOZ","ARTE",
 			"normal",
-			"//src//img//confe_7_cartelera_back.png",
-			"//src//img//confe_7_cartelera_front.png",
-			"//src//img//confe_7_cartelera_titulo.png",
-			"//src//img//confe_7_boleteria_ARTES_frase.png",
-			"//src//img//confe_7_boleteria_ARTES_horario.png");
+			"//src//img//cartelera//conferecia//confe_7//back.png",
+			"//src//img//cartelera//conferecia//confe_7//front.png",
+			"//src//img//cartelera//conferecia//confe_7//titulo.png",
+			"//src//img//cartelera//conferecia//confe_7//leyenda.png",
+			"//src//img//cartelera//conferecia//confe_7//horario.png",
+			"//src//img//detalle//conferecia//confe_7//min.png",
+			"//src//img//detalle//pelicula//confe_7//max.png");
 
 	private String titulo,duracion,horario,presentador,tematica,salaTipo;
 	private String boleteria_back,boleteria_front,boleteria_title,cartelera_back,cartelera_front,cartelera_title;
-	private String frase,ima_horario;
+	private String leyenda,ima_horario;
+	private String min,max;
 	
-	Conferencias(String boleteria_back,String boleteria_front,String boleteria_title,String titulo, String duracion, String horario, String presentador, String tematica,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String frase,String ima_horario) {
+	Conferencias(String boleteria_back,String boleteria_front,String boleteria_title,String titulo, String duracion, String horario, String presentador, String tematica,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String ima_horario,String min,String max) {
 		this.boleteria_back=boleteria_back;
 		this.boleteria_front=boleteria_front;
 		this.boleteria_title=boleteria_title;
@@ -122,8 +139,10 @@ public enum Conferencias {
 		this.presentador = presentador;
 		this.tematica = tematica;
 		this.salaTipo=salaTipo;
-		this.frase=frase;
+		this.leyenda=leyenda;
 		this.ima_horario=ima_horario;
+		this.min=min;
+		this.max=max;
 	}
 
 	static String duracion(int min) { 
@@ -155,13 +174,6 @@ public enum Conferencias {
 		d=horas[in];
 		return d;
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	public String getCartelera_back() {
@@ -224,11 +236,19 @@ public enum Conferencias {
 		return salaTipo;
 	}
 	
-	public String getFrase() {
-		return frase;
+	public String getLeyenda() {
+		return leyenda;
 	}
 
 	public String getIma_horario() {
 		return ima_horario;
+	}
+
+	public String getMin() {
+		return min;
+	}
+
+	public String getMax() {
+		return max;
 	}
 }
