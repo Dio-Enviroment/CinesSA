@@ -10,6 +10,7 @@ import componentes.CustomPanel;
 import controlador.ControladorBoleto;
 import controlador.ControladorSala;
 import controlador.ControladorView;
+import modelo.Sala;
 
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -44,11 +45,17 @@ public class ResumenCompra extends CustomPanel {
 	public JButton btn_comprar;
 	public JPanel pn_resumen;
 	public JLabel lbl_tituloPeliculaR;
-
+	private ControladorSala ctrSala;
+	private ControladorView ctrView;
+	private Sala sala;
+	private boolean [][]salaPre;
+	private boolean [][]salaAct;
 	/**
 	 * Create the panel.
 	 */
 	public ResumenCompra(int width,int height, ControladorSala ctrSala, ControladorView ctrView) {
+		this.ctrSala = ctrSala;
+		this.ctrView = ctrView;
 		setLayout(null);
 		setBounds(0, 0, width, height);
 		pn_resumen = new JPanel();
@@ -180,16 +187,27 @@ public class ResumenCompra extends CustomPanel {
 		btn_comprar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ctrView.changeAgradecimiento();
+				//setAsientos();
+				ctrView.setActivador(false);
+				ctrView.setActivador2(false);
+				
+				ctrView.changeCartelera();
+				//ctrView.changeAgradecimiento();
 			}
 
 		});
 		btn_comprar.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel.add(btn_comprar);
+		sala = ctrSala.getSala(0);
+		salaAct =  sala.getAsientos();
+		salaPre = ctrSala.getSalaPre();
+		
+		
 		showcomponet(false);
 	}
 
 	public void descargardata() {
+		
 		// maxA=0;//
 		// asientos="";
 		// estado=false;
@@ -202,6 +220,7 @@ public class ResumenCompra extends CustomPanel {
 		// this.lbl_valor_total.setText("0");
 	}
 	public void cargardata() {
+		
 		showcomponet(true);
 	}
 
@@ -222,6 +241,15 @@ public class ResumenCompra extends CustomPanel {
 		pn_resumen.setVisible(visible);
 		lbl_tituloPeliculaR.setVisible(visible);
 	}
-	
+	public void setAsientos() {
+		for (int i = 0; i < salaPre.length; i++) {
+			for (int j = 0; j < salaPre[i].length; j++) {
+				if(salaPre[i][j]) {
+					salaAct[i][j]=true;
+					
+				}
+			}
+		}
+	}
 }
 
