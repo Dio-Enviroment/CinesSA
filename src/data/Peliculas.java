@@ -21,7 +21,11 @@ public enum Peliculas {
 			"//src//img//cartelera//pelicula//peli_0//titulo.png",
 			"//src//img//cartelera//pelicula//peli_0//leyenda.png",
 			"//src//img//detalle//pelicula//peli_0//min.png",
-			"//src//img//detalle//pelicula//peli_0//max.png"),
+			"//src//img//detalle//pelicula//peli_0//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 	
 	Peli_1("//src//img//boleteria//pelicula//peli_1//back.png",
 	"//src//img//boleteria//pelicula//peli_1//front.png",
@@ -44,7 +48,11 @@ public enum Peliculas {
 			"//src//img//cartelera//pelicula//peli_1//titulo.png",
 			"//src//img//cartelera//pelicula//peli_1//leyenda.png",
 			"//src//img//detalle//pelicula//peli_1//min.png",
-			"//src//img//detalle//pelicula//peli_1//max.png"),
+			"//src//img//detalle//pelicula//peli_1//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 	
 	Peli_2("//src//img//boleteria//pelicula//peli_2//back.png",
 	"//src//img//boleteria//pelicula//peli_2//front.png",
@@ -69,7 +77,11 @@ public enum Peliculas {
 			"//src//img//cartelera//pelicula//peli_2//titulo.png",
 			"//src//img//cartelera//pelicula//peli_2//leyenda.png",
 			"//src//img//detalle//pelicula//peli_2//min.png",
-			"//src//img//detalle//pelicula//peli_2//max.png"),
+			"//src//img//detalle//pelicula//peli_2//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 	
 	Peli_3("//src//img//boleteria//pelicula//peli_3//back.png",
 	"//src//img//boleteria//pelicula//peli_3//front.png",
@@ -89,7 +101,11 @@ public enum Peliculas {
 			"//src//img//cartelera//pelicula//peli_3//titulo.png",
 			"//src//img//cartelera//pelicula//peli_3//leyenda.png",
 			"//src//img//detalle//pelicula//peli_3//min.png",
-			"//src//img//detalle//pelicula//peli_3//max.png"),
+			"//src//img//detalle//pelicula//peli_3//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 	
 	Peli_4("//src//img//boleteria//pelicula//peli_4//back.png",
 	"//src//img//boleteria//pelicula//peli_4//front.png",
@@ -114,7 +130,11 @@ public enum Peliculas {
 			"//src//img//cartelera//pelicula//peli_4//titulo.png",
 			"//src//img//cartelera//pelicula//peli_4//leyenda.png",
 			"//src//img//detalle//pelicula//peli_4//min.png",
-			"//src//img//detalle//pelicula//peli_4//max.png"),
+			"//src//img//detalle//pelicula//peli_4//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 	
 	Peli_5("//src//img//boleteria//pelicula//peli_5//back.png",
 	"//src//img//boleteria//pelicula//peli_5//front.png",
@@ -138,7 +158,11 @@ public enum Peliculas {
 			"//src//img//cartelera//pelicula//peli_5//titulo.png",
 			"//src//img//cartelera//pelicula//peli_5//leyenda.png",
 			"//src//img//detalle//pelicula//peli_5//min.png",
-			"//src//img//detalle//pelicula//peli_5//max.png"),
+			"//src//img//detalle//pelicula//peli_5//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 	
 	Peli_6("//src//img//boleteria//pelicula//peli_6//back.png",
 	"//src//img//boleteria//pelicula//peli_6//front.png",
@@ -161,7 +185,11 @@ public enum Peliculas {
 			"//src//img//cartelera//pelicula//peli_6//titulo.png",
 			"//src//img//cartelera//pelicula//peli_6//leyenda.png",
 			"//src//img//detalle//pelicula//peli_6//min.png",
-			"//src//img//detalle//pelicula//peli_6//max.png"),
+			"//src//img//detalle//pelicula//peli_6//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 
 	Peli_7("//src//img//boleteria//pelicula//peli_7//back.png",
 	"//src//img//boleteria//pelicula//peli_7//front.png",
@@ -183,15 +211,22 @@ public enum Peliculas {
 			"//src//img//cartelera//pelicula//peli_7//titulo.png",
 			"//src//img//cartelera//pelicula//peli_7//leyenda.png",
 			"//src//img//detalle//pelicula//peli_7//min.png",
-			"//src//img//detalle//pelicula//peli_7//max.png");
+			"//src//img//detalle//pelicula//peli_7//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			);
 
 	private final String duracion,horario,titulo,genero,sinapsis,salaTipo;
 	private String boleteria_back,boleteria_front,boleteria_title,cartelera_back,cartelera_front,cartelera_title;
 	private String leyenda;
 	private int edad;
 	private String min,max;
-
-	Peliculas(String boleteria_back,String boleteria_front,String boleteria_title, String titulo,String duracion,String horario, String genero, int edad, String sinapsis,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String min,String max){
+	private int xfront,yfront;
+	private int xtitulo,ytitulo;
+	private int xleyenda,yleyenda;
+	
+	Peliculas(String boleteria_back,String boleteria_front,String boleteria_title, String titulo,String duracion,String horario, String genero, int edad, String sinapsis,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String min,String max,int xfront,int yfront,int xtitulo,int ytitulo,int xleyenda,int yleyenda){
 		this.boleteria_back=boleteria_back;
 		this.boleteria_front=boleteria_front;
 		this.boleteria_title=boleteria_title;
@@ -208,42 +243,60 @@ public enum Peliculas {
 		this.leyenda=leyenda;
 		this.min=min;
 		this.max=max;
+		this.xfront=xfront;
+		this.yfront=yfront;
+		this.xtitulo=xtitulo;
+		this.ytitulo=ytitulo;
+		this.xleyenda=xleyenda;
+		this.yleyenda=yleyenda;
+	}
+
+	public int getXfront() {
+		return xfront;
+	}
+
+	public int getYfront() {
+		return yfront;
+	}
+	
+	public int getXtitulo() {
+		return xtitulo;
+	}
+
+	public int getYtitulo() {
+		return ytitulo;
+	}
+
+	public int getXleyenda() {
+		return xleyenda;
+	}
+
+	public int getYleyenda() {
+		return yleyenda;
 	}
 
 	public String getCartelera_back() {
 		return cartelera_back;
 	}
-	public void setCartelera_back(String cartelera_back) {
-		this.cartelera_back = cartelera_back;
-	}
+	// public void setCartelera_back(String cartelera_back) {
+	// 	this.cartelera_back = cartelera_back;
+	// }
 
 	public String getCartelera_front() {
 		return cartelera_front;
 	}
 
-	public void setCartelera_front(String cartelera_front) {
-		this.cartelera_front = cartelera_front;
-	}
-
-
-
-
+	//public void setCartelera_front(String cartelera_front) {
+	// 	this.cartelera_front = cartelera_front;
+	// }
 
 	public String getCartelera_title() {
 		return cartelera_title;
 	}
 
-
-
-
-
-	public void setCartelera_title(String cartelera_title) {
-		this.cartelera_title = cartelera_title;
-	}
-
-
-
-
+	// public void setCartelera_title(String cartelera_title) {
+	// 	this.cartelera_title = cartelera_title;
+	// }
 
 	public String getBoleteria_back() {
 		return boleteria_back;

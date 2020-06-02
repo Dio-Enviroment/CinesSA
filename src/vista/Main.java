@@ -12,10 +12,6 @@ import controlador.ControladorView;
 public class Main extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -25,13 +21,10 @@ public class Main extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}//s
+			}
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Main() {
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
@@ -46,9 +39,6 @@ public class Main extends JFrame {
 		add(contentPane,BorderLayout.CENTER); 
 		
 		controladorView.changeCartelera();
-		
 	}
-
-	
 
 }

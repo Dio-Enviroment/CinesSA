@@ -5,6 +5,7 @@ import java.util.Stack;
 
 import modelo.Asiento;
 import modelo.Boleto;
+import modelo.Proyeccion;
 import modelo.Sala;
 import data.*;
 
@@ -13,8 +14,8 @@ public class ControladorSala {
 	private ArrayList<Sala> salas = new ArrayList<Sala>();
 	private Conferencias[] conferencias = Conferencias.values();
 	private Peliculas[] peliculas = Peliculas.values();
-	int numSalasPelicula = conferencias.length;
-	int numSalasConferencia = peliculas.length;
+	private int numSalasPelicula = conferencias.length;
+	private int numSalasConferencia = peliculas.length;
 	private Sala actSala;
 	private ArrayList<Asiento> salaPre = new ArrayList<Asiento>();
 

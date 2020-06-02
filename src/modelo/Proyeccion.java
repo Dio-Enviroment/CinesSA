@@ -17,8 +17,13 @@ public class Proyeccion {
 	protected String titulo;
 	protected String salaTipo;
 	protected String tipoEvento;
+	protected String min,max;
+	private String leyenda;
+	protected int xfront,yfront;
+	protected int xtitulo,ytitulo;
+	protected int xleyenda,yleyenda;
 	protected File workingDirectory = new File(System.getProperty("user.dir"));
-	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String cartelera_front,String cartelera_title,String titulo,String duracion, String horario,String salaTipo) {
+	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String min,String max,int xfront,int yfront,int xtitulo,int ytitulo,int xleyenda,int yleyenda,String titulo,String duracion, String horario,String salaTipo) {
 		this.boleteria_back=workingDirectory+boleteria_back;
 		this.boleteria_front=workingDirectory+boleteria_front;
 		this.boleteria_title=workingDirectory+boleteria_title;
@@ -35,6 +40,15 @@ public class Proyeccion {
 		}
 		this.titulo=titulo;
 		this.salaTipo=salaTipo;
+		this.leyenda=workingDirectory+leyenda;
+		this.min=workingDirectory+min;
+		this.max=workingDirectory+max;
+		this.xfront=xfront;
+		this.yfront=yfront;
+		this.xtitulo=xtitulo;
+		this.ytitulo=ytitulo;
+		this.xleyenda=xleyenda;
+		this.yleyenda=yleyenda;
 	}
 
 	public String getCarteleraBack() {
@@ -112,5 +126,41 @@ public class Proyeccion {
 
 	public String getTipoEvent() {
 		return this.tipoEvento;
+	}
+
+	public String getLeyenda() {
+		return leyenda;
+	}
+
+	public String getMin() {
+		return min;
+	}
+
+	public String getMax() {
+		return max;
+	}
+
+	public int getXfront() {
+		return xfront;
+	}
+
+	public int getYfront() {
+		return yfront;
+	}
+	
+	public int getXtitulo() {
+		return xtitulo;
+	}
+
+	public int getYtitulo() {
+		return ytitulo;
+	}
+
+	public int getXleyenda() {
+		return xleyenda;
+	}
+
+	public int getYleyenda() {
+		return yleyenda;
 	}
 }

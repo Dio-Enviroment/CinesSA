@@ -97,7 +97,12 @@ public class Boleteria extends CustomPanel {
 	}
 
 	public void cargardata() {
-		proyeccion = ctrProyeccion.getActProyeccion();
+		// if (ctrProyeccion.getPreproyeccion()!=null) {
+			proyeccion = ctrProyeccion.getActProyeccion();
+		// }
+		// else{
+		// 	proyeccion = ctrProyeccion.getPreproyeccion();
+		// }
 
 		back.setImage(proyeccion.getBoleteriaBack());
 		front.setImage(proyeccion.getBoleteriaFront());

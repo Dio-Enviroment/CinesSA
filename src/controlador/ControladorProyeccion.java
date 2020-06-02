@@ -10,14 +10,17 @@ import data.*;
 public class ControladorProyeccion {
     private ArrayList<Proyeccion> proyecciones=new ArrayList<Proyeccion>();
     private Proyeccion actProyeccion;
+    //private Proyeccion preProyeccion;
+
 
     public ControladorProyeccion() {
         for (Peliculas pelicula : Peliculas.values()) {
-            proyecciones.add(new Pelicula(pelicula.getBoleteria_back(),pelicula.getBoleteria_front(),pelicula.getBoleteria_title(),pelicula.getCartelera_back(),pelicula.getCartelera_front(),pelicula.getCartelera_title(),pelicula.getTitulo(), pelicula.getDuracion(), pelicula.getHorario(),pelicula.getGenero(),pelicula.getEdad(),pelicula.getSinapsis(),pelicula.getSalaTipo()));
+            
+            proyecciones.add(new Pelicula(pelicula.getBoleteria_back(),pelicula.getBoleteria_front(),pelicula.getBoleteria_title(),pelicula.getCartelera_back(),pelicula.getCartelera_front(),pelicula.getCartelera_title(),pelicula.getLeyenda(),pelicula.getMin(),pelicula.getMax(),pelicula.getXfront(),pelicula.getYfront(),pelicula.getXtitulo(),pelicula.getYtitulo(),pelicula.getXleyenda(),pelicula.getYleyenda(),pelicula.getTitulo(), pelicula.getDuracion(), pelicula.getHorario(),pelicula.getGenero(),pelicula.getEdad(),pelicula.getSinapsis(),pelicula.getSalaTipo()));
         }
         
         for (Conferencias conferencia : Conferencias.values()) {
-            proyecciones.add(new Conferencia(conferencia.getBoleteria_back(),conferencia.getBoleteria_front(),conferencia.getBoleteria_title(),conferencia.getCartelera_back(),conferencia.getCartelera_front(),conferencia.getCartelera_title(),conferencia.getTitulo(), conferencia.getDuracion(), conferencia.getHorario(),conferencia.getPresentador(),conferencia.getTematica(),conferencia.getSalaTipo()));
+            proyecciones.add(new Conferencia(conferencia.getBoleteria_back(),conferencia.getBoleteria_front(),conferencia.getBoleteria_title(),conferencia.getCartelera_back(),conferencia.getCartelera_front(),conferencia.getCartelera_title(),conferencia.getLeyenda(),conferencia.getMin(),conferencia.getMax(),conferencia.getXfront(),conferencia.getYfront(),conferencia.getXtitulo(),conferencia.getYtitulo(),conferencia.getXleyenda(),conferencia.getYleyenda(),conferencia.getTitulo(), conferencia.getDuracion(), conferencia.getHorario(),conferencia.getPresentador(),conferencia.getTematica(),conferencia.getSalaTipo()));
         }
     }
 
@@ -32,4 +35,12 @@ public class ControladorProyeccion {
     public Proyeccion getActProyeccion() {
         return actProyeccion;
     }
+
+    // public void setPreproyeccion(Proyeccion preProyeccion){
+    //     this.preProyeccion=preProyeccion;
+    // }
+
+    // public Proyeccion getPreproyeccion(){
+    //     return preProyeccion;
+    // }
 }

@@ -14,7 +14,11 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_0//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_0//horario.png",
 			"//src//img//detalle//conferecia//confe_0//min.png",
-			"//src//img//detalle//pelicula//confe_0//max.png"),
+			"//src//img//detalle//pelicula//confe_0//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 	
 	Conf_1("//src//img//boleteria//conferecia//confe_1//back.png",
 	"//src//img//boleteria//conferecia//confe_1//front.png",
@@ -29,7 +33,11 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_1//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_1//horario.png",
 			"//src//img//detalle//conferecia//confe_1//min.png",
-			"//src//img//detalle//pelicula//confe_1//max.png"),
+			"//src//img//detalle//pelicula//confe_1//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 
 	Conf_2("//src//img//boleteria//conferecia//confe_2//back.png",
 	"//src//img//boleteria//conferecia//confe_2//front.png",
@@ -44,7 +52,11 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_2//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_2//horario.png",
 			"//src//img//detalle//conferecia//confe_2//min.png",
-			"//src//img//detalle//pelicula//confe_2//max.png"),
+			"//src//img//detalle//pelicula//confe_2//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 
 	Conf_3("//src//img//boleteria//conferecia//confe_3//back.png",
 	"//src//img//boleteria//conferecia//confe_3//front.png",
@@ -59,7 +71,11 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_3//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_3//horario.png",
 			"//src//img//detalle//conferecia//confe_3//min.png",
-			"//src//img//detalle//pelicula//confe_3//max.png"),
+			"//src//img//detalle//pelicula//confe_3//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 
 	Conf_4("//src//img//boleteria//conferecia//confe_4//back.png",
 	"//src//img//boleteria//conferecia//confe_4//front.png",
@@ -74,7 +90,11 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_4//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_4//horario.png",
 			"//src//img//detalle//conferecia//confe_4//min.png",
-			"//src//img//detalle//pelicula//confe_4//max.png"),
+			"//src//img//detalle//pelicula//confe_4//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 
 	Conf_5("//src//img//boleteria//conferecia//confe_5//back.png",
 	"//src//img//boleteria//conferecia//confe_5//front.png",
@@ -89,7 +109,11 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_5//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_5//horario.png",
 			"//src//img//detalle//conferecia//confe_5//min.png",
-			"//src//img//detalle//pelicula//confe_5//max.png"),
+			"//src//img//detalle//pelicula//confe_5//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 
 	Conf_6("//src//img//boleteria//conferecia//confe_6//back.png",
 	"//src//img//boleteria//conferecia//confe_6//front.png",
@@ -104,7 +128,11 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_6//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_6//horario.png",
 			"//src//img//detalle//conferecia//confe_6//min.png",
-			"//src//img//detalle//pelicula//confe_6//max.png"),
+			"//src//img//detalle//pelicula//confe_6//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			),
 
 	Conf_7("//src//img//boleteria//conferecia//confe_7//back.png",
 	"//src//img//boleteria//conferecia//confe_7//front.png",
@@ -119,14 +147,21 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_7//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_7//horario.png",
 			"//src//img//detalle//conferecia//confe_7//min.png",
-			"//src//img//detalle//pelicula//confe_7//max.png");
+			"//src//img//detalle//pelicula//confe_7//max.png",
+			0,0, //x y del front
+			0,0, //x y del titulo
+			0,0//x y de la leyenda
+			);
 
 	private String titulo,duracion,horario,presentador,tematica,salaTipo;
 	private String boleteria_back,boleteria_front,boleteria_title,cartelera_back,cartelera_front,cartelera_title;
 	private String leyenda,ima_horario;
 	private String min,max;
+	private int xfront,yfront;
+	private int xtitulo,ytitulo;
+	private int xleyenda,yleyenda;
 	
-	Conferencias(String boleteria_back,String boleteria_front,String boleteria_title,String titulo, String duracion, String horario, String presentador, String tematica,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String ima_horario,String min,String max) {
+	Conferencias(String boleteria_back,String boleteria_front,String boleteria_title,String titulo, String duracion, String horario, String presentador, String tematica,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String ima_horario,String min,String max,int xfront,int yfront,int xtitulo,int ytitulo,int xleyenda,int yleyenda) {
 		this.boleteria_back=boleteria_back;
 		this.boleteria_front=boleteria_front;
 		this.boleteria_title=boleteria_title;
@@ -143,6 +178,36 @@ public enum Conferencias {
 		this.ima_horario=ima_horario;
 		this.min=min;
 		this.max=max;
+		this.xfront=xfront;
+		this.yfront=yfront;
+		this.xtitulo=xtitulo;
+		this.ytitulo=ytitulo;
+		this.xleyenda=xleyenda;
+		this.yleyenda=yleyenda;
+	}
+
+	public int getXfront() {
+		return xfront;
+	}
+
+	public int getYfront() {
+		return yfront;
+	}
+	
+	public int getXtitulo() {
+		return xtitulo;
+	}
+
+	public int getYtitulo() {
+		return ytitulo;
+	}
+
+	public int getXleyenda() {
+		return xleyenda;
+	}
+
+	public int getYleyenda() {
+		return yleyenda;
 	}
 
 	static String duracion(int min) { 
@@ -180,25 +245,25 @@ public enum Conferencias {
 		return cartelera_back;
 	}
 
-	public void setCartelera_back(String cartelera_back) {
-		this.cartelera_back = cartelera_back;
-	}
+	// public void setCartelera_back(String cartelera_back) {
+	// 	this.cartelera_back = cartelera_back;
+	// }
 
 	public String getCartelera_front() {
 		return cartelera_front;
 	}
 
-	public void setCartelera_front(String cartelera_front) {
-		this.cartelera_front = cartelera_front;
-	}
+	// public void setCartelera_front(String cartelera_front) {
+	// 	this.cartelera_front = cartelera_front;
+	// }
 
 	public String getCartelera_title() {
 		return cartelera_title;
 	}
 
-	public void setCartelera_title(String cartelera_title) {
-		this.cartelera_title = cartelera_title;
-	}
+	// public void setCartelera_title(String cartelera_title) {
+	// 	this.cartelera_title = cartelera_title;
+	// }
 
 	public String getBoleteria_back() {
 		return boleteria_back;

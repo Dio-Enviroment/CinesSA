@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.Color;
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -12,6 +13,8 @@ import componentes.ImageAdaptable;
 import componentes.TransparentPanel;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
+import modelo.Pelicula;
+import modelo.Proyeccion;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -22,8 +25,11 @@ public class SelectPelicula extends CustomPanel {
 	private ImageAdaptable back0;
 	private SelectItem[] selectItem;
 	private CustomButton regresar;
+	private ControladorProyeccion ctrProyeccion;
+	private Proyeccion proyeccion;
 
 	public SelectPelicula(int width,int height,ControladorProyeccion ctrProyeccion,ControladorView ctrView) {
+		this.ctrProyeccion=ctrProyeccion;
 		setLayout(null);
 		setBounds(0, 0, width, height);
 		File workingDirectory = new File(System.getProperty("user.dir"));
@@ -33,13 +39,13 @@ public class SelectPelicula extends CustomPanel {
 
 		String[] rawitem={
 			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
-			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
-			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
-			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
-			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
-			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
-			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png",
-			workingDirectory+"//src//img//detalle//pelicula//peli_0//min.png"
+			workingDirectory+"//src//img//detalle//pelicula//peli_1//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_2//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_3//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_4//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_5//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_6//min.png",
+			workingDirectory+"//src//img//detalle//pelicula//peli_7//min.png"
 		};
 		
 		generateGrid(rawitem);
@@ -81,11 +87,35 @@ public class SelectPelicula extends CustomPanel {
 		}
 	}
 
+
+	private void refreshButtons(){
+		int cont=0;
+		ArrayList<Proyeccion> proyecciones=ctrProyeccion.getProyeccions();
+		int ini,end;
+		if (proyeccion instanceof Pelicula) {
+			ini=0;
+			end=7;
+		}
+		else{
+			ini=8;
+			end=15;
+		}
+
+		for (int i = ini; i < end; i++) {
+			Proyeccion p=proyecciones.get(i);
+		
+			selectItem[cont].setImg(p.getMin());
+			cont++;
+		}
+	}
+
 	public void descargardata() {
 		showcomponet(false);
 	}
 
 	public void cargardata() {
+		proyeccion=ctrProyeccion.getActProyeccion();
+		refreshButtons();
 		showcomponet(true);
 	}
 
@@ -111,6 +141,10 @@ public class SelectPelicula extends CustomPanel {
 			add(btn_comprar);
 
 			//showcomponet(false);
+		}
+
+		public void setImg(String path){
+			img.setImg(path);
 		}
 
 		// public void descargardata() {
