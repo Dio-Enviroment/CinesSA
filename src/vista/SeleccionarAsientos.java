@@ -126,7 +126,7 @@ public class SeleccionarAsientos extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				
 				ctrView.setActivador2(true);
 				ctrView.changeCompraPrincipal();
 			}
@@ -137,7 +137,10 @@ public class SeleccionarAsientos extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-
+				ctrView.setPuestos("0");
+				ctrView.setTotal("0");
+				ctrView.setIva("0");
+				ctrView.setSubtotal("0");
 				ctrSala.vaciarTodos();
 				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();

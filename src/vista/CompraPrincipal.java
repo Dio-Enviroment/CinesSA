@@ -562,6 +562,10 @@ public class CompraPrincipal extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ctrView.setPuestos(lbl_contador.getText());
+				ctrView.setSubtotal(lbl_valor_Subtotal.getText());
+				ctrView.setTotal(lbl_valor_total.getText());
+				ctrView.setIva(lbl_valor_iva.getText());
 				ctrView.setContador(lbl_contador.getText());
 				ctrView.changeSeleccionarAsientos();
 			}
@@ -637,12 +641,12 @@ public class CompraPrincipal extends CustomPanel {
 		asientos = "";
 		estado = false;
 
-		this.lbl_contador.setText("0");
+		//this.lbl_contador.setText("0");
 		this.lbl_tituloPelicula.setText("");
 		this.lbl_tiiposala.setText("");
-		this.lbl_valor_iva.setText("0");
-		this.lbl_valor_Subtotal.setText("0");
-		this.lbl_valor_total.setText("0");
+		//this.lbl_valor_iva.setText(ctrView.getIva());
+		//this.lbl_valor_Subtotal.setText(ctrView.getSubtotal());
+		//this.lbl_valor_total.setText(ctrView.getTotal());
 		this.sp_adultos.getModel().setValue("0");
 		this.sp_ninios.getModel().setValue("0");
 	}
@@ -653,13 +657,21 @@ public class CompraPrincipal extends CustomPanel {
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
 		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
+		System.out.println(ctrView.getTotal());
+		
 		this.btn_selecionAsiento.setEnabled(ctrView.getActivador());
 		this.btn_siguiente.setEnabled(ctrView.getActivador2());
+		
 		limitarValoresJpinner();
 		maxA = Integer.parseInt(ad.getMaximum().toString());
 		aux = 0;
 		asientos = "";
 		estado = false;
+		this.lbl_contador.setText(ctrView.getPuestos());
+		this.lbl_valor_iva.setText(ctrView.getIva());
+		this.lbl_valor_Subtotal.setText(ctrView.getSubtotal());
+		this.lbl_valor_total.setText(ctrView.getTotal());
+		
 		censura();
 		activar();
 		//

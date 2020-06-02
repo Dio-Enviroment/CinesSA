@@ -24,7 +24,10 @@ public class ControladorView {
     private boolean activador2;
     private boolean inicompraPrincipal=true;
     private String nombre ;
-	
+	private String total="0";
+	private String subtotal="0";
+	private String iva="0";
+	private String puestos="0";
     
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
         this.container=container;
@@ -46,7 +49,46 @@ public class ControladorView {
         this.container.add(agradecimiento);
     }
     
-    public boolean getActivador2() {
+    
+    
+    
+    
+    
+    public String getPuestos() {
+		return puestos;
+	}
+
+	public void setPuestos(String puestos) {
+		this.puestos = puestos;
+	}
+
+	public String getTotal() {
+		return total;
+	}
+
+
+	public void setTotal(String total) {
+		this.total = total;
+	}
+
+
+	public String getSubtotal() {
+		return subtotal;
+	}
+
+	public void setSubtotal(String subtotal) {
+		this.subtotal = subtotal;
+	}
+
+	public String getIva() {
+		return iva;
+	}
+
+	public void setIva(String iva) {
+		this.iva = iva;
+	}
+
+	public boolean getActivador2() {
 		return activador2;
 	}
 

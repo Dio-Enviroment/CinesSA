@@ -175,7 +175,11 @@ public class ResumenCompra extends CustomPanel {
 		btn_cancelar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setAsientos();
+				ctrView.setPuestos("0");
+				ctrView.setTotal("0");
+				ctrView.setIva("0");
+				ctrView.setSubtotal("0");
+				//setAsientos();
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				ctrView.changeCartelera();
@@ -189,7 +193,13 @@ public class ResumenCompra extends CustomPanel {
 		btn_comprar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				ctrView.setPuestos("0");
+				ctrView.setTotal("0");
+				ctrView.setIva("0");
+				ctrView.setSubtotal("0");
 				setAsientos();
+				
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				
@@ -249,4 +259,3 @@ public class ResumenCompra extends CustomPanel {
 		}
 	}
 }
-
