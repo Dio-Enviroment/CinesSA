@@ -235,7 +235,7 @@ public class ResumenCompra extends CustomPanel {
 		
 		showcomponet(true);
 	}
-
+//55
 	public void showcomponet(boolean visible){
 		pn_resumenCompra.setVisible(visible);
 		lbl_salaR.setVisible(visible);
