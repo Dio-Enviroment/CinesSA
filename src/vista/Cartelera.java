@@ -42,6 +42,7 @@ public class Cartelera extends CustomPanel {
 		
 		slide.setBounds(0, 0, 1008, 729);
 		btn_comprar.setBounds(140, 603, 718, 40);
+		//slide.setExternalComponent(btn_comprar);
 
 		j=new JButton("sd");
 		j.setBounds(10, 50, 50, 50);
@@ -50,6 +51,7 @@ public class Cartelera extends CustomPanel {
 		
 		slide.add(btn_comprar);
 		add(slide);
+
 		iniComponentEvents();
 		showcomponet(false);
 	}
