@@ -20,6 +20,8 @@ import java.awt.AlphaComposite;
 public class SelectPelicula extends CustomPanel {
 	private TransparentPanel back1;
 	private ImageAdaptable back0;
+	private SelectItem[] selectItem;
+	private CustomButton regresar;
 
 	public SelectPelicula(int width,int height,ControladorProyeccion ctrProyeccion,ControladorView ctrView) {
 		setLayout(null);
@@ -30,42 +32,45 @@ public class SelectPelicula extends CustomPanel {
 		};
 
 		String[] rawitem={
-			workingDirectory+"//src//img//item0.png",
-			workingDirectory+"//src//img//item1.png",
-			workingDirectory+"//src//img//item0.png",
-			workingDirectory+"//src//img//item1.png",
-			workingDirectory+"//src//img//item0.png",
-			workingDirectory+"//src//img//item1.png",
-			workingDirectory+"//src//img//item0.png",
-			workingDirectory+"//src//img//item1.png"
+			workingDirectory+"//src//img//item0.jpg",
+			workingDirectory+"//src//img//item0.jpg",
+			workingDirectory+"//src//img//item0.jpg",
+			workingDirectory+"//src//img//item0.jpg",
+			workingDirectory+"//src//img//item0.jpg",
+			workingDirectory+"//src//img//item0.jpg",
+			workingDirectory+"//src//img//item0.jpg",
+			workingDirectory+"//src//img//item0.jpg"
 		};
-
+		
 		generateGrid(rawitem);
+
+		regresar=new CustomButton("Regresar");
+		regresar.setBounds(745,635, 178, 40);
+		add(regresar);
 
 		back1=new TransparentPanel();
 		back1.setBounds(0, 0, width, height);
 		add(back1);
 		
-
 		back0 = new ImageAdaptable(rawback[0]);
 		back0.setLocation(0, 0);
 		add(back0);	
 		
 		showcomponet(false);
+		this.setVisible(false);
 	}
 
 	private void generateGrid(String[] items){
 		int itemWidth=178, itemHeight=254;
-		int iniX=50,iniY=70, spaceX=65,spaceY=70;
+		int iniX=60,iniY=50, spaceX=50,spaceY=50;
 		int itemOnly4=0;
 		int x=iniX,y=iniY;
-		
+		selectItem=new SelectItem[items.length];
 		for (int i = 0; i < items.length; i++) {
-			SelectItem SelectItem=new SelectItem(items[i],itemWidth,itemHeight,37);
+			selectItem[i]=new SelectItem(items[i],itemWidth,itemHeight,37);
 			
-
-			SelectItem.setLocation(x, y);
-			add(SelectItem);
+			selectItem[i].setLocation(x, y);
+			add(selectItem[i]);
 			x+=itemWidth+spaceX;
 			itemOnly4++;
 			if (itemOnly4==4) {
@@ -74,6 +79,14 @@ public class SelectPelicula extends CustomPanel {
 				x=iniX;
 			}
 		}
+	}
+
+	public void descargardata() {
+		showcomponet(false);
+	}
+
+	public void cargardata() {
+		showcomponet(true);
 	}
 
 	public void showcomponet(boolean visible) {
@@ -86,10 +99,10 @@ public class SelectPelicula extends CustomPanel {
 
 		public SelectItem(String path,int width,int height,int buttonHeight) {
 			setLayout(null);
-			Object p=path;
+			Object[] p={path};
 			setSize(width, height);
 
-			img=new CustomButton(p);
+			img=new CustomButton(p,1);
 			img.setBounds(0, 0, width, height-buttonHeight);
 			add(img);
 
@@ -97,20 +110,20 @@ public class SelectPelicula extends CustomPanel {
 			btn_comprar.setBounds(0, height-buttonHeight, width, buttonHeight);
 			add(btn_comprar);
 
-			showcomponet(false);
+			//showcomponet(false);
 		}
 
-		public void descargardata() {
-			
-		}
+		// public void descargardata() {
+		// 	showcomponet(false);
+		// }
+	
+		// public void cargardata() {
+		// 	showcomponet(true);
+		// }
 
-		public void cargardata() {
-
-		}
-
-		public void showcomponet(boolean visible) {
-			img.setVisible(visible);
-			btn_comprar.setVisible(visible);
-		}
+		// public void showcomponet(boolean visible) {
+		// 	img.setVisible(visible);
+		// 	btn_comprar.setVisible(visible);;
+		// }
 	} 
 }

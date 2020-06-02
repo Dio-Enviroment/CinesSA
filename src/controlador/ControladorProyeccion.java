@@ -21,6 +21,10 @@ public class ControladorProyeccion {
         }
     }
 
+    public ArrayList<Proyeccion> getProyeccions() {
+        return proyecciones;
+    }
+
     public void setActProyeccion(int num) {
         this.actProyeccion=proyecciones.get(num);
     }

@@ -53,8 +53,13 @@ public class CustomButton extends JButton{
 
     }
 
+    public void setImg(String path) {
+        this.setUI(new CustomButtonUI(mode,path));
+        
+    }
+
     public void changeIcon(int pos){
-        this.setUI(new CustomButtonUI(mode,paths[pos].toString()));
+        setImg(paths[pos].toString());
     }
 
     public Object getCustomParameter(int pos){

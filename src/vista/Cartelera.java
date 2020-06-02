@@ -15,6 +15,8 @@ import componentes.CustomPanel;
 import componentes.Slide;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
+import modelo.Proyeccion;
+
 import java.awt.Graphics;
 
 public class Cartelera extends CustomPanel {
@@ -27,17 +29,23 @@ public class Cartelera extends CustomPanel {
 	public Cartelera(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
 		this.ctrProyeccion=ctrProyeccion;
 		this.ctrView=ctrView;
+		int cont=0;
 		setLayout(null);
 		setBounds(0, 0, width, height);
-
+		
 		btn_comprar = new CustomButton("Comprar");
 		
 		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] paths = { 
-			workingDirectory + "//src//img//peli_0_carteleta_back.png",
-			workingDirectory + "//src//img//fondoPrueba2.png",
-			workingDirectory + "//src//img//peli_0_carteleta_back.png", 
-		};
+		// String[] paths = { 
+		// 	workingDirectory + "//src//img//peli_0_carteleta_back.png",
+		// 	workingDirectory + "//src//img//fondoPrueba2.png",
+		// 	workingDirectory + "//src//img//peli_0_carteleta_back.png", 
+		// };
+		String[] paths=new String[ctrProyeccion.getProyeccions().size()]; 
+		for (Proyeccion proyeccion : ctrProyeccion.getProyeccions()) {
+			paths[cont]=proyeccion.getBoleteriaBack();
+			cont++;
+		}
 		slide = new Slide(paths, 1008, 729);
 		
 		slide.setBounds(0, 0, 1008, 729);

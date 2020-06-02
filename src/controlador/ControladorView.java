@@ -32,7 +32,7 @@ public class ControladorView {
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
         this.container=container;
         this.cartelera=new Cartelera(1008,729,ctrProyeccion,this);
-        //this.selectPelicula=new SelectPelicula(1008, 729,ctrProyeccion,this);
+        this.selectPelicula=new SelectPelicula(1008, 729,ctrProyeccion,this);
         this.boleteria=new Boleteria(1008, 729,ctrProyeccion,this);
         this.compraPrincipal=new CompraPrincipal(1008, 729,ctrProyeccion, ctrSala, this);
         //this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
@@ -41,7 +41,8 @@ public class ControladorView {
         this.agradecimiento=new Agradecimiento(1008, 729,ctrSala,this);
 
         this.container.add(cartelera);
-        //this.container.add(selectPelicula);
+        this.container.add(selectPelicula);
+        //selectPelicula.setVisible(false);
         this.container.add(boleteria);
         this.container.add(compraPrincipal);
         this.container.add(seleccionarAsientos);
