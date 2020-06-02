@@ -5,8 +5,8 @@ public class Conferencia extends Proyeccion {
 	private String tematica;
 	private String salaTipo;
 
-	public Conferencia(String boleteria_back,String boleteria_front,String boleteria_title, String titulo, String duracion, String horario, String presentador,String tematica,String salaTipo) {
-		super(boleteria_back, boleteria_front, boleteria_title, titulo, duracion, horario, salaTipo);
+	public Conferencia(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String cartelera_front,String cartelera_title, String titulo, String duracion, String horario, String presentador,String tematica,String salaTipo) {
+		super(boleteria_back, boleteria_front, boleteria_title,cartelera_back,cartelera_front,cartelera_title, titulo, duracion, horario, salaTipo);
 		this.presentador = presentador;
 		this.tematica = tematica;
 		this.salaTipo=salaTipo;

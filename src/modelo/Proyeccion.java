@@ -13,11 +13,11 @@ public class Proyeccion {
 	protected String cartelera_title;
 	protected String duracion;
 	protected String[] horario;
-	private String hora;
+	protected String hora;
 	protected String titulo;
 	protected String salaTipo;
-	private String tipoEvento;
-	private File workingDirectory = new File(System.getProperty("user.dir"));
+	protected String tipoEvento;
+	protected File workingDirectory = new File(System.getProperty("user.dir"));
 	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String cartelera_front,String cartelera_title,String titulo,String duracion, String horario,String salaTipo) {
 		this.boleteria_back=workingDirectory+boleteria_back;
 		this.boleteria_front=workingDirectory+boleteria_front;
