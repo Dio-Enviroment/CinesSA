@@ -41,15 +41,15 @@ public class Cartelera extends CustomPanel {
 		
 		slide.setBounds(0, 0, 1008, 729);
 		btn_comprar.setBounds(140, 603, 718, 40);
-		
+		slide.setExternalComponent(btn_comprar);
+
 		j=new JButton("sd");
 		j.setBounds(10, 50, 50, 50);
 
 		add(j);
 		
-		add(btn_comprar);
 		add(slide);
-
+		add(btn_comprar);
 		iniComponentEvents();
 	}
 
@@ -89,11 +89,9 @@ public class Cartelera extends CustomPanel {
 		});
 
 		slide.addChangePos(new ChangePosListener(){
-		
 			@Override
 			public void ChangePosEvent(ChangePos evt) {
-				System.out.println(slide.getPos());
-				
+				ctrProyeccion.setActProyeccion(slide.getPos());
 			}
 		});
 	}
