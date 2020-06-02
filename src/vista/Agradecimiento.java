@@ -44,11 +44,13 @@ public class Agradecimiento extends CustomPanel {
 		
 		
 	}
-
+	
+	
 	public void descargardata() {
 		showcomponet(false);
 	}
-
+	
+	
 	public void cargardata() {
 		
 		texto.setText("              GRACIAS POR SU COMPRA \n" 
@@ -56,6 +58,7 @@ public class Agradecimiento extends CustomPanel {
 				+ "            DISFRUTE DE SU PELICULA");
 		showcomponet(true);
 	}
+	
 
 	public void showcomponet(boolean visible){
 	
