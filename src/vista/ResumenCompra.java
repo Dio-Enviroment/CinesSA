@@ -220,6 +220,7 @@ public class ResumenCompra extends CustomPanel {
 
 	public void descargardata() {
 		//*******
+		//**
 		// maxA=0;//
 		// asientos="";
 		// estado=false;
