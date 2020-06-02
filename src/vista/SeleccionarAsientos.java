@@ -153,7 +153,6 @@ public class SeleccionarAsientos extends CustomPanel {
 	public void descargardata() {
 		numeros = null;
 		letras = null;
-		//salaPre =null;
 		this.lbl_asiento.setText("0");
 		invisible();
 		invisibleL();
@@ -239,11 +238,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		int y = dim[0].length;
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
-				// if (salaPre[i][j]) {
-				// 	botones[i][j].changeIcon(0);
-				// 	botones[i][j].setEnabled(true);
-				// 	botones[i][j].setCustomParameter(2, true);
-				// } else {
+				
 					if (asientos[i][j]) {
 						botones[i][j].changeIcon(2);
 						botones[i][j].setEnabled(false);
@@ -254,7 +249,7 @@ public class SeleccionarAsientos extends CustomPanel {
 						botones[i][j].setCustomParameter(2, true);
 					}
 					botones[i][j].setVisible(true);
-				//}
+			
 			}
 		}
 	}
@@ -323,7 +318,7 @@ public class SeleccionarAsientos extends CustomPanel {
 								btn.setCustomParameter(2, true);
 								//sala.vaciarAsiento(x, y);
 								ctrSala.vaciarSeleccionados(x,y);
-								System.out.println(salaPre);
+								
 								aux++;
 								lbl_asiento.setText(aux + "");
 								btncomprar.setEnabled(false);
@@ -335,7 +330,7 @@ public class SeleccionarAsientos extends CustomPanel {
 								btn.setCustomParameter(2, false);
 								//sala.ocuparAsiento(x, y);
 								ctrSala.anadirSalaPre(x, y);
-								//System.out.println(salaPre[x][y]);
+								
 								aux--;
 								lbl_asiento.setText(aux + "");
 								if (aux == 0) {

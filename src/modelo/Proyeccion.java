@@ -37,11 +37,11 @@ public class Proyeccion {
 		this.atributos = atributos;
 	}
 
-	public int getDuracion() {
+	public String getDuracion() {
 		return this.duracion;
 	}
 
-	public void setDuracion(int duracion) {
+	public void setDuracion(String duracion) {
 		this.duracion = duracion;
 	}
 

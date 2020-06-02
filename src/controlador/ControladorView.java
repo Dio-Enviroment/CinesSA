@@ -37,7 +37,7 @@ public class ControladorView {
         this.compraPrincipal=new CompraPrincipal(1008, 729,ctrProyeccion, ctrSala, this);
         //this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
         this.seleccionarAsientos=new SeleccionarAsientos(1008, 729,ctrSala,this);
-        this.resumenCompra=new ResumenCompra(1008, 729,ctrSala,this);
+        this.resumenCompra=new ResumenCompra(1008, 729,ctrSala,ctrProyeccion,this);
         this.agradecimiento=new Agradecimiento(1008, 729,ctrSala,this);
 
         this.container.add(cartelera);

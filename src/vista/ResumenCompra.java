@@ -8,9 +8,11 @@ import componentes.CustomPanel;
 // import controlador.Registro_asiento;
 // import Modelo.DatosCliente;
 import controlador.ControladorBoleto;
+import controlador.ControladorProyeccion;
 import controlador.ControladorSala;
 import controlador.ControladorView;
 import modelo.Asiento;
+import modelo.Proyeccion;
 import modelo.Sala;
 
 import javax.swing.border.LineBorder;
@@ -37,33 +39,37 @@ public class ResumenCompra extends CustomPanel {
 	private JLabel lbl_boletosR;
 	private JLabel lbl_totalR;
 	private JLabel lbl_asientosR;
-	public JLabel lbl_numSalaR;
-	public JLabel lbl_numAsiemtosR;
-	public JLabel lbl_numBoletasR;
-	public JLabel lbl_numTotalR;
+	private JLabel lbl_numSalaR;
+	private JLabel lbl_numAsiemtosR;
+	private JLabel lbl_numBoletasR;
+	private JLabel lbl_numTotalR;
 	private JPanel panel;
-	public JButton btn_cancelar;
-	public JButton btn_comprar;
-	public JPanel pn_resumen;
-	public JLabel lbl_tituloPeliculaR;
+	private JButton btn_cancelar;
+	private JButton btn_comprar;
+	private JPanel pn_resumen;
+	private JLabel lbl_tituloPeliculaR;
 	private ControladorSala ctrSala;
 	private ControladorView ctrView;
 	private Sala sala;
+	private ControladorProyeccion ctrPro;
 	private ArrayList<Asiento> salaPre;
 	private boolean [][]salaAct;
+	private String letras[] = {"A","B","C","D","E","F","G","H"};
+	private String puesto="";
 	/**
 	 * Create the panel.
 	 */
-	public ResumenCompra(int width,int height, ControladorSala ctrSala, ControladorView ctrView) {
+	public ResumenCompra(int width,int height, ControladorSala ctrSala, ControladorProyeccion ctrPro, ControladorView ctrView) {
 		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
+		this.ctrPro= ctrPro;
 		setLayout(null);
 		setBounds(0, 0, width, height);
 		pn_resumen = new JPanel();
 		pn_resumen.setBounds(26, 30, 386, 285);
 		add(pn_resumen);
 		pn_resumen.setLayout(null);
-
+	
 		pn_resumenCompra = new JPanel();
 		pn_resumenCompra.setBounds(12, 13, 343, 178);
 		pn_resumen.add(pn_resumenCompra);
@@ -179,7 +185,8 @@ public class ResumenCompra extends CustomPanel {
 				ctrView.setTotal("0");
 				ctrView.setIva("0");
 				ctrView.setSubtotal("0");
-				//setAsientos();
+				puesto="";
+				
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				ctrSala.vaciarTodos();
@@ -194,13 +201,14 @@ public class ResumenCompra extends CustomPanel {
 		btn_comprar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				puesto="";
 				ctrView.setPuestos("0");
 				ctrView.setTotal("0");
 				ctrView.setIva("0");
 				ctrView.setSubtotal("0");
+			
 				setAsientos();
-				
+				ctrSala.vaciarTodos();
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
 				
@@ -220,24 +228,20 @@ public class ResumenCompra extends CustomPanel {
 	}
 
 	public void descargardata() {
-		//*******
-		//**
-		// maxA=0;//
-		// asientos="";
-		// estado=false;
+		
+		puesto="";
 		showcomponet(false);
-		// this.lbl_contador.setText("0");
-		// this.lbl_tituloPelicula.setText("");
-		// this.lbl_tiiposala.setText("");
-		// this.lbl_valor_iva.setText("0");
-		// this.lbl_valor_Subtotal.setText("0");
-		// this.lbl_valor_total.setText("0");
+		
 	}
 	public void cargardata() {
-		
+		this.lbl_numAsiemtosR.setText("{ " + setPuesto() + " } ");
+		this.lbl_tituloPeliculaR.setText( ctrPro.getActProyeccion().getTitulo());
+		this.lbl_numSalaR.setText((sala.getId()+1) +"");
+		this.lbl_numBoletasR.setText(ctrView.getPuestos());
+		this.lbl_numTotalR.setText(ctrView.getTotal());
 		showcomponet(true);
+		
 	}
-//55
 	public void showcomponet(boolean visible){
 		pn_resumenCompra.setVisible(visible);
 		lbl_salaR.setVisible(visible);
@@ -260,4 +264,11 @@ public class ResumenCompra extends CustomPanel {
 			salaAct[asiento.getFila()][asiento.getColumna()]=true;	
 		}
 	}
+	public String setPuesto() {
+		for (Asiento asiento: salaPre) {
+			puesto = puesto + " " + letras[asiento.getFila()]+ "" + (asiento.getColumna()+1);
+		}
+		return puesto;
+	}
+	
 }
