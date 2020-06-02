@@ -78,20 +78,6 @@ public class CompraPrincipal extends CustomPanel {
 
 	private Precio pr=new Precio();
 	private JComponent editor,editor2;
-	
-	/*private GridBagConstraints gbc_lbl_cedula,
-	gbc_txt_cedula,gbc_lbl_nombre,gbc_txt_nombre,
-	gbc_lbl_telefono,gbc_txt_fono,gbc_lbl_direccion,
-	gbc_txt_direccion,gbc_lbl_pelicula,gbc_lbl_tituloPelicula,
-	gbc_lbl_tiiposala,gbc_lbl_boletos,gbc_lbl_sp,gbc_lbl_ninios,
-	gbc_sp_ninios,gbc_lbl_adultos,gbc_sp_adultos,gbc_btn_selecionAsiento,
-	gbc_lbl_contador,gbc_lbl_subtotal,gbc_lbl_valor_Subtotal,
-	gbc_lbl_iva,gbc_lbl_valor_iva,gbc_lbl_total,gbc_lbl_valor_total;*/
-	
-
-	/*private Precio pr = new Precio();
-	private JComponent editor, editor2;*/
-
 	private GridBagConstraints gbc_lbl_cedula, gbc_txt_cedula, gbc_lbl_nombre, gbc_txt_nombre, gbc_lbl_telefono,
 			gbc_txt_fono, gbc_lbl_direccion, gbc_txt_direccion, gbc_lbl_pelicula, gbc_lbl_tituloPelicula,
 			gbc_lbl_tiiposala, gbc_lbl_boletos, gbc_lbl_sp, gbc_lbl_ninios, gbc_sp_ninios, gbc_lbl_adultos,
@@ -386,13 +372,7 @@ public class CompraPrincipal extends CustomPanel {
 		this.btn_siguiente.setEnabled(false);
 
 		showcomponet(false);
-		// ra.a�adirSalas();
-
-		// ************** NEcesito Numero sala ***////////////////////
-
-		// ****************************////////////////////////
-
-		// SiguienteToolTip();
+		
 
 		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 		// this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
@@ -412,6 +392,10 @@ public class CompraPrincipal extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ctrView.setPuestos("0");
+				ctrView.setTotal("0");
+				ctrView.setIva("0");
+				ctrView.setSubtotal("0");
 				ctrView.changeBoleteria();
 			}
 
@@ -424,7 +408,7 @@ public class CompraPrincipal extends CustomPanel {
 		init();
 	}
 
-	// Registro_asiento ra = new Registro_asiento();
+	
 
 	public void limitarValoresJpinner() {
 		int a = ctrSala.getLimiteBoletos();
@@ -485,7 +469,6 @@ public class CompraPrincipal extends CustomPanel {
 			}
 		});
 
-		/************** NEcesito Numero sala ***////////////////////
 
 		sp_adultos.addChangeListener(new ChangeListener() {
 
@@ -502,13 +485,6 @@ public class CompraPrincipal extends CustomPanel {
 				}
 
 				lbl_contador.setText(aux + "");
-
-				// lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),Integer.parseInt(sp_ninios.getValue().toString()),
-				// 1, "Pelicula") * 100) / 100d) + "");
-				// lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText()))
-				// * 100) / 100d) + "");
-				// lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText()))
-				// * 100) / 100d) + "");
 				lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),
 						Integer.parseInt(sp_ninios.getValue().toString()), ctrProyeccion) * 100) / 100d) + "");
 				lbl_valor_iva.setText(
@@ -537,13 +513,6 @@ public class CompraPrincipal extends CustomPanel {
 				}
 
 				lbl_contador.setText(aux + "");
-
-				// lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),Integer.parseInt(sp_ninios.getValue().toString()),
-				// 1, "Pelicula") * 100) / 100d) + "");
-				// lbl_valor_iva.setText((Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText()))
-				// * 100) / 100d) + "");
-				// lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),Double.parseDouble(lbl_valor_iva.getText()))
-				// * 100) / 100d) + "");
 				lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),
 						Integer.parseInt(sp_ninios.getValue().toString()), ctrProyeccion) * 100) / 100d) + "");
 				lbl_valor_iva.setText(
@@ -674,8 +643,6 @@ public class CompraPrincipal extends CustomPanel {
 		
 		censura();
 		activar();
-		//
-
 	}
 
 	public void showcomponet(boolean visible) {
