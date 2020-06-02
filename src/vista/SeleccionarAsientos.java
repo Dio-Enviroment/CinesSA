@@ -149,7 +149,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	public void descargardata() {
 		numeros = null;
 		letras = null;
-		salaPre = null;
+		//salaPre =null;
 		this.lbl_asiento.setText("0");
 		invisible();
 		invisibleL();
@@ -235,9 +235,8 @@ public class SeleccionarAsientos extends CustomPanel {
 		int y = dim[0].length;
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
-				if (salaPre[i][j]) {
+				if (salaPre[i][j] && salaPre != null) {
 					botones[i][j].changeIcon(0);
-					botones[i][j].setEnabled(true);
 				} else {
 					if (asientos[i][j]) {
 						botones[i][j].changeIcon(2);
