@@ -10,10 +10,9 @@ public enum Peliculas {
 			horarios(),
 			"Fantastico. Ciencia ficcion. Accion | Superheroes. Comic. Marvel Comics. Secuela. 3-D. Robots. Terrorismo",
 			12, 
-			"El descarado y brillante empresario Tony Stark/Iron Man se enfrentara a un enemigo cuyo poder no conoce "
-					+ "limites. Cuando Stark comprende que su enemigo ha destruido su universo personal, se embarca en una "
-					+ "angustiosa busqueda para encontrar a los responsables. Este viaje pondra a prueba su entereza una y "
-					+ "otra vez. Acorralado, Stark tendra que sobrevivir por sus propios medios, confiando en su ingenio y"
+			"El brillante empresario Tony Stark/Iron Man se enfrentara a un enemigo. "
+					+ "Cuando Stark comprende que su enemigo ha destruido su universo personal, se embarca en una "
+					+ " busqueda para encontrar a los responsables, Stark confiando en su ingenio y "
 					+ " su instinto para proteger a las personas que quiere.",
 			"normal",
 			"//src//img//cartelera//pelicula//peli_0//back.png",
@@ -35,13 +34,12 @@ public enum Peliculas {
 			horarios(), 
 			"Comedia | Adolescencia. Comedia juvenil. Secuela",
 			18,
-			"Los protagonistas masculinos de la primera entrega, entonces obsesionados por perder la virginidad,"
-					+ " se reencuentran en su pueblo natal tras su primer ano en la universidad. Ha pasado un ano, y Jim "
-					+ "(Jason Biggs), Oz (Chris Klein), Kevin (Thomas Ian Nicholas) y Finch (Eddie Kay Thomas) deciden "
-					+ "para pasar juntos el verano. Para poder tener independencia y perseguir mujeres, como "
-					+ "tradicionalmente acostumbran, aunque sin exito, deciden alquilar una casa en la playa. Como el"
-					+ " alquiler es algo caro deciden invitar tambien a Stifler (Seann William Scott), quien ademas de "
-					+ "tener mucho dinero, supuestamente sabe mucho de mujeres, aunque su personalidad es detestable.",
+			"Jovenes obsesionados por perder la virginidad,se reencuentran en su pueblo natal tras su primer"
+					+ " ano en la universidad. Jim, Oz, Kevin y Finch deciden pasar juntos el verano "
+					+ " Para poder tener independencia y perseguir mujeres, como tradicionalmente acostumbran,"
+					+ "  ,deciden alquilar una casa en la playa. Como el alquiler es algo caro"
+					+ "  deciden invitar tambien a Stifler (millonario),"
+					+"que sabe mucho de mujeres.",
 			"imax",
 			"//src//img//cartelera//pelicula//peli_1//back.png",
 			"//src//img//cartelera//pelicula//peli_1//front.png",
@@ -62,15 +60,11 @@ public enum Peliculas {
 			horarios(), 
 			"Terror. Thriller | Sobrenatural. Comedia de terror",
 			18,
-			"La joven Christine Brown (Alison Lohman), ambiciosa apoderada de un banco de Los Angeles, sale con un"
-					+ " hombre encantador, el profesor Clay Dalton (Justin Long). El trabajo de Christine consiste en "
-					+ "conceder prestamos hipotecarios. Un dia la senora Ganush, una misteriosa anciana (Lorna Raver), "
-					+ "va al banco para pedirle una moratoria, pero Christine se la niega, y la senora Ganush pierde su "
-					+ "casa. La anciana decide entonces vengarse lanzandole una maldicion que convierte su vida en un infierno."
-					+ " Ante la incomprension de su esceptico novio, Christine busca la ayuda de un vidente (Dileep Rao) para"
-					+ " salvar su alma de una condenacion eterna. Intentando ayudarla a recobrar una vida normal, el vidente"
-					+ " la guia en una frenetica carrera para conjurar el hechizo. Pero las fuerzas del mal se acercan y Christine "
-					+ "debe enfrentarse a algo impensable.",
+			" La joven Christine Brown,apoderada de un banco de Los Angeles."
+					+ " El trabajo de Christine consiste en conceder prestamos hipotecarios."
+					+ " Un dia la senora Ganush, una misteriosa anciana,va al banco para "
+					+ " pedirle una moratoria, pero Christine se la niega, y la senora Ganush pierde su casa. "
+					+ " La anciana decide entonces vengarse lanzandole una maldicion que convierte su vida en un infierno.",
 			"normal",
 			"//src//img//cartelera//pelicula//peli_2//back.png",
 			"//src//img//cartelera//pelicula//peli_2//front.png",
@@ -115,14 +109,9 @@ public enum Peliculas {
 			horarios(), 
 			"Ciencia ficcion. Accion. Terror | Supervivencia. Pandemias. Vampiros. Remake. Futuro postapocaliptico",
 			12,
-			"Ano 2012. Robert Neville (Will Smith) es el ultimo hombre vivo que hay sobre la Tierra, pero no esta "
-					+ "solo. Los demas seres humanos se han convertido en vampiros y todos ansian beber su sangre. Durante "
-					+ "el dia vive en estado de alerta, como un cazador, y busca a los muertos vivientes mientras duermen; "
-					+ "pero durante la noche debe esconderse de ellos y esperar el amanecer. Esta pesadilla empezo hace tres"
-					+ " anos: Neville era un brillante cientifico, pero no pudo impedir la expansion de un terrible virus "
-					+ "creado por el hombre. El ha sobrevivido porque es inmune al virus; todos los dias envia mensajes por "
-					+ "radio con la esperanza de que haya otros supervivientes, pero es inutil. Lo unico que puede hacer es "
-					+ "buscar una formula que le permita utilizar su sangre inmune para devolverles a los hombres su"
+			"Robert Neville es el ultimo hombre vivo que hay sobre la Tierra, pero no esta "
+					+ "solo. Los demas seres humanos se han convertido en vampiros. "
+					+ "Busca una formula que le permita utilizar su sangre inmune para devolverles a los hombres su"
 					+ " naturaleza. Pero esta en inferioridad de condiciones y el tiempo se acaba.",
 			"normal",
 			"//src//img//cartelera//pelicula//peli_4//back.png",
@@ -144,12 +133,11 @@ public enum Peliculas {
 			horarios(), 
 			"Fantastico. Animacion. Aventuras | Cuentos. 3-D",
 			10,
-			"Inspirada en la obra homonima de Lewis Carroll. Alicia (Mia Wasikowska), una joven de 19 anos,"
-					+ " acude a una mansion victoriana para asistir a una fiesta de la alta sociedad. Cuando esta a "
+			"Alicia,asiste a una fiesta de la alta sociedad. Cuando esta a "
 					+ "punto de recibir publicamente una propuesta de matrimonio, sale corriendo tras un conejo blanco "
-					+ "y va a parar al Pais de las Maravillas, un lugar que habia visitado diez anos antes, aunque ya no "
-					+ "lo recuerda. Ese pais era un reino pacifico hasta que la Reina Roja (Helena Bonham Carter) derroco "
-					+ "a su hermana, la Reina Blanca (Anne Hathaway), pero las criaturas que viven en el, dispuestas a "
+					+ "y va a parar al Pais de las Maravillas. "
+					+ "Ese pais era un reino pacifico hasta que la Reina Roja derroco "
+					+ "a su hermana la Reina Blanca, pero las criaturas que viven en el, dispuestas a "
 					+ "rebelarse, esperan contar con el apoyo de Alicia, a la que ayudan a recordar su primera visita al "
 					+ "fantastico reino. ",
 			"imax",
@@ -172,13 +160,11 @@ public enum Peliculas {
 			horarios(), 
 			"Fantastico. Accion | Superheroes. Comic. Marvel Comics. Secuela",
 			14,
-			"Tercera entrega de las aventuras del joven Peter Parker (Maguire). Parece que Parker ha conseguido por "
-					+ "fin el equilibrio entre su devocion por Mary Jane y sus deberes como superheroe. Pero, de repente, su "
-					+ "traje se vuelve negro y adquiere nuevos poderes; tambien el se transforma, mostrando el lado mas oscuro "
-					+ "y vengativo de su personalidad. Bajo la influencia del nuevo traje, Peter se convierte en un ser egoista que"
-					+ " solo se preocupa por si mismo. Tiene, pues, que afrontar un dilema: disfrutar de sus nuevos poderes o seguir"
-					+ " siendo un heroe compasivo. Mientras tanto, sobre el se cierne la amenaza de dos temibles enemigos: Venom y el "
-					+ "Hombre de Arena.",
+			" Parece que Parker se ha convertido en un superheroe de los malos "
+					+ ",de repente, su traje se vuelve negro y adquiere nuevos poderes;"
+					+ " mostrando el lado mas oscuro y vengativo de su personalidad.Tiene, pues, que afrontar"
+					+ " un dilema: disfrutar de sus nuevos poderes o seguir siendo un heroe compasivo. Mientras tanto,"
+					+ "  sobre el se cierne la amenaza de dos temibles enemigos: Venom y el Hombre de Arena.",
 			"normal",
 			"//src//img//cartelera//pelicula//peli_6//back.png",
 			"//src//img//cartelera//pelicula//peli_6//front.png",
@@ -199,12 +185,10 @@ public enum Peliculas {
 			horarios(), 
 			"Terror | Sobrenatural. Munecos. Spin-off. Anos 70",
 			16,
-			"John Form encuentra el regalo perfecto para su mujer embarazada, Mia: una preciosa e inusual muneca "
-					+ "vintage que lleva un vestido de novia blanco inmaculado. Sin embargo, la alegria de Mia al recibir a "
-					+ "Annabelle no dura mucho. Durante una espantosa noche la pareja ve como miembros de una secta satanica"
-					+ " invaden su hogar y los atacan brutalmente. No solo dejan sangre derramada y terror tras su visitaï¿½los"
-					+ " miembros de la secta conjuran a un ente de tal maldad que nada de lo que han hecho se compara al siniestro "
-					+ "camino a la maldicion que ahora esï¿½ Annabelle.",
+			"John Form encuentra el regalo perfecto para su mujer embarazada,nuna preciosa e inusual muneca. "
+					+ " Sin embargo, la alegria de Mia al recibir a Annabelle no dura mucho. "
+					+ "Una espantosa noche la pareja ve como miembros de una secta satanica"
+					+ " invaden su hogar y los atacan brutalmente.Hasta llegar a la maldición de Anabelle",
 			"imax",
 			"//src//img//cartelera//pelicula//peli_7//back.png",
 			"//src//img//cartelera//pelicula//peli_7//front.png",
