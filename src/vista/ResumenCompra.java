@@ -5,7 +5,7 @@ import java.awt.GridBagLayout;
 import javax.swing.border.TitledBorder;
 
 import componentes.CustomPanel;
-
+import componentes.ImageAdaptable;
 import controlador.ControladorProyeccion;
 import controlador.ControladorSala;
 import controlador.ControladorView;
@@ -21,6 +21,7 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -63,6 +64,16 @@ public class ResumenCompra extends CustomPanel {
 		this.ctrPro= ctrPro;
 		setLayout(null);
 		setBounds(0, 0, width, height);
+
+
+		File workingDirectory = new File(System.getProperty("user.dir"));
+				String[] paths = { workingDirectory + "//src//resources//compraPrincipal_3.png",
+						workingDirectory + "//src//resources//compraPrincipal_2.png"};
+
+		ImageAdaptable img1=new ImageAdaptable(paths[0]);
+		img1.setLocation(130, 400);
+		add(img1);
+
 		pn_resumen = new JPanel();
 		pn_resumen.setBounds(26, 30, 386, 285);
 		add(pn_resumen);

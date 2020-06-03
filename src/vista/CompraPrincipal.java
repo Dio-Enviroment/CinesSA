@@ -15,6 +15,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.plaf.basic.BasicArrowButton;
 
+import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.ImageAdaptable;
 
@@ -68,8 +69,8 @@ public class CompraPrincipal extends CustomPanel {
 	private JLabel lbl_nombre;
 	private JLabel lbl_telefono;
 	private JLabel lbl_direccion;
-	private JButton btn_anterior;
-	private JButton btn_siguiente;
+	private CustomButton btn_anterior;
+	private CustomButton btn_siguiente;
 	private JPanel pn_controlBotones;
 	private JLabel lbl_tiiposala;
 	private JLabel lbl_sp;
@@ -95,8 +96,7 @@ public class CompraPrincipal extends CustomPanel {
 		setLayout(null);
 		File workingDirectory = new File(System.getProperty("user.dir"));
 				String[] paths = { workingDirectory + "//src//resources//compraPrincipal_1.png",
-						workingDirectory + "//src//resources//compraPrincipal_2.png",
-						workingDirectory + "//src//resources//asiento_desabilitado.png"};
+						workingDirectory + "//src//resources//compraPrincipal_2.png"};
 
 		ImageAdaptable img1=new ImageAdaptable(paths[0]);
 		img1.setLocation(130, 400);
@@ -367,20 +367,32 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto.add(lbl_valor_total, gbc_lbl_valor_total);
 
 		pn_controlBotones = new JPanel();
-		pn_controlBotones.setBounds(293, 484, 213, 40);
+		pn_controlBotones.setBounds(293, 484, 413, 40);
 		pn_compra.add(pn_controlBotones);
 		pn_controlBotones.setBorder(new EmptyBorder(0, 0, 0, 0));
-		pn_controlBotones.setLayout(new BoxLayout(pn_controlBotones, BoxLayout.X_AXIS));
+		GridBagLayout gbl_pn_controlBotones = new GridBagLayout();
+		gbl_pn_controlBotones.columnWidths = new int[]{85, 85, 0};
+		gbl_pn_controlBotones.rowHeights = new int[]{23, 0};
+		gbl_pn_controlBotones.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_pn_controlBotones.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		pn_controlBotones.setLayout(gbl_pn_controlBotones);
+		
+				btn_anterior = new CustomButton("ANTERIOR");
 
-		btn_anterior = new JButton("ANTERIOR");
-		btn_anterior.setForeground(new Color(102, 0, 102));
-		btn_anterior.setFont(new Font("Verdana", Font.BOLD, 13));
-		pn_controlBotones.add(btn_anterior);
+				GridBagConstraints gbc_btn_anterior = new GridBagConstraints();
+				gbc_btn_anterior.anchor = GridBagConstraints.WEST;
+				gbc_btn_anterior.insets = new Insets(0, 0, 0, 5);
+				gbc_btn_anterior.gridx = 0;
+				gbc_btn_anterior.gridy = 0;
+				pn_controlBotones.add(btn_anterior, gbc_btn_anterior);
+		
+				btn_siguiente = new CustomButton("SIGUIENTE");
 
-		btn_siguiente = new JButton("SIGUIENTE");
-		btn_siguiente.setForeground(new Color(102, 0, 102));
-		btn_siguiente.setFont(new Font("Verdana", Font.PLAIN, 13));
-		pn_controlBotones.add(btn_siguiente);
+				GridBagConstraints gbc_btn_siguiente = new GridBagConstraints();
+				gbc_btn_siguiente.anchor = GridBagConstraints.WEST;
+				gbc_btn_siguiente.gridx = 1;
+				gbc_btn_siguiente.gridy = 0;
+				pn_controlBotones.add(btn_siguiente, gbc_btn_siguiente);
 
 		this.btn_siguiente.setEnabled(false);
 
