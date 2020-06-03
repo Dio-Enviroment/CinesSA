@@ -251,20 +251,10 @@ public class ResumenCompra extends CustomPanel {
 		});
 		btn_comprar.setFont(new Font("Verdana", Font.BOLD, 20));
 		panel.add(btn_comprar);
-<<<<<<< HEAD
 		// sala = ctrSala.getSala(0);
 		// salaAct =  sala.getAsientos();
 		// salaPre = ctrSala.getSalaPre();
 		
-=======
-		sala = ctrSala.getSala(0);
-		salaAct =  sala.getAsientos();
-		salaPre = ctrSala.getSalaPre();
-		add(btn_cancelar);
-		add(btn_comprar);
-		this.btn_cancelar.setBounds(250, 400, 150,25);
-		this.btn_comprar.setBounds(400, 400, 150, 25);
->>>>>>> 6f2b7e1e40c3be416c3de7403a6d4e91c9084e39
 		
 		showcomponet(false);
 	}
