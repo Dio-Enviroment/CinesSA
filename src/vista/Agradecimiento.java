@@ -7,6 +7,9 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javax.swing.border.LineBorder;
 
 import componentes.CustomPanel;
@@ -23,6 +26,9 @@ public class Agradecimiento extends CustomPanel {
 	public JLabel lbl_nombreCliente_1;
 	private ControladorView ctrView;
 	private JTextArea texto;
+	private Timer timer = new Timer();
+	private TimerTask task;
+	
 	public Agradecimiento(int width,int height,ControladorSala ctrSala, ControladorView ctrView) {
 		setLayout(null);
 		setBounds(0, 0, width, height);
@@ -43,6 +49,7 @@ public class Agradecimiento extends CustomPanel {
 		
 		
 		
+		
 	}
 	
 	
@@ -57,6 +64,7 @@ public class Agradecimiento extends CustomPanel {
 				+"                     "+ctrView.getCliente() +" \n" 
 				+ "            DISFRUTE DE SU PELICULA");
 		showcomponet(true);
+		this.initTransition();
 	}
 	
 
@@ -64,5 +72,25 @@ public class Agradecimiento extends CustomPanel {
 	
 		texto.setVisible(visible);
 		pn_agradecimiento.setVisible(visible);	
+	}
+	public void initTransition() {
+		//
+		task=null;
+		task=new TimerTask() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				ctrView.changeCartelera();
+				/*try {
+					Thread.currentThread();
+					Thread.sleep(delayTransition);
+				} catch (InterruptedException ex) {
+					Thread.currentThread().interrupt();
+				}*/
+			}
+			
+		};
+		timer.schedule(task, 2000);
 	}
 }
