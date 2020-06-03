@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.border.TitledBorder;
 
+import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.ImageAdaptable;
 import controlador.ControladorProyeccion;
@@ -43,8 +44,8 @@ public class ResumenCompra extends CustomPanel {
 	private JLabel lbl_numBoletasR;
 	private JLabel lbl_numTotalR;
 	private JPanel panel;
-	private JButton btn_cancelar;
-	private JButton btn_comprar;
+	private CustomButton btn_cancelar;
+	private CustomButton btn_comprar;
 	private JPanel pn_resumen;
 	private JLabel lbl_tituloPeliculaR;
 	private ControladorSala ctrSala;
@@ -186,7 +187,7 @@ public class ResumenCompra extends CustomPanel {
 		panel.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
-		btn_cancelar = new JButton("CANCELAR");
+		btn_cancelar = new CustomButton("CANCELAR");
 		btn_cancelar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -206,7 +207,7 @@ public class ResumenCompra extends CustomPanel {
 		btn_cancelar.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel.add(btn_cancelar);
 
-		btn_comprar = new JButton("COMPRAR");
+		btn_comprar = new CustomButton("COMPRAR");
 		btn_comprar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {

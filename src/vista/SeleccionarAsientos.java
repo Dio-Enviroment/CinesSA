@@ -36,8 +36,8 @@ public class SeleccionarAsientos extends CustomPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel panel;
-	private JButton btncomprar;
-	private JButton btn_cancelar;
+	private CustomButton btncomprar;
+	private CustomButton btn_cancelar;
 	private JPanel pn_seleccionarAsiento;
 	private Sala sala;
 	private CustomButton botones[][] = new CustomButton[8][8];
@@ -62,7 +62,6 @@ public class SeleccionarAsientos extends CustomPanel {
 		this.ctrView = ctrView;
 		setBounds(0, 0, width, height);
 		setLayout(null);
-		
 		pn_asientos = new JPanel();
 		pn_asientos.setBounds(12, 13, 1000, 1000);
 		add(pn_asientos);
@@ -77,11 +76,11 @@ public class SeleccionarAsientos extends CustomPanel {
 		panel.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
-		btn_cancelar = new JButton("CANCELAR");
+		btn_cancelar = new CustomButton("CANCELAR");
 		btn_cancelar.setFont(new Font("Verdana", Font.BOLD, 13));
 		panel.add(btn_cancelar);
 
-		btncomprar = new JButton("COMPRAR");
+		btncomprar = new CustomButton("COMPRAR");
 		btncomprar.setFont(new Font("Verdana", Font.BOLD, 13));
 		panel.add(btncomprar);
 

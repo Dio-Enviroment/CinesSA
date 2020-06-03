@@ -20,6 +20,8 @@ import modelo.Proyeccion;
 
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.GridBagConstraints;
 
 public class DetallePelicula extends CustomPanel {
@@ -29,7 +31,7 @@ public class DetallePelicula extends CustomPanel {
 	private ImageAdaptable back0, img;
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
-	private Proyeccion proyeccion,actProyeccion;
+	private Proyeccion proyeccion, actProyeccion;
 	private JLabel title, l2, l5, l3, l4;
 	private JPanel datos;
 	private JLabel l1;
@@ -52,7 +54,8 @@ public class DetallePelicula extends CustomPanel {
 		File workingDirectory = new File(System.getProperty("user.dir"));
 		String[] rawback = { workingDirectory + "//src//img//detalle//pelicula//peli_0//max.png" };
 
-		//String[] rawitem = { workingDirectory + "//src//img//boleteria//conferecia//confe_0//back.png" };
+		// String[] rawitem = { workingDirectory +
+		// "//src//img//boleteria//conferecia//confe_0//back.png" };
 
 		datos = new JPanel();
 		datos.setBounds(497, 99, 458, 510);
@@ -230,7 +233,7 @@ public class DetallePelicula extends CustomPanel {
 		back0 = new ImageAdaptable(rawback[0]);
 		back0.setLocation(0, 0);
 		add(back0);
-
+		iniComponentEvents();
 		showcomponet(false);
 		this.setVisible(false);
 	}
@@ -240,15 +243,15 @@ public class DetallePelicula extends CustomPanel {
 	}
 
 	public void cargardata() {
-		String hora="";
+		String hora = "";
 		String[] horas;
-		actProyeccion= ctrProyeccion.getActProyeccion();
+		actProyeccion = ctrProyeccion.getActProyeccion();
 		proyeccion = ctrProyeccion.getPreproyeccion();
 		back0.setImage(actProyeccion.getBoleteriaBack());
 		img.setImage(proyeccion.getMax());
-		title.setText("  "+proyeccion.getTitulo());
-		if(proyeccion instanceof Pelicula){
-			Pelicula pel=(Pelicula)proyeccion;
+		title.setText("  " + proyeccion.getTitulo());
+		if (proyeccion instanceof Pelicula) {
+			Pelicula pel = (Pelicula) proyeccion;
 			l1.setText("  SINOPSIS:");
 			l2.setText("  GENEROS:");
 			l3.setText("  DISPONIBILIDAD:");
@@ -257,26 +260,58 @@ public class DetallePelicula extends CustomPanel {
 			sinopsis.setText(pel.getSinapsis());
 			generos.setText(pel.getGenero());
 			salaTipo.setText(pel.getSalaTipo());
-			censura.setText(pel.getEdad()+"");
-			horas= pel.getHorario();
+			censura.setText(pel.getEdad() + "");
+			horas = pel.getHorario();
 			for (int i = 0; i < horas.length; i++) {
-				hora+=horas[i];
-				if(i<horas.length-1){
-					hora+=" - ";
+				hora += horas[i];
+				if (i < horas.length - 1) {
+					hora += " - ";
 				}
 			}
-			
+
 			horarios.setText(hora);
-		}
-		else{
-			Conferencia con=(Conferencia)proyeccion;
+		} else {
+			Conferencia con = (Conferencia) proyeccion;
 			l1.setText("  Tematica:");
 			l2.setText("  Presentador:");
 			sinopsis.setText(con.getTematica());
 			generos.setText(con.getPresentador());
 		}
-		
+
 		showcomponet(true);
+	}
+
+	public void iniComponentEvents() {
+		salir.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeCartelera();
+				
+			}
+			
+		});
+
+		continuar.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeSelectPelicula();
+			}
+			
+		});
+
+		selecionar.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				ctrProyeccion.setActProyeccion(proyeccion);
+				ctrView.changeBoleteria();
+			}
+			
+		});
+
 	}
 
 	public void showcomponet(boolean visible) {

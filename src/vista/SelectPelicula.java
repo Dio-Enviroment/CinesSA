@@ -128,6 +128,8 @@ public class SelectPelicula extends CustomPanel {
 		showcomponet(true);
 	}
 
+	
+
 	public void showcomponet(boolean visible) {
 		back0.setVisible(visible);
 		back1.setVisible(visible);

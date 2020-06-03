@@ -55,7 +55,7 @@ public class CompraPrincipal extends CustomPanel {
 	private JLabel lbl_adultos;
 
 	private JSpinner sp_adultos = new JSpinner();
-	private JButton btn_selecionAsiento;
+	private CustomButton btn_selecionAsiento;
 	private JLabel lbl_contador;
 	private JLabel lbl_subtotal;
 	private JLabel lbl_valor_Subtotal;
@@ -105,7 +105,6 @@ public class CompraPrincipal extends CustomPanel {
 		ImageAdaptable img2=new ImageAdaptable(paths[1]);
 		img2.setLocation(680, 70);
 		add(img2);
-
 		pn_compra = new JPanel();
 		pn_compra.setBounds(228, 83, 513, 526);
 		add(pn_compra);
@@ -248,7 +247,6 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_boletos.gridx = 2;
 		gbc_lbl_boletos.gridy = 2;
 		pn_datoBoleto.add(lbl_boletos, gbc_lbl_boletos);
-
 		lbl_sp = new JLabel("");
 		gbc_lbl_sp = new GridBagConstraints();
 		gbc_lbl_sp.insets = new Insets(0, 0, 5, 5);
@@ -289,7 +287,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_sp_adultos.gridy = 4;
 		pn_datoBoleto.add(sp_adultos, gbc_sp_adultos);
 
-		btn_selecionAsiento = new JButton("SELEC ASIENTOS");
+		btn_selecionAsiento = new CustomButton("SELEC ASIENTOS");
 		btn_selecionAsiento.setFont(new Font("Verdana", Font.BOLD, 13));
 		btn_selecionAsiento.setForeground(new Color(102, 0, 102));
 		btn_selecionAsiento.setBounds(0, 0, 8, 18);
@@ -367,11 +365,11 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto.add(lbl_valor_total, gbc_lbl_valor_total);
 
 		pn_controlBotones = new JPanel();
-		pn_controlBotones.setBounds(293, 484, 413, 40);
+		pn_controlBotones.setBounds(250, 490, 600, 40);
 		pn_compra.add(pn_controlBotones);
 		pn_controlBotones.setBorder(new EmptyBorder(0, 0, 0, 0));
 		GridBagLayout gbl_pn_controlBotones = new GridBagLayout();
-		gbl_pn_controlBotones.columnWidths = new int[]{85, 85, 0};
+		gbl_pn_controlBotones.columnWidths = new int[]{50, 50, 0};
 		gbl_pn_controlBotones.rowHeights = new int[]{23, 0};
 		gbl_pn_controlBotones.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
 		gbl_pn_controlBotones.rowWeights = new double[]{0.0, Double.MIN_VALUE};
@@ -390,6 +388,7 @@ public class CompraPrincipal extends CustomPanel {
 
 				GridBagConstraints gbc_btn_siguiente = new GridBagConstraints();
 				gbc_btn_siguiente.anchor = GridBagConstraints.WEST;
+				gbc_btn_siguiente.insets = new Insets(0, 0, 0, 5);
 				gbc_btn_siguiente.gridx = 1;
 				gbc_btn_siguiente.gridy = 0;
 				pn_controlBotones.add(btn_siguiente, gbc_btn_siguiente);
@@ -401,7 +400,7 @@ public class CompraPrincipal extends CustomPanel {
 		
 		
 		
-
+		//
 		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 		// this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
 		// this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
