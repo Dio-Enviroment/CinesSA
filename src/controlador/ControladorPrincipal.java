@@ -16,6 +16,7 @@ public class ControladorPrincipal {
         this.ctrView=new ControladorView(container,this.ctrSala,this.ctrProyeccion,this.ctrBoleto);
     }
 
+
     public ControladorSala getCtlSala() {
         return ctrSala;
     }

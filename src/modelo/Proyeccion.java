@@ -19,9 +19,7 @@ public class Proyeccion {
 	protected String tipoEvento;
 	protected String min,max;
 	private String leyenda;
-	protected int xfront,yfront;
-	protected int xtitulo,ytitulo;
-	protected int xleyenda,yleyenda;
+
 	protected File workingDirectory = new File(System.getProperty("user.dir"));
 	public Proyeccion(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String min,String max,int xfront,int yfront,int xtitulo,int ytitulo,int xleyenda,int yleyenda,String titulo,String duracion, String horario,String salaTipo) {
 		this.boleteria_back=workingDirectory+boleteria_back;

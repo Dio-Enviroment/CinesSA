@@ -229,9 +229,9 @@ public class ResumenCompra extends CustomPanel {
 		});
 		btn_comprar.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel.add(btn_comprar);
-		sala = ctrSala.getSala(0);
-		salaAct =  sala.getAsientos();
-		salaPre = ctrSala.getSalaPre();
+		// sala = ctrSala.getSala(0);
+		// salaAct =  sala.getAsientos();
+		// salaPre = ctrSala.getSalaPre();
 		
 		
 		showcomponet(false);
@@ -244,6 +244,9 @@ public class ResumenCompra extends CustomPanel {
 		
 	}
 	public void cargardata() {
+		sala = ctrSala.getSala(0);
+		salaAct =  sala.getAsientos();
+		salaPre = ctrSala.getSalaPre();
 		this.lbl_numAsiemtosR.setText("{ " + setPuesto() + " } ");
 		this.lbl_tituloPeliculaR.setText( ctrPro.getActProyeccion().getTitulo());
 		this.lbl_numSalaR.setText((sala.getId()+1) +"");

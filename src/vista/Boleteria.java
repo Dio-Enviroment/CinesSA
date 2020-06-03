@@ -1,6 +1,7 @@
 package vista;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -11,9 +12,12 @@ import componentes.CustomPanel;
 import componentes.ImageAdaptable;
 import componentes.TransparentPanel;
 import controlador.ControladorProyeccion;
+import controlador.ControladorSala;
 import controlador.ControladorView;
+import modelo.Conferencia;
 import modelo.Pelicula;
 import modelo.Proyeccion;
+import modelo.Sala;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +30,7 @@ public class Boleteria extends CustomPanel {
 	private static final long serialVersionUID = 1L;
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
+	private ControladorSala ctrSala;
 	private ImageAdaptable back, front;
 	private TransparentPanel formulary;
 	private CustomButton title, compra;
@@ -34,9 +39,10 @@ public class Boleteria extends CustomPanel {
 	private Proyeccion proyeccion;
 	private DefaultComboBoxModel horarios = new DefaultComboBoxModel();
 
-	public Boleteria(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
+	public Boleteria(int width, int height, ControladorProyeccion ctrProyeccion,ControladorSala ctrSala, ControladorView ctrView) {
 		this.ctrProyeccion = ctrProyeccion;
 		this.ctrView = ctrView;
+		this.ctrSala=ctrSala;
 		setBounds(0, 0, width, height);
 
 		File workingDirectory = new File(System.getProperty("user.dir"));
@@ -124,7 +130,6 @@ public class Boleteria extends CustomPanel {
 		compra.setVisible(visible);
 		tipo.setVisible(visible);
 		horario.setVisible(visible);
-		;
 	}
 
 	public void iniComponentEvents() {
@@ -132,9 +137,15 @@ public class Boleteria extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(proyeccion instanceof Pelicula){
+					Pelicula pelicula=(Pelicula)proyeccion;
+					ArrayList<Sala> salas=pelicula.getSalas();
+					
+					ctrSala.setSala(salas.get(horario.getSelectedIndex()-1));
 					proyeccion.setTipoEvent("Pelicula");
 				}
 				else{
+					Conferencia conferencia=(Conferencia)proyeccion;
+					ctrSala.setSala(conferencia.getSala());
 					proyeccion.setTipoEvent("Conferencia");
 				}
 				
