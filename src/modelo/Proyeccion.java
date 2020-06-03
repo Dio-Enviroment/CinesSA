@@ -43,12 +43,6 @@ public class Proyeccion {
 		this.leyenda=workingDirectory+leyenda;
 		this.min=workingDirectory+min;
 		this.max=workingDirectory+max;
-		this.xfront=xfront;
-		this.yfront=yfront;
-		this.xtitulo=xtitulo;
-		this.ytitulo=ytitulo;
-		this.xleyenda=xleyenda;
-		this.yleyenda=yleyenda;
 	}
 
 	public String getCarteleraBack() {
@@ -138,29 +132,5 @@ public class Proyeccion {
 
 	public String getMax() {
 		return max;
-	}
-
-	public int getXfront() {
-		return xfront;
-	}
-
-	public int getYfront() {
-		return yfront;
-	}
-	
-	public int getXtitulo() {
-		return xtitulo;
-	}
-
-	public int getYtitulo() {
-		return ytitulo;
-	}
-
-	public int getXleyenda() {
-		return xleyenda;
-	}
-
-	public int getYleyenda() {
-		return yleyenda;
 	}
 }
