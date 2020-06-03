@@ -151,7 +151,7 @@ public class SelectPelicula extends CustomPanel {
 			img.setBounds(0, 0, width, height-buttonHeight);
 			add(img);
 
-			Object[] customParameters={""};
+			Object[] customParameters={0};
 			btn_comprar=new CustomButton("Comprar",customParameters);
 			btn_comprar.setBounds(0, height-buttonHeight, width, buttonHeight);
 			add(btn_comprar);
@@ -159,7 +159,8 @@ public class SelectPelicula extends CustomPanel {
 			btn_comprar.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					//ctrProyeccion.setActProyeccion((int)btn_comprar.getCustomParameter(0));
+			
+					ctrProyeccion.setPreproyeccion((Proyeccion)btn_comprar.getCustomParameter(0));
 					ctrView.changeDetallePelicula();
 				}
 			});

@@ -10,7 +10,7 @@ import data.*;
 public class ControladorProyeccion {
     private ArrayList<Proyeccion> proyecciones=new ArrayList<Proyeccion>();
     private Proyeccion actProyeccion;
-    //private Proyeccion preProyeccion;
+    private Proyeccion preProyeccion;
 
 
     public ControladorProyeccion() {
@@ -36,11 +36,11 @@ public class ControladorProyeccion {
         return actProyeccion;
     }
 
-    // public void setPreproyeccion(Proyeccion preProyeccion){
-    //     this.preProyeccion=preProyeccion;
-    // }
+    public void setPreproyeccion(Proyeccion proyeccion){
+        this.preProyeccion=proyeccion;
+    }
 
-    // public Proyeccion getPreproyeccion(){
-    //     return preProyeccion;
-    // }
+    public Proyeccion getPreproyeccion(){
+        return preProyeccion;
+    }
 }

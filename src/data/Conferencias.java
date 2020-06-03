@@ -14,7 +14,7 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_0//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_0//horario.png",
 			"//src//img//detalle//conferecia//confe_0//min.png",
-			"//src//img//detalle//pelicula//confe_0//max.png",
+			"//src//img//detalle//conferecia//confe_0//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
 			0,0//x y de la leyenda
@@ -33,7 +33,7 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_1//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_1//horario.png",
 			"//src//img//detalle//conferecia//confe_1//min.png",
-			"//src//img//detalle//pelicula//confe_1//max.png",
+			"//src//img//detalle//conferecia//confe_1//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
 			0,0//x y de la leyenda
@@ -52,7 +52,7 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_2//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_2//horario.png",
 			"//src//img//detalle//conferecia//confe_2//min.png",
-			"//src//img//detalle//pelicula//confe_2//max.png",
+			"//src//img//detalle//conferecia//confe_2//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
 			0,0//x y de la leyenda
@@ -71,7 +71,7 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_3//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_3//horario.png",
 			"//src//img//detalle//conferecia//confe_3//min.png",
-			"//src//img//detalle//pelicula//confe_3//max.png",
+			"//src//img//detalle//conferecia//confe_3//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
 			0,0//x y de la leyenda
@@ -90,7 +90,7 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_4//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_4//horario.png",
 			"//src//img//detalle//conferecia//confe_4//min.png",
-			"//src//img//detalle//pelicula//confe_4//max.png",
+			"//src//img//detalle//conferecia//confe_4//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
 			0,0//x y de la leyenda
@@ -109,7 +109,7 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_5//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_5//horario.png",
 			"//src//img//detalle//conferecia//confe_5//min.png",
-			"//src//img//detalle//pelicula//confe_5//max.png",
+			"//src//img//detalle//conferecia//confe_5//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
 			0,0//x y de la leyenda
@@ -128,7 +128,7 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_6//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_6//horario.png",
 			"//src//img//detalle//conferecia//confe_6//min.png",
-			"//src//img//detalle//pelicula//confe_6//max.png",
+			"//src//img//detalle//conferecia//confe_6//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
 			0,0//x y de la leyenda
@@ -147,7 +147,7 @@ public enum Conferencias {
 			"//src//img//cartelera//conferecia//confe_7//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_7//horario.png",
 			"//src//img//detalle//conferecia//confe_7//min.png",
-			"//src//img//detalle//pelicula//confe_7//max.png",
+			"//src//img//detalle//conferecia//confe_7//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
 			0,0//x y de la leyenda
