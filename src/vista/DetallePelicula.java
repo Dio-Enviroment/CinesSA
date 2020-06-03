@@ -245,7 +245,7 @@ public class DetallePelicula extends CustomPanel {
 		actProyeccion= ctrProyeccion.getActProyeccion();
 		proyeccion = ctrProyeccion.getPreproyeccion();
 		back0.setImage(actProyeccion.getBoleteriaBack());
-		img.setImage(actProyeccion.getMax());
+		img.setImage(proyeccion.getMax());
 		title.setText("  "+proyeccion.getTitulo());
 		if(proyeccion instanceof Pelicula){
 			Pelicula pel=(Pelicula)proyeccion;
