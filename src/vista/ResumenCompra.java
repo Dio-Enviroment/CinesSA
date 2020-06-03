@@ -254,9 +254,13 @@ public class ResumenCompra extends CustomPanel {
 		// sala = ctrSala.getSala(0);
 		// salaAct =  sala.getAsientos();
 		// salaPre = ctrSala.getSalaPre();
+		add(btn_cancelar);
+		add(btn_comprar);
 		
-		
+		this.btn_cancelar.setBounds(300, 400, 150, 25);
+		this.btn_comprar.setBounds(450, 400, 150, 25);
 		showcomponet(false);
+		
 	}
 
 	public void descargardata() {
