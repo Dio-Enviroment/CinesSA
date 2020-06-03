@@ -33,7 +33,7 @@ import javax.swing.border.EmptyBorder;
 public class ResumenCompra extends CustomPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel pn_resumenCompra;
+	//private JPanel pn_resumenCompra;
 	private JLabel lbl_salaR;
 	private JLabel lbl_peliculaR;
 	private JLabel lbl_boletosR;
@@ -46,7 +46,7 @@ public class ResumenCompra extends CustomPanel {
 	private JPanel panel;
 	private CustomButton btn_cancelar;
 	private CustomButton btn_comprar;
-	private JPanel pn_resumen;
+	
 	private JLabel lbl_tituloPeliculaR;
 	private ControladorSala ctrSala;
 	private ControladorView ctrView;
@@ -72,120 +72,142 @@ public class ResumenCompra extends CustomPanel {
 						workingDirectory + "//src//resources//compraPrincipal_2.png"};
 
 		ImageAdaptable img1=new ImageAdaptable(paths[0]);
-		img1.setLocation(130, 400);
+		
 		add(img1);
 
-		pn_resumen = new JPanel();
-		pn_resumen.setBounds(26, 30, 386, 285);
-		add(pn_resumen);
-		pn_resumen.setLayout(null);
-	
-		pn_resumenCompra = new JPanel();
-		pn_resumenCompra.setBounds(12, 13, 343, 178);
-		pn_resumen.add(pn_resumenCompra);
-		pn_resumenCompra.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true), "RESUMEN DE LA COMPRA",
-				TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		
 		GridBagLayout gbl_pn_resumenCompra = new GridBagLayout();
 		gbl_pn_resumenCompra.columnWidths = new int[] { 0, 0, 0, 0 };
 		gbl_pn_resumenCompra.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
 		gbl_pn_resumenCompra.columnWeights = new double[] { 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		gbl_pn_resumenCompra.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
-		pn_resumenCompra.setLayout(gbl_pn_resumenCompra);
+		//pn_resumenCompra.setLayout(gbl_pn_resumenCompra);
 
 		lbl_peliculaR = new JLabel("PEL\u00CDCULA:");
-		lbl_peliculaR.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_peliculaR.setFont(new Font("Verdana", Font.BOLD, 30));
 		GridBagConstraints gbc_lbl_peliculaR = new GridBagConstraints();
 		gbc_lbl_peliculaR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_peliculaR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_peliculaR.gridx = 1;
 		gbc_lbl_peliculaR.gridy = 1;
-		pn_resumenCompra.add(lbl_peliculaR, gbc_lbl_peliculaR);
+		//pn_resumenCompra.add(lbl_peliculaR, gbc_lbl_peliculaR);
 
 		lbl_tituloPeliculaR = new JLabel("t\u00EDtulo de la pel\u00EDcula");
-		lbl_tituloPeliculaR.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lbl_tituloPeliculaR.setFont(new Font("Verdana", Font.PLAIN, 30));
 		GridBagConstraints gbc_lbl_tituloPeliculaR = new GridBagConstraints();
 		gbc_lbl_tituloPeliculaR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_tituloPeliculaR.gridx = 2;
 		gbc_lbl_tituloPeliculaR.gridy = 1;
-		pn_resumenCompra.add(lbl_tituloPeliculaR, gbc_lbl_tituloPeliculaR);
+		//pn_resumenCompra.add(lbl_tituloPeliculaR, gbc_lbl_tituloPeliculaR);
 
 		lbl_salaR = new JLabel("SALA:");
-		lbl_salaR.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_salaR.setFont(new Font("Verdana", Font.BOLD, 30));
 		GridBagConstraints gbc_lbl_salaR = new GridBagConstraints();
 		gbc_lbl_salaR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_salaR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_salaR.gridx = 1;
 		gbc_lbl_salaR.gridy = 2;
-		pn_resumenCompra.add(lbl_salaR, gbc_lbl_salaR);
+	//	pn_resumenCompra.add(lbl_salaR, gbc_lbl_salaR);
 
 		lbl_numSalaR = new JLabel("1");
-		lbl_numSalaR.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lbl_numSalaR.setFont(new Font("Verdana", Font.PLAIN, 30));
 		GridBagConstraints gbc_lbl_numSalaR = new GridBagConstraints();
 		gbc_lbl_numSalaR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_numSalaR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_numSalaR.gridx = 2;
 		gbc_lbl_numSalaR.gridy = 2;
-		pn_resumenCompra.add(lbl_numSalaR, gbc_lbl_numSalaR);
+		//pn_resumenCompra.add(lbl_numSalaR, gbc_lbl_numSalaR);
 
 		lbl_boletosR = new JLabel("BOLETOS:");
-		lbl_boletosR.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_boletosR.setFont(new Font("Verdana", Font.BOLD, 30));
 		GridBagConstraints gbc_lbl_boletosR = new GridBagConstraints();
 		gbc_lbl_boletosR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_boletosR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_boletosR.gridx = 1;
 		gbc_lbl_boletosR.gridy = 3;
-		pn_resumenCompra.add(lbl_boletosR, gbc_lbl_boletosR);
+		//pn_resumenCompra.add(lbl_boletosR, gbc_lbl_boletosR);
 
 		lbl_numBoletasR = new JLabel("1");
-		lbl_numBoletasR.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lbl_numBoletasR.setFont(new Font("Verdana", Font.PLAIN, 30));
 		GridBagConstraints gbc_lbl_numBoletasR = new GridBagConstraints();
 		gbc_lbl_numBoletasR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_numBoletasR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_numBoletasR.gridx = 2;
 		gbc_lbl_numBoletasR.gridy = 3;
-		pn_resumenCompra.add(lbl_numBoletasR, gbc_lbl_numBoletasR);
+		//pn_resumenCompra.add(lbl_numBoletasR, gbc_lbl_numBoletasR);
 
 		lbl_asientosR = new JLabel("ASIENTOS:");
-		lbl_asientosR.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_asientosR.setFont(new Font("Verdana", Font.BOLD, 30));
 		GridBagConstraints gbc_lbl_asientosR = new GridBagConstraints();
 		gbc_lbl_asientosR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_asientosR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_asientosR.gridx = 1;
 		gbc_lbl_asientosR.gridy = 4;
-		pn_resumenCompra.add(lbl_asientosR, gbc_lbl_asientosR);
+		//pn_resumenCompra.add(lbl_asientosR, gbc_lbl_asientosR);
 
 		lbl_numAsiemtosR = new JLabel("{ A3 - B5 -B6 }");
-		lbl_numAsiemtosR.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lbl_numAsiemtosR.setFont(new Font("Verdana", Font.PLAIN, 30));
 		GridBagConstraints gbc_lbl_numAsiemtosR = new GridBagConstraints();
 		gbc_lbl_numAsiemtosR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_numAsiemtosR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_numAsiemtosR.gridx = 2;
 		gbc_lbl_numAsiemtosR.gridy = 4;
-		pn_resumenCompra.add(lbl_numAsiemtosR, gbc_lbl_numAsiemtosR);
+		
+		//pn_resumenCompra.add(lbl_numAsiemtosR, gbc_lbl_numAsiemtosR);
 
 		lbl_totalR = new JLabel("TOTAL:");
-		lbl_totalR.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_totalR.setFont(new Font("Verdana", Font.BOLD, 30));
 		GridBagConstraints gbc_lbl_totalR = new GridBagConstraints();
 		gbc_lbl_totalR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_totalR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_totalR.gridx = 1;
 		gbc_lbl_totalR.gridy = 5;
-		pn_resumenCompra.add(lbl_totalR, gbc_lbl_totalR);
+		//pn_resumenCompra.add(lbl_totalR, gbc_lbl_totalR);
 
 		lbl_numTotalR = new JLabel("1");
-		lbl_numTotalR.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lbl_numTotalR.setFont(new Font("Verdana", Font.PLAIN, 30));
 		GridBagConstraints gbc_lbl_numTotalR = new GridBagConstraints();
 		gbc_lbl_numTotalR.anchor = GridBagConstraints.WEST;
 		gbc_lbl_numTotalR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_numTotalR.gridx = 2;
 		gbc_lbl_numTotalR.gridy = 5;
-		pn_resumenCompra.add(lbl_numTotalR, gbc_lbl_numTotalR);
+		//pn_resumenCompra.add(lbl_numTotalR, gbc_lbl_numTotalR);
 
 		panel = new JPanel();
 		panel.setBounds(57, 204, 250, 40);
-		pn_resumen.add(panel);
 		panel.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		add(lbl_salaR);
+		add(lbl_peliculaR);
+		add(lbl_totalR);
+		add(lbl_boletosR);
+		add(lbl_asientosR);
+		add(lbl_numSalaR);
+		add(lbl_numAsiemtosR);
+		add(lbl_numBoletasR);
+		add(lbl_numTotalR);
+		add(lbl_tituloPeliculaR);
+		
+		this.lbl_peliculaR.setBounds(250, 200, 300, 50);
+		this.lbl_tituloPeliculaR.setBounds(453, 200, 300, 50);
+		lbl_tituloPeliculaR.setFont(new Font("Verdana", Font.PLAIN, 30));
+		this.lbl_salaR.setBounds(330, 235, 300, 50);
+		this.lbl_numSalaR.setBounds(450, 235, 300, 50);
+		lbl_numSalaR.setFont(new Font("Verdana", Font.PLAIN, 30));
+		this.lbl_asientosR.setBounds(241, 270, 300, 50);
+		this.lbl_numAsiemtosR.setBounds(445, 270, 1000, 50);
+		lbl_numAsiemtosR.setFont(new Font("Verdana", Font.PLAIN, 30));
+		this.lbl_boletosR.setBounds(259, 305, 300, 50);
+		this.lbl_numBoletasR.setBounds(449, 305, 300, 50);
+		lbl_numBoletasR.setFont(new Font("Verdana", Font.PLAIN, 30));
+		this.lbl_totalR.setBounds(303, 340, 300, 50);
+		this.lbl_numTotalR.setBounds(450, 340, 300, 50);
+		lbl_numTotalR.setFont(new Font("Verdana", Font.PLAIN, 30));
+		//
+		
+		
+		//pn_resumen.setBounds(240, 500, 386, 285);
+		img1.setLocation(600, 300);
 
 		btn_cancelar = new CustomButton("CANCELAR");
 		btn_cancelar.addActionListener(new ActionListener(){
@@ -204,7 +226,7 @@ public class ResumenCompra extends CustomPanel {
 			}
 
 		});
-		btn_cancelar.setFont(new Font("Verdana", Font.BOLD, 14));
+		btn_cancelar.setFont(new Font("Verdana", Font.BOLD, 20));
 		panel.add(btn_cancelar);
 
 		btn_comprar = new CustomButton("COMPRAR");
@@ -227,12 +249,15 @@ public class ResumenCompra extends CustomPanel {
 			}
 
 		});
-		btn_comprar.setFont(new Font("Verdana", Font.BOLD, 14));
+		btn_comprar.setFont(new Font("Verdana", Font.BOLD, 20));
 		panel.add(btn_comprar);
 		sala = ctrSala.getSala(0);
 		salaAct =  sala.getAsientos();
 		salaPre = ctrSala.getSalaPre();
-		
+		add(btn_cancelar);
+		add(btn_comprar);
+		this.btn_cancelar.setBounds(250, 400, 150,25);
+		this.btn_comprar.setBounds(400, 400, 150, 25);
 		
 		showcomponet(false);
 	}
@@ -253,7 +278,7 @@ public class ResumenCompra extends CustomPanel {
 		
 	}
 	public void showcomponet(boolean visible){
-		pn_resumenCompra.setVisible(visible);
+		//pn_resumenCompra.setVisible(visible);
 		lbl_salaR.setVisible(visible);
 		lbl_peliculaR.setVisible(visible);
 		lbl_boletosR.setVisible(visible);
@@ -266,7 +291,6 @@ public class ResumenCompra extends CustomPanel {
 		panel.setVisible(visible);
 		btn_cancelar.setVisible(visible);
 		btn_comprar.setVisible(visible);
-		pn_resumen.setVisible(visible);
 		lbl_tituloPeliculaR.setVisible(visible);
 	}
 	public void setAsientos() {
