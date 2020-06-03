@@ -88,7 +88,7 @@ public class DetallePelicula extends CustomPanel {
 		datos.add(l1, gbc_l1);
 
 		sinopsis = new JTextPane();
-		sinopsis.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		sinopsis.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		sinopsis.setForeground(Color.WHITE);
 		sinopsis.setText("asdas qweq  qweqw qwe  asdasda dvfvfd sdwqq qweqw asdasz zxczx  asdas  qweq como sera");
 		sinopsis.setBackground(new Color(37, 36, 37, 255));
@@ -114,7 +114,7 @@ public class DetallePelicula extends CustomPanel {
 		generos = new JTextPane();
 		generos.setText("123");
 		generos.setForeground(Color.WHITE);
-		generos.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		generos.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		generos.setBackground(new Color(37, 36, 37));
 		GridBagConstraints gbc_generos = new GridBagConstraints();
 		gbc_generos.insets = new Insets(0, 0, 5, 0);
@@ -246,7 +246,7 @@ public class DetallePelicula extends CustomPanel {
 		proyeccion = ctrProyeccion.getPreproyeccion();
 		back0.setImage(actProyeccion.getBoleteriaBack());
 		img.setImage(actProyeccion.getMax());
-		title.setText(proyeccion.getTitulo());
+		title.setText("  "+proyeccion.getTitulo());
 		if(proyeccion instanceof Pelicula){
 			Pelicula pel=(Pelicula)proyeccion;
 			l1.setText("  SINOPSIS:");
