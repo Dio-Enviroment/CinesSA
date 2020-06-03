@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
@@ -24,6 +23,8 @@ import java.awt.Insets;
 import java.awt.GridBagConstraints;
 
 public class DetallePelicula extends CustomPanel {
+
+	private static final long serialVersionUID = 1L;
 	private TransparentPanel back1;
 	private ImageAdaptable back0, img;
 	private ControladorProyeccion ctrProyeccion;
@@ -37,7 +38,6 @@ public class DetallePelicula extends CustomPanel {
 	private JTextPane salaTipo;
 	private JTextPane censura;
 	private JTextPane horarios;
-	private JButton j;
 	private JPanel panel;
 	private CustomButton salir;
 	private CustomButton continuar;
@@ -52,7 +52,7 @@ public class DetallePelicula extends CustomPanel {
 		File workingDirectory = new File(System.getProperty("user.dir"));
 		String[] rawback = { workingDirectory + "//src//img//detalle//pelicula//peli_0//max.png" };
 
-		String[] rawitem = { workingDirectory + "//src//img//boleteria//conferecia//confe_0//back.png" };
+		//String[] rawitem = { workingDirectory + "//src//img//boleteria//conferecia//confe_0//back.png" };
 
 		datos = new JPanel();
 		datos.setBounds(497, 99, 458, 510);

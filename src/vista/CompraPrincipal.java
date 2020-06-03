@@ -8,11 +8,9 @@ import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
-import java.awt.event.ComponentListener;
-import java.text.DecimalFormat;
+
 
 import javax.swing.JTextField;
-import javax.swing.SpinnerModel;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -24,12 +22,12 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JSpinner;
 import javax.swing.JSpinner.DefaultEditor;
-import javax.swing.JSpinner.NumberEditor;
+
 import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JFrame;
+
 import javax.swing.BoxLayout;
-import javax.swing.border.MatteBorder;
+
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
 import javax.swing.SpinnerNumberModel;
@@ -39,6 +37,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class CompraPrincipal extends CustomPanel {
+
+	private static final long serialVersionUID = 1L;
 	private JTextField txt_cedula;
 	private JTextField txt_nombre;
 	private JTextField txt_fono;

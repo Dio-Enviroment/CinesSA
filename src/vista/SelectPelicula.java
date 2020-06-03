@@ -1,11 +1,8 @@
 package vista;
 
-import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
 
 import componentes.CustomButton;
 import componentes.CustomPanel;
@@ -18,9 +15,6 @@ import modelo.Proyeccion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.AlphaComposite;
 
 public class SelectPelicula extends CustomPanel {
 	private TransparentPanel back1;
@@ -116,7 +110,7 @@ public class SelectPelicula extends CustomPanel {
 			end=15;
 		}
 
-		for (int i = ini; i < end; i++) {
+		for (int i = ini; i <= end; i++) {
 			Proyeccion p=proyecciones.get(i);
 			selectItem[cont].setProyeccion(p);
 			selectItem[cont].setImg(p.getMin());

@@ -2,11 +2,9 @@ package vista;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.TimerTask;
+
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 import componentes.ChangePos;
 import componentes.ChangePosListener;
@@ -17,9 +15,12 @@ import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 import modelo.Proyeccion;
 
-import java.awt.Graphics;
 
 public class Cartelera extends CustomPanel {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private CustomButton btn_comprar;
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
@@ -35,7 +36,6 @@ public class Cartelera extends CustomPanel {
 		
 		btn_comprar = new CustomButton("Comprar");
 		
-		File workingDirectory = new File(System.getProperty("user.dir"));
 
 		String[] paths=new String[ctrProyeccion.getProyeccions().size()]; 
 		for (Proyeccion proyeccion : ctrProyeccion.getProyeccions()) {

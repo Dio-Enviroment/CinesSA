@@ -1,35 +1,26 @@
 package vista;
 
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
-import java.awt.GridBagLayout;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
-import java.awt.Dimension;
 
-import javax.swing.border.MatteBorder;
-import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.TitledBorder;
 
 import componentes.CustomButton;
 import componentes.CustomPanel;
 
-import javax.swing.border.BevelBorder;
-import javax.swing.border.EtchedBorder;
 import javax.swing.JLabel;
-import java.awt.GridBagConstraints;
+
 import java.awt.Font;
-import java.awt.Insets;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Stack;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.ImageIcon;
+
 import javax.swing.BoxLayout;
 import javax.swing.border.EmptyBorder;
 import controlador.ControladorSala;
@@ -40,6 +31,10 @@ import modelo.Sala;
 import javax.swing.UIManager;
 
 public class SeleccionarAsientos extends CustomPanel {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel panel;
 	private JButton btncomprar;
 	private JButton btn_cancelar;

@@ -5,14 +5,12 @@ import java.awt.GridBagLayout;
 import javax.swing.border.TitledBorder;
 
 import componentes.CustomPanel;
-// import controlador.Registro_asiento;
-// import Modelo.DatosCliente;
-import controlador.ControladorBoleto;
+
 import controlador.ControladorProyeccion;
 import controlador.ControladorSala;
 import controlador.ControladorView;
 import modelo.Asiento;
-import modelo.Proyeccion;
+
 import modelo.Sala;
 
 import javax.swing.border.LineBorder;
@@ -26,13 +24,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+
 
 public class ResumenCompra extends CustomPanel {
+
+	private static final long serialVersionUID = 1L;
 	private JPanel pn_resumenCompra;
 	private JLabel lbl_salaR;
 	private JLabel lbl_peliculaR;

@@ -2,11 +2,9 @@ package vista;
 
 import java.io.File;
 
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import componentes.CustomButton;
 import componentes.CustomPanel;
@@ -17,17 +15,15 @@ import controlador.ControladorView;
 import modelo.Pelicula;
 import modelo.Proyeccion;
 
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.Component;
+
 
 import java.awt.Color;
-import java.awt.image.BufferedImage;
 
 public class Boleteria extends CustomPanel {
+
+	private static final long serialVersionUID = 1L;
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
 	private ImageAdaptable back, front;
