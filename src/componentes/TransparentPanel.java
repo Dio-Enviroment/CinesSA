@@ -10,6 +10,11 @@ import java.awt.AlphaComposite;
 import java.awt.Component;
 
 public class TransparentPanel extends JPanel {
+
+	public TransparentPanel(boolean none) {
+		setLayout(null);
+	}
+
 	public TransparentPanel() {
 		setBackground(Color.BLACK);
 		setLayout(null);

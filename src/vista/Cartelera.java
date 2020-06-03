@@ -11,6 +11,7 @@ import componentes.ChangePosListener;
 import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.Slide;
+import componentes.TransparentPanel;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 import modelo.Proyeccion;
@@ -25,7 +26,6 @@ public class Cartelera extends CustomPanel {
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
 	private Slide slide;
-	private JButton j;
 
 	public Cartelera(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
 		this.ctrProyeccion=ctrProyeccion;
@@ -42,15 +42,11 @@ public class Cartelera extends CustomPanel {
 			paths[cont]=proyeccion.getCarteleraBack();
 			cont++;
 		}
-		slide = new Slide(paths, 1008, 729);
+		slide = new Slide(paths, width, height);
 		
-		slide.setBounds(0, 0, 1008, 729);
+		slide.setBounds(0, 0, width, height);
 		btn_comprar.setBounds(140, 603, 718, 40);
 
-		j=new JButton("sd");
-		j.setBounds(10, 50, 50, 50);
-
-		add(j);
 		
 		slide.add(btn_comprar);
 		add(slide);
@@ -73,7 +69,6 @@ public class Cartelera extends CustomPanel {
 	public void showcomponet(boolean visible){
 		slide.setVisible(visible);
 		btn_comprar.setVisible(visible);
-		j.setVisible(visible);
 	}
 
 
@@ -86,15 +81,6 @@ public class Cartelera extends CustomPanel {
 			}
 		});
 
-		j.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				slide.setPos(1);
-				btn_comprar.repaint();
-			}
-
-		});
 
 		slide.addChangePos(new ChangePosListener(){
 			@Override
