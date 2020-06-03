@@ -10,7 +10,7 @@ import controlador.ControladorPrincipal;
 import controlador.ControladorView;
 
 public class Main extends JFrame {
-
+ ///aasas
 	private JPanel contentPane;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
