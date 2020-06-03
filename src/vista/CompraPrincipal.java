@@ -137,7 +137,7 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoPersona.add(lbl_cedula, gbc_lbl_cedula);
 
 		txt_cedula = new JTextField();
-
+//
 		gbc_txt_cedula = new GridBagConstraints();
 		gbc_txt_cedula.anchor = GridBagConstraints.WEST;
 		gbc_txt_cedula.insets = new Insets(0, 0, 5, 0);
@@ -620,7 +620,7 @@ public class CompraPrincipal extends CustomPanel {
 	public void censura() {
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		if (actProyeccion instanceof Pelicula) {
-			if (((Pelicula) actProyeccion).getEdad() < 12) {
+			if (((Pelicula) actProyeccion).getEdad() > 12) {
 				this.sp_ninios.setEnabled(false);
 				this.sp_adultos.setEnabled(true);
 			} else {
