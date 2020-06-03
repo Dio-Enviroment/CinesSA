@@ -136,7 +136,6 @@ public class SeleccionarAsientos extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
 				ctrView.setPuestos("0");
 				ctrView.setTotal("0");
 				ctrView.setIva("0");
@@ -305,7 +304,6 @@ public class SeleccionarAsientos extends CustomPanel {
 
 					public void actionPerformed(ActionEvent e) {
 						int aux = Integer.parseInt(lbl_asiento.getText());
-						;
 						CustomButton btn = (CustomButton) e.getSource();
 						int x = (int) btn.getCustomParameter(0);
 						int y = (int) btn.getCustomParameter(1);

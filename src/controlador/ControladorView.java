@@ -34,15 +34,15 @@ public class ControladorView {
         this.cartelera=new Cartelera(1008,729,ctrProyeccion,this);
         this.selectPelicula=new SelectPelicula(1008, 729,ctrProyeccion,this);
         this.boleteria=new Boleteria(1008, 729,ctrProyeccion,this);
+        this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
         this.compraPrincipal=new CompraPrincipal(1008, 729,ctrProyeccion, ctrSala, this);
-        //this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
         this.seleccionarAsientos=new SeleccionarAsientos(1008, 729,ctrSala,this);
         this.resumenCompra=new ResumenCompra(1008, 729,ctrSala,ctrProyeccion,this);
         this.agradecimiento=new Agradecimiento(1008, 729,ctrSala,this);
 
+        this.container.add(detallePelicula);
         this.container.add(cartelera);
         this.container.add(selectPelicula);
-        //selectPelicula.setVisible(false);
         this.container.add(boleteria);
         this.container.add(compraPrincipal);
         this.container.add(seleccionarAsientos);
@@ -126,13 +126,13 @@ public class ControladorView {
 
     private void cargarPanel(CustomPanel customPanel){
         if(this.actPanel!=null){
-            this.actPanel.descargadata();
             this.actPanel.setVisible(false);
+            this.actPanel.descargadata();
         }
 
         this.actPanel=customPanel;
-        this.actPanel.cargardata();
         this.actPanel.setVisible(true);
+        this.actPanel.cargardata();
 
     }
 

@@ -24,6 +24,16 @@ public class CustomButton extends JButton{
 
     public CustomButton(String txt) {
         super(txt);
+        ini();
+    }
+
+    public CustomButton(String txt,Object[] customParameter) {
+        super(txt);
+        this.customParameter=customParameter;
+        ini();
+    }
+
+    private void ini(){
         this.setForeground(Color.white);
         this.setFont(new Font("Tahoma", Font.PLAIN, 20));
         this.setUI(new CustomButtonUI(mode));

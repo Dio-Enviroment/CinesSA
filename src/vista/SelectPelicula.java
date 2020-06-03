@@ -15,6 +15,8 @@ import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 import modelo.Pelicula;
 import modelo.Proyeccion;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -26,10 +28,13 @@ public class SelectPelicula extends CustomPanel {
 	private SelectItem[] selectItem;
 	private CustomButton regresar;
 	private ControladorProyeccion ctrProyeccion;
+	private ControladorView ctrView;
 	private Proyeccion proyeccion;
+	private ArrayList<Proyeccion> proyecciones;
 
 	public SelectPelicula(int width,int height,ControladorProyeccion ctrProyeccion,ControladorView ctrView) {
 		this.ctrProyeccion=ctrProyeccion;
+		this.ctrView=ctrView;
 		setLayout(null);
 		setBounds(0, 0, width, height);
 		File workingDirectory = new File(System.getProperty("user.dir"));
@@ -61,9 +66,20 @@ public class SelectPelicula extends CustomPanel {
 		back0 = new ImageAdaptable(rawback[0]);
 		back0.setLocation(0, 0);
 		add(back0);	
-		
+		iniComponentEvents();
 		showcomponet(false);
 		this.setVisible(false);
+	}
+
+	public void iniComponentEvents() {
+		regresar.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrView.changeBoleteria();
+			}
+
+		});
 	}
 
 	private void generateGrid(String[] items){
@@ -74,7 +90,6 @@ public class SelectPelicula extends CustomPanel {
 		selectItem=new SelectItem[items.length];
 		for (int i = 0; i < items.length; i++) {
 			selectItem[i]=new SelectItem(items[i],itemWidth,itemHeight,37);
-			
 			selectItem[i].setLocation(x, y);
 			add(selectItem[i]);
 			x+=itemWidth+spaceX;
@@ -90,8 +105,8 @@ public class SelectPelicula extends CustomPanel {
 
 	private void refreshButtons(){
 		int cont=0;
-		ArrayList<Proyeccion> proyecciones=ctrProyeccion.getProyeccions();
 		int ini,end;
+		proyecciones=ctrProyeccion.getProyeccions();
 		if (proyeccion instanceof Pelicula) {
 			ini=0;
 			end=7;
@@ -103,7 +118,7 @@ public class SelectPelicula extends CustomPanel {
 
 		for (int i = ini; i < end; i++) {
 			Proyeccion p=proyecciones.get(i);
-		
+			selectItem[cont].setProyeccion(p);
 			selectItem[cont].setImg(p.getMin());
 			cont++;
 		}
@@ -136,15 +151,27 @@ public class SelectPelicula extends CustomPanel {
 			img.setBounds(0, 0, width, height-buttonHeight);
 			add(img);
 
-			btn_comprar=new CustomButton("Comprar");
+			Object[] customParameters={""};
+			btn_comprar=new CustomButton("Comprar",customParameters);
 			btn_comprar.setBounds(0, height-buttonHeight, width, buttonHeight);
 			add(btn_comprar);
 
+			btn_comprar.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//ctrProyeccion.setActProyeccion((int)btn_comprar.getCustomParameter(0));
+					ctrView.changeDetallePelicula();
+				}
+			});
 			//showcomponet(false);
 		}
 
 		public void setImg(String path){
 			img.setImg(path);
+		}
+
+		public void setProyeccion(Proyeccion proyecciont){
+			btn_comprar.setCustomParameter(0, proyecciont);	
 		}
 
 		// public void descargardata() {

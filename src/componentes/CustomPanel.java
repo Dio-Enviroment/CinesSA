@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Component;
 
 public class CustomPanel extends JPanel implements Controlable {
+
     @Override
     public void cargardata() {}
 
