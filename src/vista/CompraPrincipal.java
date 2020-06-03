@@ -77,6 +77,8 @@ public class CompraPrincipal extends CustomPanel {
 	private ControladorProyeccion ctrProyeccion;
 	private ControladorView ctrView;
 	private ControladorSala ctrSala;
+	private JLabel datosCliente;
+	private JLabel infoBoleto;
 
 	private Precio pr=new Precio();
 	private JComponent editor,editor2;
@@ -93,7 +95,11 @@ public class CompraPrincipal extends CustomPanel {
 		this.ctrProyeccion = ctrProyeccion;
 		this.ctrView = ctrView;
 		this.ctrSala = ctrSala;
+		this.datosCliente= new JLabel("DATOS DEL CLIENTE");
+		this.infoBoleto= new JLabel("INFORMACION DE LA PELICULA");
 		setLayout(null);
+		add(datosCliente);
+		add(infoBoleto);
 		File workingDirectory = new File(System.getProperty("user.dir"));
 				String[] paths = { workingDirectory + "//src//resources//compraPrincipal_1.png",
 						workingDirectory + "//src//resources//compraPrincipal_2.png"};
@@ -113,8 +119,6 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoPersona = new JPanel();
 		pn_datoPersona.setBounds(12, 9, 494, 183);
 		pn_compra.add(pn_datoPersona);
-		pn_datoPersona.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2, true),
-				"INFORMACI\u00D3N DEL CLIENTE", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		GridBagLayout gbl_pn_datoPersona = new GridBagLayout();
 		gbl_pn_datoPersona.columnWidths = new int[] { 0, 0, 197, 0 };
 		gbl_pn_datoPersona.rowHeights = new int[] { 0, 0, 0, 0, 0, 0 };
@@ -124,7 +128,7 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_cedula = new JLabel("C\u00C9DULA:");
 		lbl_cedula.setForeground(new Color(102, 0, 102));
-		lbl_cedula.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_cedula.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_cedula = new GridBagConstraints();
 		gbc_lbl_cedula.anchor = GridBagConstraints.EAST;
 		gbc_lbl_cedula.insets = new Insets(0, 0, 5, 5);
@@ -144,7 +148,7 @@ public class CompraPrincipal extends CustomPanel {
 	
 		lbl_nombre = new JLabel("NOMBRE:");
 		lbl_nombre.setForeground(new Color(102, 0, 102));
-		lbl_nombre.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_nombre.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_nombre = new GridBagConstraints();
 		gbc_lbl_nombre.anchor = GridBagConstraints.EAST;
 		gbc_lbl_nombre.insets = new Insets(0, 0, 5, 5);
@@ -163,7 +167,7 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_telefono = new JLabel("TELEFONO:");
 		lbl_telefono.setForeground(new Color(102, 0, 102));
-		lbl_telefono.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_telefono.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_telefono = new GridBagConstraints();
 		gbc_lbl_telefono.anchor = GridBagConstraints.EAST;
 		gbc_lbl_telefono.insets = new Insets(0, 0, 5, 5);
@@ -182,7 +186,7 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_direccion = new JLabel("DIRECCION:");
 		lbl_direccion.setForeground(new Color(102, 0, 102));
-		lbl_direccion.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_direccion.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_direccion = new GridBagConstraints();
 		gbc_lbl_direccion.anchor = GridBagConstraints.EAST;
 		gbc_lbl_direccion.insets = new Insets(0, 0, 0, 5);
@@ -202,8 +206,6 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto = new JPanel();
 		pn_datoBoleto.setBounds(12, 209, 494, 270);
 		pn_compra.add(pn_datoBoleto);
-		pn_datoBoleto.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2), "DATOS DEL BOLETO",
-				TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagLayout gbl_pn_datoBoleto = new GridBagLayout();
 		gbl_pn_datoBoleto.columnWidths = new int[] { 0, 0, 0, 0, 0, 0 };
 		gbl_pn_datoBoleto.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -213,7 +215,7 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_pelicula = new JLabel("PEL\u00CDCULA:");
 		lbl_pelicula.setForeground(new Color(102, 0, 102));
-		lbl_pelicula.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_pelicula.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_pelicula = new GridBagConstraints();
 		gbc_lbl_pelicula.anchor = GridBagConstraints.EAST;
 		gbc_lbl_pelicula.insets = new Insets(0, 0, 5, 5);
@@ -222,7 +224,7 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto.add(lbl_pelicula, gbc_lbl_pelicula);
 
 		lbl_tituloPelicula = new JLabel("titulo de la pelicula");
-		lbl_tituloPelicula.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_tituloPelicula.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_tituloPelicula = new GridBagConstraints();
 		gbc_lbl_tituloPelicula.anchor = GridBagConstraints.WEST;
 		gbc_lbl_tituloPelicula.insets = new Insets(0, 0, 5, 5);
@@ -232,16 +234,16 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_tiiposala = new JLabel("tipo de sala");
 		lbl_tiiposala.setHorizontalAlignment(SwingConstants.TRAILING);
-		lbl_tiiposala.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_tiiposala.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_tiiposala = new GridBagConstraints();
 		gbc_lbl_tiiposala.insets = new Insets(0, 0, 5, 0);
-		gbc_lbl_tiiposala.gridx = 4;
+		gbc_lbl_tiiposala.gridx = 7;
 		gbc_lbl_tiiposala.gridy = 1;
 		pn_datoBoleto.add(lbl_tiiposala, gbc_lbl_tiiposala);
 
 		lbl_boletos = new JLabel("BOLETOS");
 		lbl_boletos.setForeground(new Color(102, 0, 102));
-		lbl_boletos.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_boletos.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_boletos = new GridBagConstraints();
 		gbc_lbl_boletos.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_boletos.gridx = 2;
@@ -256,7 +258,7 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_ninios = new JLabel("NI\u00D1OS:");
 		lbl_ninios.setForeground(new Color(102, 0, 102));
-		lbl_ninios.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_ninios.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_ninios = new GridBagConstraints();
 		gbc_lbl_ninios.anchor = GridBagConstraints.EAST;
 		gbc_lbl_ninios.insets = new Insets(0, 0, 5, 5);
@@ -273,7 +275,7 @@ public class CompraPrincipal extends CustomPanel {
 		lbl_adultos = new JLabel("ADULTOS:");
 
 		lbl_adultos.setForeground(new Color(102, 0, 102));
-		lbl_adultos.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_adultos.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_adultos = new GridBagConstraints();
 		gbc_lbl_adultos.anchor = GridBagConstraints.EAST;
 		gbc_lbl_adultos.insets = new Insets(0, 0, 5, 5);
@@ -288,7 +290,7 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto.add(sp_adultos, gbc_sp_adultos);
 
 		btn_selecionAsiento = new CustomButton("SELEC ASIENTOS");
-		btn_selecionAsiento.setFont(new Font("Verdana", Font.BOLD, 13));
+		btn_selecionAsiento.setFont(new Font("Verdana", Font.BOLD, 20));
 		btn_selecionAsiento.setForeground(new Color(102, 0, 102));
 		btn_selecionAsiento.setBounds(0, 0, 8, 18);
 		gbc_btn_selecionAsiento = new GridBagConstraints();
@@ -299,7 +301,7 @@ public class CompraPrincipal extends CustomPanel {
 		this.btn_selecionAsiento.setEnabled(false);
 
 		lbl_contador = new JLabel("0");
-		lbl_contador.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_contador.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_contador = new GridBagConstraints();
 		gbc_lbl_contador.anchor = GridBagConstraints.WEST;
 		gbc_lbl_contador.insets = new Insets(0, 0, 5, 5);
@@ -309,7 +311,7 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_subtotal = new JLabel("SUBTOTAL:");
 		lbl_subtotal.setForeground(new Color(102, 0, 102));
-		lbl_subtotal.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_subtotal.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_subtotal = new GridBagConstraints();
 		gbc_lbl_subtotal.anchor = GridBagConstraints.EAST;
 		gbc_lbl_subtotal.insets = new Insets(0, 0, 5, 5);
@@ -318,7 +320,7 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto.add(lbl_subtotal, gbc_lbl_subtotal);
 
 		lbl_valor_Subtotal = new JLabel("0");
-		lbl_valor_Subtotal.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_valor_Subtotal.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_valor_Subtotal = new GridBagConstraints();
 		gbc_lbl_valor_Subtotal.anchor = GridBagConstraints.WEST;
 		gbc_lbl_valor_Subtotal.insets = new Insets(0, 0, 5, 5);
@@ -328,7 +330,7 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_iva = new JLabel("IVA:");
 		lbl_iva.setForeground(new Color(102, 0, 102));
-		lbl_iva.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_iva.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_iva = new GridBagConstraints();
 		gbc_lbl_iva.anchor = GridBagConstraints.EAST;
 		gbc_lbl_iva.insets = new Insets(0, 0, 5, 5);
@@ -337,7 +339,7 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto.add(lbl_iva, gbc_lbl_iva);
 
 		lbl_valor_iva = new JLabel("0");
-		lbl_valor_iva.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_valor_iva.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_valor_iva = new GridBagConstraints();
 		gbc_lbl_valor_iva.anchor = GridBagConstraints.WEST;
 		gbc_lbl_valor_iva.insets = new Insets(0, 0, 5, 5);
@@ -347,7 +349,7 @@ public class CompraPrincipal extends CustomPanel {
 
 		lbl_total = new JLabel("TOTAL:");
 		lbl_total.setForeground(new Color(102, 0, 102));
-		lbl_total.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_total.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_total = new GridBagConstraints();
 		gbc_lbl_total.anchor = GridBagConstraints.EAST;
 		gbc_lbl_total.insets = new Insets(0, 0, 0, 5);
@@ -356,7 +358,7 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto.add(lbl_total, gbc_lbl_total);
 
 		lbl_valor_total = new JLabel("0");
-		lbl_valor_total.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_valor_total.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_valor_total = new GridBagConstraints();
 		gbc_lbl_valor_total.anchor = GridBagConstraints.WEST;
 		gbc_lbl_valor_total.insets = new Insets(0, 0, 0, 5);
@@ -394,6 +396,12 @@ public class CompraPrincipal extends CustomPanel {
 				pn_controlBotones.add(btn_siguiente, gbc_btn_siguiente);
 
 		this.btn_siguiente.setEnabled(false);
+		this.datosCliente.setBounds(240, 43, 250, 50);
+		datosCliente.setFont(new Font("Verdana", Font.BOLD, 20));
+		this.infoBoleto.setBounds(240, 230, 400, 50);
+		infoBoleto.setFont(new Font("Verdana", Font.BOLD, 20));
+		//pn_datoBoleto.setBounds(12, 209, 494, 270);
+		
 
 		showcomponet(false);
 
