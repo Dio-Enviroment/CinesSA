@@ -203,8 +203,8 @@ public class ResumenCompra extends CustomPanel {
 		this.lbl_totalR.setBounds(303, 340, 300, 50);
 		this.lbl_numTotalR.setBounds(450, 340, 300, 50);
 		lbl_numTotalR.setFont(new Font("Verdana", Font.PLAIN, 30));
-		//
-		
+	
+		/////dfgdfg
 		
 		//pn_resumen.setBounds(240, 500, 386, 285);
 		img1.setLocation(600, 300);
