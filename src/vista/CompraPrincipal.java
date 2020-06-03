@@ -9,7 +9,6 @@ import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
 
-
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
@@ -17,6 +16,7 @@ import javax.swing.event.ChangeListener;
 import javax.swing.plaf.basic.BasicArrowButton;
 
 import componentes.CustomPanel;
+import componentes.ImageAdaptable;
 
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -35,6 +35,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
 public class CompraPrincipal extends CustomPanel {
 
@@ -92,6 +93,18 @@ public class CompraPrincipal extends CustomPanel {
 		this.ctrView = ctrView;
 		this.ctrSala = ctrSala;
 		setLayout(null);
+		File workingDirectory = new File(System.getProperty("user.dir"));
+				String[] paths = { workingDirectory + "//src//resources//compraPrincipal_1.png",
+						workingDirectory + "//src//resources//compraPrincipal_2.png",
+						workingDirectory + "//src//resources//asiento_desabilitado.png"};
+
+		ImageAdaptable img1=new ImageAdaptable(paths[0]);
+		img1.setLocation(130, 400);
+		add(img1);
+
+		ImageAdaptable img2=new ImageAdaptable(paths[1]);
+		img2.setLocation(680, 70);
+		add(img2);
 
 		pn_compra = new JPanel();
 		pn_compra.setBounds(228, 83, 513, 526);
@@ -372,6 +385,9 @@ public class CompraPrincipal extends CustomPanel {
 		this.btn_siguiente.setEnabled(false);
 
 		showcomponet(false);
+
+		
+		
 		
 
 		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();

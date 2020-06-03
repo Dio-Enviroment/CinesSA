@@ -103,6 +103,7 @@ public class Slide extends JPanel {
 						}
 					}
 					fireChangePos(new ChangePos(this));
+					
 					try {
 						Thread.currentThread();
 						Thread.sleep(delayTransition);
