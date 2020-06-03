@@ -2,7 +2,7 @@ package vista;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.io.File;
 
 import javax.swing.JButton;
 
@@ -10,6 +10,7 @@ import componentes.ChangePos;
 import componentes.ChangePosListener;
 import componentes.CustomButton;
 import componentes.CustomPanel;
+import componentes.ImageAdaptable;
 import componentes.Slide;
 import componentes.TransparentPanel;
 import controlador.ControladorProyeccion;
@@ -47,8 +48,13 @@ public class Cartelera extends CustomPanel {
 		slide.setBounds(0, 0, width, height);
 		btn_comprar.setBounds(140, 603, 718, 40);
 
-		
+		File workingDirectory = new File(System.getProperty("user.dir"));
+
+		ImageAdaptable logo=new ImageAdaptable(workingDirectory + "//src//resources//logo.png");
+		logo.setLocation(12, 12);	
+
 		slide.add(btn_comprar);
+		slide.add(logo);
 		add(slide);
 
 		iniComponentEvents();

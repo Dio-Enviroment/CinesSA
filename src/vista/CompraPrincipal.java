@@ -612,7 +612,7 @@ public class CompraPrincipal extends CustomPanel {
 	public void censura() {
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		if (actProyeccion instanceof Pelicula) {
-			if (((Pelicula) actProyeccion).getEdad() < 12) {
+			if (((Pelicula) actProyeccion).getEdad() > 12) {
 				this.sp_ninios.setEnabled(false);
 				this.sp_adultos.setEnabled(true);
 			} else {

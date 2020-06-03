@@ -18,7 +18,7 @@ public class CustomButton extends JButton{
 
     private static final long serialVersionUID = 1L;
     private int mode = 0;
-    private Color idle, press;
+    private Color idle, press,enable;
     private Object[] customParameter;
     private String [] paths;
 
@@ -40,6 +40,7 @@ public class CustomButton extends JButton{
         this.setBorder(new EmptyBorder(5, 15, 5, 15));
         this.idle=new Color(148, 48, 42, 255);
         this.press=new Color(101, 35, 34, 255);
+        this.enable=new Color(68, 22, 20, 255);
     }
 
     public CustomButton(Object[] path,int num_img) {
@@ -127,6 +128,9 @@ public class CustomButton extends JButton{
                 g.setColor(idle);
             } else {
                 g.setColor(press);
+            }
+            if(!b.getModel().isEnabled()){
+                g.setColor(enable);
             }
             g.fillRect(0, 0, d.width, d.height);
         }
