@@ -34,11 +34,10 @@ public class Agradecimiento extends CustomPanel {
 		setBounds(0, 0, width, height);
 		this.ctrView=ctrView;
 		pn_agradecimiento = new JPanel();
-		pn_agradecimiento.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		pn_agradecimiento.setBounds(29, 29, 238, 76);
+		pn_agradecimiento.setBounds(200, 230,800,400);
 		add(pn_agradecimiento);
 		texto = new JTextArea();
-		texto.setBounds(0, 0, 238, 76);
+		texto.setBounds(0, 0, 800, 20);
 		texto.setEditable(false);  
 		texto.setCursor(null);  
 		texto.setOpaque(false);  
@@ -46,7 +45,7 @@ public class Agradecimiento extends CustomPanel {
 		texto.setLineWrap(true);
 		texto.setWrapStyleWord(true);
 		pn_agradecimiento.add(texto);
-		
+		texto.setFont(new Font("Verdana", Font.PLAIN, 40));
 		
 		
 		
@@ -60,9 +59,9 @@ public class Agradecimiento extends CustomPanel {
 	
 	public void cargardata() {
 		
-		texto.setText("              GRACIAS POR SU COMPRA \n" 
-				+"                     "+ctrView.getCliente() +" \n" 
-				+ "            DISFRUTE DE SU PELICULA");
+		texto.setText("GRACIAS POR SU COMPRA \n" 
+				+"         "+ctrView.getCliente() +" \n" 
+				+ "DISFRUTE DE SU PELICULA");
 		showcomponet(true);
 		this.initTransition();
 	}
@@ -82,12 +81,7 @@ public class Agradecimiento extends CustomPanel {
 			public void run() {
 				// TODO Auto-generated method stub
 				ctrView.changeCartelera();
-				/*try {
-					Thread.currentThread();
-					Thread.sleep(delayTransition);
-				} catch (InterruptedException ex) {
-					Thread.currentThread().interrupt();
-				}*/
+				
 			}
 			
 		};

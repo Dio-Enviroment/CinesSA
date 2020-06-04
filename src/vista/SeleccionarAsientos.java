@@ -9,6 +9,7 @@ import javax.swing.border.TitledBorder;
 
 import componentes.CustomButton;
 import componentes.CustomPanel;
+import componentes.ImageAdaptable;
 
 import javax.swing.JLabel;
 
@@ -54,7 +55,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	private JLabel[] num = new JLabel[8];
 	private JLabel[] let = new JLabel[8];
 	private ArrayList<Asiento> salaPre;
-
+	
 	private JPanel pn_letras;
 
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
@@ -97,12 +98,21 @@ public class SeleccionarAsientos extends CustomPanel {
 
 		pn_asientos.add(lbl_asiento);
 		pn_asientos.add(pn_seleccionarAsiento);
+		File workingDirectory = new File(System.getProperty("user.dir"));
+		String[] paths = { workingDirectory + "//src//resources//fondoSala.png",};
+		
+		ImageAdaptable img1=new ImageAdaptable(paths[0]);
+		Jlabels();
+		img1.setLocation(70,75 );
+		pn_asientos.add(img1);
 		pn_seleccionarAsiento.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 3), null,
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		pn_seleccionarAsiento.setLayout(null);
+		pn_seleccionarAsiento.setOpaque(false);
+		pn_letras.setOpaque(false);
 		this.btncomprar.setEnabled(false);
+		
 		generarBotones();
-		Jlabels();
 		invisibleL();
 		invisibleN();
 		invisible();
