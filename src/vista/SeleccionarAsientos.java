@@ -107,7 +107,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		lbl_asiento.setForeground(Color.white);
 		lbl_asientos.setForeground(Color.white);
 		Jlabels();
-		img1.setLocation(70,75 );
+		img1.setLocation(90,75 );
 		pn_asientos.add(img1);
 		pn_asientos.add(img2);
 		
@@ -186,8 +186,8 @@ public class SeleccionarAsientos extends CustomPanel {
 		letras[7] = "H";
 		sala = ctrSala.getSala(0);
 		asientos = sala.getAsientos();
-		pn_letras.setBounds(155, 120, 40, 62 * asientos.length);
-		pn_seleccionarAsiento.setBounds(200, 120, 77 * asientos[0].length, 62 * asientos.length);
+		pn_letras.setBounds(155, 120, 40, 70 * asientos.length);
+		pn_seleccionarAsiento.setBounds(200, 120, 90 * asientos[0].length, 70 * asientos.length);
 		for (int i = 0; i < asientos[0].length; i++) {
 			num[i].setText(numeros[i]);
 			num[i].setVisible(true);
@@ -205,27 +205,27 @@ public class SeleccionarAsientos extends CustomPanel {
 	}
 
 	public void Jlabels() {
-		int x = 230;
+		int x = 234;
 		int y = 80;
 		for (int i = 0; i < num.length; i++) {
 			JLabel l1 = new JLabel();
 			l1.setFont(new Font("Verdana", Font.BOLD, 18));
 			l1.setForeground(Color.white);
 			l1.setBounds(x, y, 40, 40);
-			x += 77;
+			x += 90;
 			num[i] = l1;
 			pn_asientos.add(num[i]);
 		}
 
 		int w = 10;
-		int z = 10;
+		int z = 14;
 
 		for (int i = 0; i < let.length; i++) {
 			JLabel l = new JLabel();
 			l.setFont(new Font("Verdana", Font.BOLD, 18));
 			l.setForeground(Color.white);
 			l.setBounds(w, z, 15, 40);
-			z += 58;
+			z += 68;
 			let[i] = l;
 			pn_letras.add(let[i]);
 		}
@@ -296,7 +296,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	 */
 
 	private void generarBotones() {
-		int itemWidth = 62, itemHeight = 47;
+		int itemWidth = 75, itemHeight = 55;
 		int iniX = 5, iniY = 5, spaceX = 15, spaceY = 15;
 		int itemOnly7 = 0;
 		int x = iniX, y = iniY;
