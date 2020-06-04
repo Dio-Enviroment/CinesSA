@@ -98,15 +98,19 @@ public class SeleccionarAsientos extends CustomPanel {
 
 		pn_asientos.add(lbl_asiento);
 		pn_asientos.add(pn_seleccionarAsiento);
+		
 		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] paths = { workingDirectory + "//src//resources//fondoSala.png",};
+		String[] paths = { workingDirectory + "//src//resources//fondoSala.png",workingDirectory + "//src//resources//fondo_s.png"};
 		
 		ImageAdaptable img1=new ImageAdaptable(paths[0]);
+		ImageAdaptable img2=new ImageAdaptable(paths[1]);
+		lbl_asiento.setForeground(Color.white);
+		lbl_asientos.setForeground(Color.white);
 		Jlabels();
 		img1.setLocation(70,75 );
 		pn_asientos.add(img1);
-		pn_seleccionarAsiento.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 3), null,
-				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		pn_asientos.add(img2);
+		
 		pn_seleccionarAsiento.setLayout(null);
 		pn_seleccionarAsiento.setOpaque(false);
 		pn_letras.setOpaque(false);
@@ -206,6 +210,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		for (int i = 0; i < num.length; i++) {
 			JLabel l1 = new JLabel();
 			l1.setFont(new Font("Verdana", Font.BOLD, 18));
+			l1.setForeground(Color.white);
 			l1.setBounds(x, y, 40, 40);
 			x += 77;
 			num[i] = l1;
@@ -218,6 +223,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		for (int i = 0; i < let.length; i++) {
 			JLabel l = new JLabel();
 			l.setFont(new Font("Verdana", Font.BOLD, 18));
+			l.setForeground(Color.white);
 			l.setBounds(w, z, 15, 40);
 			z += 58;
 			let[i] = l;
