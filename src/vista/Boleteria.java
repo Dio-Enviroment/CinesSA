@@ -33,8 +33,8 @@ public class Boleteria extends CustomPanel {
 	private ControladorSala ctrSala;
 	private ImageAdaptable back, front;
 	private TransparentPanel formulary;
-	private CustomButton title, compra;
-	private JLabel lb1, lb2;
+	private CustomButton title, compra,cartelera;
+	private JLabel lb1,lb1_1, lb2;
 	private JComboBox tipo, horario;
 	private Proyeccion proyeccion;
 	private DefaultComboBoxModel horarios = new DefaultComboBoxModel();
@@ -62,15 +62,19 @@ public class Boleteria extends CustomPanel {
 		Object[] titleS = { workingDirectory + "//src//img//boleteria//pelicula//peli_0//titulo.png" };
 		title = new CustomButton(titleS, 1);
 		title.setVisible(false);
-		title.setBounds(10, 150, formularyWidth - 20, 78);
+		title.setBounds(10, 215, formularyWidth - 20, 78);
+		cartelera = new CustomButton("Ver Cartelera");
+		cartelera.setBounds(45, 380, formularyWidth - 90, 60);
+		cartelera.setVisible(false);
+
 		compra = new CustomButton("Comprar");
 		compra.setBounds(45, 450, formularyWidth - 90, 60);
 		compra.setVisible(false);
 
-		lb1 = new JLabel("Tipo:");
+		lb1 = new JLabel("Precione el logo para ver detalles:");
 		lb1.setFont(lb1.getFont().deriveFont(20.0f));
 		lb1.setForeground(Color.WHITE);
-		lb1.setBounds(75, 240, formularyWidth - 20, 60);
+		lb1.setBounds(10, 160, formularyWidth - 10, 60);
 		lb2 = new JLabel("Horario:");
 		lb2.setFont(lb1.getFont().deriveFont(20.0f));
 		lb2.setForeground(Color.WHITE);
@@ -89,6 +93,7 @@ public class Boleteria extends CustomPanel {
 		formulary.add(tipo);
 		formulary.add(horario);
 		formulary.add(lb1);
+		formulary.add(cartelera);
 		formulary.add(compra);
 
 		add(front);
@@ -127,6 +132,7 @@ public class Boleteria extends CustomPanel {
 		front.setVisible(visible);
 		formulary.setVisible(visible);
 		title.setVisible(visible);
+		cartelera.setVisible(visible);
 		compra.setVisible(visible);
 		tipo.setVisible(visible);
 		horario.setVisible(visible);
@@ -156,10 +162,19 @@ public class Boleteria extends CustomPanel {
 			}
 		});
 
-		title.addActionListener(new ActionListener() {
+
+		cartelera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ctrView.changeSelectPelicula();
+			}
+		});
+
+		title.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ctrProyeccion.setPreproyeccion(ctrProyeccion.getActProyeccion());
+				ctrView.changeDetallePelicula();
 			}
 		});
 	}

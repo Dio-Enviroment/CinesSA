@@ -148,7 +148,7 @@ public class SelectPelicula extends CustomPanel {
 			add(img);
 
 			Object[] customParameters={0};
-			btn_comprar=new CustomButton("Comprar",customParameters);
+			btn_comprar=new CustomButton("Ver detalles",customParameters);
 			btn_comprar.setBounds(0, height-buttonHeight, width, buttonHeight);
 			add(btn_comprar);
 
