@@ -139,8 +139,10 @@ public class SeleccionarAsientos extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				ctrView.setActivador4(true);
 				ctrView.setActivador2(true);
 				ctrView.changeCompraPrincipal();
+				
 			}
 
 		});
@@ -148,10 +150,12 @@ public class SeleccionarAsientos extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				ctrView.setActivador4(false);
 				ctrBoleto.setPuestos("0");
 				ctrBoleto.setTotal("0");
 				ctrBoleto.setIva("0");
 				ctrBoleto.setSubtotal("0");
+				
 				ctrSala.vaciarTodos();
 				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();

@@ -22,6 +22,8 @@ public class ControladorView {
     
     private boolean activador;
     private boolean activador2;
+    private boolean activador3;
+    private boolean activador4;
     private boolean inicompraPrincipal=true;
     private String nombre ;
     private String[] log=new String[2];
@@ -95,8 +97,17 @@ public class ControladorView {
     public void changeDetallePelicula() {
         cargarPanel(this.detallePelicula);
     }
+    
 
-    private void cargarPanel(CustomPanel customPanel){
+    public boolean getActivador3() {
+		return activador3;
+	}
+
+	public void setActivador3(boolean activador3) {
+		this.activador3 = activador3;
+	}
+
+	private void cargarPanel(CustomPanel customPanel){
         if(this.actPanel!=null){
             this.actPanel.setVisible(false);
             this.actPanel.descargadata();
@@ -132,6 +143,15 @@ public class ControladorView {
     	this.nombre=nombre;
     	
     }
+
+	public boolean getActivador4() {
+		return activador4;
+	}
+
+	public void setActivador4(boolean activador4) {
+		this.activador4 = activador4;
+	}
+    
     
 
 }

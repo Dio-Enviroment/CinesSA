@@ -442,6 +442,7 @@ public class CompraPrincipal extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ctrView.setActivador4(false);
 				
 				cliente.setNombre(txt_nombre.getText());
 				cliente.setCedula(txt_cedula.getText());
@@ -531,13 +532,36 @@ public class CompraPrincipal extends CustomPanel {
 			public void stateChanged(ChangeEvent arg0) {
 				aux = Integer.parseInt(sp_adultos.getValue().toString())
 						+ Integer.parseInt(sp_ninios.getValue().toString());
-				if (aux == maxA) {
+				/*if (aux == maxA) {
+					
 					arribaA.setEnabled(false);
 					arribaN.setEnabled(false);
 				} else {
+					
 					arribaA.setEnabled(true);
 					arribaN.setEnabled(true);
 					//
+				}*/
+				
+				if (ctrView.getActivador3()) {
+					if (aux == maxA) {
+						
+						arribaA.setEnabled(false);
+						arribaN.setEnabled(false);
+					} else {
+						
+						arribaA.setEnabled(true);
+						arribaN.setEnabled(true);
+						//
+					}
+				}
+				else {
+					if (aux == maxA) {
+						arribaA.setEnabled(false);
+					}
+					else {
+						arribaA.setEnabled(true);
+					}
 				}
 
 				lbl_contador.setText(aux + "");
@@ -634,28 +658,50 @@ public class CompraPrincipal extends CustomPanel {
 		return estado;
 	}
 
-	public void activar() {
-		if (ctrView.getActivador2()) {
-			this.sp_ninios.setEnabled(false);
-			this.sp_adultos.setEnabled(false);
-		}
-	}
 
 	public void censura() {
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		if (actProyeccion instanceof Pelicula) {
+			
 			if (((Pelicula) actProyeccion).getEdad() > 12) {
-				this.arribaN.setEnabled(false);
-				this.sp_ninios.setEnabled(false);
-				this.sp_adultos.setEnabled(true);
-			} else {
+				if(ctrView.getActivador4()) {
+					ctrView.setActivador3(false);
+					this.arribaN.setEnabled(false);
+					this.sp_ninios.setEnabled(false);
+					this.sp_adultos.setEnabled(false);
+				}
+				else {
+					ctrView.setActivador3(false);
+					this.arribaN.setEnabled(false);
+					this.sp_ninios.setEnabled(false);
+					this.sp_adultos.setEnabled(true);
+				}
 				
-				this.sp_ninios.setEnabled(true);
-				this.sp_adultos.setEnabled(true);
+			} else {
+				if (ctrView.getActivador4()) {
+					ctrView.setActivador3(true);
+					this.sp_ninios.setEnabled(false);
+					this.sp_adultos.setEnabled(false);
+				}
+				else {
+					ctrView.setActivador3(true);
+					this.sp_ninios.setEnabled(true);
+					this.sp_adultos.setEnabled(true);
+				}
+				
 			}
 		} else {
-			this.sp_adultos.setEnabled(true);
-			this.sp_ninios.setEnabled(true);
+			if (ctrView.getActivador4()) {
+				ctrView.setActivador3(true);
+				this.sp_adultos.setEnabled(false);
+				this.sp_ninios.setEnabled(false);
+			}
+			else {
+				ctrView.setActivador3(true);
+				this.sp_adultos.setEnabled(true);
+				this.sp_ninios.setEnabled(true);
+			}
+			
 		}
 
 	}
@@ -678,12 +724,13 @@ public class CompraPrincipal extends CustomPanel {
 		this.lbl_tiiposala.setText("");
 		this.sp_adultos.getModel().setValue("0");
 		this.sp_ninios.getModel().setValue("0");
+		
 	}
 
 	public void cargardata() {
 		showcomponet(true);
 		cliente= ctrBoleto.getCliente();
-
+		
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
 		this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
@@ -694,7 +741,8 @@ public class CompraPrincipal extends CustomPanel {
 		aux = 0;
 		asientos = "";
 		estado = false;
-		//this.sp_ninios.setEnabled(ctrView.getActivador2());
+		//this.sp_ninios.setEnabled(ctrView.getActivador4());
+		//this.sp_adultos.setEnabled(ctrView.getActivador4());
 		this.lbl_contador.setText(ctrBoleto.getPuestos());
 		this.lbl_valor_iva.setText(ctrBoleto.getIva());
 		this.lbl_valor_Subtotal.setText(ctrBoleto.getSubtotal());
@@ -704,9 +752,9 @@ public class CompraPrincipal extends CustomPanel {
 		txt_fono.setText(cliente.getTelefono());
 		txt_direccion.setText(cliente.getDireccion());
 		
-		
-		activar();
 		censura();
+		
+		
 	}
 
 	public void showcomponet(boolean visible) {

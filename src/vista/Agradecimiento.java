@@ -84,6 +84,7 @@ public class Agradecimiento extends CustomPanel {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
+				ctrView.setActivador4(false);
 				cliente= ctrBoleto.getCliente();
 				cliente.setCedula("");
 				cliente.setNombre("");
