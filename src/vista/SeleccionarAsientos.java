@@ -72,7 +72,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		setBounds(0, 0, width, height);
 		setLayout(null);
 		pn_asientos = new JPanel();
-		pn_asientos.setBounds(12, 13, 1000, 1000);
+		pn_asientos.setBounds(0, 0, 1008, 729);
 		add(pn_asientos);
 		pn_letras = new JPanel();
 		pn_letras.setLayout(null);
