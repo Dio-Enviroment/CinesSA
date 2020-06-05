@@ -36,7 +36,6 @@ public class SeleccionarAsientos extends CustomPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel panel;
 	private CustomButton btncomprar;
 	private CustomButton btn_cancelar;
 	private JPanel pn_seleccionarAsiento;
@@ -58,6 +57,13 @@ public class SeleccionarAsientos extends CustomPanel {
 	private ArrayList<Asiento> salaPre;
 	
 	private JPanel pn_letras;
+	File workingDirectory = new File(System.getProperty("user.dir"));
+	String[] paths = { workingDirectory + "//src//resources//sala_5_5.png",workingDirectory + "//src//resources//sala_5_6.png",
+			workingDirectory + "//src//resources//sala_5_7.png",workingDirectory + "//src//resources//sala_6_5.png"
+			,workingDirectory + "//src//resources//sala_6_6.png",workingDirectory + "//src//resources//sala_6_7.png"
+			,workingDirectory + "//src//resources//sala_7_5.png",workingDirectory + "//src//resources//sala_7_6.png"
+			,workingDirectory + "//src//resources//sala_7_7.png",workingDirectory + "//src//resources//fondo_s.png"};
+	ImageAdaptable img1=new ImageAdaptable(paths[0]);
 
 	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorBoleto ctrBoleto, ControladorView ctrView) {
 		this.ctrSala = ctrSala;
@@ -73,19 +79,19 @@ public class SeleccionarAsientos extends CustomPanel {
 		pn_asientos.setLayout(null);
 		pn_asientos.add(pn_letras);
 		pn_seleccionarAsiento = new JPanel();
-		panel = new JPanel();
-		panel.setBounds(645, 645, 212, 25);
-		pn_asientos.add(panel);
-		panel.setBorder(new EmptyBorder(0, 0, 0, 0));
-		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		
 
 		btn_cancelar = new CustomButton("CANCELAR");
 		btn_cancelar.setFont(new Font("Verdana", Font.BOLD, 13));
-		panel.add(btn_cancelar);
+		btn_cancelar.setBounds(570, 650, 125, 50);
+		pn_asientos.add(btn_cancelar);
+		
 
 		btncomprar = new CustomButton("COMPRAR");
 		btncomprar.setFont(new Font("Verdana", Font.BOLD, 13));
-		panel.add(btncomprar);
+		btncomprar.setBounds(700, 650, 125, 50);
+		pn_asientos.add(btncomprar);
+		
 
 		lbl_asientos = new JLabel("ASIENTOS:");
 		lbl_asientos.setForeground(UIManager.getColor("InternalFrame.inactiveTitleForeground"));
@@ -114,8 +120,14 @@ public class SeleccionarAsientos extends CustomPanel {
 		pn_letras.setOpaque(false);
 		this.btncomprar.setEnabled(false);
 		
+		
 		generarBotones();
 		Jlabels();
+		pn_asientos.add(img1);
+		ImageAdaptable img2=new ImageAdaptable(paths[9]);
+		img2.setLocation(0, 0);
+		pn_asientos.add(img2);
+		
 		invisibleL();
 		invisibleN();
 		invisible();
@@ -167,12 +179,11 @@ public class SeleccionarAsientos extends CustomPanel {
 		invisibleL();
 		invisibleN();
 		invisible();
-		
-		
 		showcomponet(false);
 	}
 
 	public void cargardata() {
+		
 		numeros[0] = "1";
 		numeros[1] = "2";
 		numeros[2] = "3";
@@ -204,65 +215,52 @@ public class SeleccionarAsientos extends CustomPanel {
 			let[i].setVisible(true);
 		}
 	
-		
-		
-		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] paths = { workingDirectory + "//src//resources//sala_5_5.png",workingDirectory + "//src//resources//sala_5_6.png",
-				workingDirectory + "//src//resources//sala_5_7.png",workingDirectory + "//src//resources//sala_6_5.png"
-				,workingDirectory + "//src//resources//sala_6_6.png",workingDirectory + "//src//resources//sala_6_7.png"
-				,workingDirectory + "//src//resources//sala_7_5.png",workingDirectory + "//src//resources//sala_7_6.png"
-				,workingDirectory + "//src//resources//sala_7_7.png",workingDirectory + "//src//resources//fondo_s.png"};
-		
-		
-	
 		if( asientos.length == 5 && asientos[0].length ==5) {
-			ImageAdaptable img1=new ImageAdaptable(paths[0]);
+			 img1.setImage(paths[0]);
 			img1.setLocation(100, 90);
-			pn_asientos.add(img1);
+			
 		}
 		if( asientos.length == 5 && asientos[0].length ==6) {
-			ImageAdaptable img1=new ImageAdaptable(paths[1]);
+			 img1.setImage(paths[1]);
 			img1.setLocation(100, 90);
-			pn_asientos.add(img1);
+			
 		}
 		if( asientos.length == 5 && asientos[0].length ==7) {
-			ImageAdaptable img1=new ImageAdaptable(paths[2]);
+			 img1.setImage(paths[2]);
 			img1.setLocation(100, 90);
-			pn_asientos.add(img1);
+			
 		}
 		if( asientos.length == 6 && asientos[0].length ==5) {
-			ImageAdaptable img1=new ImageAdaptable(paths[3]);
-			img1.setLocation(100, 90);
-			pn_asientos.add(img1);
+			 img1.setImage(paths[3]);
+			img1.setLocation(124, 90);
+			
 		}
 		if( asientos.length == 6 && asientos[0].length ==6) {
-			ImageAdaptable img1=new ImageAdaptable(paths[4]);
+			 img1.setImage(paths[4]);
 			img1.setLocation(100, 90);
-			pn_asientos.add(img1);
+			
 		}
 		if( asientos.length == 6 && asientos[0].length ==7) {
-			ImageAdaptable img1=new ImageAdaptable(paths[5]);
+			 img1.setImage(paths[5]);
 			img1.setLocation(100, 90);
-			pn_asientos.add(img1);
+			
 		}
 		if( asientos.length == 7 && asientos[0].length ==5) {
-			ImageAdaptable img1=new ImageAdaptable(paths[6]);
-			img1.setLocation(100, 90);
-			pn_asientos.add(img1);
+			 img1.setImage(paths[6]);
+			img1.setLocation(115, 80);
+			
 		}
 		if( asientos.length == 7 && asientos[0].length ==6) {
-			ImageAdaptable img1=new ImageAdaptable(paths[7]);
-			img1.setLocation(100, 90);
-			pn_asientos.add(img1);
+			 img1.setImage(paths[7]);
+			img1.setLocation(140, 80);
+			
 		}
 		if( asientos.length == 7 && asientos[0].length ==7) {
-			ImageAdaptable img1=new ImageAdaptable(paths[8]);
-			img1.setLocation(130, 100);
-			pn_asientos.add(img1);
+			 img1.setImage(paths[8]);
+			img1.setLocation(130, 85);
+			
 		}
-		ImageAdaptable img2=new ImageAdaptable(paths[9]);
-		img2.setLocation(0, 0);
-		pn_asientos.add(img2);
+		
 		
 		
 		this.lbl_asiento.setText(ctrBoleto.getContador());
@@ -302,7 +300,6 @@ public class SeleccionarAsientos extends CustomPanel {
 	}
 
 	public void showcomponet(boolean visible) {
-		panel.setVisible(visible);
 		btncomprar.setVisible(visible);
 		btn_cancelar.setVisible(visible);
 		pn_seleccionarAsiento.setVisible(visible);
@@ -322,12 +319,15 @@ public class SeleccionarAsientos extends CustomPanel {
 						botones[i][j].changeIcon(2);
 						botones[i][j].setEnabled(false);
 						botones[i][j].setCustomParameter(2, false);
+						botones[i][j].setBackground(new Color(127,126,126,255));
 					} else {
 						botones[i][j].changeIcon(0);
 						botones[i][j].setEnabled(true);
 						botones[i][j].setCustomParameter(2, true);
+						botones[i][j].setBackground(new Color(127,126,126,255));
 					}
 					botones[i][j].setVisible(true);
+					botones[i][j].setBackground(new Color(127,126,126,255));
 			
 			}
 		}
@@ -393,6 +393,7 @@ public class SeleccionarAsientos extends CustomPanel {
 
 							if (!interuptor) {
 								btn.changeIcon(0);
+								btn.setBackground(new Color(127,126,126,255));
 								btn.setCustomParameter(2, true);
 								//sala.vaciarAsiento(x, y);
 								ctrSala.vaciarSeleccionados(x,y);
@@ -406,6 +407,7 @@ public class SeleccionarAsientos extends CustomPanel {
 							if (interuptor) {
 								btn.changeIcon(1);
 								btn.setCustomParameter(2, false);
+								btn.setBackground(new Color(127,126,126,255));
 								//sala.ocuparAsiento(x, y);
 								ctrSala.anadirSalaPre(x, y);
 								
@@ -418,6 +420,7 @@ public class SeleccionarAsientos extends CustomPanel {
 
 								btn.changeIcon(0);
 								btn.setCustomParameter(2, true);
+								btn.setBackground(new Color(127,126,126,255));
 								//sala.vaciarAsiento(x, y);
 								ctrSala.vaciarSeleccionados(x,y);
 								aux++;

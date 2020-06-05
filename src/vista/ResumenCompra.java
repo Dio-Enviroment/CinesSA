@@ -34,7 +34,7 @@ import javax.swing.border.EmptyBorder;
 public class ResumenCompra extends CustomPanel {
 
 	private static final long serialVersionUID = 1L;
-	//private JPanel pn_resumenCompra;
+
 	private JLabel lbl_salaR;
 	private JLabel lbl_peliculaR;
 	private JLabel lbl_boletosR;
@@ -85,7 +85,7 @@ public class ResumenCompra extends CustomPanel {
 		gbl_pn_resumenCompra.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
 		gbl_pn_resumenCompra.columnWeights = new double[] { 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		gbl_pn_resumenCompra.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
-		//pn_resumenCompra.setLayout(gbl_pn_resumenCompra);
+		
 
 		lbl_peliculaR = new JLabel("PEL\u00CDCULA:");
 		lbl_peliculaR.setFont(new Font("Verdana", Font.BOLD, 30));
@@ -94,7 +94,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_peliculaR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_peliculaR.gridx = 1;
 		gbc_lbl_peliculaR.gridy = 1;
-		//pn_resumenCompra.add(lbl_peliculaR, gbc_lbl_peliculaR);
+	
 
 		lbl_tituloPeliculaR = new JLabel("t\u00EDtulo de la pel\u00EDcula");
 		lbl_tituloPeliculaR.setFont(new Font("Verdana", Font.PLAIN, 30));
@@ -102,7 +102,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_tituloPeliculaR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_tituloPeliculaR.gridx = 2;
 		gbc_lbl_tituloPeliculaR.gridy = 1;
-		//pn_resumenCompra.add(lbl_tituloPeliculaR, gbc_lbl_tituloPeliculaR);
+		
 
 		lbl_salaR = new JLabel("SALA:");
 		lbl_salaR.setFont(new Font("Verdana", Font.BOLD, 30));
@@ -111,7 +111,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_salaR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_salaR.gridx = 1;
 		gbc_lbl_salaR.gridy = 2;
-	//	pn_resumenCompra.add(lbl_salaR, gbc_lbl_salaR);
+	
 
 		lbl_numSalaR = new JLabel("1");
 		lbl_numSalaR.setFont(new Font("Verdana", Font.PLAIN, 30));
@@ -120,7 +120,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_numSalaR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_numSalaR.gridx = 2;
 		gbc_lbl_numSalaR.gridy = 2;
-		//pn_resumenCompra.add(lbl_numSalaR, gbc_lbl_numSalaR);
+	
 
 		lbl_boletosR = new JLabel("BOLETOS:");
 		lbl_boletosR.setFont(new Font("Verdana", Font.BOLD, 30));
@@ -129,7 +129,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_boletosR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_boletosR.gridx = 1;
 		gbc_lbl_boletosR.gridy = 3;
-		//pn_resumenCompra.add(lbl_boletosR, gbc_lbl_boletosR);
+	
 
 		lbl_numBoletasR = new JLabel("1");
 		lbl_numBoletasR.setFont(new Font("Verdana", Font.PLAIN, 30));
@@ -138,7 +138,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_numBoletasR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_numBoletasR.gridx = 2;
 		gbc_lbl_numBoletasR.gridy = 3;
-		//pn_resumenCompra.add(lbl_numBoletasR, gbc_lbl_numBoletasR);
+		
 
 		lbl_asientosR = new JLabel("ASIENTOS:");
 		lbl_asientosR.setFont(new Font("Verdana", Font.BOLD, 30));
@@ -147,7 +147,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_asientosR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_asientosR.gridx = 1;
 		gbc_lbl_asientosR.gridy = 4;
-		//pn_resumenCompra.add(lbl_asientosR, gbc_lbl_asientosR);
+	
 
 		lbl_numAsiemtosR = new JLabel("{ A3 - B5 -B6 }");
 		lbl_numAsiemtosR.setFont(new Font("Verdana", Font.PLAIN, 30));
@@ -157,7 +157,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_numAsiemtosR.gridx = 2;
 		gbc_lbl_numAsiemtosR.gridy = 4;
 		
-		//pn_resumenCompra.add(lbl_numAsiemtosR, gbc_lbl_numAsiemtosR);
+		
 
 		lbl_totalR = new JLabel("TOTAL:");
 		lbl_totalR.setFont(new Font("Verdana", Font.BOLD, 30));
@@ -166,7 +166,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_totalR.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_totalR.gridx = 1;
 		gbc_lbl_totalR.gridy = 5;
-		//pn_resumenCompra.add(lbl_totalR, gbc_lbl_totalR);
+		
 
 		lbl_numTotalR = new JLabel("1");
 		lbl_numTotalR.setFont(new Font("Verdana", Font.PLAIN, 30));
@@ -175,7 +175,7 @@ public class ResumenCompra extends CustomPanel {
 		gbc_lbl_numTotalR.insets = new Insets(0, 0, 5, 0);
 		gbc_lbl_numTotalR.gridx = 2;
 		gbc_lbl_numTotalR.gridy = 5;
-		//pn_resumenCompra.add(lbl_numTotalR, gbc_lbl_numTotalR);
+	
 
 		panel = new JPanel();
 		panel.setBounds(57, 204, 250, 40);
@@ -208,9 +208,9 @@ public class ResumenCompra extends CustomPanel {
 		this.lbl_numTotalR.setBounds(450, 340, 300, 50);
 		lbl_numTotalR.setFont(new Font("Verdana", Font.PLAIN, 30));
 	
-		/////dfgdfg
+	
 		
-		//pn_resumen.setBounds(240, 500, 386, 285);
+		
 		img1.setLocation(600, 300);
 
 		btn_cancelar = new CustomButton("CANCELAR");
@@ -249,26 +249,20 @@ public class ResumenCompra extends CustomPanel {
 				ctrBoleto.setTotal("0");
 				ctrBoleto.setIva("0");
 				ctrBoleto.setSubtotal("0");
-			
 				setAsientos();
 				ctrSala.vaciarTodos();
 				ctrView.setActivador(false);
 				ctrView.setActivador2(false);
-				
-				//ctrView.changeCartelera();
 				ctrView.changeAgradecimiento();
 			}
 
 		});
 		btn_comprar.setFont(new Font("Verdana", Font.BOLD, 20));
 		panel.add(btn_comprar);
-		// sala = ctrSala.getSala(0);
-		// salaAct =  sala.getAsientos();
-		// salaPre = ctrSala.getSalaPre();
 		add(btn_cancelar);
 		add(btn_comprar);
 		
-		this.btn_cancelar.setBounds(300, 400, 150, 25);
+		this.btn_cancelar.setBounds(290, 400, 150, 25);
 		this.btn_comprar.setBounds(450, 400, 150, 25);
 		showcomponet(false);
 		
@@ -294,7 +288,7 @@ public class ResumenCompra extends CustomPanel {
 		
 	}
 	public void showcomponet(boolean visible){
-		//pn_resumenCompra.setVisible(visible);
+		
 		lbl_salaR.setVisible(visible);
 		lbl_peliculaR.setVisible(visible);
 		lbl_boletosR.setVisible(visible);
