@@ -395,7 +395,6 @@ public class SeleccionarAsientos extends CustomPanel {
 								btn.changeIcon(0);
 								btn.setBackground(new Color(127,126,126,255));
 								btn.setCustomParameter(2, true);
-								//sala.vaciarAsiento(x, y);
 								ctrSala.vaciarSeleccionados(x,y);
 								
 								aux++;
