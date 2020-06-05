@@ -658,16 +658,6 @@ public class CompraPrincipal extends CustomPanel {
 		return estado;
 	}
 
-	public void activar() {
-		if (ctrView.getActivador4()) {
-			this.sp_ninios.setEnabled(false);
-			this.sp_adultos.setEnabled(false);
-		}
-		else {
-			this.sp_ninios.setEnabled(true);
-			this.sp_adultos.setEnabled(true);
-		}
-	}
 
 	public void censura() {
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
