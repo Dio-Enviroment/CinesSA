@@ -24,7 +24,7 @@ public class ControladorView {
     private boolean activador2;
     private boolean inicompraPrincipal=true;
     private String nombre ;
-    private String log;
+    private String[] log=new String[2];
 
     private String cliente="";
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
@@ -48,11 +48,11 @@ public class ControladorView {
         this.container.add(agradecimiento);
     }
 
-    public void setLog(String log) {
+    public void setLog(String[] log) {
         this.log=log;
     }
 
-    public String getLog(){
+    public String[] getLog(){
         return log;
     }
     
