@@ -213,10 +213,10 @@ public class DetallePelicula extends CustomPanel {
 
 		add(datos);
 
-		salir = new CustomButton("Salir");
+		salir = new CustomButton("Regresar");
 		panel.add(salir);
 
-		continuar = new CustomButton("Continuar viendo");
+		continuar = new CustomButton("Ver Cartelera");
 		panel.add(continuar);
 
 		selecionar = new CustomButton("Seleccionar");
@@ -286,8 +286,7 @@ public class DetallePelicula extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ctrView.changeCartelera();
-				
+				ctrView.changeBoleteria();
 			}
 			
 		});
@@ -349,7 +348,12 @@ public class DetallePelicula extends CustomPanel {
 		panel.setVisible(visible);
 		salir.setVisible(visible);
 		continuar.setVisible(visible);
-		selecionar.setVisible(visible);
+		if(ctrView.getLog()!=null && ctrView.getLog().equals("Boleteria")){
+			selecionar.setVisible(false);
+		}
+		else{
+			selecionar.setVisible(true);
+		}
 	}
 
 }

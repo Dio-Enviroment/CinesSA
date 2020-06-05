@@ -21,7 +21,8 @@ import modelo.Sala;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 import java.awt.Color;
 
@@ -34,8 +35,8 @@ public class Boleteria extends CustomPanel {
 	private ImageAdaptable back, front;
 	private TransparentPanel formulary;
 	private CustomButton title, compra,cartelera;
-	private JLabel lb1,lb1_1, lb2;
-	private JComboBox tipo, horario;
+	private JLabel lb1, lb2;
+	private JComboBox horario;
 	private Proyeccion proyeccion;
 	private DefaultComboBoxModel horarios = new DefaultComboBoxModel();
 
@@ -79,18 +80,12 @@ public class Boleteria extends CustomPanel {
 		lb2.setFont(lb1.getFont().deriveFont(20.0f));
 		lb2.setForeground(Color.WHITE);
 		lb2.setBounds(47, 300, formularyWidth - 20, 60);
-		DefaultComboBoxModel d = new DefaultComboBoxModel();
-		tipo = new JComboBox(d);
-		tipo.setBounds(135, 250, formularyWidth - 170, 40);
-		d.addElement("Seleccione una opcion");
-		d.addElement("Pelicula");
-		d.addElement("Conferencia");
+		
 		horario = new JComboBox(horarios);
 		horario.setBounds(135, 310, formularyWidth - 170, 40);
 
 		formulary.add(title);
 		formulary.add(lb2);
-		formulary.add(tipo);
 		formulary.add(horario);
 		formulary.add(lb1);
 		formulary.add(cartelera);
@@ -104,12 +99,7 @@ public class Boleteria extends CustomPanel {
 	}
 
 	public void cargardata() {
-		// if (ctrProyeccion.getPreproyeccion()!=null) {
-			proyeccion = ctrProyeccion.getActProyeccion();
-		// }
-		// else{
-		// 	proyeccion = ctrProyeccion.getPreproyeccion();
-		// }
+		proyeccion = ctrProyeccion.getActProyeccion();
 
 		back.setImage(proyeccion.getBoleteriaBack());
 		front.setImage(proyeccion.getBoleteriaFront());
@@ -118,6 +108,13 @@ public class Boleteria extends CustomPanel {
 
 		for (String hora : proyeccion.getHorario()) {
 			horarios.addElement(hora);
+		}
+		if (proyeccion.getHorario().length!=1 || horario.getSelectedIndex()!=0) {
+			compra.setEnabled(false);
+		}
+		else{
+			horario.setSelectedIndex(1);
+			horario.setEnabled(true);
 		}
 		showcomponet(true);
 	}
@@ -134,7 +131,6 @@ public class Boleteria extends CustomPanel {
 		title.setVisible(visible);
 		cartelera.setVisible(visible);
 		compra.setVisible(visible);
-		tipo.setVisible(visible);
 		horario.setVisible(visible);
 	}
 
@@ -174,7 +170,19 @@ public class Boleteria extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ctrProyeccion.setPreproyeccion(ctrProyeccion.getActProyeccion());
+				ctrView.setLog("Boleteria");
 				ctrView.changeDetallePelicula();
+			}
+		});
+
+		horario.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				if(horario.getSelectedIndex()!=0){
+					compra.setEnabled(true);
+				}
+				else{
+					compra.setEnabled(false);
+				}
 			}
 		});
 	}
