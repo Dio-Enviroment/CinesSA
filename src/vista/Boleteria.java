@@ -114,7 +114,7 @@ public class Boleteria extends CustomPanel {
 		}
 		else{
 			horario.setSelectedIndex(1);
-			horario.setEnabled(true);
+			horario.setEnabled(false);
 		}
 		showcomponet(true);
 	}

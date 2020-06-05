@@ -286,7 +286,12 @@ public class DetallePelicula extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ctrView.changeBoleteria();
+				if (ctrView.getLog().equals("Boleteria")) {
+					ctrView.changeBoleteria();
+				}
+				else{
+					ctrView.changeSelectPelicula();	
+				}
 			}
 			
 		});
