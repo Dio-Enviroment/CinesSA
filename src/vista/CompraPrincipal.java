@@ -537,6 +537,7 @@ public class CompraPrincipal extends CustomPanel {
 				} else {
 					arribaA.setEnabled(true);
 					arribaN.setEnabled(true);
+					//
 				}
 
 				lbl_contador.setText(aux + "");
