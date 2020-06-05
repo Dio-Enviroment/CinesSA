@@ -117,11 +117,11 @@ public class CompraPrincipal extends CustomPanel {
 						workingDirectory + "//src//resources//compraPrincipal_2.png"};
 
 		ImageAdaptable img1=new ImageAdaptable(paths[0]);
-		img1.setLocation(130, 400);
+		img1.setLocation(130, 435);
 		add(img1);
 
 		ImageAdaptable img2=new ImageAdaptable(paths[1]);
-		img2.setLocation(680, 70);
+		img2.setLocation(685, 80);
 		add(img2);
 		pn_compra = new JPanel();
 		pn_compra.setBounds(228, 83, 513, 526);
@@ -215,7 +215,7 @@ public class CompraPrincipal extends CustomPanel {
 		txt_direccion.setColumns(10);
 
 		pn_datoBoleto = new JPanel();
-		pn_datoBoleto.setBounds(12, 209, 494, 270);
+		pn_datoBoleto.setBounds(8, 209, 500, 282);
 		pn_compra.add(pn_datoBoleto);
 		GridBagLayout gbl_pn_datoBoleto = new GridBagLayout();
 		gbl_pn_datoBoleto.columnWidths = new int[] { 0, 0, 0, 0, 0, 0 };
@@ -235,7 +235,7 @@ public class CompraPrincipal extends CustomPanel {
 		pn_datoBoleto.add(lbl_pelicula, gbc_lbl_pelicula);
 
 		lbl_tituloPelicula = new JLabel("titulo de la pelicula");
-		lbl_tituloPelicula.setFont(new Font("Verdana", Font.BOLD, 20));
+		lbl_tituloPelicula.setFont(new Font("Verdana", Font.BOLD, 10));
 		gbc_lbl_tituloPelicula = new GridBagConstraints();
 		gbc_lbl_tituloPelicula.anchor = GridBagConstraints.WEST;
 		gbc_lbl_tituloPelicula.insets = new Insets(0, 0, 5, 5);
@@ -248,8 +248,8 @@ public class CompraPrincipal extends CustomPanel {
 		lbl_tiiposala.setFont(new Font("Verdana", Font.BOLD, 20));
 		gbc_lbl_tiiposala = new GridBagConstraints();
 		gbc_lbl_tiiposala.insets = new Insets(0, 0, 5, 0);
-		gbc_lbl_tiiposala.gridx = 7;
-		gbc_lbl_tiiposala.gridy = 1;
+		gbc_lbl_tiiposala.gridx = 1;
+		gbc_lbl_tiiposala.gridy = 2;
 		pn_datoBoleto.add(lbl_tiiposala, gbc_lbl_tiiposala);
 
 		lbl_boletos = new JLabel("BOLETOS");
@@ -258,7 +258,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_boletos = new GridBagConstraints();
 		gbc_lbl_boletos.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_boletos.gridx = 2;
-		gbc_lbl_boletos.gridy = 2;
+		gbc_lbl_boletos.gridy = 3;
 		pn_datoBoleto.add(lbl_boletos, gbc_lbl_boletos);
 		lbl_sp = new JLabel("");
 		gbc_lbl_sp = new GridBagConstraints();
@@ -274,13 +274,13 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_ninios.anchor = GridBagConstraints.EAST;
 		gbc_lbl_ninios.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_ninios.gridx = 1;
-		gbc_lbl_ninios.gridy = 3;
+		gbc_lbl_ninios.gridy = 4;
 		pn_datoBoleto.add(lbl_ninios, gbc_lbl_ninios);
 		gbc_sp_ninios = new GridBagConstraints();
 		gbc_sp_ninios.anchor = GridBagConstraints.WEST;
 		gbc_sp_ninios.insets = new Insets(0, 0, 5, 5);
 		gbc_sp_ninios.gridx = 2;
-		gbc_sp_ninios.gridy = 3;
+		gbc_sp_ninios.gridy = 4;
 		pn_datoBoleto.add(sp_ninios, gbc_sp_ninios);
 
 		lbl_adultos = new JLabel("ADULTOS:");
@@ -291,13 +291,13 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_adultos.anchor = GridBagConstraints.EAST;
 		gbc_lbl_adultos.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_adultos.gridx = 1;
-		gbc_lbl_adultos.gridy = 4;
+		gbc_lbl_adultos.gridy = 5;
 		pn_datoBoleto.add(lbl_adultos, gbc_lbl_adultos);
 		gbc_sp_adultos = new GridBagConstraints();
 		gbc_sp_adultos.anchor = GridBagConstraints.WEST;
 		gbc_sp_adultos.insets = new Insets(0, 0, 5, 5);
 		gbc_sp_adultos.gridx = 2;
-		gbc_sp_adultos.gridy = 4;
+		gbc_sp_adultos.gridy = 5;
 		pn_datoBoleto.add(sp_adultos, gbc_sp_adultos);
 
 		btn_selecionAsiento = new CustomButton("SELEC ASIENTOS");
@@ -307,7 +307,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_btn_selecionAsiento = new GridBagConstraints();
 		gbc_btn_selecionAsiento.insets = new Insets(0, 0, 5, 5);
 		gbc_btn_selecionAsiento.gridx = 1;
-		gbc_btn_selecionAsiento.gridy = 5;
+		gbc_btn_selecionAsiento.gridy = 6;
 		pn_datoBoleto.add(btn_selecionAsiento, gbc_btn_selecionAsiento);
 		this.btn_selecionAsiento.setEnabled(false);
 
@@ -317,7 +317,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_contador.anchor = GridBagConstraints.WEST;
 		gbc_lbl_contador.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_contador.gridx = 2;
-		gbc_lbl_contador.gridy = 5;
+		gbc_lbl_contador.gridy = 6;
 		pn_datoBoleto.add(lbl_contador, gbc_lbl_contador);
 
 		lbl_subtotal = new JLabel("SUBTOTAL:");
@@ -327,7 +327,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_subtotal.anchor = GridBagConstraints.EAST;
 		gbc_lbl_subtotal.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_subtotal.gridx = 1;
-		gbc_lbl_subtotal.gridy = 6;
+		gbc_lbl_subtotal.gridy = 7;
 		pn_datoBoleto.add(lbl_subtotal, gbc_lbl_subtotal);
 
 		lbl_valor_Subtotal = new JLabel("0");
@@ -336,7 +336,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_valor_Subtotal.anchor = GridBagConstraints.WEST;
 		gbc_lbl_valor_Subtotal.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_valor_Subtotal.gridx = 2;
-		gbc_lbl_valor_Subtotal.gridy = 6;
+		gbc_lbl_valor_Subtotal.gridy = 7;
 		pn_datoBoleto.add(lbl_valor_Subtotal, gbc_lbl_valor_Subtotal);
 
 		lbl_iva = new JLabel("IVA:");
@@ -346,7 +346,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_iva.anchor = GridBagConstraints.EAST;
 		gbc_lbl_iva.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_iva.gridx = 1;
-		gbc_lbl_iva.gridy = 7;
+		gbc_lbl_iva.gridy = 8;
 		pn_datoBoleto.add(lbl_iva, gbc_lbl_iva);
 
 		lbl_valor_iva = new JLabel("0");
@@ -355,7 +355,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_valor_iva.anchor = GridBagConstraints.WEST;
 		gbc_lbl_valor_iva.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl_valor_iva.gridx = 2;
-		gbc_lbl_valor_iva.gridy = 7;
+		gbc_lbl_valor_iva.gridy = 8;
 		pn_datoBoleto.add(lbl_valor_iva, gbc_lbl_valor_iva);
 
 		lbl_total = new JLabel("TOTAL:");
@@ -365,7 +365,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_total.anchor = GridBagConstraints.EAST;
 		gbc_lbl_total.insets = new Insets(0, 0, 0, 5);
 		gbc_lbl_total.gridx = 1;
-		gbc_lbl_total.gridy = 8;
+		gbc_lbl_total.gridy = 9;
 		pn_datoBoleto.add(lbl_total, gbc_lbl_total);
 
 		lbl_valor_total = new JLabel("0");
@@ -374,11 +374,11 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_valor_total.anchor = GridBagConstraints.WEST;
 		gbc_lbl_valor_total.insets = new Insets(0, 0, 0, 5);
 		gbc_lbl_valor_total.gridx = 2;
-		gbc_lbl_valor_total.gridy = 8;
+		gbc_lbl_valor_total.gridy = 9;
 		pn_datoBoleto.add(lbl_valor_total, gbc_lbl_valor_total);
 
 		pn_controlBotones = new JPanel();
-		pn_controlBotones.setBounds(250, 490, 600, 40);
+		pn_controlBotones.setBounds(260, 490, 600, 40);
 		pn_compra.add(pn_controlBotones);
 		pn_controlBotones.setBorder(new EmptyBorder(0, 0, 0, 0));
 		GridBagLayout gbl_pn_controlBotones = new GridBagLayout();
