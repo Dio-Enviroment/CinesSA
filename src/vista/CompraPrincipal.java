@@ -447,10 +447,10 @@ public class CompraPrincipal extends CustomPanel {
 				cliente.setCedula(txt_cedula.getText());
 				cliente.setTelefono(txt_fono.getText());
 				cliente.setDireccion(txt_direccion.getText());
-				ctrView.setPuestos("0");
-				ctrView.setTotal("0");
-				ctrView.setIva("0");
-				ctrView.setSubtotal("0");
+				ctrBoleto.setPuestos("0");
+				ctrBoleto.setTotal("0");
+				ctrBoleto.setIva("0");
+				ctrBoleto.setSubtotal("0");
 				ctrView.changeBoleteria();
 			}
 
@@ -591,11 +591,11 @@ public class CompraPrincipal extends CustomPanel {
 				cliente.setTelefono(txt_fono.getText());
 				cliente.setDireccion(txt_direccion.getText());
 				
-				ctrView.setPuestos(lbl_contador.getText());
-				ctrView.setSubtotal(lbl_valor_Subtotal.getText());
-				ctrView.setTotal(lbl_valor_total.getText());
-				ctrView.setIva(lbl_valor_iva.getText());
-				ctrView.setContador(lbl_contador.getText());
+				ctrBoleto.setPuestos(lbl_contador.getText());
+				ctrBoleto.setSubtotal(lbl_valor_Subtotal.getText());
+				ctrBoleto.setTotal(lbl_valor_total.getText());
+				ctrBoleto.setIva(lbl_valor_iva.getText());
+				ctrBoleto.setContador(lbl_contador.getText());
 				ctrView.changeSeleccionarAsientos();
 			}
 
@@ -690,10 +690,10 @@ public class CompraPrincipal extends CustomPanel {
 		aux = 0;
 		asientos = "";
 		estado = false;
-		this.lbl_contador.setText(ctrView.getPuestos());
-		this.lbl_valor_iva.setText(ctrView.getIva());
-		this.lbl_valor_Subtotal.setText(ctrView.getSubtotal());
-		this.lbl_valor_total.setText(ctrView.getTotal());
+		this.lbl_contador.setText(ctrBoleto.getPuestos());
+		this.lbl_valor_iva.setText(ctrBoleto.getIva());
+		this.lbl_valor_Subtotal.setText(ctrBoleto.getSubtotal());
+		this.lbl_valor_total.setText(ctrBoleto.getTotal());
 		txt_nombre.setText(cliente.getNombre());
 		txt_cedula.setText(cliente.getCedula());
 		txt_fono.setText(cliente.getTelefono());

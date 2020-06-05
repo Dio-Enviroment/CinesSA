@@ -19,15 +19,12 @@ public class ControladorView {
     private CustomPanel seleccionarAsientos;
     private CustomPanel resumenCompra;
     private CustomPanel agradecimiento;
-    private String contador;
+    
     private boolean activador;
     private boolean activador2;
     private boolean inicompraPrincipal=true;
     private String nombre ;
-	private String total="0";
-	private String subtotal="0";
-	private String iva="0";
-	private String puestos="0";
+
     private String cliente="";
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
         this.container=container;
@@ -36,7 +33,7 @@ public class ControladorView {
         this.boleteria=new Boleteria(1008, 729,ctrProyeccion,ctrSala,this);
         this.detallePelicula=new DetallePelicula(1008, 729,ctrProyeccion,this);
         this.compraPrincipal=new CompraPrincipal(1008, 729,ctrProyeccion, ctrSala,ctrBoleto, this);
-        this.seleccionarAsientos=new SeleccionarAsientos(1008, 729,ctrSala,this);
+        this.seleccionarAsientos=new SeleccionarAsientos(1008, 729,ctrSala,ctrBoleto,this);
         this.resumenCompra=new ResumenCompra(1008, 729,ctrSala,ctrProyeccion,ctrBoleto,this);
         this.agradecimiento=new Agradecimiento(1008, 729,ctrSala,ctrBoleto,this);
 
@@ -56,40 +53,6 @@ public class ControladorView {
 	}
 	public void setCliente(String cliente) {
 		this.cliente = cliente;
-	}
-
-	public String getPuestos() {
-		return puestos;
-	}
-
-	public void setPuestos(String puestos) {
-		this.puestos = puestos;
-	}
-
-	public String getTotal() {
-		return total;
-	}
-
-
-	public void setTotal(String total) {
-		this.total = total;
-	}
-
-
-	public String getSubtotal() {
-		return subtotal;
-	}
-
-	public void setSubtotal(String subtotal) {
-		this.subtotal = subtotal;
-	}
-
-	public String getIva() {
-		return iva;
-	}
-
-	public void setIva(String iva) {
-		this.iva = iva;
 	}
 
 	public boolean getActivador2() {
@@ -143,15 +106,6 @@ public class ControladorView {
     public void changeSeleccionarAsientos() {
         cargarPanel(this.seleccionarAsientos);
     }
-
-    public String getContador() {
-        return contador;
-    }
-
-    public void setContador(String contador) {
-        this.contador = contador;
-    }
-
 
     public void changeResumenCompra() {
         cargarPanel(this.resumenCompra);

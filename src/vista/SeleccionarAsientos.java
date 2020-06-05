@@ -24,6 +24,8 @@ import javax.swing.JButton;
 
 import javax.swing.BoxLayout;
 import javax.swing.border.EmptyBorder;
+
+import controlador.ControladorBoleto;
 import controlador.ControladorSala;
 import controlador.ControladorView;
 import modelo.Asiento;
@@ -51,6 +53,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	private String[] numeros = new String[8];
 	private JPanel pn_asientos;
 	private String puestos;
+	private ControladorBoleto ctrBoleto;
 
 	private JLabel[] num = new JLabel[8];
 	private JLabel[] let = new JLabel[8];
@@ -58,9 +61,10 @@ public class SeleccionarAsientos extends CustomPanel {
 	
 	private JPanel pn_letras;
 
-	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorView ctrView) {
+	public SeleccionarAsientos(int width, int height, ControladorSala ctrSala, ControladorBoleto ctrBoleto, ControladorView ctrView) {
 		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
+		this.ctrBoleto= ctrBoleto;
 		setBounds(0, 0, width, height);
 		setLayout(null);
 		pn_asientos = new JPanel();
@@ -126,7 +130,7 @@ public class SeleccionarAsientos extends CustomPanel {
 	}
 
 	public void ini() {
-		this.lbl_asiento.setText(ctrView.getContador());
+		this.lbl_asiento.setText(ctrBoleto.getContador());
 	}
 
 	public void iniComponentEvents() {
@@ -144,10 +148,10 @@ public class SeleccionarAsientos extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				ctrView.setPuestos("0");
-				ctrView.setTotal("0");
-				ctrView.setIva("0");
-				ctrView.setSubtotal("0");
+				ctrBoleto.setPuestos("0");
+				ctrBoleto.setTotal("0");
+				ctrBoleto.setIva("0");
+				ctrBoleto.setSubtotal("0");
 				ctrSala.vaciarTodos();
 				ctrView.setActivador2(false);
 				ctrView.changeCompraPrincipal();
@@ -196,7 +200,7 @@ public class SeleccionarAsientos extends CustomPanel {
 			let[i].setText(letras[i]);
 			let[i].setVisible(true);
 		}
-		this.lbl_asiento.setText(ctrView.getContador());
+		this.lbl_asiento.setText(ctrBoleto.getContador());
 		this.btncomprar.setEnabled(false);
 		salaPre = ctrSala.getSalaPre();
 		refreshBotones(asientos);

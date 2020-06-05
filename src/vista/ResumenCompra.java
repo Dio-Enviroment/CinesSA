@@ -222,10 +222,10 @@ public class ResumenCompra extends CustomPanel {
 				cliente.setNombre("");
 				cliente.setTelefono("");
 				cliente.setDireccion("");
-				ctrView.setPuestos("0");
-				ctrView.setTotal("0");
-				ctrView.setIva("0");
-				ctrView.setSubtotal("0");
+				ctrBoleto.setPuestos("0");
+				ctrBoleto.setTotal("0");
+				ctrBoleto.setIva("0");
+				ctrBoleto.setSubtotal("0");
 				puesto="";
 				ctrView.setCliente("");
 				ctrView.setActivador(false);
@@ -243,10 +243,10 @@ public class ResumenCompra extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				puesto="";
-				ctrView.setPuestos("0");
-				ctrView.setTotal("0");
-				ctrView.setIva("0");
-				ctrView.setSubtotal("0");
+				ctrBoleto.setPuestos("0");
+				ctrBoleto.setTotal("0");
+				ctrBoleto.setIva("0");
+				ctrBoleto.setSubtotal("0");
 			
 				setAsientos();
 				ctrSala.vaciarTodos();
@@ -286,8 +286,8 @@ public class ResumenCompra extends CustomPanel {
 		this.lbl_numAsiemtosR.setText("{ " + setPuesto() + " } ");
 		this.lbl_tituloPeliculaR.setText( ctrPro.getActProyeccion().getTitulo());
 		this.lbl_numSalaR.setText((sala.getId()+1) +"");
-		this.lbl_numBoletasR.setText(ctrView.getPuestos());
-		this.lbl_numTotalR.setText(ctrView.getTotal());
+		this.lbl_numBoletasR.setText(ctrBoleto.getPuestos());
+		this.lbl_numTotalR.setText(ctrBoleto.getTotal());
 		showcomponet(true);
 		
 	}
