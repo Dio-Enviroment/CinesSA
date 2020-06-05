@@ -10,7 +10,7 @@ import controlador.ControladorPrincipal;
 import controlador.ControladorView;
 
 public class Main extends JFrame {
-	//
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	public static void main(String[] args) {
@@ -27,6 +27,7 @@ public class Main extends JFrame {
 	}
 
 	public Main() {
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
 		ControladorPrincipal controladorPrincipal = new ControladorPrincipal(contentPane);

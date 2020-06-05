@@ -3,24 +3,23 @@ package vista;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
+
+import java.awt.Color;
 import java.awt.Font;
-import java.awt.Insets;
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.border.LineBorder;
-
 import componentes.CustomPanel;
+import componentes.ImageAdaptable;
 import controlador.ControladorBoleto;
 import controlador.ControladorSala;
 import controlador.ControladorView;
 import modelo.Cliente;
 
-import java.awt.Color;
 
 public class Agradecimiento extends CustomPanel {
+	private static final long serialVersionUID = 1L;
 	public JLabel lbl_nombreCliente;
 	public JPanel pn_agradecimiento;
 	public JLabel lblNewLabel;
@@ -37,8 +36,13 @@ public class Agradecimiento extends CustomPanel {
 		setBounds(0, 0, width, height);
 		this.ctrView=ctrView;
 		this.ctrBoleto= ctrBoleto;
+
+		File workingDirectory = new File(System.getProperty("user.dir"));
+		String[] paths = { workingDirectory + "//src//resources//agradecimiento.png"};
+
+		ImageAdaptable img=new ImageAdaptable(paths[0]);
 		pn_agradecimiento = new JPanel();
-		pn_agradecimiento.setBounds(200, 230,800,400);
+		pn_agradecimiento.setBounds(200, 230,800,200);
 		add(pn_agradecimiento);
 		texto = new JTextArea();
 		texto.setBounds(0, 0, 800, 20);
@@ -48,11 +52,10 @@ public class Agradecimiento extends CustomPanel {
 		texto.setFocusable(false);
 		texto.setLineWrap(true);
 		texto.setWrapStyleWord(true);
+		pn_agradecimiento.setBackground(new Color(121,119,119,255));
 		pn_agradecimiento.add(texto);
 		texto.setFont(new Font("Verdana", Font.PLAIN, 40));
-		
-		
-		
+		add(img);
 	}
 	
 	
@@ -83,7 +86,6 @@ public class Agradecimiento extends CustomPanel {
 
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				ctrView.setActivador4(false);
 				cliente= ctrBoleto.getCliente();
 				cliente.setCedula("");
