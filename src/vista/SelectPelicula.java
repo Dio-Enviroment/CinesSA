@@ -138,7 +138,8 @@ public class SelectPelicula extends CustomPanel {
 	}
 
 	public void cargardata() {
-		proyeccion = ctrProyeccion.getActProyeccion();
+		proyeccion = ctrProyeccion.getPreproyeccion();
+		back0.setImage(ctrProyeccion.getActProyeccion().getCarteleraFront());
 		if (proyeccion instanceof Pelicula) {
 			ver.setText("Ver Conferencias");
 			isPelicula = true;

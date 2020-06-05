@@ -214,8 +214,6 @@ public class DetallePelicula extends CustomPanel {
 		salir = new CustomButton("Ver Cartelera");
 		panel.add(salir);
 
-		// continuar = new CustomButton("Ver Cartelera");
-		// panel.add(continuar);
 
 		selecionar = new CustomButton("Seleccionar");
 		panel.add(selecionar);
@@ -245,7 +243,7 @@ public class DetallePelicula extends CustomPanel {
 		String[] horas;
 		actProyeccion = ctrProyeccion.getActProyeccion();
 		proyeccion = ctrProyeccion.getPreproyeccion();
-		back0.setImage(actProyeccion.getBoleteriaBack());
+		back0.setImage(actProyeccion.getCarteleraFront());
 		img.setImage(proyeccion.getMax());
 		title.setText("  " + proyeccion.getTitulo());
 		selecionar.setText("Seleccionar horario");//Seleccionar horario
@@ -274,8 +272,10 @@ public class DetallePelicula extends CustomPanel {
 			Conferencia con = (Conferencia) proyeccion;
 			l1.setText("  Tematica:");
 			l2.setText("  Presentador:");
+			l3.setText("  Descripcion:");
 			sinopsis.setText(con.getTematica());
 			generos.setText(con.getPresentador());
+			salaTipo.setText(con.getDescripcion());
 		}
 
 		showcomponet(true);
@@ -326,12 +326,12 @@ public class DetallePelicula extends CustomPanel {
 		else{
 			l1.setVisible(visible);
 			l2.setVisible(visible);
-			l3.setVisible(false);
+			l3.setVisible(visible);
 			l4.setVisible(false);
 			l5.setVisible(false);
 			sinopsis.setVisible(visible);
 			generos.setVisible(visible);
-			salaTipo.setVisible(false);
+			salaTipo.setVisible(visible);
 			censura.setVisible(false);
 			horarios.setVisible(false);
 		}

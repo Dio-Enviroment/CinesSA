@@ -30,7 +30,7 @@ public class ControladorProyeccion {
         for (Conferencias conferencia : Conferencias.values()) {
             Sala sala=new Sala(cont, conferencia.getSalaTipo(), calcDimencion(5, 8), calcDimencion(5, 8));
             cont++;
-            proyecciones.add(new Conferencia(conferencia.getBoleteria_back(),conferencia.getBoleteria_front(),conferencia.getBoleteria_title(),conferencia.getCartelera_back(),conferencia.getCartelera_front(),conferencia.getCartelera_title(),conferencia.getLeyenda(),conferencia.getMin(),conferencia.getMax(),conferencia.getXfront(),conferencia.getYfront(),conferencia.getXtitulo(),conferencia.getYtitulo(),conferencia.getXleyenda(),conferencia.getYleyenda(),conferencia.getTitulo(), conferencia.getDuracion(), conferencia.getHorario(),conferencia.getPresentador(),conferencia.getTematica(),conferencia.getSalaTipo(),sala));
+            proyecciones.add(new Conferencia(conferencia.getBoleteria_back(),conferencia.getBoleteria_front(),conferencia.getBoleteria_title(),conferencia.getCartelera_back(),conferencia.getCartelera_front(),conferencia.getCartelera_title(),conferencia.getLeyenda(),conferencia.getMin(),conferencia.getMax(),conferencia.getXfront(),conferencia.getYfront(),conferencia.getXtitulo(),conferencia.getYtitulo(),conferencia.getXleyenda(),conferencia.getYleyenda(),conferencia.getTitulo(), conferencia.getDuracion(), conferencia.getHorario(),conferencia.getPresentador(),conferencia.getTematica(),conferencia.getSalaTipo(),sala,conferencia.getDescripcion()));
         }
     }
 

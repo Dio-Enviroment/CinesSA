@@ -9,7 +9,7 @@ public enum Conferencias {
 			"JIM CANTORES","CLIMATOLOGIA",
 			"imax",
 			"//src//img//cartelera//conferecia//confe_0//back.png",
-			"//src//img//cartelera//conferecia//confe_0//front.png",
+			"//src//img//boleteria//conferecia//confe_0//blur.png",
 			"//src//img//cartelera//conferecia//confe_0//titulo.png",
 			"//src//img//cartelera//conferecia//confe_0//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_0//horario.png",
@@ -17,8 +17,10 @@ public enum Conferencias {
 			"//src//img//detalle//conferecia//confe_0//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
-			0,0//x y de la leyenda
-			),
+			0,0, //x y de la leyenda
+			"La meteorologia es la ciencia que estudia la atmosfera, concretamente los fenomenos fisicos que ocurren en la"
+			+ " baja atmosfera. Estos fenomenos estan relacionados con la presion atmosferica y la temperatura, que determinan "
+			+ "el comportamiento del resto de sus componentes."),
 	
 	Conf_1("//src//img//boleteria//conferecia//confe_1//back.png",
 	"//src//img//boleteria//conferecia//confe_1//front.png",
@@ -28,7 +30,7 @@ public enum Conferencias {
 			"JHON C. MAXWELL","LECTURA",
 			"normal",
 			"//src//img//cartelera//conferecia//confe_1//back.png",
-			"//src//img//cartelera//conferecia//confe_1//front.png",
+			"//src//img//boleteria//conferecia//confe_1//blur.png",
 			"//src//img//cartelera//conferecia//confe_1//titulo.png",
 			"//src//img//cartelera//conferecia//confe_1//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_1//horario.png",
@@ -36,8 +38,9 @@ public enum Conferencias {
 			"//src//img//detalle//conferecia//confe_1//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
-			0,0//x y de la leyenda
-			),
+			0,0, //x y de la leyenda
+			"Acercamos a ninas y ninos a la lectura porque favorece las relaciones de respeto entre diversos. Celebremos "
+				+ "su dia compartiendo ideas para crear un mundo mejor."),
 
 	Conf_2("//src//img//boleteria//conferecia//confe_2//back.png",
 	"//src//img//boleteria//conferecia//confe_2//front.png",
@@ -47,7 +50,7 @@ public enum Conferencias {
 			"NATALIE PORTMAN","PSICOLOGIA",
 			"imax",
 			"//src//img//cartelera//conferecia//confe_2//back.png",
-			"//src//img//cartelera//conferecia//confe_2//front.png",
+			"//src//img//boleteria//conferecia//confe_2//blur.png",
 			"//src//img//cartelera//conferecia//confe_2//titulo.png",
 			"//src//img//cartelera//conferecia//confe_2//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_2//horario.png",
@@ -55,8 +58,10 @@ public enum Conferencias {
 			"//src//img//detalle//conferecia//confe_2//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
-			0,0//x y de la leyenda
-			),
+			0,0, //x y de la leyenda
+			"La psicologia  es, a la vez, una profesion, una disciplina academica y una ciencia que trata el estudio "
+				+ "y el analisis de la conducta y los procesos mentales de los individuos y de grupos humanos en distintas "
+				+ "situaciones, cuyo campo de estudio abarca todos los aspectos de la experiencia humana."),
 
 	Conf_3("//src//img//boleteria//conferecia//confe_3//back.png",
 	"//src//img//boleteria//conferecia//confe_3//front.png",
@@ -66,7 +71,7 @@ public enum Conferencias {
 			"ISMAEL PASCUAL","POLITICA",
 			"normal",
 			"//src//img//cartelera//conferecia//confe_3//back.png",
-			"//src//img//cartelera//conferecia//confe_3//front.png",
+			"//src//img//boleteria//conferecia//confe_3//blur.png",
 			"//src//img//cartelera//conferecia//confe_3//titulo.png",
 			"//src//img//cartelera//conferecia//confe_3//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_3//horario.png",
@@ -74,8 +79,10 @@ public enum Conferencias {
 			"//src//img//detalle//conferecia//confe_3//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
-			0,0//x y de la leyenda
-			),
+			0,0, //x y de la leyenda
+			"Un congreso es una reunion o conferencia, generalmente periodica, donde los legisladores se reunen para"
+				+ " debatir cuestiones de diversa indole. Se compone de 3 elementos: moderador, mediador y participe. El "
+				+ "\"moderador\" modera la opacidad textual y lirica de los argumentos."),
 
 	Conf_4("//src//img//boleteria//conferecia//confe_4//back.png",
 	"//src//img//boleteria//conferecia//confe_4//front.png",
@@ -85,7 +92,7 @@ public enum Conferencias {
 			"MARIA DOLORES","CULTURA",
 			"imax",
 			"//src//img//cartelera//conferecia//confe_4//back.png",
-			"//src//img//cartelera//conferecia//confe_4//front.png",
+			"//src//img//boleteria//conferecia//confe_4//blur.png",
 			"//src//img//cartelera//conferecia//confe_4//titulo.png",
 			"//src//img//cartelera//conferecia//confe_4//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_4//horario.png",
@@ -93,8 +100,9 @@ public enum Conferencias {
 			"//src//img//detalle//conferecia//confe_4//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
-			0,0//x y de la leyenda
-			),
+			0,0, //x y de la leyenda
+			"La historiografia es la disciplina centrada en el analisis de la historia. Se trata de una serie de teorias "
+				+ "y tecnicas que se vinculan al estudio y a la interpretacion de los hechos historicos."),
 
 	Conf_5("//src//img//boleteria//conferecia//confe_5//back.png",
 	"//src//img//boleteria//conferecia//confe_5//front.png",
@@ -104,7 +112,7 @@ public enum Conferencias {
 			"PEDRO GOMEZ","TECNOLOGIA",
 			"normal",
 			"//src//img//cartelera//conferecia//confe_5//back.png",
-			"//src//img//cartelera//conferecia//confe_5//front.png",
+			"//src//img//boleteria//conferecia//confe_5//blur.png",
 			"//src//img//cartelera//conferecia//confe_5//titulo.png",
 			"//src//img//cartelera//conferecia//confe_5//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_5//horario.png",
@@ -112,8 +120,9 @@ public enum Conferencias {
 			"//src//img//detalle//conferecia//confe_5//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
-			0,0//x y de la leyenda
-			),
+			0,0, //x y de la leyenda
+			"La informatica,  tambien llamada computacion,  es una ciencia que administra metodos, tecnicas y procesos con el fin de almacenar, procesar y "
+			+ "transmitir. informacion y datos en formato digital."),
 
 	Conf_6("//src//img//boleteria//conferecia//confe_6//back.png",
 	"//src//img//boleteria//conferecia//confe_6//front.png",
@@ -123,7 +132,7 @@ public enum Conferencias {
 			"JAVIER GONZALES","PSICOLOGIA",
 			"imax",
 			"//src//img//cartelera//conferecia//confe_6//back.png",
-			"//src//img//cartelera//conferecia//confe_6//front.png",
+			"//src//img//boleteria//conferecia//confe_6//blur.png",
 			"//src//img//cartelera//conferecia//confe_6//titulo.png",
 			"//src//img//cartelera//conferecia//confe_6//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_6//horario.png",
@@ -131,8 +140,10 @@ public enum Conferencias {
 			"//src//img//detalle//conferecia//confe_6//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
-			0,0//x y de la leyenda
-			),
+			0,0, //x y de la leyenda
+			"La informatica,  tambien llamada computacion,  es una ciencia que administra metodos, tecnicas y procesos con"
+				+ " el fin de almacenar, procesar y transmitir. informacion y datos en formato digital. La autoestima es un conjunto "
+				+ "de percepciones, pensamientos, evaluaciones, sentimientos y tendencias de comportamientos dirigidos hacia uno mismo."),
 
 	Conf_7("//src//img//boleteria//conferecia//confe_7//back.png",
 	"//src//img//boleteria//conferecia//confe_7//front.png",
@@ -142,7 +153,7 @@ public enum Conferencias {
 			"LUCIA MUNOZ","ARTE",
 			"normal",
 			"//src//img//cartelera//conferecia//confe_7//back.png",
-			"//src//img//cartelera//conferecia//confe_7//front.png",
+			"//src//img//boleteria//conferecia//confe_7//blur.png",
 			"//src//img//cartelera//conferecia//confe_7//titulo.png",
 			"//src//img//cartelera//conferecia//confe_7//leyenda.png",
 			"//src//img//cartelera//conferecia//confe_7//horario.png",
@@ -150,9 +161,17 @@ public enum Conferencias {
 			"//src//img//detalle//conferecia//confe_7//max.png",
 			0,0, //x y del front
 			0,0, //x y del titulo
-			0,0//x y de la leyenda
-			);
+			0,0, //x y de la leyenda
+			"En nuestra sociedad individualizada todos somos artistas de la vida, ya sea por propia eleccion o por imperativo social."
+			+ " Y esto es asi lo creamos o no, nos guste o no. En esta obra, Zygmunt Bauman realiza una brillante descripcion de las "
+			+ "condiciones en las que elegimos como queremos vivir.");
 
+
+	
+	
+	
+	
+	
 	private String titulo,duracion,horario,presentador,tematica,salaTipo;
 	private String boleteria_back,boleteria_front,boleteria_title,cartelera_back,cartelera_front,cartelera_title;
 	private String leyenda,ima_horario;
@@ -160,8 +179,9 @@ public enum Conferencias {
 	private int xfront,yfront;
 	private int xtitulo,ytitulo;
 	private int xleyenda,yleyenda;
+	private String descripcion;
 	
-	Conferencias(String boleteria_back,String boleteria_front,String boleteria_title,String titulo, String duracion, String horario, String presentador, String tematica,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String ima_horario,String min,String max,int xfront,int yfront,int xtitulo,int ytitulo,int xleyenda,int yleyenda) {
+	Conferencias(String boleteria_back,String boleteria_front,String boleteria_title,String titulo, String duracion, String horario, String presentador, String tematica,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String ima_horario,String min,String max,int xfront,int yfront,int xtitulo,int ytitulo,int xleyenda,int yleyenda,String descripcion) {
 		this.boleteria_back=boleteria_back;
 		this.boleteria_front=boleteria_front;
 		this.boleteria_title=boleteria_title;
@@ -184,6 +204,7 @@ public enum Conferencias {
 		this.ytitulo=ytitulo;
 		this.xleyenda=xleyenda;
 		this.yleyenda=yleyenda;
+		this.descripcion=descripcion;
 	}
 
 	public int getXfront() {
@@ -316,4 +337,9 @@ public enum Conferencias {
 	public String getMax() {
 		return max;
 	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+	
 }
