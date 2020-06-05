@@ -2,6 +2,8 @@ package controlador;
 
 import java.util.ArrayList;
 
+import javax.swing.JTextField;
+
 import modelo.Asiento;
 import modelo.Boleto;
 import modelo.Proyeccion;
@@ -9,9 +11,14 @@ import modelo.Cliente;
 
 public class ControladorBoleto {
     private ArrayList<Boleto> boletos=new ArrayList<Boleto>();
+    private Cliente cliente= new Cliente();
+    
 
     public ControladorBoleto() {
         
+    }
+    public Cliente getCliente() {
+    	return cliente;
     }
 
 
@@ -25,4 +32,8 @@ public class ControladorBoleto {
         return boletos;
     }
     //getBoletos () numero totales de bolestos de cada sala
+   
+	
+    
+
 }

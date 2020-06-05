@@ -5,6 +5,8 @@ import controlador.*;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
@@ -79,6 +81,8 @@ public class CompraPrincipal extends CustomPanel {
 	private ControladorSala ctrSala;
 	private JLabel datosCliente;
 	private JLabel infoBoleto;
+	private ControladorBoleto ctrBoleto;
+	private Cliente cliente;
 
 	private Precio pr=new Precio();
 	private JComponent editor,editor2;
@@ -90,11 +94,12 @@ public class CompraPrincipal extends CustomPanel {
 
 
 	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorSala ctrSala,
-			ControladorView ctrView) {
+			ControladorBoleto ctrBoleto, ControladorView ctrView) {
 		setBounds(0, 0, width, height);
 		this.ctrProyeccion = ctrProyeccion;
 		this.ctrView = ctrView;
 		this.ctrSala = ctrSala;
+		this.ctrBoleto=ctrBoleto;
 		this.datosCliente= new JLabel("DATOS DEL CLIENTE");
 		this.infoBoleto= new JLabel("INFORMACION DE LA PELICULA");
 		setLayout(null);
@@ -418,16 +423,30 @@ public class CompraPrincipal extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ctrView.setCliente(txt_nombre.getText());
-				ctrView.changeResumenCompra();
+				if(exp()) {
+					ctrView.setCliente(txt_nombre.getText());
+					cliente.setNombre(txt_nombre.getText());
+					cliente.setCedula(txt_cedula.getText());
+					cliente.setTelefono(txt_fono.getText());
+					cliente.setDireccion(txt_direccion.getText());
+					
+					ctrView.changeResumenCompra();
+				}
+				
 			}
 
 		});
 
 		this.btn_anterior.addActionListener(new ActionListener() {
+			
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				cliente.setNombre(txt_nombre.getText());
+				cliente.setCedula(txt_cedula.getText());
+				cliente.setTelefono(txt_fono.getText());
+				cliente.setDireccion(txt_direccion.getText());
 				ctrView.setPuestos("0");
 				ctrView.setTotal("0");
 				ctrView.setIva("0");
@@ -567,6 +586,11 @@ public class CompraPrincipal extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				cliente.setNombre(txt_nombre.getText());
+				cliente.setCedula(txt_cedula.getText());
+				cliente.setTelefono(txt_fono.getText());
+				cliente.setDireccion(txt_direccion.getText());
+				
 				ctrView.setPuestos(lbl_contador.getText());
 				ctrView.setSubtotal(lbl_valor_Subtotal.getText());
 				ctrView.setTotal(lbl_valor_total.getText());
@@ -597,16 +621,15 @@ public class CompraPrincipal extends CustomPanel {
 	}
 
 	public boolean exp() {
-		// DatosCliente dc = new DatosCliente();
-		Object[] d = { this.lbl_tituloPelicula.getText(), this.lbl_tiiposala.getText(), this.lbl_contador.getText(),
-				null, this.lbl_valor_total.getText(), this.txt_cedula.getText(), this.txt_nombre.getText(),
+		
+		Object[] d = {  this.txt_cedula.getText(), this.txt_nombre.getText(),
 				this.txt_fono.getText(), this.txt_direccion.getText() };
-		// try {
-		// estado = dc.ValidarCampos(d);
-		// dc.ValidarCampos(d);
-		// } catch (Excepcion le) {
-		// print(le.getMessage());
-		// }
+		try {
+		 estado = cliente.ValidarCampos(d);
+		 cliente.ValidarCampos(d);
+		 } catch (Excepcion le) {
+		 JOptionPane.showMessageDialog(null, le.getMessage());
+		 }
 		return estado;
 	}
 
@@ -655,6 +678,7 @@ public class CompraPrincipal extends CustomPanel {
 
 	public void cargardata() {
 		showcomponet(true);
+		cliente= ctrBoleto.getCliente();
 
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
@@ -670,6 +694,10 @@ public class CompraPrincipal extends CustomPanel {
 		this.lbl_valor_iva.setText(ctrView.getIva());
 		this.lbl_valor_Subtotal.setText(ctrView.getSubtotal());
 		this.lbl_valor_total.setText(ctrView.getTotal());
+		txt_nombre.setText(cliente.getNombre());
+		txt_cedula.setText(cliente.getCedula());
+		txt_fono.setText(cliente.getTelefono());
+		txt_direccion.setText(cliente.getDireccion());
 		
 		censura();
 		activar();

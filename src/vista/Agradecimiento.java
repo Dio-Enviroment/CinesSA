@@ -16,6 +16,7 @@ import componentes.CustomPanel;
 import controlador.ControladorBoleto;
 import controlador.ControladorSala;
 import controlador.ControladorView;
+import modelo.Cliente;
 
 import java.awt.Color;
 
@@ -28,11 +29,14 @@ public class Agradecimiento extends CustomPanel {
 	private JTextArea texto;
 	private Timer timer = new Timer();
 	private TimerTask task;
+	private Cliente cliente;
+	private ControladorBoleto ctrBoleto;
 	
-	public Agradecimiento(int width,int height,ControladorSala ctrSala, ControladorView ctrView) {
+	public Agradecimiento(int width,int height,ControladorSala ctrSala, ControladorBoleto ctrBoleto, ControladorView ctrView) {
 		setLayout(null);
 		setBounds(0, 0, width, height);
 		this.ctrView=ctrView;
+		this.ctrBoleto= ctrBoleto;
 		pn_agradecimiento = new JPanel();
 		pn_agradecimiento.setBounds(200, 230,800,400);
 		add(pn_agradecimiento);
@@ -80,6 +84,11 @@ public class Agradecimiento extends CustomPanel {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
+				cliente= ctrBoleto.getCliente();
+				cliente.setCedula("");
+				cliente.setNombre("");
+				cliente.setTelefono("");
+				cliente.setDireccion("");
 				ctrView.changeCartelera();
 				
 			}

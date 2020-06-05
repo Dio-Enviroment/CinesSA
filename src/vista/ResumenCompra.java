@@ -7,11 +7,12 @@ import javax.swing.border.TitledBorder;
 import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.ImageAdaptable;
+import controlador.ControladorBoleto;
 import controlador.ControladorProyeccion;
 import controlador.ControladorSala;
 import controlador.ControladorView;
 import modelo.Asiento;
-
+import modelo.Cliente;
 import modelo.Sala;
 
 import javax.swing.border.LineBorder;
@@ -56,13 +57,16 @@ public class ResumenCompra extends CustomPanel {
 	private boolean [][]salaAct;
 	private String letras[] = {"A","B","C","D","E","F","G","H"};
 	private String puesto="";
+	private Cliente cliente;
+	private ControladorBoleto ctrBoleto;
 	/**
 	 * Create the panel.
 	 */
-	public ResumenCompra(int width,int height, ControladorSala ctrSala, ControladorProyeccion ctrPro, ControladorView ctrView) {
+	public ResumenCompra(int width,int height, ControladorSala ctrSala, ControladorProyeccion ctrPro, ControladorBoleto ctrBoleto, ControladorView ctrView) {
 		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
 		this.ctrPro= ctrPro;
+		this.ctrBoleto= ctrBoleto;
 		setLayout(null);
 		setBounds(0, 0, width, height);
 
@@ -213,6 +217,11 @@ public class ResumenCompra extends CustomPanel {
 		btn_cancelar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				cliente= ctrBoleto.getCliente();
+				cliente.setCedula("");
+				cliente.setNombre("");
+				cliente.setTelefono("");
+				cliente.setDireccion("");
 				ctrView.setPuestos("0");
 				ctrView.setTotal("0");
 				ctrView.setIva("0");
@@ -270,6 +279,7 @@ public class ResumenCompra extends CustomPanel {
 		
 	}
 	public void cargardata() {
+		
 		sala = ctrSala.getSala(0);
 		salaAct =  sala.getAsientos();
 		salaPre = ctrSala.getSalaPre();
