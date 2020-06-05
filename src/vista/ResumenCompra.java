@@ -217,6 +217,7 @@ public class ResumenCompra extends CustomPanel {
 		btn_cancelar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ctrView.setActivador4(false);
 				cliente= ctrBoleto.getCliente();
 				cliente.setCedula("");
 				cliente.setNombre("");
@@ -242,6 +243,7 @@ public class ResumenCompra extends CustomPanel {
 		btn_comprar.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				puesto="";
 				ctrBoleto.setPuestos("0");
 				ctrBoleto.setTotal("0");
