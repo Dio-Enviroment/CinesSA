@@ -61,5 +61,16 @@ public class Sala {
 		this.tipo = tipo;
 	}
 
+	public int verificarNumAsiento(){
+		int num=0;
+		for (int i = 0; i < asientos.length; i++) {
+			for (int j = 0; j < asientos[i].length; j++) {
+				if (!asientos[i][j]) {
+					num++;
+				}
+			}
+		}
+		return num;
+	}
 	
 }

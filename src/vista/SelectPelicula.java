@@ -23,7 +23,6 @@ public class SelectPelicula extends CustomPanel {
 	private ControladorView ctrView;
 	private Proyeccion proyeccion;
 	private ArrayList<Proyeccion> proyecciones;
-	private boolean isPelicula;
 
 	public SelectPelicula(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
 		this.ctrProyeccion = ctrProyeccion;
@@ -78,12 +77,12 @@ public class SelectPelicula extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (isPelicula) {
-					isPelicula=false;
+				if (ctrView.getIsPelicula()) {
+					ctrView.setIsPelicula(false);
 					ver.setText("Ver Peliculas");
 				}
 				else{
-					isPelicula=true;
+					ctrView.setIsPelicula(true);
 					ver.setText("Ver Conferencias");
 				}
 				refreshButtons(true);
@@ -117,7 +116,7 @@ public class SelectPelicula extends CustomPanel {
 		int ini, end;
 		proyecciones = ctrProyeccion.getProyeccions();
 
-		if (isPelicula) {
+		if (ctrView.getIsPelicula()) {
 			ini = 0;
 			end = 7;
 		} else {
@@ -142,10 +141,10 @@ public class SelectPelicula extends CustomPanel {
 		back0.setImage(ctrProyeccion.getActProyeccion().getCarteleraFront());
 		if (proyeccion instanceof Pelicula) {
 			ver.setText("Ver Conferencias");
-			isPelicula = true;
+			ctrView.setIsPelicula(true);
 		} else {
 			ver.setText("Ver Peliculas");
-			isPelicula = false;
+			ctrView.setIsPelicula(false);
 		}
 		refreshButtons(false);
 		showcomponet(true);

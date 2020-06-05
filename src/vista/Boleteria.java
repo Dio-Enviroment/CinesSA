@@ -83,7 +83,7 @@ public class Boleteria extends CustomPanel {
 		
 		horario = new JComboBox(horarios);
 		horario.setBounds(135, 310, formularyWidth - 170, 40);
-
+		//horario.setEditable(false);
 		formulary.add(title);
 		formulary.add(lb2);
 		formulary.add(horario);
@@ -100,6 +100,7 @@ public class Boleteria extends CustomPanel {
 
 	public void cargardata() {
 		proyeccion = ctrProyeccion.getActProyeccion();
+		
 
 		back.setImage(proyeccion.getBoleteriaBack());
 		front.setImage(proyeccion.getBoleteriaFront());
@@ -109,13 +110,26 @@ public class Boleteria extends CustomPanel {
 		for (String hora : proyeccion.getHorario()) {
 			horarios.addElement(hora);
 		}
-		if (proyeccion.getHorario().length!=1 || horario.getSelectedIndex()!=0) {
+
+		if(!(proyeccion instanceof Pelicula) || horario.getSelectedIndex()!=0){
 			compra.setEnabled(false);
 		}
-		else{
+		if(proyeccion instanceof Conferencia){
 			horario.setSelectedIndex(1);
 			horario.setEnabled(false);
 		}
+		else{
+			horario.setEnabled(true);
+		}
+		// if (proyeccion.getHorario().length!=1 || horario.getSelectedIndex()!=0) {
+		// 	compra.setEnabled(false);
+		// }
+		// else{
+		// 	horario.setSelectedIndex(1);
+		// 	horario.setEnabled(false);
+		// }
+
+		
 		showcomponet(true);
 	}
 
@@ -163,6 +177,12 @@ public class Boleteria extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ctrProyeccion.setPreproyeccion(proyeccion);
+				if (ctrProyeccion.getActProyeccion() instanceof Pelicula){
+					ctrView.setIsPelicula(true);
+				}
+				else{
+					ctrView.setIsPelicula(false);
+				}
 				ctrView.changeSelectPelicula();
 			}
 		});
@@ -177,11 +197,42 @@ public class Boleteria extends CustomPanel {
 
 		horario.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
+
+
 				if(horario.getSelectedIndex()!=0){
 					compra.setEnabled(true);
 				}
 				else{
 					compra.setEnabled(false);
+				}
+
+				if(horarios.getSize()!=0 && horario.getSelectedIndex()!=0){
+					if(proyeccion instanceof Pelicula){
+						Pelicula p=(Pelicula)proyeccion;
+						ArrayList<Sala> ss= p.getSalas();
+						Sala sz= ss.get(horario.getSelectedIndex()-1);
+						if(sz.verificarNumAsiento()==0){
+							compra.setText("Agotado");
+							compra.setEnabled(false);
+						}
+						else{
+							compra.setText("Comprar");
+						}
+					}
+					else{
+						Conferencia c=(Conferencia)proyeccion;
+						Sala s= c.getSala();
+						if(s.verificarNumAsiento()==0){
+							compra.setText("Agotado");
+							compra.setEnabled(false);
+						}
+						else{
+							compra.setText("Comprar");
+						}
+					}
+				}
+				else{
+					compra.setText("Comprar");
 				}
 			}
 		});

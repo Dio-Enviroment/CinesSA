@@ -26,6 +26,7 @@ public class ControladorView {
     private boolean activador4;
     private boolean inicompraPrincipal=true;
     private String nombre ;
+    private boolean isPelicula=true;
 
     private String cliente="";
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
@@ -49,14 +50,13 @@ public class ControladorView {
         this.container.add(agradecimiento);
     }
 
-    // public void setLog(String log) {
-    //     this.log=log;
-    // }
+    public void setIsPelicula(boolean value) {
+        this.isPelicula=value;
+    }
 
-    // public String getLog(){
-    //     return log;
-    // }
-    
+    public boolean getIsPelicula() {
+        return isPelicula;
+    }
    
     public String getCliente() {
 		return cliente;

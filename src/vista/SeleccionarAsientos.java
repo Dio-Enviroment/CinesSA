@@ -20,8 +20,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-
 import javax.swing.BoxLayout;
 import javax.swing.border.EmptyBorder;
 
@@ -103,17 +101,13 @@ public class SeleccionarAsientos extends CustomPanel {
 		pn_asientos.add(lbl_asiento);
 		pn_asientos.add(pn_seleccionarAsiento);
 		
-		File workingDirectory = new File(System.getProperty("user.dir"));
-		String[] paths = { workingDirectory + "//src//resources//fondoSala.png",workingDirectory + "//src//resources//fondo_s.png"};
 		
-		ImageAdaptable img1=new ImageAdaptable(paths[0]);
-		ImageAdaptable img2=new ImageAdaptable(paths[1]);
 		lbl_asiento.setForeground(Color.white);
 		lbl_asientos.setForeground(Color.white);
-		Jlabels();
-		img1.setLocation(90,75 );
-		pn_asientos.add(img1);
-		pn_asientos.add(img2);
+		
+		
+	
+		
 		
 		pn_seleccionarAsiento.setLayout(null);
 		pn_seleccionarAsiento.setOpaque(false);
@@ -121,10 +115,11 @@ public class SeleccionarAsientos extends CustomPanel {
 		this.btncomprar.setEnabled(false);
 		
 		generarBotones();
+		Jlabels();
 		invisibleL();
 		invisibleN();
 		invisible();
-
+		
 		iniComponentEvents();
 		showcomponet(false);
 	}
@@ -169,9 +164,11 @@ public class SeleccionarAsientos extends CustomPanel {
 		numeros = null;
 		letras = null;
 		this.lbl_asiento.setText("0");
-		invisible();
 		invisibleL();
 		invisibleN();
+		invisible();
+		
+		
 		showcomponet(false);
 	}
 
@@ -196,6 +193,8 @@ public class SeleccionarAsientos extends CustomPanel {
 		asientos = sala.getAsientos();
 		pn_letras.setBounds(155, 120, 40, 70 * asientos.length);
 		pn_seleccionarAsiento.setBounds(200, 120, 90 * asientos[0].length, 70 * asientos.length);
+		invisibleL();
+		invisibleN();
 		for (int i = 0; i < asientos[0].length; i++) {
 			num[i].setText(numeros[i]);
 			num[i].setVisible(true);
@@ -204,9 +203,72 @@ public class SeleccionarAsientos extends CustomPanel {
 			let[i].setText(letras[i]);
 			let[i].setVisible(true);
 		}
+	
+		
+		
+		File workingDirectory = new File(System.getProperty("user.dir"));
+		String[] paths = { workingDirectory + "//src//resources//sala_5_5.png",workingDirectory + "//src//resources//sala_5_6.png",
+				workingDirectory + "//src//resources//sala_5_7.png",workingDirectory + "//src//resources//sala_6_5.png"
+				,workingDirectory + "//src//resources//sala_6_6.png",workingDirectory + "//src//resources//sala_6_7.png"
+				,workingDirectory + "//src//resources//sala_7_5.png",workingDirectory + "//src//resources//sala_7_6.png"
+				,workingDirectory + "//src//resources//sala_7_7.png",workingDirectory + "//src//resources//fondo_s.png"};
+		
+		
+	
+		if( asientos.length == 5 && asientos[0].length ==5) {
+			ImageAdaptable img1=new ImageAdaptable(paths[0]);
+			img1.setLocation(100, 90);
+			pn_asientos.add(img1);
+		}
+		if( asientos.length == 5 && asientos[0].length ==6) {
+			ImageAdaptable img1=new ImageAdaptable(paths[1]);
+			img1.setLocation(100, 90);
+			pn_asientos.add(img1);
+		}
+		if( asientos.length == 5 && asientos[0].length ==7) {
+			ImageAdaptable img1=new ImageAdaptable(paths[2]);
+			img1.setLocation(100, 90);
+			pn_asientos.add(img1);
+		}
+		if( asientos.length == 6 && asientos[0].length ==5) {
+			ImageAdaptable img1=new ImageAdaptable(paths[3]);
+			img1.setLocation(100, 90);
+			pn_asientos.add(img1);
+		}
+		if( asientos.length == 6 && asientos[0].length ==6) {
+			ImageAdaptable img1=new ImageAdaptable(paths[4]);
+			img1.setLocation(100, 90);
+			pn_asientos.add(img1);
+		}
+		if( asientos.length == 6 && asientos[0].length ==7) {
+			ImageAdaptable img1=new ImageAdaptable(paths[5]);
+			img1.setLocation(100, 90);
+			pn_asientos.add(img1);
+		}
+		if( asientos.length == 7 && asientos[0].length ==5) {
+			ImageAdaptable img1=new ImageAdaptable(paths[6]);
+			img1.setLocation(100, 90);
+			pn_asientos.add(img1);
+		}
+		if( asientos.length == 7 && asientos[0].length ==6) {
+			ImageAdaptable img1=new ImageAdaptable(paths[7]);
+			img1.setLocation(100, 90);
+			pn_asientos.add(img1);
+		}
+		if( asientos.length == 7 && asientos[0].length ==7) {
+			ImageAdaptable img1=new ImageAdaptable(paths[8]);
+			img1.setLocation(130, 100);
+			pn_asientos.add(img1);
+		}
+		ImageAdaptable img2=new ImageAdaptable(paths[9]);
+		img2.setLocation(0, 0);
+		pn_asientos.add(img2);
+		
+		
 		this.lbl_asiento.setText(ctrBoleto.getContador());
 		this.btncomprar.setEnabled(false);
 		salaPre = ctrSala.getSalaPre();
+		
 		refreshBotones(asientos);
 
 		showcomponet(true);
@@ -277,13 +339,13 @@ public class SeleccionarAsientos extends CustomPanel {
 	 * (botones[i][j].isEnabled()) { botones[i][j].changeIcon(0);
 	 * botones[i][j].setEnabled(true); } } } }
 	 */
-	private void invisibleL() {
+	private void invisibleN() {
 		for (int i = 0; i < num.length; i++) {
 			num[i].setVisible(false);
 		}
 	}
 
-	private void invisibleN() {
+	private void invisibleL() {
 		for (int i = 0; i < let.length; i++) {
 			let[i].setVisible(false);
 		}
