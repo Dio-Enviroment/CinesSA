@@ -644,14 +644,17 @@ public class CompraPrincipal extends CustomPanel {
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		if (actProyeccion instanceof Pelicula) {
 			if (((Pelicula) actProyeccion).getEdad() > 12) {
+				this.arribaN.setEnabled(false);
 				this.sp_ninios.setEnabled(false);
 				this.sp_adultos.setEnabled(true);
 			} else {
+				
 				this.sp_ninios.setEnabled(true);
 				this.sp_adultos.setEnabled(true);
 			}
 		} else {
 			this.sp_adultos.setEnabled(true);
+			this.sp_ninios.setEnabled(true);
 		}
 
 	}
@@ -690,6 +693,7 @@ public class CompraPrincipal extends CustomPanel {
 		aux = 0;
 		asientos = "";
 		estado = false;
+		//this.sp_ninios.setEnabled(ctrView.getActivador2());
 		this.lbl_contador.setText(ctrBoleto.getPuestos());
 		this.lbl_valor_iva.setText(ctrBoleto.getIva());
 		this.lbl_valor_Subtotal.setText(ctrBoleto.getSubtotal());
@@ -699,8 +703,9 @@ public class CompraPrincipal extends CustomPanel {
 		txt_fono.setText(cliente.getTelefono());
 		txt_direccion.setText(cliente.getDireccion());
 		
-		censura();
+		
 		activar();
+		censura();
 	}
 
 	public void showcomponet(boolean visible) {
