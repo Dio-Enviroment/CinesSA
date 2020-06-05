@@ -3,6 +3,8 @@ package vista;
 import modelo.*;
 import controlador.*;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -20,6 +22,7 @@ import javax.swing.plaf.basic.BasicArrowButton;
 import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.ImageAdaptable;
+import componentes.JTextFieldHint;
 
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -43,10 +46,10 @@ import java.io.File;
 public class CompraPrincipal extends CustomPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField txt_cedula;
-	private JTextField txt_nombre;
-	private JTextField txt_fono;
-	private JTextField txt_direccion;
+	private JTextFieldHint txt_cedula;
+	private JTextFieldHint txt_nombre;
+	private JTextFieldHint txt_fono;
+	private JTextFieldHint txt_direccion;
 	private JLabel lbl_pelicula;
 	private JLabel lbl_tituloPelicula;
 	private JLabel lbl_boletos;
@@ -83,7 +86,7 @@ public class CompraPrincipal extends CustomPanel {
 	private JLabel infoBoleto;
 	private ControladorBoleto ctrBoleto;
 	private Cliente cliente;
-
+	
 	private Precio pr=new Precio();
 	private JComponent editor,editor2;
 	private GridBagConstraints gbc_lbl_cedula, gbc_txt_cedula, gbc_lbl_nombre, gbc_txt_nombre, gbc_lbl_telefono,
@@ -91,6 +94,9 @@ public class CompraPrincipal extends CustomPanel {
 			gbc_lbl_tiiposala, gbc_lbl_boletos, gbc_lbl_sp, gbc_lbl_ninios, gbc_sp_ninios, gbc_lbl_adultos,
 			gbc_sp_adultos, gbc_btn_selecionAsiento, gbc_lbl_contador, gbc_lbl_subtotal, gbc_lbl_valor_Subtotal,
 			gbc_lbl_iva, gbc_lbl_valor_iva, gbc_lbl_total, gbc_lbl_valor_total;
+
+	
+  
 
 
 	public CompraPrincipal(int width, int height, ControladorProyeccion ctrProyeccion, ControladorSala ctrSala,
@@ -100,6 +106,7 @@ public class CompraPrincipal extends CustomPanel {
 		this.ctrView = ctrView;
 		this.ctrSala = ctrSala;
 		this.ctrBoleto=ctrBoleto;
+	
 		this.datosCliente= new JLabel("DATOS DEL CLIENTE");
 		this.infoBoleto= new JLabel("INFORMACION DE LA PELICULA");
 		setLayout(null);
@@ -141,8 +148,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_cedula.gridy = 1;
 		pn_datoPersona.add(lbl_cedula, gbc_lbl_cedula);
 
-		txt_cedula = new JTextField();
-//
+		txt_cedula = new JTextFieldHint();
 		gbc_txt_cedula = new GridBagConstraints();
 		gbc_txt_cedula.anchor = GridBagConstraints.WEST;
 		gbc_txt_cedula.insets = new Insets(0, 0, 5, 0);
@@ -161,7 +167,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_nombre.gridy = 2;
 		pn_datoPersona.add(lbl_nombre, gbc_lbl_nombre);
 
-		txt_nombre = new JTextField();
+		txt_nombre = new JTextFieldHint();
 		gbc_txt_nombre = new GridBagConstraints();
 		gbc_txt_nombre.insets = new Insets(0, 0, 5, 0);
 		gbc_txt_nombre.fill = GridBagConstraints.HORIZONTAL;
@@ -180,7 +186,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_telefono.gridy = 3;
 		pn_datoPersona.add(lbl_telefono, gbc_lbl_telefono);
 
-		txt_fono = new JTextField();
+		txt_fono = new JTextFieldHint();
 		gbc_txt_fono = new GridBagConstraints();
 		gbc_txt_fono.anchor = GridBagConstraints.NORTHWEST;
 		gbc_txt_fono.insets = new Insets(0, 0, 5, 0);
@@ -199,7 +205,7 @@ public class CompraPrincipal extends CustomPanel {
 		gbc_lbl_direccion.gridy = 4;
 		pn_datoPersona.add(lbl_direccion, gbc_lbl_direccion);
 
-		txt_direccion = new JTextField();
+		txt_direccion = new JTextFieldHint();
 		txt_direccion.setText("");
 		gbc_txt_direccion = new GridBagConstraints();
 		gbc_txt_direccion.fill = GridBagConstraints.HORIZONTAL;
@@ -399,7 +405,7 @@ public class CompraPrincipal extends CustomPanel {
 				gbc_btn_siguiente.gridx = 1;
 				gbc_btn_siguiente.gridy = 0;
 				pn_controlBotones.add(btn_siguiente, gbc_btn_siguiente);
-
+		
 		this.btn_siguiente.setEnabled(false);
 		this.datosCliente.setBounds(240, 43, 250, 50);
 		datosCliente.setFont(new Font("Verdana", Font.BOLD, 20));
@@ -423,7 +429,8 @@ public class CompraPrincipal extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(exp()) {
+				
+				if(exp() && !( txt_nombre.getText().equals("Campo Requerido") || txt_direccion.getText().equals("Campo Requerido"))) {
 					ctrView.setCliente(txt_nombre.getText());
 					cliente.setNombre(txt_nombre.getText());
 					cliente.setCedula(txt_cedula.getText());
@@ -432,6 +439,7 @@ public class CompraPrincipal extends CustomPanel {
 					
 					ctrView.changeResumenCompra();
 				}
+				 
 				
 			}
 
@@ -443,7 +451,10 @@ public class CompraPrincipal extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ctrView.setActivador4(false);
-				
+				txt_nombre.setHint("");
+				txt_cedula.setHint("");
+				txt_fono.setHint("");
+				txt_direccion.setHint("");
 				cliente.setNombre(txt_nombre.getText());
 				cliente.setCedula(txt_cedula.getText());
 				cliente.setTelefono(txt_fono.getText());
@@ -532,16 +543,7 @@ public class CompraPrincipal extends CustomPanel {
 			public void stateChanged(ChangeEvent arg0) {
 				aux = Integer.parseInt(sp_adultos.getValue().toString())
 						+ Integer.parseInt(sp_ninios.getValue().toString());
-				/*if (aux == maxA) {
-					
-					arribaA.setEnabled(false);
-					arribaN.setEnabled(false);
-				} else {
-					
-					arribaA.setEnabled(true);
-					arribaN.setEnabled(true);
-					//
-				}*/
+			
 				
 				if (ctrView.getActivador3()) {
 					if (aux == maxA) {
@@ -653,7 +655,27 @@ public class CompraPrincipal extends CustomPanel {
 		 estado = cliente.ValidarCampos(d);
 		 cliente.ValidarCampos(d);
 		 } catch (Excepcion le) {
-		 JOptionPane.showMessageDialog(null, le.getMessage());
+			 if(le.getMessage().equals("Campo Requerido")) {
+				 	
+				 if(txt_nombre.getText().equals("")) {
+					 txt_nombre.setHint(le.getMessage());
+				 }
+				 if(txt_direccion.getText().equals("")) {
+					txt_direccion.setHint(le.getMessage());
+				 }
+				 if(txt_cedula.getText().equals("")) {
+					 txt_cedula.setHint(le.getMessage());
+				 }
+				 if(txt_fono.getText().equals("")) {
+					 txt_fono.setHint(le.getMessage());
+				 }
+			 }
+			 if(le.getMessage().equals("Cedula Incorrecta")) {	
+				 txt_cedula.setHint(le.getMessage());
+			 }
+			 else if(le.getMessage().equals("Telefono Incorrecto")) {
+				 txt_fono.setHint(le.getMessage());
+			 }
 		 }
 		return estado;
 	}

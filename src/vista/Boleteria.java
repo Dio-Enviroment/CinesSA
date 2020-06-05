@@ -171,7 +171,6 @@ public class Boleteria extends CustomPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ctrProyeccion.setPreproyeccion(proyeccion);
-				//ctrProyeccion.setPreproyeccion(ctrProyeccion.getActProyeccion());
 				ctrView.changeDetallePelicula();
 			}
 		});

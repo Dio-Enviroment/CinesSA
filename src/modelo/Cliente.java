@@ -55,17 +55,17 @@ public class Cliente {
 	 	for (int i = 0; i < campos.length; i++) {
 	 		if (campos[i].toString().equals("")) {
 				estado=false;
- 			throw new Excepcion("Todos los campos deben ser Ingresados");
+ 			throw new Excepcion("Campo Requerido");
 	 		}
 			
 	 	}
 	 	if(campos[0].toString().length()<10 || campos[0].toString().length()>10) {
 	 		estado=false;
-	 		throw new Excepcion("Ingrese correctamente la cedula");
+	 		throw new Excepcion("Cedula Incorrecta");
 	 	}
 	 	if(campos[2].toString().length()<10 || campos[2].toString().length()>10) {
 	 		estado=false;
-	 		throw new Excepcion("Ingrese correctamente su numero de celular");
+	 		throw new Excepcion("Telefono Incorrecto");
 	 	}
 		return estado;
 	 }
