@@ -177,7 +177,6 @@ public class SelectPelicula extends CustomPanel {
 				public void actionPerformed(ActionEvent e) {
 
 					ctrProyeccion.setPreproyeccion((Proyeccion) btn_comprar.getCustomParameter(0));
-					ctrView.setLog("SelectPelicula");
 					ctrView.changeDetallePelicula();
 				}
 			});

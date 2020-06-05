@@ -41,9 +41,7 @@ public class DetallePelicula extends CustomPanel {
 	private JTextPane censura;
 	private JTextPane horarios;
 	private JPanel panel;
-	private CustomButton salir;
-	private CustomButton continuar;
-	private CustomButton selecionar;
+	private CustomButton salir,selecionar;//continuar
 
 	public DetallePelicula(int width, int height, ControladorProyeccion ctrProyeccion, ControladorView ctrView) {
 		setLayout(null);
@@ -213,11 +211,11 @@ public class DetallePelicula extends CustomPanel {
 
 		add(datos);
 
-		salir = new CustomButton("Regresar");
+		salir = new CustomButton("Ver Cartelera");
 		panel.add(salir);
 
-		continuar = new CustomButton("Ver Cartelera");
-		panel.add(continuar);
+		// continuar = new CustomButton("Ver Cartelera");
+		// panel.add(continuar);
 
 		selecionar = new CustomButton("Seleccionar");
 		panel.add(selecionar);
@@ -250,6 +248,8 @@ public class DetallePelicula extends CustomPanel {
 		back0.setImage(actProyeccion.getBoleteriaBack());
 		img.setImage(proyeccion.getMax());
 		title.setText("  " + proyeccion.getTitulo());
+		selecionar.setText("Seleccionar horario");//Seleccionar horario
+
 		if (proyeccion instanceof Pelicula) {
 			Pelicula pel = (Pelicula) proyeccion;
 			l1.setText("  SINOPSIS:");
@@ -286,24 +286,11 @@ public class DetallePelicula extends CustomPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (ctrView.getLog().equals("Boleteria")) {
-					ctrView.changeBoleteria();
-				}
-				else{
-					ctrView.changeSelectPelicula();	
-				}
+				ctrView.changeSelectPelicula();	
 			}
 			
 		});
 
-		continuar.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ctrView.changeSelectPelicula();
-			}
-			
-		});
 
 		selecionar.addActionListener(new ActionListener(){
 
@@ -352,11 +339,7 @@ public class DetallePelicula extends CustomPanel {
 		datos.setVisible(visible);
 		panel.setVisible(visible);
 		salir.setVisible(visible);
-		continuar.setVisible(visible);
-		if(ctrView.getLog()!=null && ctrView.getLog().equals("Boleteria")){
-			selecionar.setVisible(false);
-		}
-		else{
+		if(ctrProyeccion.getActProyeccion()==ctrProyeccion.getPreproyeccion()){
 			selecionar.setVisible(true);
 		}
 	}

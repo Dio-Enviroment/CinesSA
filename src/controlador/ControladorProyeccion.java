@@ -12,6 +12,7 @@ public class ControladorProyeccion {
     private ArrayList<Proyeccion> proyecciones=new ArrayList<Proyeccion>();
     private Proyeccion actProyeccion;
     private Proyeccion preProyeccion;
+    private Proyeccion selectProyeccion;
 
 
     public ControladorProyeccion() {
@@ -59,5 +60,13 @@ public class ControladorProyeccion {
 
     public Proyeccion getPreproyeccion(){
         return preProyeccion;
+    }
+
+    public void setSelectProyeccion(Proyeccion proyeccion){
+        this.selectProyeccion=proyeccion;
+    }
+
+    public Proyeccion getSelectProyeccion(){
+        return selectProyeccion;
     }
 }

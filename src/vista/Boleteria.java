@@ -162,6 +162,7 @@ public class Boleteria extends CustomPanel {
 		cartelera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ctrProyeccion.setPreproyeccion(proyeccion);
 				ctrView.changeSelectPelicula();
 			}
 		});
@@ -169,8 +170,8 @@ public class Boleteria extends CustomPanel {
 		title.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ctrProyeccion.setPreproyeccion(ctrProyeccion.getActProyeccion());
-				ctrView.setLog("Boleteria");
+				ctrProyeccion.setPreproyeccion(proyeccion);
+				//ctrProyeccion.setPreproyeccion(ctrProyeccion.getActProyeccion());
 				ctrView.changeDetallePelicula();
 			}
 		});
