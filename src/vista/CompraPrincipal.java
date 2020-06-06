@@ -556,7 +556,7 @@ public class CompraPrincipal extends CustomPanel {
 						arribaA.setEnabled(true);
 						arribaN.setEnabled(true);
 					}
-				}
+				}///asd
 				else {
 					if (aux == maxA) {
 						arribaA.setEnabled(false);
