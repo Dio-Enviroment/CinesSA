@@ -500,6 +500,7 @@ public class CompraPrincipal extends CustomPanel {
 	SpinnerNumberModel ad = new SpinnerNumberModel();
 	SpinnerNumberModel nn = new SpinnerNumberModel();
 	BasicArrowButton arribaA = (BasicArrowButton) sp_adultos.getComponent(0);
+	BasicArrowButton abajoA = (BasicArrowButton) sp_adultos.getComponent(1);
 	BasicArrowButton arribaN = (BasicArrowButton) sp_ninios.getComponent(0);
 
 	private int maxA;
@@ -554,7 +555,6 @@ public class CompraPrincipal extends CustomPanel {
 						
 						arribaA.setEnabled(true);
 						arribaN.setEnabled(true);
-						//
 					}
 				}
 				else {
@@ -566,9 +566,14 @@ public class CompraPrincipal extends CustomPanel {
 					}
 				}
 
+				
+
 				lbl_contador.setText(aux + "");
-				lbl_valor_Subtotal.setText((Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),
-						Integer.parseInt(sp_ninios.getValue().toString()), ctrProyeccion) * 100) / 100d) + "");
+				double t=(Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),
+				Integer.parseInt(sp_ninios.getValue().toString()), ctrProyeccion) * 100) / 100d);
+				lbl_valor_Subtotal.setText( t+ "");
+				
+
 				lbl_valor_iva.setText(
 						(Math.round(pr.calculoI(Double.parseDouble(lbl_valor_Subtotal.getText())) * 100) / 100d) + "");
 				lbl_valor_total.setText((Math.round(pr.calculoT(Double.parseDouble(lbl_valor_Subtotal.getText()),

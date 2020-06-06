@@ -4,7 +4,7 @@ import modelo.*;
 import java.text.DecimalFormat;
 
 public class Precio {
-	public  double pelicula=5.60;
+	public final  double pelicula=5.60;
 	public final  double conferencia=9.30;
 	public final  double desN = 0.50;
 	public final double PreImax = 0.20;
@@ -41,14 +41,13 @@ public class Precio {
 		public double subtotal(int num_boletoA, int num_boletoN, ControladorProyeccion ctrProyeccion) {
 			Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
 			if(actProyeccion instanceof Pelicula) {
-				if(((Pelicula) actProyeccion).getSalaTipo().equals("normal")) 
-				return (num_boletoA*pelicula)+(num_boletoN*(pelicula*desN));
-				
+				if(((Pelicula) actProyeccion).getSalaTipo().equals("normal")){ 
+					return (num_boletoA*pelicula)+(num_boletoN*(pelicula*desN));
+				}
 						
 				else {
-					pelicula = (pelicula*PreImax)+pelicula;
-					return (num_boletoA*pelicula)+(num_boletoN*(pelicula*desN));
-					}
+					return (num_boletoA*((pelicula*PreImax)+pelicula))+(num_boletoN*(((pelicula*PreImax)+pelicula)*desN));
+				}
 			}
 			else {
 				
