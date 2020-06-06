@@ -27,12 +27,15 @@ public class Main extends JFrame {
 	}
 
 	public Main() {
+		
 		setResizable(false);
+		
+		this.setTitle("CINES S.A");
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
 		ControladorPrincipal controladorPrincipal = new ControladorPrincipal(contentPane);
 		ControladorView controladorView = controladorPrincipal.getCtrView();
-
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1024, 768);
 
@@ -41,6 +44,7 @@ public class Main extends JFrame {
 		add(contentPane,BorderLayout.CENTER); 
 		
 		controladorView.changeCartelera();
+		this.setLocationRelativeTo(null);
 	}
 
 }
