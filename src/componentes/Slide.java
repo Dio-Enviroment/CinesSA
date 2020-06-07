@@ -54,17 +54,10 @@ public class Slide extends JPanel {
 		Slide s=this;
 		if (s.getComponent(1) instanceof CustomButton){
 			CustomButton customButton=(CustomButton)s.getComponent(1);
-			//TransparentPanel visor=(TransparentPanel)s.getComponent(2);
 			ImageAdaptable img1=(ImageAdaptable)s.getComponent(2);
-			// ImageAdaptable img2=(ImageAdaptable)s.getComponent(3);
-			// ImageAdaptable img3=(ImageAdaptable)s.getComponent(4);
-			// ImageAdaptable img4=(ImageAdaptable)s.getComponent(5);
 			
 			s.setComponentZOrder(customButton, 0);
 			s.setComponentZOrder(img1, 1);
-			// s.setComponentZOrder(img2, 2);
-			// s.setComponentZOrder(img3, 3);
-			// s.setComponentZOrder(img4, 4);
 			s.setComponentZOrder(slideContainer, 2);
 		}
 

@@ -16,9 +16,7 @@ import modelo.Proyeccion;
 
 
 public class Cartelera extends CustomPanel {
-	/**
-	 *
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private CustomButton btn_comprar;
 	private ControladorProyeccion ctrProyeccion;

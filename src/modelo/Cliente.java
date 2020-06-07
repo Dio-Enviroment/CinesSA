@@ -2,8 +2,6 @@ package modelo;
 
 import controlador.Excepcion;
 
-//import Controlador.Excepcion;
-
 public class Cliente {
 
 	
