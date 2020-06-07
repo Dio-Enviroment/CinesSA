@@ -12,7 +12,6 @@ import java.io.File;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionListener;
-import java.awt.Component;
 
 public class CustomButton extends JButton{
 

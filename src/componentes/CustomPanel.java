@@ -1,10 +1,10 @@
 package componentes;
 
 import javax.swing.JPanel;
-import java.awt.Graphics;
-import java.awt.Component;
 
 public class CustomPanel extends JPanel implements Controlable {
+
+    private static final long serialVersionUID = 1L;
 
     @Override
     public void cargardata() {}

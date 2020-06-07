@@ -83,7 +83,6 @@ public class Boleteria extends CustomPanel {
 		
 		horario = new JComboBox(horarios);
 		horario.setBounds(135, 310, formularyWidth - 170, 40);
-		//horario.setEditable(false);
 		formulary.add(title);
 		formulary.add(lb2);
 		formulary.add(horario);
@@ -121,15 +120,7 @@ public class Boleteria extends CustomPanel {
 		else{
 			horario.setEnabled(true);
 		}
-		// if (proyeccion.getHorario().length!=1 || horario.getSelectedIndex()!=0) {
-		// 	compra.setEnabled(false);
-		// }
-		// else{
-		// 	horario.setSelectedIndex(1);
-		// 	horario.setEnabled(false);
-		// }
-
-		
+				
 		showcomponet(true);
 	}
 

@@ -5,6 +5,10 @@ public enum Peliculas {
 	Peli_0("//src//img//boleteria//pelicula//peli_0//back.png",
 			"//src//img//boleteria//pelicula//peli_0//front.png",
 			"//src//img//boleteria//pelicula//peli_0//titulo.png",
+			"//src//img//cartelera//pelicula//peli_0//back.png",
+			"//src//img//detalle//pelicula//peli_0//blur.png",
+			"//src//img//detalle//pelicula//peli_0//min.png",
+			"//src//img//detalle//pelicula//peli_0//max.png",
 			"Iron Man 3", 
 			duracion(130),
 			horarios(),
@@ -14,21 +18,16 @@ public enum Peliculas {
 					+ "Cuando Stark comprende que su enemigo ha destruido su universo personal, se embarca en una "
 					+ " busqueda para encontrar a los responsables, Stark confiando en su ingenio y "
 					+ " su instinto para proteger a las personas que quiere.",
-			"normal",
-			"//src//img//cartelera//pelicula//peli_0//back.png",
-			"//src//img//boleteria//pelicula//peli_0//blur.png",
-			"//src//img//cartelera//pelicula//peli_0//titulo.png",
-			"//src//img//cartelera//pelicula//peli_0//leyenda.png",
-			"//src//img//detalle//pelicula//peli_0//min.png",
-			"//src//img//detalle//pelicula//peli_0//max.png",
-			0,0, //x y del front
-			0,0, //x y del titulo
-			0,0//x y de la leyenda
+			"normal"
 			),
 	
-	Peli_1("//src//img//boleteria//pelicula//peli_1//back.png",
-	"//src//img//boleteria//pelicula//peli_1//front.png",
-	"//src//img//boleteria//pelicula//peli_1//titulo.png",
+	Peli_1( "//src//img//boleteria//pelicula//peli_1//back.png",
+			"//src//img//boleteria//pelicula//peli_1//front.png",
+			"//src//img//boleteria//pelicula//peli_1//titulo.png",
+			"//src//img//cartelera//pelicula//peli_1//back.png",
+			"//src//img//detalle//pelicula//peli_1//blur.png",
+			"//src//img//detalle//pelicula//peli_1//min.png",
+			"//src//img//detalle//pelicula//peli_1//max.png",
 			"American Pie 2", 
 			duracion(104),
 			horarios(), 
@@ -40,22 +39,17 @@ public enum Peliculas {
 					+ "  ,deciden alquilar una casa en la playa. Como el alquiler es algo caro"
 					+ "  deciden invitar tambien a Stifler (millonario),"
 					+"que sabe mucho de mujeres.",
-			"imax",
-			"//src//img//cartelera//pelicula//peli_1//back.png",
-			"//src//img//boleteria//pelicula//peli_1//blur.png",
-			"//src//img//cartelera//pelicula//peli_1//titulo.png",
-			"//src//img//cartelera//pelicula//peli_1//leyenda.png",
-			"//src//img//detalle//pelicula//peli_1//min.png",
-			"//src//img//detalle//pelicula//peli_1//max.png",
-			0,0, //x y del front
-			0,0, //x y del titulo
-			0,0//x y de la leyenda
+			"imax"
 			),
 	
-	Peli_2("//src//img//boleteria//pelicula//peli_2//back.png",
-	"//src//img//boleteria//pelicula//peli_2//front.png",
-	"//src//img//boleteria//pelicula//peli_2//titulo.png",
-		"Drag Me To Hell",
+	Peli_2( "//src//img//boleteria//pelicula//peli_2//back.png",
+			"//src//img//boleteria//pelicula//peli_2//front.png",
+			"//src//img//boleteria//pelicula//peli_2//titulo.png",
+			"//src//img//cartelera//pelicula//peli_2//back.png",
+			"//src//img//detalle//pelicula//peli_2//blur.png",
+			"//src//img//detalle//pelicula//peli_2//min.png",
+			"//src//img//detalle//pelicula//peli_2//max.png",
+			"Drag Me To Hell",
 			duracion(95),
 			horarios(), 
 			"Terror. Thriller | Sobrenatural. Comedia de terror",
@@ -65,21 +59,16 @@ public enum Peliculas {
 					+ " Un dia la senora Ganush, una misteriosa anciana,va al banco para "
 					+ " pedirle una moratoria, pero Christine se la niega, y la senora Ganush pierde su casa. "
 					+ " La anciana decide entonces vengarse lanzandole una maldicion que convierte su vida en un infierno.",
-			"normal",
-			"//src//img//cartelera//pelicula//peli_2//back.png",
-			"//src//img//boleteria//pelicula//peli_2//blur.png",
-			"//src//img//cartelera//pelicula//peli_2//titulo.png",
-			"//src//img//cartelera//pelicula//peli_2//leyenda.png",
-			"//src//img//detalle//pelicula//peli_2//min.png",
-			"//src//img//detalle//pelicula//peli_2//max.png",
-			0,0, //x y del front
-			0,0, //x y del titulo
-			0,0//x y de la leyenda
+			"normal"
 			),
 	
-	Peli_3("//src//img//boleteria//pelicula//peli_3//back.png",
-	"//src//img//boleteria//pelicula//peli_3//front.png",
-	"//src//img//boleteria//pelicula//peli_3//titulo.png",
+	Peli_3( "//src//img//boleteria//pelicula//peli_3//back.png",
+			"//src//img//boleteria//pelicula//peli_3//front.png",
+			"//src//img//boleteria//pelicula//peli_3//titulo.png",
+			"//src//img//cartelera//pelicula//peli_3//back.png",
+			"//src//img//detalle//pelicula//peli_3//blur.png",
+			"//src//img//detalle//pelicula//peli_3//min.png",
+			"//src//img//detalle//pelicula//peli_3//max.png",
 			"Kung Fu Panda",
 				duracion(95),
 				horarios(), 
@@ -89,21 +78,16 @@ public enum Peliculas {
 						+ "Con poderosos enemigos acercandose, la esperanza es depositada en una antigua profecia que dice que "
 						+ "un heroe se alzara para salvarles. Voces originales de Jack Black, Angelina Jolie, Dustin Hoffman,"
 						+ " Lucy Liu & Jackie Chan.",
-				"imax",
-				"//src//img//cartelera//pelicula//peli_3//back.png",
-			"//src//img//boleteria//pelicula//peli_3//blur.png",
-			"//src//img//cartelera//pelicula//peli_3//titulo.png",
-			"//src//img//cartelera//pelicula//peli_3//leyenda.png",
-			"//src//img//detalle//pelicula//peli_3//min.png",
-			"//src//img//detalle//pelicula//peli_3//max.png",
-			0,0, //x y del front
-			0,0, //x y del titulo
-			0,0//x y de la leyenda
+				"imax"
 			),
 	
-	Peli_4("//src//img//boleteria//pelicula//peli_4//back.png",
-	"//src//img//boleteria//pelicula//peli_4//front.png",
-	"//src//img//boleteria//pelicula//peli_4//titulo.png",
+	Peli_4( "//src//img//boleteria//pelicula//peli_4//back.png",
+			"//src//img//boleteria//pelicula//peli_4//front.png",
+			"//src//img//boleteria//pelicula//peli_4//titulo.png",
+			"//src//img//cartelera//pelicula//peli_4//back.png",
+			"//src//img//detalle//pelicula//peli_4//blur.png",
+			"//src//img//detalle//pelicula//peli_4//min.png",
+			"//src//img//detalle//pelicula//peli_4//max.png",
 			"I Am Legend", 
 			duracion(100),
 			horarios(), 
@@ -113,21 +97,16 @@ public enum Peliculas {
 					+ "solo. Los demas seres humanos se han convertido en vampiros. "
 					+ "Busca una formula que le permita utilizar su sangre inmune para devolverles a los hombres su"
 					+ " naturaleza. Pero esta en inferioridad de condiciones y el tiempo se acaba.",
-			"normal",
-			"//src//img//cartelera//pelicula//peli_4//back.png",
-			"//src//img//boleteria//pelicula//peli_4//blur.png",
-			"//src//img//cartelera//pelicula//peli_4//titulo.png",
-			"//src//img//cartelera//pelicula//peli_4//leyenda.png",
-			"//src//img//detalle//pelicula//peli_4//min.png",
-			"//src//img//detalle//pelicula//peli_4//max.png",
-			0,0, //x y del front
-			0,0, //x y del titulo
-			0,0//x y de la leyenda
+			"normal"
 			),
 	
-	Peli_5("//src//img//boleteria//pelicula//peli_5//back.png",
-	"//src//img//boleteria//pelicula//peli_5//front.png",
-	"//src//img//boleteria//pelicula//peli_5//titulo.png",
+	Peli_5( "//src//img//boleteria//pelicula//peli_5//back.png",
+			"//src//img//boleteria//pelicula//peli_5//front.png",
+			"//src//img//boleteria//pelicula//peli_5//titulo.png",
+			"//src//img//cartelera//pelicula//peli_5//back.png",
+			"//src//img//detalle//pelicula//peli_5//blur.png",
+			"//src//img//detalle//pelicula//peli_5//min.png",
+			"//src//img//detalle//pelicula//peli_5//max.png",
 			"Alice in Wonderland",
 			duracion(108),
 			horarios(), 
@@ -140,22 +119,17 @@ public enum Peliculas {
 					+ "a su hermana la Reina Blanca, pero las criaturas que viven en el, dispuestas a "
 					+ "rebelarse, esperan contar con el apoyo de Alicia, a la que ayudan a recordar su primera visita al "
 					+ "fantastico reino. ",
-			"imax",
-			"//src//img//cartelera//pelicula//peli_5//back.png",
-			"//src//img//boleteria//pelicula//peli_5//blur.png",
-			"//src//img//cartelera//pelicula//peli_5//titulo.png",
-			"//src//img//cartelera//pelicula//peli_5//leyenda.png",
-			"//src//img//detalle//pelicula//peli_5//min.png",
-			"//src//img//detalle//pelicula//peli_5//max.png",
-			0,0, //x y del front
-			0,0, //x y del titulo
-			0,0//x y de la leyenda
+			"imax"
 			),
 	
-	Peli_6("//src//img//boleteria//pelicula//peli_6//back.png",
-	"//src//img//boleteria//pelicula//peli_6//front.png",
-	"//src//img//boleteria//pelicula//peli_6//titulo.png",
-		"Spider-Man 3", 
+	Peli_6( "//src//img//boleteria//pelicula//peli_6//back.png",
+			"//src//img//boleteria//pelicula//peli_6//front.png",
+			"//src//img//boleteria//pelicula//peli_6//titulo.png",
+			"//src//img//cartelera//pelicula//peli_6//back.png",
+			"//src//img//detalle//pelicula//peli_6//blur.png",
+			"//src//img//detalle//pelicula//peli_6//min.png",
+			"//src//img//detalle//pelicula//peli_6//max.png",
+			"Spider-Man 3", 
 			duracion(140),
 			horarios(), 
 			"Fantastico. Accion | Superheroes. Comic. Marvel Comics. Secuela",
@@ -165,21 +139,16 @@ public enum Peliculas {
 					+ " mostrando el lado mas oscuro y vengativo de su personalidad.Tiene, pues, que afrontar"
 					+ " un dilema: disfrutar de sus nuevos poderes o seguir siendo un heroe compasivo. Mientras tanto,"
 					+ "  sobre el se cierne la amenaza de dos temibles enemigos: Venom y el Hombre de Arena.",
-			"normal",
-			"//src//img//cartelera//pelicula//peli_6//back.png",
-			"//src//img//boleteria//pelicula//peli_6//blur.png",
-			"//src//img//cartelera//pelicula//peli_6//titulo.png",
-			"//src//img//cartelera//pelicula//peli_6//leyenda.png",
-			"//src//img//detalle//pelicula//peli_6//min.png",
-			"//src//img//detalle//pelicula//peli_6//max.png",
-			0,0, //x y del front
-			0,0, //x y del titulo
-			0,0//x y de la leyenda
+			"normal"
 			),
 
-	Peli_7("//src//img//boleteria//pelicula//peli_7//back.png",
-	"//src//img//boleteria//pelicula//peli_7//front.png",
-	"//src//img//boleteria//pelicula//peli_7//titulo.png",
+	Peli_7( "//src//img//boleteria//pelicula//peli_7//back.png",
+			"//src//img//boleteria//pelicula//peli_7//front.png",
+			"//src//img//boleteria//pelicula//peli_7//titulo.png",
+			"//src//img//cartelera//pelicula//peli_7//back.png",
+			"//src//img//detalle//pelicula//peli_7//blur.png",
+			"//src//img//detalle//pelicula//peli_7//min.png",
+			"//src//img//detalle//pelicula//peli_7//max.png",
 			"Annabelle",
 			duracion(98),
 			horarios(), 
@@ -189,34 +158,22 @@ public enum Peliculas {
 					+ " Sin embargo, la alegria de Mia al recibir a Annabelle no dura mucho. "
 					+ "Una espantosa noche la pareja ve como miembros de una secta satanica"
 					+ " invaden su hogar y los atacan brutalmente.Hasta llegar a la maldici�n de Anabelle",
-			"imax",
-			"//src//img//cartelera//pelicula//peli_7//back.png",
-			"//src//img//boleteria//pelicula//peli_7//blur.png",
-			"//src//img//cartelera//pelicula//peli_7//titulo.png",
-			"//src//img//cartelera//pelicula//peli_7//leyenda.png",
-			"//src//img//detalle//pelicula//peli_7//min.png",
-			"//src//img//detalle//pelicula//peli_7//max.png",
-			0,0, //x y del front
-			0,0, //x y del titulo
-			0,0//x y de la leyenda
+			"imax"
 			);
 
 	private final String duracion,horario,titulo,genero,sinapsis,salaTipo;
-	private String boleteria_back,boleteria_front,boleteria_title,cartelera_back,cartelera_front,cartelera_title;
-	private String leyenda;
+	private String boleteria_back,boleteria_front,boleteria_title;
+	private String cartelera_back;
+	private String detalle_blur;
 	private int edad;
 	private String min,max;
-	private int xfront,yfront;
-	private int xtitulo,ytitulo;
-	private int xleyenda,yleyenda;
 	
-	Peliculas(String boleteria_back,String boleteria_front,String boleteria_title, String titulo,String duracion,String horario, String genero, int edad, String sinapsis,String salaTipo,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String min,String max,int xfront,int yfront,int xtitulo,int ytitulo,int xleyenda,int yleyenda){
+	Peliculas(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String detalle_blur,String min,String max, String titulo,String duracion,String horario, String genero, int edad, String sinapsis,String salaTipo){
 		this.boleteria_back=boleteria_back;
 		this.boleteria_front=boleteria_front;
 		this.boleteria_title=boleteria_title;
 		this.cartelera_back=cartelera_back;
-		this.cartelera_front=cartelera_front;
-		this.cartelera_title=cartelera_title;
+		this.detalle_blur=detalle_blur;
 		this.duracion = duracion;
 		this.horario = horario;
 		this.titulo = titulo;
@@ -224,63 +181,17 @@ public enum Peliculas {
 		this.edad = edad;
 		this.sinapsis = sinapsis;
 		this.salaTipo=salaTipo;
-		this.leyenda=leyenda;
 		this.min=min;
 		this.max=max;
-		this.xfront=xfront;
-		this.yfront=yfront;
-		this.xtitulo=xtitulo;
-		this.ytitulo=ytitulo;
-		this.xleyenda=xleyenda;
-		this.yleyenda=yleyenda;
-	}
-
-	public int getXfront() {
-		return xfront;
-	}
-
-	public int getYfront() {
-		return yfront;
-	}
-	
-	public int getXtitulo() {
-		return xtitulo;
-	}
-
-	public int getYtitulo() {
-		return ytitulo;
-	}
-
-	public int getXleyenda() {
-		return xleyenda;
-	}
-
-	public int getYleyenda() {
-		return yleyenda;
 	}
 
 	public String getCartelera_back() {
 		return cartelera_back;
 	}
-	// public void setCartelera_back(String cartelera_back) {
-	// 	this.cartelera_back = cartelera_back;
-	// }
 
-	public String getCartelera_front() {
-		return cartelera_front;
+	public String getDetalle_Blur() {
+		return detalle_blur;
 	}
-
-	//public void setCartelera_front(String cartelera_front) {
-	// 	this.cartelera_front = cartelera_front;
-	// }
-
-	public String getCartelera_title() {
-		return cartelera_title;
-	}
-
-	// public void setCartelera_title(String cartelera_title) {
-	// 	this.cartelera_title = cartelera_title;
-	// }
 
 	public String getBoleteria_back() {
 		return boleteria_back;
@@ -368,10 +279,6 @@ public enum Peliculas {
 	
 	public String getSalaTipo() {
 		return salaTipo;
-	}
-
-	public String getLeyenda() {
-		return leyenda;
 	}
 
 	public String getMin() {

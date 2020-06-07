@@ -15,6 +15,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SelectPelicula extends CustomPanel {
+
+	private static final long serialVersionUID = 1L;
 	private TransparentPanel back1;
 	private ImageAdaptable back0;
 	private SelectItem[] selectItem;
@@ -138,7 +140,7 @@ public class SelectPelicula extends CustomPanel {
 
 	public void cargardata() {
 		proyeccion = ctrProyeccion.getPreproyeccion();
-		back0.setImage(ctrProyeccion.getActProyeccion().getCarteleraFront());
+		back0.setImage(ctrProyeccion.getActProyeccion().getDetalle_blur());
 		if (proyeccion instanceof Pelicula) {
 			ver.setText("Ver Conferencias");
 			ctrView.setIsPelicula(true);
@@ -156,6 +158,8 @@ public class SelectPelicula extends CustomPanel {
 	}
 
 	class SelectItem extends CustomPanel {
+
+		private static final long serialVersionUID = 6L;
 		CustomButton img, btn_comprar;
 
 		public SelectItem(String path, int width, int height, int buttonHeight) {

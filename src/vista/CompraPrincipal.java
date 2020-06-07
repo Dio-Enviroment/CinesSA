@@ -3,18 +3,14 @@ package vista;
 import modelo.*;
 import controlador.*;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
 
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
 
-import javax.swing.JTextField;
-import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.plaf.basic.BasicArrowButton;
@@ -24,15 +20,11 @@ import componentes.CustomPanel;
 import componentes.ImageAdaptable;
 import componentes.JTextFieldHint;
 
-import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JSpinner;
 import javax.swing.JSpinner.DefaultEditor;
 
-import javax.swing.JButton;
 import javax.swing.JComponent;
-
-import javax.swing.BoxLayout;
 
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
@@ -411,20 +403,9 @@ public class CompraPrincipal extends CustomPanel {
 		datosCliente.setFont(new Font("Verdana", Font.BOLD, 20));
 		this.infoBoleto.setBounds(240, 230, 400, 50);
 		infoBoleto.setFont(new Font("Verdana", Font.BOLD, 20));
-		//pn_datoBoleto.setBounds(12, 209, 494, 270);
-		
 
 		showcomponet(false);
 
-		
-		
-		
-		//
-		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
-		// this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
-		// this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
-
-		// censura();
 		this.btn_siguiente.addActionListener(new ActionListener() {
 
 			@Override
@@ -478,7 +459,6 @@ public class CompraPrincipal extends CustomPanel {
 	
 
 	public void limitarValoresJpinner() {
-		int a = ctrSala.getLimiteBoletos();
 		ad.setMaximum(ctrSala.getLimiteBoletos());
 		ad.setMinimum(0);
 		ad.setStepSize(1);
@@ -507,10 +487,6 @@ public class CompraPrincipal extends CustomPanel {
 	private int aux;
 
 	public void init() {
-
-		// Proyeccion actProyeccion= ctrProyeccion.getActProyeccion();
-		// this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());
-		// this.lbl_tiiposala.setText(actProyeccion.getSalaTipo());
 
 		txt_cedula.addKeyListener(new KeyAdapter() {
 			@Override
@@ -556,7 +532,7 @@ public class CompraPrincipal extends CustomPanel {
 						arribaA.setEnabled(true);
 						arribaN.setEnabled(true);
 					}
-				}///asd
+				}
 				else {
 					if (aux == maxA) {
 						arribaA.setEnabled(false);
@@ -565,8 +541,6 @@ public class CompraPrincipal extends CustomPanel {
 						arribaA.setEnabled(true);
 					}
 				}
-
-				
 
 				lbl_contador.setText(aux + "");
 				double t=(Math.round(pr.calculoS(Integer.parseInt(sp_adultos.getValue().toString()),
@@ -734,7 +708,6 @@ public class CompraPrincipal extends CustomPanel {
 	}
 
 	public void descargardata() {
-		// ctrView.setActivador(true);
 		showcomponet(false);
 		if (editor instanceof DefaultEditor) {
 			((DefaultEditor) editor).getTextField().setValue(0);
@@ -768,8 +741,7 @@ public class CompraPrincipal extends CustomPanel {
 		aux = 0;
 		asientos = "";
 		estado = false;
-		//this.sp_ninios.setEnabled(ctrView.getActivador4());
-		//this.sp_adultos.setEnabled(ctrView.getActivador4());
+
 		this.lbl_contador.setText(ctrBoleto.getPuestos());
 		this.lbl_valor_iva.setText(ctrBoleto.getIva());
 		this.lbl_valor_Subtotal.setText(ctrBoleto.getSubtotal());
@@ -780,8 +752,6 @@ public class CompraPrincipal extends CustomPanel {
 		txt_direccion.setText(cliente.getDireccion());
 		
 		censura();
-		
-		
 	}
 
 	public void showcomponet(boolean visible) {

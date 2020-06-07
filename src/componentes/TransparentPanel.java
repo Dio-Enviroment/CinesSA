@@ -5,11 +5,12 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.util.ArrayList;
 import java.awt.AlphaComposite;
 import java.awt.Component;
 
 public class TransparentPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
 
 	public TransparentPanel(boolean none) {
 		setLayout(null);

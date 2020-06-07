@@ -2,7 +2,6 @@ package vista;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
-import javax.swing.border.TitledBorder;
 
 import componentes.CustomButton;
 import componentes.CustomPanel;
@@ -15,8 +14,6 @@ import modelo.Asiento;
 import modelo.Cliente;
 import modelo.Sala;
 
-import javax.swing.border.LineBorder;
-import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Font;
@@ -27,7 +24,6 @@ import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
 
 
@@ -59,9 +55,7 @@ public class ResumenCompra extends CustomPanel {
 	private String puesto="";
 	private Cliente cliente;
 	private ControladorBoleto ctrBoleto;
-	/**
-	 * Create the panel.
-	 */
+
 	public ResumenCompra(int width,int height, ControladorSala ctrSala, ControladorProyeccion ctrPro, ControladorBoleto ctrBoleto, ControladorView ctrView) {
 		this.ctrSala = ctrSala;
 		this.ctrView = ctrView;
@@ -69,7 +63,6 @@ public class ResumenCompra extends CustomPanel {
 		this.ctrBoleto= ctrBoleto;
 		setLayout(null);
 		setBounds(0, 0, width, height);
-
 
 		File workingDirectory = new File(System.getProperty("user.dir"));
 				String[] paths = { workingDirectory + "//src//resources//compraPrincipal_3.png",
@@ -208,9 +201,6 @@ public class ResumenCompra extends CustomPanel {
 		this.lbl_numTotalR.setBounds(450, 340, 300, 50);
 		lbl_numTotalR.setFont(new Font("Verdana", Font.PLAIN, 30));
 	
-	
-		
-		
 		img1.setLocation(600, 300);
 
 		btn_cancelar = new CustomButton("CANCELAR");
@@ -275,7 +265,7 @@ public class ResumenCompra extends CustomPanel {
 		
 	}
 	public void cargardata() {
-		
+		ctrView.toString();
 		sala = ctrSala.getSala(0);
 		salaAct =  sala.getAsientos();
 		salaPre = ctrSala.getSalaPre();

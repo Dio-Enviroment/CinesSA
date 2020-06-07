@@ -2,8 +2,6 @@ package controlador;
 
 import java.util.ArrayList;
 
-import javax.swing.JTextField;
-
 import modelo.Asiento;
 import modelo.Boleto;
 import modelo.Proyeccion;
@@ -41,7 +39,7 @@ public class ControladorBoleto {
     public ArrayList<Boleto> getBoletos() {
         return boletos;
     }
-    //getBoletos () numero totales de bolestos de cada sala
+
 	public String getTotal() {
 		return total;
 	}
@@ -66,8 +64,4 @@ public class ControladorBoleto {
 	public void setPuestos(String puestos) {
 		this.puestos = puestos;
 	}
-   
-	
-    
-
 }

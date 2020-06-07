@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 public class JTextFieldHint extends JTextField implements FocusListener {
 
+    private static final long serialVersionUID = 1L;
     private final Font fontLost = new Font("Monaco", Font.ITALIC, 10);
     private final Font fontGained = new Font("Monaco", Font.PLAIN, 12);
     private final Color colorLost = Color.RED;

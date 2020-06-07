@@ -52,9 +52,6 @@ public class DetallePelicula extends CustomPanel {
 		File workingDirectory = new File(System.getProperty("user.dir"));
 		String[] rawback = { workingDirectory + "//src//img//detalle//pelicula//peli_0//max.png" };
 
-		// String[] rawitem = { workingDirectory +
-		// "//src//img//boleteria//conferecia//confe_0//back.png" };
-
 		datos = new JPanel();
 		datos.setBounds(497, 99, 458, 510);
 		datos.setBackground(new Color(37, 36, 37, 255));
@@ -68,7 +65,7 @@ public class DetallePelicula extends CustomPanel {
 		title = new JLabel("  IROM MAN 3");
 		title.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		title.setLocation(0, 12);
-		// title.setBounds(0, 10, 50, 115);
+
 		title.setForeground(Color.white);
 		GridBagConstraints gbc_title = new GridBagConstraints();
 		gbc_title.gridwidth = 2;
@@ -243,7 +240,7 @@ public class DetallePelicula extends CustomPanel {
 		String[] horas;
 		actProyeccion = ctrProyeccion.getActProyeccion();
 		proyeccion = ctrProyeccion.getPreproyeccion();
-		back0.setImage(actProyeccion.getCarteleraFront());
+		back0.setImage(actProyeccion.getDetalle_blur());
 		img.setImage(proyeccion.getMax());
 		title.setText("  " + proyeccion.getTitulo());
 		selecionar.setText("Seleccionar horario");//Seleccionar horario

@@ -7,14 +7,13 @@ public class Conferencia extends Proyeccion {
 	private Sala sala;
 	private String descripcion;
 
-	public Conferencia(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String cartelera_front,String cartelera_title,String leyenda,String min,String max,int xfront,int yfront,int xtitulo,int ytitulo,int xleyenda,int yleyenda, String titulo, String duracion, String horario, String presentador,String tematica,String salaTipo,Sala sala, String descripcion) {
-		super(boleteria_back, boleteria_front, boleteria_title,cartelera_back,cartelera_front,cartelera_title,leyenda,min,max,xfront,yfront,xtitulo,ytitulo,xleyenda,yleyenda, titulo, duracion, horario, salaTipo);
+	public Conferencia(String boleteria_back,String boleteria_front,String boleteria_title,String cartelera_back,String descripcion_blur,String min,String max, String titulo, String duracion, String horario, String presentador,String tematica,String salaTipo,Sala sala, String descripcion) {
+		super(boleteria_back, boleteria_front, boleteria_title,cartelera_back,descripcion_blur,min,max, titulo, duracion, horario, salaTipo);
 		this.presentador = presentador;
 		this.tematica = tematica;
 		this.salaTipo=salaTipo;
 		this.sala=sala;
 		this.descripcion=descripcion;
-		
 	}
 
 	

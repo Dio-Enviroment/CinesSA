@@ -4,15 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-import javax.swing.JButton;
-
 import componentes.ChangePos;
 import componentes.ChangePosListener;
 import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.ImageAdaptable;
 import componentes.Slide;
-import componentes.TransparentPanel;
 import controlador.ControladorProyeccion;
 import controlador.ControladorView;
 import modelo.Proyeccion;

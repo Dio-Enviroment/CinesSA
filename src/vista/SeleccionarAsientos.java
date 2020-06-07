@@ -1,27 +1,16 @@
 package vista;
 
 import javax.swing.JPanel;
-
-import javax.swing.border.LineBorder;
 import java.awt.Color;
-
-import javax.swing.border.TitledBorder;
-
 import componentes.CustomButton;
 import componentes.CustomPanel;
 import componentes.ImageAdaptable;
-
 import javax.swing.JLabel;
-
 import java.awt.Font;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
-
-import javax.swing.BoxLayout;
-import javax.swing.border.EmptyBorder;
 
 import controlador.ControladorBoleto;
 import controlador.ControladorSala;
@@ -49,13 +38,16 @@ public class SeleccionarAsientos extends CustomPanel {
 	private String[] letras = new String[8];
 	private String[] numeros = new String[8];
 	private JPanel pn_asientos;
-	private String puestos;
 	private ControladorBoleto ctrBoleto;
 
 	private JLabel[] num = new JLabel[8];
 	private JLabel[] let = new JLabel[8];
 	private ArrayList<Asiento> salaPre;
-	
+	///////////////////////////////////////////////
+	int n=0;
+	String s ;
+	char j;
+	//variables para mostrar las letras no borrar!!!!
 	private JPanel pn_letras;
 	File workingDirectory = new File(System.getProperty("user.dir"));
 	String[] paths = { workingDirectory + "//src//resources//sala_5_5.png",workingDirectory + "//src//resources//sala_5_6.png",
@@ -106,15 +98,10 @@ public class SeleccionarAsientos extends CustomPanel {
 
 		pn_asientos.add(lbl_asiento);
 		pn_asientos.add(pn_seleccionarAsiento);
-		
-		
+
 		lbl_asiento.setForeground(Color.white);
 		lbl_asientos.setForeground(Color.white);
-		
-		
-	
-		
-		
+
 		pn_seleccionarAsiento.setLayout(null);
 		pn_seleccionarAsiento.setOpaque(false);
 		pn_letras.setOpaque(false);
@@ -181,7 +168,7 @@ public class SeleccionarAsientos extends CustomPanel {
 		invisible();
 		showcomponet(false);
 	}
-
+	
 	public void cargardata() {
 		
 		numeros[0] = "1";
@@ -192,14 +179,17 @@ public class SeleccionarAsientos extends CustomPanel {
 		numeros[5] = "6";
 		numeros[6] = "7";
 		numeros[7] = "8";
-		letras[0] = "A";
-		letras[1] = "B";
-		letras[2] = "C";
-		letras[3] = "D";
-		letras[4] = "E";
-		letras[5] = "F";
-		letras[6] = "G";
-		letras[7] = "H";
+		letras[0] = "H";
+		letras[1] = "G";
+		letras[2] = "F";
+		letras[3] = "E";
+		letras[4] = "D";
+		letras[5] = "C";
+		letras[6] = "B";
+		letras[7] = "A";
+		n=0;
+		j='.';
+		s = "HGFEDCBA";
 		sala = ctrSala.getSala(0);
 		asientos = sala.getAsientos();
 		pn_letras.setBounds(155, 120, 40, 70 * asientos.length);
@@ -210,9 +200,13 @@ public class SeleccionarAsientos extends CustomPanel {
 			num[i].setText(numeros[i]);
 			num[i].setVisible(true);
 		}
+		 n = s.length() -asientos.length;
 		for (int i = 0; i < asientos.length; i++) {
-			let[i].setText(letras[i]);
+			
+			j = s.charAt(n);
+			let[i].setText(j+"");
 			let[i].setVisible(true);
+			n++;
 		}
 	
 		if( asientos.length == 5 && asientos[0].length ==5) {
@@ -286,9 +280,9 @@ public class SeleccionarAsientos extends CustomPanel {
 		}
 
 		int w = 10;
-		int z = 14;
+		int z =  10;
 
-		for (int i = 0; i < let.length; i++) {
+		for (int i = 0; i <let.length; i++) {
 			JLabel l = new JLabel();
 			l.setFont(new Font("Verdana", Font.BOLD, 18));
 			l.setForeground(Color.white);
@@ -333,12 +327,6 @@ public class SeleccionarAsientos extends CustomPanel {
 		}
 	}
 
-	/*
-	 * private void valorIni(boolean[][] dim) { int x = dim.length; int y =
-	 * dim[0].length; for (int i = 0; i < x; i++) { for (int j = 0; j < y; j++) { if
-	 * (botones[i][j].isEnabled()) { botones[i][j].changeIcon(0);
-	 * botones[i][j].setEnabled(true); } } } }
-	 */
 	private void invisibleN() {
 		for (int i = 0; i < num.length; i++) {
 			num[i].setVisible(false);
@@ -358,12 +346,6 @@ public class SeleccionarAsientos extends CustomPanel {
 			}
 		}
 	}
-
-	/*
-	 * public void validarAsiento() { if(this.lbl_asiento.getText().equals("0")) {
-	 * this.btncomprar.setEnabled(true); } else { this.btncomprar.setEnabled(false);
-	 * } }
-	 */
 
 	private void generarBotones() {
 		int itemWidth = 75, itemHeight = 55;
@@ -407,9 +389,9 @@ public class SeleccionarAsientos extends CustomPanel {
 								btn.changeIcon(1);
 								btn.setCustomParameter(2, false);
 								btn.setBackground(new Color(127,126,126,255));
-								//sala.ocuparAsiento(x, y);
+
 								ctrSala.anadirSalaPre(x, y);
-								
+								salaPre.toString();
 								aux--;
 								lbl_asiento.setText(aux + "");
 								if (aux == 0) {

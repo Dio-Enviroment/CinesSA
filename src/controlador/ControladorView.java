@@ -1,11 +1,7 @@
 package controlador;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import componentes.CustomPanel;
-
-import java.awt.BorderLayout;
 import vista.*;
 
 public class ControladorView {
@@ -24,7 +20,6 @@ public class ControladorView {
     private boolean activador2;
     private boolean activador3;
     private boolean activador4;
-    private boolean inicompraPrincipal=true;
     private String nombre ;
     private boolean isPelicula=true;
 
@@ -150,7 +145,4 @@ public class ControladorView {
 	public void setActivador4(boolean activador4) {
 		this.activador4 = activador4;
 	}
-    
-    
-
 }

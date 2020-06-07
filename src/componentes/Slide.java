@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.Graphics;
-import java.awt.Component;
+
 public class Slide extends JPanel {
 
 	private static final long serialVersionUID = 1L;
