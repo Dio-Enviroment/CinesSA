@@ -730,6 +730,7 @@ public class CompraPrincipal extends CustomPanel {
 	public void cargardata() {
 		showcomponet(true);
 		cliente= ctrBoleto.getCliente();
+		ctrView.setLog("CompraPricipal");
 		
 		Proyeccion actProyeccion = ctrProyeccion.getActProyeccion();
 		this.lbl_tituloPelicula.setText(actProyeccion.getTitulo());

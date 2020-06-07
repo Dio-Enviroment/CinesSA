@@ -100,10 +100,13 @@ public class Boleteria extends CustomPanel {
 	public void cargardata() {
 		proyeccion = ctrProyeccion.getActProyeccion();
 		
+		if (!ctrView.getLog().equals("CompraPrincipal")) {
+			back.setImage(proyeccion.getBoleteriaBack());
+			front.setImage(proyeccion.getBoleteriaFront());
+			title.setImg(proyeccion.getBoleteriaTitle());
+		}
 
-		back.setImage(proyeccion.getBoleteriaBack());
-		front.setImage(proyeccion.getBoleteriaFront());
-		title.setImg(proyeccion.getBoleteriaTitle());
+		ctrView.setLog("Boleteria");
 		horarios.addElement("Seleccione una opcion");
 
 		for (String hora : proyeccion.getHorario()) {

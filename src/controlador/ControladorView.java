@@ -22,6 +22,7 @@ public class ControladorView {
     private boolean activador4;
     private String nombre ;
     private boolean isPelicula=true;
+    private String log="";
 
     private String cliente="";
     public ControladorView(JPanel container,ControladorSala ctrSala,ControladorProyeccion ctrProyeccion, ControladorBoleto ctrBoleto){
@@ -43,6 +44,14 @@ public class ControladorView {
         this.container.add(seleccionarAsientos);
         this.container.add(resumenCompra);
         this.container.add(agradecimiento);
+    }
+
+    public void setLog(String log){
+        this.log=log;
+    }
+
+    public String getLog(){
+        return log;
     }
 
     public void setIsPelicula(boolean value) {
